@@ -1,0 +1,2052 @@
+[
+  {
+    "period": "2026-Q1",
+    "value": 8.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2025-Q4",
+    "value": 7.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2025-Q3",
+    "value": 7.7,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2025-Q2",
+    "value": 7.6,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2025-Q1",
+    "value": 7.4,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2024-Q4",
+    "value": 7.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2024-Q3",
+    "value": 7.4,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2024-Q2",
+    "value": 7.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2024-Q1",
+    "value": 7.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2023-Q4",
+    "value": 7.6,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2023-Q3",
+    "value": 7.4,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2023-Q2",
+    "value": 7.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2023-Q1",
+    "value": 7.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2022-Q4",
+    "value": 7.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2022-Q3",
+    "value": 7.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2022-Q2",
+    "value": 7.4,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2022-Q1",
+    "value": 7.4,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2021-Q4",
+    "value": 7.4,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2021-Q3",
+    "value": 7.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2021-Q2",
+    "value": 7.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2021-Q1",
+    "value": 8.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2020-Q4",
+    "value": 8.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2020-Q3",
+    "value": 9.0,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2020-Q2",
+    "value": 7.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2020-Q1",
+    "value": 7.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2019-Q4",
+    "value": 8.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2019-Q3",
+    "value": 8.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2019-Q2",
+    "value": 8.4,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2019-Q1",
+    "value": 8.7,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2018-Q4",
+    "value": 8.8,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2018-Q3",
+    "value": 8.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2018-Q2",
+    "value": 9.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2018-Q1",
+    "value": 9.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2017-Q4",
+    "value": 9.0,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2017-Q3",
+    "value": 9.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2017-Q2",
+    "value": 9.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2017-Q1",
+    "value": 9.6,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2016-Q4",
+    "value": 10.0,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2016-Q3",
+    "value": 9.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2016-Q2",
+    "value": 10.0,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2016-Q1",
+    "value": 10.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2015-Q4",
+    "value": 10.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2015-Q3",
+    "value": 10.4,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2015-Q2",
+    "value": 10.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2015-Q1",
+    "value": 10.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2014-Q4",
+    "value": 10.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2014-Q3",
+    "value": 10.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2014-Q2",
+    "value": 10.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2014-Q1",
+    "value": 10.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2013-Q4",
+    "value": 10.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2013-Q3",
+    "value": 10.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2013-Q2",
+    "value": 10.4,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2013-Q1",
+    "value": 10.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2012-Q4",
+    "value": 10.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2012-Q3",
+    "value": 9.8,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2012-Q2",
+    "value": 9.7,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2012-Q1",
+    "value": 9.4,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2011-Q4",
+    "value": 9.4,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2011-Q3",
+    "value": 9.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2011-Q2",
+    "value": 9.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2011-Q1",
+    "value": 9.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2010-Q4",
+    "value": 9.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2010-Q3",
+    "value": 9.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2010-Q2",
+    "value": 9.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2010-Q1",
+    "value": 9.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2009-Q4",
+    "value": 9.6,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2009-Q3",
+    "value": 9.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2009-Q2",
+    "value": 9.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2009-Q1",
+    "value": 8.6,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2008-Q4",
+    "value": 7.8,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2008-Q3",
+    "value": 7.4,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2008-Q2",
+    "value": 7.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2008-Q1",
+    "value": 7.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2007-Q4",
+    "value": 7.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2007-Q3",
+    "value": 8.0,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2007-Q2",
+    "value": 8.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2007-Q1",
+    "value": 8.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2006-Q4",
+    "value": 8.4,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2006-Q3",
+    "value": 8.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2006-Q2",
+    "value": 9.0,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2006-Q1",
+    "value": 9.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2005-Q4",
+    "value": 9.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2005-Q3",
+    "value": 9.0,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2005-Q2",
+    "value": 8.8,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2005-Q1",
+    "value": 8.6,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2004-Q4",
+    "value": 8.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2004-Q3",
+    "value": 8.8,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2004-Q2",
+    "value": 8.8,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2004-Q1",
+    "value": 9.0,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2003-Q4",
+    "value": 8.8,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2003-Q3",
+    "value": 8.4,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2003-Q2",
+    "value": 8.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2003-Q1",
+    "value": 8.4,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2002-Q4",
+    "value": 7.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2002-Q3",
+    "value": 7.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2002-Q2",
+    "value": 7.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2002-Q1",
+    "value": 7.8,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2001-Q4",
+    "value": 7.8,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2001-Q3",
+    "value": 7.7,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2001-Q2",
+    "value": 7.7,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2001-Q1",
+    "value": 7.8,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2000-Q4",
+    "value": 8.0,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2000-Q3",
+    "value": 8.4,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2000-Q2",
+    "value": 8.7,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "2000-Q1",
+    "value": 9.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1999-Q4",
+    "value": 9.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1999-Q3",
+    "value": 9.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1999-Q2",
+    "value": 10.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1999-Q1",
+    "value": 10.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1998-Q4",
+    "value": 10.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1998-Q3",
+    "value": 10.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1998-Q2",
+    "value": 10.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1998-Q1",
+    "value": 10.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1997-Q4",
+    "value": 10.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1997-Q3",
+    "value": 10.6,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1997-Q2",
+    "value": 10.7,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1997-Q1",
+    "value": 10.7,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1996-Q4",
+    "value": 10.6,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1996-Q3",
+    "value": 10.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1996-Q2",
+    "value": 10.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1996-Q1",
+    "value": 10.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1995-Q4",
+    "value": 9.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1995-Q3",
+    "value": 9.8,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1995-Q2",
+    "value": 9.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1995-Q1",
+    "value": 10.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1994-Q4",
+    "value": 10.4,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1994-Q3",
+    "value": 10.6,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1994-Q2",
+    "value": 10.7,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1994-Q1",
+    "value": 10.7,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1993-Q4",
+    "value": 10.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1993-Q3",
+    "value": 10.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1993-Q2",
+    "value": 9.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1993-Q1",
+    "value": 9.6,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1992-Q4",
+    "value": 9.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1992-Q3",
+    "value": 9.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1992-Q2",
+    "value": 8.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1992-Q1",
+    "value": 8.7,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1991-Q4",
+    "value": 8.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1991-Q3",
+    "value": 8.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1991-Q2",
+    "value": 8.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1991-Q1",
+    "value": 7.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1990-Q4",
+    "value": 8.0,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1990-Q3",
+    "value": 8.0,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1990-Q2",
+    "value": 8.0,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1990-Q1",
+    "value": 8.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1989-Q4",
+    "value": 8.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1989-Q3",
+    "value": 8.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1989-Q2",
+    "value": 8.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1989-Q1",
+    "value": 8.4,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1988-Q4",
+    "value": 8.7,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1988-Q3",
+    "value": 8.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1988-Q2",
+    "value": 8.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1988-Q1",
+    "value": 9.0,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1987-Q4",
+    "value": 9.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1987-Q3",
+    "value": 9.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1987-Q2",
+    "value": 9.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1987-Q1",
+    "value": 9.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1986-Q4",
+    "value": 9.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1986-Q3",
+    "value": 9.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1986-Q2",
+    "value": 9.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1986-Q1",
+    "value": 9.0,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1985-Q4",
+    "value": 9.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1985-Q3",
+    "value": 9.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1985-Q2",
+    "value": 9.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1985-Q1",
+    "value": 9.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1984-Q4",
+    "value": 9.0,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1984-Q3",
+    "value": 8.8,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1984-Q2",
+    "value": 8.6,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1984-Q1",
+    "value": 8.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1983-Q4",
+    "value": 7.8,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1983-Q3",
+    "value": 7.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1983-Q2",
+    "value": 7.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1983-Q1",
+    "value": 7.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1982-Q4",
+    "value": 7.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1982-Q3",
+    "value": 7.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1982-Q2",
+    "value": 7.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1982-Q1",
+    "value": 7.0,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1981-Q4",
+    "value": 6.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1981-Q3",
+    "value": 6.8,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1981-Q2",
+    "value": 6.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1981-Q1",
+    "value": 6.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1980-Q4",
+    "value": 5.8,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1980-Q3",
+    "value": 5.6,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1980-Q2",
+    "value": 5.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1980-Q1",
+    "value": 5.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1979-Q4",
+    "value": 5.4,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1979-Q3",
+    "value": 5.3,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1979-Q2",
+    "value": 5.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1979-Q1",
+    "value": 5.1,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1978-Q4",
+    "value": 5.0,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1978-Q3",
+    "value": 4.8,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1978-Q2",
+    "value": 4.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1978-Q1",
+    "value": 4.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1977-Q4",
+    "value": 4.6,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1977-Q3",
+    "value": 4.7,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1977-Q2",
+    "value": 4.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1977-Q1",
+    "value": 4.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1976-Q4",
+    "value": 4.0,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1976-Q3",
+    "value": 3.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1976-Q2",
+    "value": 4.0,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1976-Q1",
+    "value": 4.0,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1975-Q4",
+    "value": 3.9,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1975-Q3",
+    "value": 3.8,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1975-Q2",
+    "value": 3.5,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  },
+  {
+    "period": "1975-Q1",
+    "value": 3.2,
+    "dataflow_id": "SERIES_BDM",
+    "dimensions": {},
+    "is_provisional": false,
+    "metadata": {
+      "OBS_STATUS": "A"
+    }
+  }
+]
