@@ -1,0 +1,628 @@
+[
+  {
+    "claim_id": "MVP-001",
+    "annotation": {
+      "identity": {
+        "text": "La réalité de l’inflation est de 12 %, soit deux fois les chiffres officiels.",
+        "language": "fr",
+        "reference_date": "2022-08-30"
+      },
+      "subject": {
+        "indicator": "inflation",
+        "territory_main": "France",
+        "population": "Toute la population"
+      },
+      "time": {
+        "period_explicit": "août 2022",
+        "granularity": "ANNUAL"
+      },
+      "measure": {
+        "value": 12,
+        "unit": "PERCENTAGE",
+        "is_approximate": false
+      },
+      "operation": {
+        "type": "VALUE",
+        "direction": "NONE"
+      },
+      "status": {
+        "answerability": "VERIFIABLE"
+      }
+    }
+  },
+  {
+    "claim_id": "MVP-002",
+    "annotation": {
+      "identity": {
+        "text": "Les prix à la consommation ont augmenté de 5,8 % entre août 2021 et août 2022.",
+        "language": "fr",
+        "reference_date": "2022-09-01"
+      },
+      "subject": {
+        "indicator": "prix à la consommation",
+        "territory_main": "France",
+        "population": "Toute la population"
+      },
+      "time": {
+        "period_explicit": "août 2021 à août 2022",
+        "granularity": "MONTHLY"
+      },
+      "measure": {
+        "value": 5.8,
+        "unit": "PERCENTAGE",
+        "is_approximate": false
+      },
+      "operation": {
+        "type": "RELATIVE_CHANGE",
+        "direction": "INCREASE"
+      },
+      "status": {
+        "answerability": "VERIFIABLE"
+      }
+    }
+  },
+  {
+    "claim_id": "MVP-003",
+    "annotation": {
+      "identity": {
+        "text": "Les prix de l’alimentation ont augmenté de 7,7 % sur un an en août 2022.",
+        "language": "fr",
+        "reference_date": "2022-09-01"
+      },
+      "subject": {
+        "indicator": "prix de l'alimentation",
+        "territory_main": "France",
+        "population": "Toute la population"
+      },
+      "time": {
+        "period_explicit": "août 2022",
+        "period_relative": "sur un an",
+        "granularity": "MONTHLY"
+      },
+      "measure": {
+        "value": 7.7,
+        "unit": "PERCENTAGE",
+        "is_approximate": false
+      },
+      "operation": {
+        "type": "RELATIVE_CHANGE",
+        "direction": "INCREASE"
+      },
+      "status": {
+        "answerability": "VERIFIABLE"
+      }
+    }
+  },
+  {
+    "claim_id": "MVP-004",
+    "annotation": {
+      "identity": {
+        "text": "Les prix de l’énergie ont augmenté de 22,2 % sur un an en août 2022.",
+        "language": "fr",
+        "reference_date": "2022-09-01"
+      },
+      "subject": {
+        "indicator": "prix de l'énergie",
+        "territory_main": "France",
+        "population": "Toute la population"
+      },
+      "time": {
+        "period_explicit": "août 2022",
+        "period_relative": "sur un an",
+        "granularity": "MONTHLY"
+      },
+      "measure": {
+        "value": 22.2,
+        "unit": "PERCENTAGE",
+        "is_approximate": false
+      },
+      "operation": {
+        "type": "RELATIVE_CHANGE",
+        "direction": "INCREASE"
+      },
+      "status": {
+        "answerability": "VERIFIABLE"
+      }
+    }
+  },
+  {
+    "claim_id": "MVP-005",
+    "annotation": {
+      "identity": {
+        "text": "L’inflation a ralenti de 6,1 % en juillet à 5,8 % en août 2022.",
+        "language": "fr",
+        "reference_date": "2022-09-01"
+      },
+      "subject": {
+        "indicator": "inflation",
+        "territory_main": "France",
+        "population": "Toute la population"
+      },
+      "time": {
+        "period_explicit": "juillet et août 2022",
+        "granularity": "MONTHLY"
+      },
+      "measure": {
+        "value": 5.8,
+        "unit": "PERCENTAGE",
+        "is_approximate": false
+      },
+      "operation": {
+        "type": "VALUE",
+        "direction": "DECREASE"
+      },
+      "status": {
+        "answerability": "VERIFIABLE"
+      }
+    }
+  },
+  {
+    "claim_id": "MVP-006",
+    "annotation": {
+      "identity": {
+        "text": "L’inflation a atteint 5,2 % en moyenne en 2022.",
+        "language": "fr",
+        "reference_date": "2023-01-01"
+      },
+      "subject": {
+        "indicator": "inflation",
+        "territory_main": "France",
+        "population": "Toute la population"
+      },
+      "time": {
+        "period_explicit": "2022",
+        "granularity": "ANNUAL"
+      },
+      "measure": {
+        "value": 5.2,
+        "unit": "PERCENTAGE",
+        "is_approximate": false
+      },
+      "operation": {
+        "type": "AVERAGE",
+        "direction": "NONE"
+      },
+      "status": {
+        "answerability": "VERIFIABLE"
+      }
+    }
+  },
+  {
+    "claim_id": "MVP-007",
+    "annotation": {
+      "identity": {
+        "text": "Les prix ont augmenté de 5,7 % entre mars 2022 et mars 2023.",
+        "language": "fr",
+        "reference_date": "2023-04-01"
+      },
+      "subject": {
+        "indicator": "prix",
+        "territory_main": "France",
+        "population": "Toute la population"
+      },
+      "time": {
+        "period_explicit": "mars 2022 et mars 2023",
+        "granularity": "MONTHLY"
+      },
+      "measure": {
+        "value": 5.7,
+        "unit": "PERCENTAGE",
+        "is_approximate": false
+      },
+      "operation": {
+        "type": "RELATIVE_CHANGE",
+        "direction": "INCREASE"
+      },
+      "status": {
+        "answerability": "VERIFIABLE"
+      }
+    }
+  },
+  {
+    "claim_id": "MVP-009",
+    "annotation": {
+      "identity": {
+        "text": "Le chômage est passé de 9,3 % début 2017 à 7,4 % fin 2021.",
+        "language": "fr",
+        "reference_date": "2022-03-14"
+      },
+      "subject": {
+        "indicator": "chômage",
+        "territory_main": "France",
+        "population": "Toute la population"
+      },
+      "time": {
+        "period_explicit": "début 2017 à fin 2021",
+        "granularity": "QUARTERLY"
+      },
+      "measure": {
+        "value": 7.4,
+        "unit": "PERCENTAGE",
+        "is_approximate": false
+      },
+      "operation": {
+        "type": "VALUE",
+        "direction": "DECREASE"
+      },
+      "status": {
+        "answerability": "VERIFIABLE"
+      }
+    }
+  },
+  {
+    "claim_id": "MVP-010",
+    "annotation": {
+      "identity": {
+        "text": "À 7,4 %, le chômage est au plus bas depuis quinze ans.",
+        "language": "fr",
+        "reference_date": "2022-03-14"
+      },
+      "subject": {
+        "indicator": "chômage",
+        "territory_main": "France",
+        "population": "Toute la population"
+      },
+      "time": {
+        "period_explicit": "2022",
+        "period_relative": "depuis quinze ans",
+        "granularity": "QUARTERLY"
+      },
+      "measure": {
+        "value": 7.4,
+        "unit": "PERCENTAGE",
+        "is_approximate": false
+      },
+      "operation": {
+        "type": "MINIMUM",
+        "direction": "NONE"
+      },
+      "status": {
+        "answerability": "VERIFIABLE"
+      }
+    }
+  },
+  {
+    "claim_id": "MVP-011",
+    "annotation": {
+      "identity": {
+        "text": "Le chômage des jeunes est à son plus bas depuis quarante ans.",
+        "language": "fr",
+        "reference_date": "2022-03-14"
+      },
+      "subject": {
+        "indicator": "chômage",
+        "territory_main": "France",
+        "population": "jeunes"
+      },
+      "time": {
+        "period_explicit": "2022",
+        "period_relative": "depuis quarante ans",
+        "granularity": "UNKNOWN"
+      },
+      "measure": {
+        "value": null,
+        "unit": "UNKNOWN",
+        "is_approximate": false
+      },
+      "operation": {
+        "type": "MINIMUM",
+        "direction": "NONE"
+      },
+      "status": {
+        "answerability": "VERIFIABLE"
+      }
+    }
+  },
+  {
+    "claim_id": "MVP-012",
+    "annotation": {
+      "identity": {
+        "text": "Il y a plus de six millions de chômeurs en France.",
+        "language": "fr",
+        "reference_date": "2022-03-12"
+      },
+      "subject": {
+        "indicator": "chômeurs",
+        "territory_main": "France",
+        "population": "Toute la population"
+      },
+      "time": {
+        "period_explicit": "2022-03",
+        "granularity": "UNKNOWN"
+      },
+      "measure": {
+        "value": 6000000,
+        "unit": "ABSOLUTE",
+        "is_approximate": true
+      },
+      "operation": {
+        "type": "VALUE",
+        "direction": "ABOVE"
+      },
+      "status": {
+        "answerability": "VERIFIABLE"
+      }
+    }
+  },
+  {
+    "claim_id": "MVP-013",
+    "annotation": {
+      "identity": {
+        "text": "Il n’y a aucun recul du chômage depuis 2017.",
+        "language": "fr",
+        "reference_date": "2022-03-12"
+      },
+      "subject": {
+        "indicator": "chômage",
+        "territory_main": "France",
+        "population": "Toute la population"
+      },
+      "time": {
+        "period_explicit": "depuis 2017",
+        "granularity": "UNKNOWN"
+      },
+      "measure": {
+        "value": 0,
+        "unit": "UNKNOWN",
+        "is_approximate": false
+      },
+      "operation": {
+        "type": "TREND",
+        "direction": "EQUAL"
+      },
+      "status": {
+        "answerability": "VERIFIABLE"
+      }
+    }
+  },
+  {
+    "claim_id": "MVP-014",
+    "annotation": {
+      "identity": {
+        "text": "Un million d’emplois nets ont été créés durant le quinquennat 2017-2022.",
+        "language": "fr",
+        "reference_date": "2022-04-08"
+      },
+      "subject": {
+        "indicator": "emplois nets créés",
+        "territory_main": "France",
+        "population": "Toute la population"
+      },
+      "time": {
+        "period_explicit": "2017-2022",
+        "granularity": "UNKNOWN"
+      },
+      "measure": {
+        "value": 1000000,
+        "unit": "ABSOLUTE",
+        "is_approximate": false
+      },
+      "operation": {
+        "type": "ABSOLUTE_CHANGE",
+        "direction": "INCREASE"
+      },
+      "status": {
+        "answerability": "VERIFIABLE"
+      }
+    }
+  },
+  {
+    "claim_id": "MVP-016",
+    "annotation": {
+      "identity": {
+        "text": "Le taux d’activité est au plus haut depuis qu’on le mesure.",
+        "language": "fr",
+        "reference_date": "2022-03-14"
+      },
+      "subject": {
+        "indicator": "taux d'activité",
+        "territory_main": "France",
+        "population": "Toute la population"
+      },
+      "time": {
+        "period_explicit": "2022",
+        "period_relative": "depuis qu'on le mesure",
+        "granularity": "UNKNOWN"
+      },
+      "measure": {
+        "value": null,
+        "unit": "PERCENTAGE",
+        "is_approximate": false
+      },
+      "operation": {
+        "type": "MAXIMUM",
+        "direction": "NONE"
+      },
+      "status": {
+        "answerability": "VERIFIABLE"
+      }
+    }
+  },
+  {
+    "claim_id": "MVP-017",
+    "annotation": {
+      "identity": {
+        "text": "Environ 723 000 enfants sont nés en France en 2022.",
+        "language": "fr",
+        "reference_date": "2023-01-15"
+      },
+      "subject": {
+        "indicator": "naissances",
+        "territory_main": "France",
+        "population": "enfants"
+      },
+      "time": {
+        "period_explicit": "2022",
+        "granularity": "ANNUAL"
+      },
+      "measure": {
+        "value": 723000,
+        "unit": "ABSOLUTE",
+        "is_approximate": true
+      },
+      "operation": {
+        "type": "VALUE",
+        "direction": "NONE"
+      },
+      "status": {
+        "answerability": "VERIFIABLE"
+      }
+    }
+  },
+  {
+    "claim_id": "MVP-018",
+    "annotation": {
+      "identity": {
+        "text": "Le nombre de naissances de 2022 est le plus faible depuis 1946.",
+        "language": "fr",
+        "reference_date": "2023-01-15"
+      },
+      "subject": {
+        "indicator": "naissances",
+        "territory_main": "France",
+        "population": "Toute la population"
+      },
+      "time": {
+        "period_explicit": "2022",
+        "period_relative": "depuis 1946",
+        "granularity": "ANNUAL"
+      },
+      "measure": {
+        "value": null,
+        "unit": "ABSOLUTE",
+        "is_approximate": false
+      },
+      "operation": {
+        "type": "MINIMUM",
+        "direction": "NONE"
+      },
+      "status": {
+        "answerability": "VERIFIABLE"
+      }
+    }
+  },
+  {
+    "claim_id": "MVP-019",
+    "annotation": {
+      "identity": {
+        "text": "Il y a eu environ 19 000 naissances de moins en 2022 qu’en 2021.",
+        "language": "fr",
+        "reference_date": "2023-01-15"
+      },
+      "subject": {
+        "indicator": "naissances",
+        "territory_main": "France",
+        "population": "Toute la population"
+      },
+      "time": {
+        "period_explicit": "2022 vs 2021",
+        "granularity": "ANNUAL"
+      },
+      "measure": {
+        "value": 19000,
+        "unit": "ABSOLUTE",
+        "is_approximate": true
+      },
+      "operation": {
+        "type": "ABSOLUTE_CHANGE",
+        "direction": "DECREASE"
+      },
+      "status": {
+        "answerability": "VERIFIABLE"
+      }
+    }
+  },
+  {
+    "claim_id": "MVP-020",
+    "annotation": {
+      "identity": {
+        "text": "L’indicateur conjoncturel de fécondité était de 1,80 enfant par femme en 2022.",
+        "language": "fr",
+        "reference_date": "2023-01-15"
+      },
+      "subject": {
+        "indicator": "indicateur conjoncturel de fécondité",
+        "territory_main": "France",
+        "population": "femmes"
+      },
+      "time": {
+        "period_explicit": "2022",
+        "granularity": "ANNUAL"
+      },
+      "measure": {
+        "value": 1.8,
+        "unit": "RATIO",
+        "is_approximate": false
+      },
+      "operation": {
+        "type": "VALUE",
+        "direction": "NONE"
+      },
+      "status": {
+        "answerability": "VERIFIABLE"
+      }
+    }
+  },
+  {
+    "claim_id": "MVP-025",
+    "annotation": {
+      "identity": {
+        "text": "Plus d’un million d’entreprises ont été créées en France en 2023.",
+        "language": "fr",
+        "reference_date": "2024-01-26"
+      },
+      "subject": {
+        "indicator": "créations d'entreprises",
+        "territory_main": "France",
+        "population": "entreprises"
+      },
+      "time": {
+        "period_explicit": "2023",
+        "granularity": "ANNUAL"
+      },
+      "measure": {
+        "value": 1000000,
+        "unit": "ABSOLUTE",
+        "is_approximate": true
+      },
+      "operation": {
+        "type": "SUM",
+        "direction": "ABOVE"
+      },
+      "status": {
+        "answerability": "VERIFIABLE"
+      }
+    }
+  },
+  {
+    "claim_id": "MVP-026",
+    "annotation": {
+      "identity": {
+        "text": "Les créations d’entreprises ont diminué de 1 % en 2023 par rapport à 2022.",
+        "language": "fr",
+        "reference_date": "2024-01-26"
+      },
+      "subject": {
+        "indicator": "créations d'entreprises",
+        "territory_main": "France",
+        "population": "entreprises"
+      },
+      "time": {
+        "period_explicit": "2023 vs 2022",
+        "granularity": "ANNUAL"
+      },
+      "measure": {
+        "value": 1,
+        "unit": "PERCENTAGE",
+        "is_approximate": false
+      },
+      "operation": {
+        "type": "RELATIVE_CHANGE",
+        "direction": "DECREASE"
+      },
+      "status": {
+        "answerability": "VERIFIABLE"
+      }
+    }
+  }
+]

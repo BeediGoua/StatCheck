@@ -1,0 +1,11 @@
+{
+  "dataset": "Géographie Courante",
+  "publisher": "API Geo",
+  "source_url": "https://geo.api.gouv.fr",
+  "vintage": "CURRENT",
+  "retrieved_at": "2026-07-29T18:32:38.652150Z",
+  "sha256": "272c117c727b61b1a4b8dee3197d16fc32d83373b0c0037efb8cdb986b3de7d8",
+  "row_count": 35088,
+  "schema_version": "1.0",
+  "generator_version": "2.0"
+}

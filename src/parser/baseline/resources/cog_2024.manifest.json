@@ -1,0 +1,11 @@
+{
+  "dataset": "Code Officiel Géographique",
+  "publisher": "INSEE",
+  "source_url": "https://www.insee.fr/fr/statistiques/fichier/7766585/v_commune_2024.csv",
+  "vintage": "2024",
+  "retrieved_at": "2026-07-29T18:32:39.762723Z",
+  "sha256": "7afb7aa61d79ae38389f1db92af5c01bdf68abad7837b7c4914fa901bb77bd53",
+  "row_count": 37665,
+  "schema_version": "1.0",
+  "generator_version": "2.0"
+}

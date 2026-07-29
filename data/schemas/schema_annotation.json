@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ClaimAnnotationSchema",
+  "description": "Schéma strict pour l'annotation structurée d'une affirmation statistique (Phase 3).",
+  "type": "object",
+  "properties": {
+    "identity": {
+      "type": "object",
+      "properties": {
+        "text": { "type": "string" },
+        "language": { "type": "string", "enum": ["fr", "en"] },
+        "reference_date": { "type": "string", "format": "date" }
+      },
+      "required": ["text", "language"]
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "indicator": { "type": "string", "description": "L'indicateur statistique mentionné (ex: taux de chômage)" },
+        "territory_main": { "type": "string" },
+        "territory_comparison": { "type": "string", "nullable": true },
+        "population": { "type": "string" }
+      },
+      "required": ["indicator", "territory_main", "population"]
+    },
+    "time": {
+      "type": "object",
+      "properties": {
+        "period_explicit": { "type": "string", "description": "La période explicite extraite du texte (ex: 2024, Q1 2023)" },
+        "period_relative": { "type": "string", "description": "L'expression relative (ex: depuis 5 ans)" },
+        "start_date": { "type": "string", "format": "date" },
+        "end_date": { "type": "string", "format": "date" },
+        "granularity": { "type": "string", "enum": ["ANNUAL", "QUARTERLY", "MONTHLY", "DAILY", "UNKNOWN"] }
+      },
+      "required": ["period_explicit", "granularity"]
+    },
+    "measure": {
+      "type": "object",
+      "properties": {
+        "value": { "type": "number" },
+        "unit": { "type": "string", "enum": ["PERCENTAGE", "PERCENTAGE_POINT", "ABSOLUTE", "CURRENCY", "RATIO", "RANK", "UNKNOWN"] },
+        "is_approximate": { "type": "boolean", "default": false }
+      },
+      "required": ["value", "unit"]
+    },
+    "operation": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "VALUE", "THRESHOLD_COMPARISON", "ABSOLUTE_CHANGE", "RELATIVE_CHANGE",
+            "PERCENTAGE_POINT_CHANGE", "RATIO", "SHARE", "SUM", "AVERAGE", "COUNT",
+            "RANK", "MINIMUM", "MAXIMUM", "TREND", "CROSS_GEO_COMPARISON",
+            "CROSS_POPULATION_COMPARISON", "UNKNOWN"
+          ]
+        },
+        "direction": { "type": "string", "enum": ["INCREASE", "DECREASE", "EQUAL", "ABOVE", "BELOW", "NONE"] }
+      },
+      "required": ["type", "direction"]
+    },
+    "status": {
+      "type": "object",
+      "properties": {
+        "answerability": { "type": "string", "enum": ["VERIFIABLE", "AMBIGUOUS", "UNVERIFIABLE"] },
+        "reason": { "type": "string", "description": "Pourquoi l'affirmation est ambiguë ou non vérifiable" }
+      },
+      "required": ["answerability"]
+    }
+  },
+  "required": ["identity", "subject", "time", "measure", "operation", "status"]
+}

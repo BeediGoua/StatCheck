@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mes:Structure xmlns:mes="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:com="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:str="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure">
+  <mes:Header>
+    <mes:ID>datastructure_SERIES_BDM_1785336018760</mes:ID>
+    <mes:Test>false</mes:Test>
+    <mes:Prepared>2026-07-29T16:40:18.760+02:00</mes:Prepared>
+    <mes:Sender id="FR1">
+      <com:Name xml:lang="fr">Institut national de la statistique et des études économiques</com:Name>
+    </mes:Sender>
+    <mes:Receiver id="unknown"/>
+    <mes:Source xml:lang="fr">Banque de données macro-économiques</mes:Source>
+  </mes:Header>
+  <mes:Structures>
+    <str:Concepts>
+      <str:ConceptScheme id="CONCEPTS_INSEE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=FR1:CONCEPTS_INSEE(1.0)" agencyID="FR1" version="1.0">
+        <com:Name xml:lang="fr">Concepts Insee</com:Name>
+        <com:Name xml:lang="en">Insee concepts</com:Name>
+        <str:Concept id="FREQ" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).FREQ">
+          <com:Name xml:lang="fr">Périodicité</com:Name>
+          <com:Name xml:lang="en">Frequency</com:Name>
+        </str:Concept>
+        <str:Concept id="INDICATEUR" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).INDICATEUR">
+          <com:Name xml:lang="fr">Indicateurs</com:Name>
+          <com:Name xml:lang="en">Indicators</com:Name>
+        </str:Concept>
+        <str:Concept id="ACTIVITE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).ACTIVITE">
+          <com:Name xml:lang="fr">Secteurs d'activité</com:Name>
+          <com:Name xml:lang="en">Economic activities</com:Name>
+        </str:Concept>
+        <str:Concept id="SECT-INST" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).SECT-INST">
+          <com:Name xml:lang="fr">Secteurs institutionnels</com:Name>
+          <com:Name xml:lang="en">Institutional sectors</com:Name>
+        </str:Concept>
+        <str:Concept id="FINANCEMENT" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).FINANCEMENT">
+          <com:Name xml:lang="fr">Secteurs de financement</com:Name>
+          <com:Name xml:lang="en">Financing sectors</com:Name>
+        </str:Concept>
+        <str:Concept id="OPERATION" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).OPERATION">
+          <com:Name xml:lang="fr">Opération</com:Name>
+          <com:Name xml:lang="en">Transaction</com:Name>
+        </str:Concept>
+        <str:Concept id="COMPTE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).COMPTE">
+          <com:Name xml:lang="fr">Nature</com:Name>
+          <com:Name xml:lang="en">Nature</com:Name>
+        </str:Concept>
+        <str:Concept id="NATURE-FLUX" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).NATURE-FLUX">
+          <com:Name xml:lang="fr">Nature</com:Name>
+          <com:Name xml:lang="en">Nature</com:Name>
+        </str:Concept>
+        <str:Concept id="FORME-VENTE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).FORME-VENTE">
+          <com:Name xml:lang="fr">Formes de vente de la grande distribution</com:Name>
+          <com:Name xml:lang="en">Trading forms of the large retail sector</com:Name>
+        </str:Concept>
+        <str:Concept id="MARCHANDISE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).MARCHANDISE">
+          <com:Name xml:lang="fr">Types de marchandises</com:Name>
+          <com:Name xml:lang="en">Types of goods</com:Name>
+        </str:Concept>
+        <str:Concept id="QUESTION" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).QUESTION">
+          <com:Name xml:lang="fr">Questions</com:Name>
+          <com:Name xml:lang="en">Questions</com:Name>
+        </str:Concept>
+        <str:Concept id="INSTRUMENT" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).INSTRUMENT">
+          <com:Name xml:lang="fr">Rubriques ou postes</com:Name>
+          <com:Name xml:lang="en">Headings or items</com:Name>
+        </str:Concept>
+        <str:Concept id="PRODUIT" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).PRODUIT">
+          <com:Name xml:lang="fr">Produits</com:Name>
+          <com:Name xml:lang="en">Products</com:Name>
+        </str:Concept>
+        <str:Concept id="NATURE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).NATURE">
+          <com:Name xml:lang="fr">Nature</com:Name>
+          <com:Name xml:lang="en">Nature</com:Name>
+        </str:Concept>
+        <str:Concept id="METIER" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).METIER">
+          <com:Name xml:lang="fr">Qualification</com:Name>
+          <com:Name xml:lang="en">Qualification</com:Name>
+        </str:Concept>
+        <str:Concept id="TYPE-ENT" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).TYPE-ENT">
+          <com:Name xml:lang="fr">Types d'entreprises</com:Name>
+          <com:Name xml:lang="en">Types of enterprise</com:Name>
+        </str:Concept>
+        <str:Concept id="CAUSE-DECES" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).CAUSE-DECES">
+          <com:Name xml:lang="fr">Causes de décès</com:Name>
+          <com:Name xml:lang="en">Causes of death</com:Name>
+        </str:Concept>
+        <str:Concept id="CAT-DE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).CAT-DE">
+          <com:Name xml:lang="fr">Catégories</com:Name>
+          <com:Name xml:lang="en">Categories</com:Name>
+        </str:Concept>
+        <str:Concept id="TYPE-ETAB" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).TYPE-ETAB">
+          <com:Name xml:lang="fr">Établissements hospitaliers</com:Name>
+          <com:Name xml:lang="en">Health institutions</com:Name>
+        </str:Concept>
+        <str:Concept id="FONCTION" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).FONCTION">
+          <com:Name xml:lang="fr">Fonctions</com:Name>
+          <com:Name xml:lang="en">Functions</com:Name>
+        </str:Concept>
+        <str:Concept id="FACTEUR-INV" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).FACTEUR-INV">
+          <com:Name xml:lang="fr">Types d'influence</com:Name>
+          <com:Name xml:lang="en">Types of influence</com:Name>
+        </str:Concept>
+        <str:Concept id="DEST-INV" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).DEST-INV">
+          <com:Name xml:lang="fr">Destination</com:Name>
+          <com:Name xml:lang="en">Destination</com:Name>
+        </str:Concept>
+        <str:Concept id="ETAT-CONSTRUCTION" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).ETAT-CONSTRUCTION">
+          <com:Name xml:lang="fr">État d'avancement de la construction</com:Name>
+          <com:Name xml:lang="en">Status of the construction</com:Name>
+        </str:Concept>
+        <str:Concept id="DEMOGRAPHIE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).DEMOGRAPHIE">
+          <com:Name xml:lang="fr">Indicateur démographiques</com:Name>
+          <com:Name xml:lang="en">Demographic indicator</com:Name>
+        </str:Concept>
+        <str:Concept id="TOURISME-INDIC" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).TOURISME-INDIC">
+          <com:Name xml:lang="fr">Indicateurs</com:Name>
+          <com:Name xml:lang="en">Indicators</com:Name>
+        </str:Concept>
+        <str:Concept id="TYPE-EMP" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).TYPE-EMP">
+          <com:Name xml:lang="fr">Nature</com:Name>
+          <com:Name xml:lang="en">Nature</com:Name>
+        </str:Concept>
+        <str:Concept id="TYPE-SAL" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).TYPE-SAL">
+          <com:Name xml:lang="fr">Types d'indices de salaires</com:Name>
+          <com:Name xml:lang="en">Types of wage index</com:Name>
+        </str:Concept>
+        <str:Concept id="CLIENTELE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).CLIENTELE">
+          <com:Name xml:lang="fr">Types de clientèle</com:Name>
+          <com:Name xml:lang="en">Types of clientele</com:Name>
+        </str:Concept>
+        <str:Concept id="LOCAL" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).LOCAL">
+          <com:Name xml:lang="fr">Types de local d'activité</com:Name>
+          <com:Name xml:lang="en">Types of premises for professional use</com:Name>
+        </str:Concept>
+        <str:Concept id="LOGEMENT" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).LOGEMENT">
+          <com:Name xml:lang="fr">Types de logement</com:Name>
+          <com:Name xml:lang="en">Types of housing</com:Name>
+        </str:Concept>
+        <str:Concept id="TYPE-MENAGE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).TYPE-MENAGE">
+          <com:Name xml:lang="fr">Ménages</com:Name>
+          <com:Name xml:lang="en">Households</com:Name>
+        </str:Concept>
+        <str:Concept id="CARBURANT" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).CARBURANT">
+          <com:Name xml:lang="fr">Types de carburant</com:Name>
+          <com:Name xml:lang="en">Types of fuel</com:Name>
+        </str:Concept>
+        <str:Concept id="FORMATION" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).FORMATION">
+          <com:Name xml:lang="fr">Niveau de formation</com:Name>
+          <com:Name xml:lang="en">Level of education</com:Name>
+        </str:Concept>
+        <str:Concept id="EFFOPE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).EFFOPE">
+          <com:Name xml:lang="fr">Effectifs des organismes publics et des entreprises</com:Name>
+          <com:Name xml:lang="en">Public bodies and business headcount</com:Name>
+        </str:Concept>
+        <str:Concept id="SPECIALITE-SANTE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).SPECIALITE-SANTE">
+          <com:Name xml:lang="fr">Spécialités hospitalières</com:Name>
+          <com:Name xml:lang="en">Medical speciality</com:Name>
+        </str:Concept>
+        <str:Concept id="ACCUEIL-PERS-AGEES" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).ACCUEIL-PERS-AGEES">
+          <com:Name xml:lang="fr">Types d'accueil des personnes âgées</com:Name>
+          <com:Name xml:lang="en">Types of accommodation for the elderly</com:Name>
+        </str:Concept>
+        <str:Concept id="DIPLOME" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).DIPLOME">
+          <com:Name xml:lang="fr">Diplômes</com:Name>
+          <com:Name xml:lang="en">Diplomas</com:Name>
+        </str:Concept>
+        <str:Concept id="ETAB-SCOL" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).ETAB-SCOL">
+          <com:Name xml:lang="fr">Établissements</com:Name>
+          <com:Name xml:lang="en">Establishments</com:Name>
+        </str:Concept>
+        <str:Concept id="GEOGRAPHIE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).GEOGRAPHIE">
+          <com:Name xml:lang="fr">Zones géographiques</com:Name>
+          <com:Name xml:lang="en">Geographic areas</com:Name>
+        </str:Concept>
+        <str:Concept id="ZONE-GEO" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).ZONE-GEO">
+          <com:Name xml:lang="fr">Zones économiques</com:Name>
+          <com:Name xml:lang="en">Economic areas</com:Name>
+        </str:Concept>
+        <str:Concept id="RESIDENCE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).RESIDENCE">
+          <com:Name xml:lang="fr">Pays de résidence des touristes</com:Name>
+          <com:Name xml:lang="en">Tourists' country of residence</com:Name>
+        </str:Concept>
+        <str:Concept id="LOCALISATION" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).LOCALISATION">
+          <com:Name xml:lang="fr">Localisation</com:Name>
+          <com:Name xml:lang="en">Location</com:Name>
+        </str:Concept>
+        <str:Concept id="TYPE-EVO" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).TYPE-EVO">
+          <com:Name xml:lang="fr">Types d'évolution</com:Name>
+          <com:Name xml:lang="en">Types of evolution</com:Name>
+        </str:Concept>
+        <str:Concept id="SEXE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).SEXE">
+          <com:Name xml:lang="fr">Sexe</com:Name>
+          <com:Name xml:lang="en">Gender</com:Name>
+        </str:Concept>
+        <str:Concept id="TYPE-FLUX" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).TYPE-FLUX">
+          <com:Name xml:lang="fr">Types de flux</com:Name>
+          <com:Name xml:lang="en">Types of flow</com:Name>
+        </str:Concept>
+        <str:Concept id="CAT-FP" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).CAT-FP">
+          <com:Name xml:lang="fr">Versant de la fonction publique</com:Name>
+          <com:Name xml:lang="en">Types of civil service</com:Name>
+        </str:Concept>
+        <str:Concept id="PERIODE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).PERIODE">
+          <com:Name xml:lang="fr">Moment de l'enquête</com:Name>
+          <com:Name xml:lang="en">Time of the survey</com:Name>
+        </str:Concept>
+        <str:Concept id="AGE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).AGE">
+          <com:Name xml:lang="fr">Âge</com:Name>
+          <com:Name xml:lang="en">Age</com:Name>
+        </str:Concept>
+        <str:Concept id="TAILLE-ENT" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).TAILLE-ENT">
+          <com:Name xml:lang="fr">Taille des entreprises</com:Name>
+          <com:Name xml:lang="en">Size of enterprises</com:Name>
+        </str:Concept>
+        <str:Concept id="ANCIENNETE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).ANCIENNETE">
+          <com:Name xml:lang="fr">Ancienneté</com:Name>
+          <com:Name xml:lang="en">Seniority</com:Name>
+        </str:Concept>
+        <str:Concept id="QUOTITE-TRAV" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).QUOTITE-TRAV">
+          <com:Name xml:lang="fr">Types de temps de travail</com:Name>
+          <com:Name xml:lang="en">Types of time of employment</com:Name>
+        </str:Concept>
+        <str:Concept id="PRIX" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).PRIX">
+          <com:Name xml:lang="fr">Prix de référence</com:Name>
+          <com:Name xml:lang="en">Reference prices</com:Name>
+        </str:Concept>
+        <str:Concept id="UNITE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).UNITE">
+          <com:Name xml:lang="fr">Unité</com:Name>
+          <com:Name xml:lang="en">Unit</com:Name>
+        </str:Concept>
+        <str:Concept id="CORRECTION" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).CORRECTION">
+          <com:Name xml:lang="fr">Correction saisonnière</com:Name>
+          <com:Name xml:lang="en">Seasonal adjustment</com:Name>
+        </str:Concept>
+        <str:Concept id="TYPE-SURF-ALIM" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).TYPE-SURF-ALIM">
+          <com:Name xml:lang="fr">Types de surface alimentaire</com:Name>
+          <com:Name xml:lang="en">Types of food store</com:Name>
+        </str:Concept>
+        <str:Concept id="MONNAIE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).MONNAIE">
+          <com:Name xml:lang="fr">Monnaie de valorisation</com:Name>
+          <com:Name xml:lang="en">Currency of valuation</com:Name>
+        </str:Concept>
+        <str:Concept id="DEVISE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).DEVISE">
+          <com:Name xml:lang="fr">Devises étrangères</com:Name>
+          <com:Name xml:lang="en">Foreign currencies</com:Name>
+        </str:Concept>
+        <str:Concept id="REVENU" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).REVENU">
+          <com:Name xml:lang="fr">Décomposition du revenu disponible</com:Name>
+          <com:Name xml:lang="en">Breakdown of disposable income</com:Name>
+        </str:Concept>
+        <str:Concept id="MIN-FPE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).MIN-FPE">
+          <com:Name xml:lang="fr">Ministères</com:Name>
+          <com:Name xml:lang="en">Ministries</com:Name>
+        </str:Concept>
+        <str:Concept id="EXPAGRI" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).EXPAGRI">
+          <com:Name xml:lang="fr">Exploitations agricoles</com:Name>
+          <com:Name xml:lang="en">Farm holdings</com:Name>
+        </str:Concept>
+        <str:Concept id="CHEPTEL" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).CHEPTEL">
+          <com:Name xml:lang="fr">Cheptel</com:Name>
+          <com:Name xml:lang="en">Livestock</com:Name>
+        </str:Concept>
+        <str:Concept id="FEDERATION" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).FEDERATION">
+          <com:Name xml:lang="fr">Fédérations</com:Name>
+          <com:Name xml:lang="en">Federations</com:Name>
+        </str:Concept>
+        <str:Concept id="MARCHE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).MARCHE">
+          <com:Name xml:lang="fr">Marchés</com:Name>
+          <com:Name xml:lang="en">Markets</com:Name>
+        </str:Concept>
+        <str:Concept id="UNIT_MULT" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).UNIT_MULT">
+          <com:Name xml:lang="fr">Puissance</com:Name>
+          <com:Name xml:lang="en">Unit multiplier</com:Name>
+        </str:Concept>
+        <str:Concept id="BASE_PER" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).BASE_PER">
+          <com:Name xml:lang="fr">Base de l'indice</com:Name>
+          <com:Name xml:lang="en">Base period</com:Name>
+        </str:Concept>
+        <str:Concept id="CONSOMMATION_ALCOOL_RISQUE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).CONSOMMATION_ALCOOL_RISQUE">
+          <com:Name xml:lang="fr">Consommation d’alcool à risque</com:Name>
+          <com:Name xml:lang="en">Risk alcohol consumption</com:Name>
+        </str:Concept>
+        <str:Concept id="MODE_CONTAMINATION_VIH" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).MODE_CONTAMINATION_VIH">
+          <com:Name xml:lang="fr">Mode de contamination au VIH</com:Name>
+          <com:Name xml:lang="en">Mode of contamination with the HIV</com:Name>
+        </str:Concept>
+        <str:Concept id="RENONCEMENT_SOINS" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).RENONCEMENT_SOINS">
+          <com:Name xml:lang="fr">Renoncement aux soins pour raisons financières</com:Name>
+          <com:Name xml:lang="en">Giving up care for financial reasons</com:Name>
+        </str:Concept>
+        <str:Concept id="STATUT_ACTIVITE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).STATUT_ACTIVITE">
+          <com:Name xml:lang="fr">Statut d’activité</com:Name>
+          <com:Name xml:lang="en">Activity status</com:Name>
+        </str:Concept>
+        <str:Concept id="TYPE_ROUTE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).TYPE_ROUTE">
+          <com:Name xml:lang="fr">Type de route</com:Name>
+          <com:Name xml:lang="en">Type of road</com:Name>
+        </str:Concept>
+        <str:Concept id="GRANDS_USAGES_EAU" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).GRANDS_USAGES_EAU">
+          <com:Name xml:lang="fr">Prélèvements en eau selon les grands usages</com:Name>
+          <com:Name xml:lang="en">Water withdrawal according to major uses</com:Name>
+        </str:Concept>
+        <str:Concept id="QUALITE_EAU" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).QUALITE_EAU">
+          <com:Name xml:lang="fr">Qualité de l’eau</com:Name>
+          <com:Name xml:lang="en">Water quality</com:Name>
+        </str:Concept>
+        <str:Concept id="PRODUIT_PHYTOSANITAIRE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).PRODUIT_PHYTOSANITAIRE">
+          <com:Name xml:lang="fr">Produits phytosanitaires</com:Name>
+          <com:Name xml:lang="en">Crop protection products</com:Name>
+        </str:Concept>
+        <str:Concept id="RACE_LOCALE_CLASSEE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).RACE_LOCALE_CLASSEE">
+          <com:Name xml:lang="fr">Races locales classées</com:Name>
+          <com:Name xml:lang="en">Local races classified</com:Name>
+        </str:Concept>
+        <str:Concept id="MASSE_CORPORELLE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).MASSE_CORPORELLE">
+          <com:Name xml:lang="fr">Surpoids et obésité</com:Name>
+          <com:Name xml:lang="en">Overweight and obesity</com:Name>
+        </str:Concept>
+        <str:Concept id="NIVEAU-VIE-MEDIAN" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).NIVEAU-VIE-MEDIAN">
+          <com:Name xml:lang="fr">Niveau de vie médian et médiane</com:Name>
+          <com:Name xml:lang="en">Median and median standard of living</com:Name>
+        </str:Concept>
+        <str:Concept id="UNITE-CONSOMMATION" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).UNITE-CONSOMMATION">
+          <com:Name xml:lang="fr">Unité de consommation</com:Name>
+          <com:Name xml:lang="en">Consumer unit</com:Name>
+        </str:Concept>
+        <str:Concept id="CONNECTION_INTERNET" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).CONNECTION_INTERNET">
+          <com:Name xml:lang="fr">Connection à internet</com:Name>
+          <com:Name xml:lang="en">Internet connection</com:Name>
+        </str:Concept>
+        <str:Concept id="CREDITS_PUBLICS_RD" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).CREDITS_PUBLICS_RD">
+          <com:Name xml:lang="fr">Crédits publics de recherche et développement</com:Name>
+          <com:Name xml:lang="en">Public credits for research and development</com:Name>
+        </str:Concept>
+        <str:Concept id="EMISSION_GES" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).EMISSION_GES">
+          <com:Name xml:lang="fr">Emission de gaz à effet de serre</com:Name>
+          <com:Name xml:lang="en">Greenhouse gas emission</com:Name>
+        </str:Concept>
+        <str:Concept id="SESC" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).SESC">
+          <com:Name xml:lang="fr">Statut socio-économique</com:Name>
+          <com:Name xml:lang="en">Socio-economic status</com:Name>
+        </str:Concept>
+        <str:Concept id="DISCIPLINE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).DISCIPLINE">
+          <com:Name xml:lang="fr">Discipline de base</com:Name>
+          <com:Name xml:lang="en">Basic discipline</com:Name>
+        </str:Concept>
+        <str:Concept id="NIV_COMP_NUM" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).NIV_COMP_NUM">
+          <com:Name xml:lang="fr">Niveau de compétence numérique des particuliuers</com:Name>
+          <com:Name xml:lang="en">Numerical level of expertise of individuals</com:Name>
+        </str:Concept>
+        <str:Concept id="PROJ_EDUC_DD" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).PROJ_EDUC_DD">
+          <com:Name xml:lang="fr">Projet d'éducation au développement durable</com:Name>
+          <com:Name xml:lang="en">Education project for the sustainable development</com:Name>
+        </str:Concept>
+        <str:Concept id="ENCADREMENT" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).ENCADREMENT">
+          <com:Name xml:lang="fr">Cadres dirigeants et management</com:Name>
+          <com:Name xml:lang="en">Senior executives and management</com:Name>
+        </str:Concept>
+        <str:Concept id="EMPREINTE-CARBONE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).EMPREINTE-CARBONE">
+          <com:Name xml:lang="fr">Empreinte carbone</com:Name>
+          <com:Name xml:lang="en">Carbon footprint</com:Name>
+        </str:Concept>
+        <str:Concept id="EVENEMENTS-RISQUES-NATURELS" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).EVENEMENTS-RISQUES-NATURELS">
+          <com:Name xml:lang="fr">Evènements ou risques naturels</com:Name>
+          <com:Name xml:lang="en">Events or natural risks</com:Name>
+        </str:Concept>
+        <str:Concept id="CONFIANCE-INSTITUTIONS" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).CONFIANCE-INSTITUTIONS">
+          <com:Name xml:lang="fr">Confiance de la population dans les institutions</com:Name>
+          <com:Name xml:lang="en">Public confidence in institutions</com:Name>
+        </str:Concept>
+        <str:Concept id="JUSTICE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).JUSTICE">
+          <com:Name xml:lang="fr">Statistiques diverses relatives à la justice</com:Name>
+          <com:Name xml:lang="en">Statistics for justice</com:Name>
+        </str:Concept>
+        <str:Concept id="SECTEURS" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).SECTEURS">
+          <com:Name xml:lang="fr">Secteurs</com:Name>
+          <com:Name xml:lang="en">Sectors</com:Name>
+        </str:Concept>
+        <str:Concept id="TYPE_MAT_PREM" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).TYPE_MAT_PREM">
+          <com:Name xml:lang="fr">Type de matières premières</com:Name>
+          <com:Name xml:lang="en">Type of raw materials</com:Name>
+        </str:Concept>
+        <str:Concept id="SOLS_ART" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).SOLS_ART">
+          <com:Name xml:lang="fr">Sols artificialisés</com:Name>
+          <com:Name xml:lang="en">Artificialisés grounds</com:Name>
+        </str:Concept>
+        <str:Concept id="TYPE_TRAITEMENT_DECH_MEN" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).TYPE_TRAITEMENT_DECH_MEN">
+          <com:Name xml:lang="fr">Type de traitement des déchets ménagers</com:Name>
+          <com:Name xml:lang="en">Type of household waste treatment</com:Name>
+        </str:Concept>
+        <str:Concept id="DECHETS-CONSO-MENAGES" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).DECHETS-CONSO-MENAGES">
+          <com:Name xml:lang="fr">Déchets, recyclage et consommation des ménages</com:Name>
+          <com:Name xml:lang="en">Waste, recycling and household consumption</com:Name>
+        </str:Concept>
+        <str:Concept id="OCEANS-MERS-COURS-EAU" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).OCEANS-MERS-COURS-EAU">
+          <com:Name xml:lang="fr">Océans, mers et cours d'eau</com:Name>
+          <com:Name xml:lang="en">Oceans, seas and court of water</com:Name>
+        </str:Concept>
+        <str:Concept id="ETAT_CONSERV_HAB_NAT" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).ETAT_CONSERV_HAB_NAT">
+          <com:Name xml:lang="fr">Etat de conservation des habitats naturels</com:Name>
+          <com:Name xml:lang="en">State of conservation of natural habitats</com:Name>
+        </str:Concept>
+        <str:Concept id="ETAT_TYPE-POLLUTION_IMPACTS_SITE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).ETAT_TYPE-POLLUTION_IMPACTS_SITE">
+          <com:Name xml:lang="fr">Etat, type de pollution et impacts constatés du site</com:Name>
+          <com:Name xml:lang="en">Status, type of pollution and impacts of the site</com:Name>
+        </str:Concept>
+        <str:Concept id="POP_OISEAUX_COMMUNS" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).POP_OISEAUX_COMMUNS">
+          <com:Name xml:lang="fr">Oiseaux communs selon espèces et milieux naturels</com:Name>
+          <com:Name xml:lang="en">Common bird by species and natural areas</com:Name>
+        </str:Concept>
+        <str:Concept id="AIDES-DEVELOPPEMENT" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).AIDES-DEVELOPPEMENT">
+          <com:Name xml:lang="fr">Aides au développement</com:Name>
+          <com:Name xml:lang="en">Development aids</com:Name>
+        </str:Concept>
+        <str:Concept id="REDRESSEMENT_TOUR" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).REDRESSEMENT_TOUR">
+          <com:Name xml:lang="fr">Méthode de redressement de l’enquête tourisme</com:Name>
+          <com:Name xml:lang="en">Method of recovery of the tourism survey</com:Name>
+        </str:Concept>
+        <str:Concept id="SECTEUR_LOCATIF" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).SECTEUR_LOCATIF">
+          <com:Name xml:lang="fr">Encadrement des loyers</com:Name>
+          <com:Name xml:lang="en">Frame of the rents</com:Name>
+        </str:Concept>
+        <str:Concept id="CMA_PM10" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).CMA_PM10">
+          <com:Name xml:lang="fr">Concentrations moyennes annuelles de PM10</com:Name>
+          <com:Name xml:lang="en">Annual average PM10 concentrations</com:Name>
+        </str:Concept>
+        <str:Concept id="STATIONS_MESURE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).STATIONS_MESURE">
+          <com:Name xml:lang="fr">Stations de mesure</com:Name>
+          <com:Name xml:lang="en">Measurement stations</com:Name>
+        </str:Concept>
+        <str:Concept id="EAU" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).EAU">
+          <com:Name xml:lang="fr">Eau non conforme</com:Name>
+          <com:Name xml:lang="en">Non-compliant water</com:Name>
+        </str:Concept>
+        <str:Concept id="ASSAINISSEMENT" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).ASSAINISSEMENT">
+          <com:Name xml:lang="fr">Dispositifs d’assainissement</com:Name>
+          <com:Name xml:lang="en">Sanitation devices</com:Name>
+        </str:Concept>
+        <str:Concept id="ENERGIE_PRIMAIRE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).ENERGIE_PRIMAIRE">
+          <com:Name xml:lang="fr">Energie primaire</com:Name>
+          <com:Name xml:lang="en">Primary energy</com:Name>
+        </str:Concept>
+        <str:Concept id="SUPPRESSION" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).SUPPRESSION">
+          <com:Name xml:lang="fr">Suppression des séries</com:Name>
+          <com:Name xml:lang="en">Deletion of series</com:Name>
+        </str:Concept>
+        <str:Concept id="SERIE_ARRETEE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).SERIE_ARRETEE">
+          <com:Name xml:lang="fr">Série_arrêtée</com:Name>
+          <com:Name xml:lang="en">Stopped_series</com:Name>
+        </str:Concept>
+        <str:Concept id="MODE_TRANSPORT" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).MODE_TRANSPORT">
+          <com:Name xml:lang="fr">Mode de transport</com:Name>
+          <com:Name xml:lang="en">Mode of transport</com:Name>
+        </str:Concept>
+        <str:Concept id="MOTIF_VOYAGE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).MOTIF_VOYAGE">
+          <com:Name xml:lang="fr">Motif du voyage</com:Name>
+          <com:Name xml:lang="en">Purpose of the trip</com:Name>
+        </str:Concept>
+        <str:Concept id="TYPE_HEBERGEMENT" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).TYPE_HEBERGEMENT">
+          <com:Name xml:lang="fr">Type d’hébergement</com:Name>
+          <com:Name xml:lang="en">Type of accommodation</com:Name>
+        </str:Concept>
+        <str:Concept id="DESTINATION_VOYAGE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).DESTINATION_VOYAGE">
+          <com:Name xml:lang="fr">Destination du voyage</com:Name>
+          <com:Name xml:lang="en">Destination of the travel</com:Name>
+        </str:Concept>
+        <str:Concept id="MOIS_RETOUR" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).MOIS_RETOUR">
+          <com:Name xml:lang="fr">Mois de retour du voyage</com:Name>
+          <com:Name xml:lang="en">Return month from travel</com:Name>
+        </str:Concept>
+        <str:Concept id="SATISFACTION_VIE" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).SATISFACTION_VIE">
+          <com:Name xml:lang="fr">Satisfaction dans la vie</com:Name>
+          <com:Name xml:lang="en">Life satisfaction</com:Name>
+        </str:Concept>
+        <str:Concept id="SAISON" urn="urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=FR1:CONCEPTS_INSEE(1.0).SAISON">
+          <com:Name xml:lang="fr">Saisonnalité</com:Name>
+          <com:Name xml:lang="en">Seasonality</com:Name>
+        </str:Concept>
+      </str:ConceptScheme>
+    </str:Concepts>
+    <str:DataStructures>
+      <str:DataStructure id="SERIES_BDM" urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=FR1:SERIES_BDM(1.0)" agencyID="FR1" version="1.0">
+        <com:Name xml:lang="fr">Séries chronologiques de la BDM</com:Name>
+        <com:Name xml:lang="en">BDM time series</com:Name>
+        <str:DataStructureComponents>
+          <str:DimensionList id="DimensionDescriptor" urn="urn:sdmx:org.sdmx.infomodel.datastructure.DimensionDescriptor=FR1:SERIES_BDM(1.0).DimensionDescriptor">
+            <str:TimeDimension id="TIME_PERIOD" urn="urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=FR1:SERIES_BDM(1.0).TIME_PERIOD" position="1">
+              <str:ConceptIdentity>
+                <Ref id="TIME_PERIOD" maintainableParentID="CONCEPTS_INSEE" maintainableParentVersion="1.0" agencyID="FR1" package="conceptscheme" class="Concept"/>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:TextFormat textType="ObservationalTimePeriod"/>
+              </str:LocalRepresentation>
+            </str:TimeDimension>
+            <str:Dimension id="IDBANK" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=FR1:SERIES_BDM(1.0).IDBANK" position="2">
+              <str:ConceptIdentity>
+                <Ref id="IDBANK" maintainableParentID="CONCEPTS_INSEE" maintainableParentVersion="1.0" agencyID="FR1" package="conceptscheme" class="Concept"/>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:Enumeration>
+                  <Ref id="CL_IDBANK" version="1.0" agencyID="FR1" package="codelist" class="Codelist"/>
+                </str:Enumeration>
+              </str:LocalRepresentation>
+            </str:Dimension>
+          </str:DimensionList>
+          <str:AttributeList id="AttributeDescriptor" urn="urn:sdmx:org.sdmx.infomodel.datastructure.AttributeDescriptor=FR1:SERIES_BDM(1.0).AttributeDescriptor">
+            <str:Attribute id="FREQ" urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=FR1:SERIES_BDM(1.0).FREQ" assignmentStatus="Mandatory">
+              <str:ConceptIdentity>
+                <Ref id="FREQ" maintainableParentID="CONCEPTS_INSEE" maintainableParentVersion="1.0" agencyID="FR1" package="conceptscheme" class="Concept"/>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:Enumeration>
+                  <Ref id="CL_FREQ" version="1.0" agencyID="FR1" package="codelist" class="Codelist"/>
+                </str:Enumeration>
+              </str:LocalRepresentation>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="IDBANK"/>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+            <str:Attribute id="UNIT_MEASURE" urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=FR1:SERIES_BDM(1.0).UNIT_MEASURE" assignmentStatus="Mandatory">
+              <str:ConceptIdentity>
+                <Ref id="UNIT_MEASURE" maintainableParentID="CONCEPTS_INSEE" maintainableParentVersion="1.0" agencyID="FR1" package="conceptscheme" class="Concept"/>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:Enumeration>
+                  <Ref id="CL_UNIT" version="1.0" agencyID="FR1" package="codelist" class="Codelist"/>
+                </str:Enumeration>
+              </str:LocalRepresentation>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="IDBANK"/>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+            <str:Attribute id="UNIT_MULT" urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=FR1:SERIES_BDM(1.0).UNIT_MULT" assignmentStatus="Mandatory">
+              <str:ConceptIdentity>
+                <Ref id="UNIT_MULT" maintainableParentID="CONCEPTS_INSEE" maintainableParentVersion="1.0" agencyID="FR1" package="conceptscheme" class="Concept"/>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:TextFormat textType="Integer" minValue="0" maxValue="9"/>
+              </str:LocalRepresentation>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="IDBANK"/>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+            <str:Attribute id="REF_AREA" urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=FR1:SERIES_BDM(1.0).REF_AREA" assignmentStatus="Mandatory">
+              <str:ConceptIdentity>
+                <Ref id="REF_AREA" maintainableParentID="CONCEPTS_INSEE" maintainableParentVersion="1.0" agencyID="FR1" package="conceptscheme" class="Concept"/>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:Enumeration>
+                  <Ref id="CL_AREA" version="1.0" agencyID="FR1" package="codelist" class="Codelist"/>
+                </str:Enumeration>
+              </str:LocalRepresentation>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="IDBANK"/>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+            <str:Attribute id="TITLE_FR" urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=FR1:SERIES_BDM(1.0).TITLE_FR" assignmentStatus="Mandatory">
+              <str:ConceptIdentity>
+                <Ref id="TITLE_FR" maintainableParentID="CONCEPTS_INSEE" maintainableParentVersion="1.0" agencyID="FR1" package="conceptscheme" class="Concept"/>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:TextFormat textType="String" maxLength="240"/>
+              </str:LocalRepresentation>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="IDBANK"/>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+            <str:Attribute id="TITLE_EN" urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=FR1:SERIES_BDM(1.0).TITLE_EN" assignmentStatus="Mandatory">
+              <str:ConceptIdentity>
+                <Ref id="TITLE_EN" maintainableParentID="CONCEPTS_INSEE" maintainableParentVersion="1.0" agencyID="FR1" package="conceptscheme" class="Concept"/>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:TextFormat textType="String" maxLength="240"/>
+              </str:LocalRepresentation>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="IDBANK"/>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+            <str:Attribute id="OBS_CONF" urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=FR1:SERIES_BDM(1.0).OBS_CONF" assignmentStatus="Conditional">
+              <str:ConceptIdentity>
+                <Ref id="OBS_CONF" maintainableParentID="CONCEPTS_INSEE" maintainableParentVersion="1.0" agencyID="FR1" package="conceptscheme" class="Concept"/>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:Enumeration>
+                  <Ref id="CL_OBS_CONF" version="1.0" agencyID="FR1" package="codelist" class="Codelist"/>
+                </str:Enumeration>
+              </str:LocalRepresentation>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="IDBANK"/>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+            <str:Attribute id="OBS_REV" urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=FR1:SERIES_BDM(1.0).OBS_REV" assignmentStatus="Conditional">
+              <str:ConceptIdentity>
+                <Ref id="OBS_REV" maintainableParentID="CONCEPTS_INSEE" maintainableParentVersion="1.0" agencyID="FR1" package="conceptscheme" class="Concept"/>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:Enumeration>
+                  <Ref id="CL_OBS_REV" version="1.0" agencyID="FR1" package="codelist" class="Codelist"/>
+                </str:Enumeration>
+              </str:LocalRepresentation>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="IDBANK"/>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+            <str:Attribute id="OBS_QUAL" urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=FR1:SERIES_BDM(1.0).OBS_QUAL" assignmentStatus="Conditional">
+              <str:ConceptIdentity>
+                <Ref id="OBS_QUAL" maintainableParentID="CONCEPTS_INSEE" maintainableParentVersion="1.0" agencyID="FR1" package="conceptscheme" class="Concept"/>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:Enumeration>
+                  <Ref id="CL_OBS_QUAL" version="1.0" agencyID="FR1" package="codelist" class="Codelist"/>
+                </str:Enumeration>
+              </str:LocalRepresentation>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="IDBANK"/>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+            <str:Attribute id="OBS_TYPE" urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=FR1:SERIES_BDM(1.0).OBS_TYPE" assignmentStatus="Conditional">
+              <str:ConceptIdentity>
+                <Ref id="OBS_TYPE" maintainableParentID="CONCEPTS_INSEE" maintainableParentVersion="1.0" agencyID="FR1" package="conceptscheme" class="Concept"/>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:Enumeration>
+                  <Ref id="CL_OBS_TYPE" version="1.0" agencyID="FR1" package="codelist" class="Codelist"/>
+                </str:Enumeration>
+              </str:LocalRepresentation>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="IDBANK"/>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+            <str:Attribute id="LAST_UPDATE" urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=FR1:SERIES_BDM(1.0).LAST_UPDATE" assignmentStatus="Mandatory">
+              <str:ConceptIdentity>
+                <Ref id="LAST_UPDATE" maintainableParentID="CONCEPTS_INSEE" maintainableParentVersion="1.0" agencyID="FR1" package="conceptscheme" class="Concept"/>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:TextFormat textType="GregorianTimePeriod"/>
+              </str:LocalRepresentation>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="IDBANK"/>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+            <str:Attribute id="DECIMALS" urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=FR1:SERIES_BDM(1.0).DECIMALS" assignmentStatus="Mandatory">
+              <str:ConceptIdentity>
+                <Ref id="DECIMALS" maintainableParentID="CONCEPTS_INSEE" maintainableParentVersion="1.0" agencyID="FR1" package="conceptscheme" class="Concept"/>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:TextFormat textType="Integer" minValue="0" maxValue="9"/>
+              </str:LocalRepresentation>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="IDBANK"/>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+            <str:Attribute id="OBS_STATUS" urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=FR1:SERIES_BDM(1.0).OBS_STATUS" assignmentStatus="Mandatory">
+              <str:ConceptIdentity>
+                <Ref id="OBS_STATUS" maintainableParentID="CONCEPTS_INSEE" maintainableParentVersion="1.0" agencyID="FR1" package="conceptscheme" class="Concept"/>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:Enumeration>
+                  <Ref id="CL_OBS_STATUS" version="1.0" agencyID="FR1" package="codelist" class="Codelist"/>
+                </str:Enumeration>
+              </str:LocalRepresentation>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="IDBANK"/>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+            <str:Attribute id="DATE_JO" urn="urn:sdmx:org.sdmx.infomodel.datastructure.DataAttribute=FR1:SERIES_BDM(1.0).DATE_JO" assignmentStatus="Conditional">
+              <str:ConceptIdentity>
+                <Ref id="DATE_JO" maintainableParentID="CONCEPTS_INSEE" maintainableParentVersion="1.0" agencyID="FR1" package="conceptscheme" class="Concept"/>
+              </str:ConceptIdentity>
+              <str:LocalRepresentation>
+                <str:TextFormat textType="GregorianTimePeriod"/>
+              </str:LocalRepresentation>
+              <str:AttributeRelationship>
+                <str:Dimension>
+                  <Ref id="IDBANK"/>
+                </str:Dimension>
+              </str:AttributeRelationship>
+            </str:Attribute>
+          </str:AttributeList>
+          <str:MeasureList id="MeasureDescriptor" urn="urn:sdmx:org.sdmx.infomodel.datastructure.MeasureDescriptor=FR1:SERIES_BDM(1.0).MeasureDescriptor">
+            <str:PrimaryMeasure id="OBS_VALUE" urn="urn:sdmx:org.sdmx.infomodel.datastructure.PrimaryMeasure=FR1:SERIES_BDM(1.0).OBS_VALUE">
+              <str:ConceptIdentity>
+                <Ref id="OBS_VALUE" maintainableParentID="CONCEPTS_INSEE" maintainableParentVersion="1.0" agencyID="FR1" package="conceptscheme" class="Concept"/>
+              </str:ConceptIdentity>
+            </str:PrimaryMeasure>
+          </str:MeasureList>
+        </str:DataStructureComponents>
+      </str:DataStructure>
+    </str:DataStructures>
+  </mes:Structures>
+</mes:Structure>

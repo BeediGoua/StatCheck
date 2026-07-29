@@ -1,0 +1,55 @@
+[
+  {
+    "id": "1",
+    "text": "Le chômage est passé de 8 % à 6 % en France, soit une baisse de 2 points.",
+    "expected": {
+      "answerability": "VERIFIABLE",
+      "territory_main": "France",
+      "operation_direction": "DECREASE"
+    }
+  },
+  {
+    "id": "2",
+    "text": "L'inflation en Allemagne a bondi de 3% à 5%.",
+    "expected": {
+      "answerability": "VERIFIABLE",
+      "territory_main": "Allemagne",
+      "operation_direction": "INCREASE"
+    }
+  },
+  {
+    "id": "3",
+    "text": "À Vienne, la population augmente fortement.",
+    "expected": {
+      "answerability": "AMBIGUOUS",
+      "territory_main": null,
+      "operation_direction": "INCREASE"
+    }
+  },
+  {
+    "id": "4",
+    "text": "Le nombre de naissances ne baisse pas.",
+    "expected": {
+      "answerability": "VERIFIABLE",
+      "territory_main": null,
+      "operation_direction": "DECREASE",
+      "polarity": "NEGATED"
+    }
+  },
+  {
+    "id": "5",
+    "text": "Le PIB a diminué de -3%.",
+    "expected": {
+      "answerability": "CONTRADICTION",
+      "territory_main": null,
+      "operation_direction": "DECREASE"
+    }
+  },
+  {
+    "id": "6",
+    "text": "Le pouvoir d'achat a augmenté de 100 à 110, soit une hausse de 5 points.",
+    "expected": {
+      "answerability": "CONTRADICTION"
+    }
+  }
+]

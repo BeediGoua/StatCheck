@@ -12,6 +12,8 @@ import src.models.catalogue
 import src.models.structure
 import src.models.series
 import src.models.ingestion
+import src.models.corpus
+import src.models.nlp_runs
 
 def init_db():
     print(f"Création des tables dans la base PostgreSQL...")
