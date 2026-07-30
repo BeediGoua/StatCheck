@@ -1,0 +1,11 @@
+{
+  "run_name": "llm_val_qwen_run_1",
+  "model": "qwen2.5:latest (Ollama)",
+  "timestamp": "2026-07-30T15:25:45.515909",
+  "runs_per_claim": 3,
+  "post_validation_impact": {
+    "total_mentions_modified": 0,
+    "total_claims_rejected_by_validator": 0,
+    "total_claims_repaired": 0
+  }
+}

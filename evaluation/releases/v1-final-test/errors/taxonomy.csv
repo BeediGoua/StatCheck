@@ -1,0 +1,2 @@
+error_id,error_type,description
+1,SILENT_CRITICAL,Hallucination de valeur numérique

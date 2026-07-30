@@ -1,0 +1,17 @@
+{
+  "policy_version": "v1.0",
+  "elimination_constraints": {
+    "max_silent_critical_errors": 0,
+    "min_coverage_percent": 60.0,
+    "allow_invented_geographic_codes": false,
+    "allow_invented_datasets": false
+  },
+  "lexicographical_priority": [
+    "silent_critical_errors_count (ascending)",
+    "exact_match_percent (descending)",
+    "f1_measures (descending)",
+    "coverage_percent (descending)",
+    "cost_proxy_llm_calls (ascending)",
+    "latency_proxy (ascending)"
+  ]
+}

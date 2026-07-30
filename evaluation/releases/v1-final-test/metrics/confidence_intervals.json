@@ -1,0 +1,6 @@
+{
+  "exact_match": {
+    "lower": 0.65,
+    "upper": 0.9
+  }
+}
