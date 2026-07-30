@@ -49,10 +49,12 @@ La principale difficulté méthodologique est de **comparer équitablement** dif
 - Cela garantit que l'architecture C2 (Fusion) tente de corriger *exactement la même chaîne JSON* que celle mesurée dans le rapport C1 (LLM seul).
 
 ### 3.2 L'Architecture C3 (Cascade)
-L'architecture C3 utilise la Baseline comme pare-feu :
+L'architecture C3 utilise la Baseline comme pare-feu intelligent (Routeur Déterministe) :
 - La phrase passe dans la Baseline (15ms).
-- Si la Baseline extrait une donnée incomplète ou lève un statut `MISSING_CONTEXT` (ce qui est très fréquent pour les indicateurs implicites), le routeur C3 décide d'appeler le LLM (ce qui ajoute le temps de latence de Ollama).
-- Un échantillon aléatoire (contrôlé par un *seed* fixe) force l'appel au LLM dans 5 à 10% des cas "faciles", afin de vérifier que la Baseline n'était pas "silencieusement dans l'erreur".
+- Si la Baseline est parfaite (aucune ambiguïté, tous les champs présents, confiance forte), le LLM n'est jamais appelé.
+- Le LLM est appelé par le routeur si la baseline est incomplète, si elle manque de confiance (< 0.9), si une ambiguïté textuelle est détectée (ex: confusion possible entre `%` et `points`), ou s'il y a une complexité linguistique (négations, périodes relatives non résolues).
+- La Matrice d'Autorité finale gère les conflits : la Baseline l'emporte uniquement si elle a une confiance forte. Sinon, les ambiguïtés sont préservées (BOTH_RETAINED_AS_ALTERNATIVES).
+- Un échantillon de contrôle peut forcer l'appel au LLM dans un petit pourcentage de cas pour l'audit.
 
 ### Conclusion de la phase
 Ce fonctionnement on-premise est la garantie d'un système industrialisable pour l'État ou les médias : pas de fuite de données vers des serveurs américains ou asiatiques, pas de facturation au token, et une reproductibilité totale des évaluations.
@@ -87,10 +89,10 @@ Ainsi, le goulot d'étranglement du LLM n'impactera que 20% à 30% du flux globa
 
 Pour répondre à l'exigence d'une comparaison purement scientifique entre les 4 architectures, un moteur de scoring strict a été développé (`src/evaluation/scorer.py`) couplé à un générateur de rapport (`src/evaluation/generate_report.py`).
 
-### 5.1 F1 par Champ (Granularité)
+### 5.1 Exact Match et F1 par Champ (Granularité)
 Contrairement à une simple comparaison globale, le Scorer dissèque le JSON `CanonicalParseResult` généré par chaque système :
-- Il vérifie l'**Exact Match** complet (le JSON est-il 100% identique au Gold standard ?).
-- Il isole et apparie les entités via un algorithme biparti, puis calcule un **F1 Score** spécifique pour :
+- **L'Exact Match Complet** : Une prédiction est comptée en Exact Match *uniquement* si tous les champs obligatoires (indicateur, territoire, période, opération, mesures, unités, statut) correspondent au Gold après normalisation. Une seule erreur fait chuter le score de la phrase à 0.
+- Il calcule ensuite un **F1 Score** spécifique pour :
   - Les Mesures (Valeurs numériques et Unités)
   - Les Indicateurs (Normalisation du texte)
   - Les Territoires (Codes COG)
@@ -105,9 +107,10 @@ Une fois l'inférence terminée, le script `generate_report.py` fait passer les 
 
 ---
 
-## 6. L'Arbitrage et le Juge de Paix (Étapes 8 et 9)
+## 6. L'Arbitrage et la Traçabilité (Étapes 8 et 9)
 
 Pour éviter le biais d'un "score pondéré magique" (ex: 40% F1 + 60% Erreurs), l'Étape 8 utilise un **Tri Lexicographique**.
 1. **Filtre Éliminatoire** : Exclusion immédiate via le `selection_policy.json` (Tolérance 0 pour les erreurs silencieuses).
-2. **Test de McNemar & Pareto** : Le script `select_v1.py` prouve mathématiquement que l'architecture C3 domine C2. Sur le plan qualité, elles sont équivalentes (0 discordance McNemar). Sur le plan opérationnel, C3 réduit la charge d'inférence LLM de 75%.
-3. **Scellement Cryptographique (Étape 9)** : Le test final s'exécute sur un jeu aveugle de 40 affirmations. Les prédictions, le routage et les métriques (avec intervalles de confiance bootstrapés) sont générés dans une arborescence stricte et figés par un fichier racine **`checksums.sha256`**, interdisant toute retouche a posteriori.
+2. **Comparaison Appariée & Pareto** : L'algorithme prouve mathématiquement que l'architecture C3 est le candidat Pareto-préféré. Sur le plan de la qualité, elle obtient les mêmes scores observés que C2 (zéro discordance, rendant un test de McNemar non concluant sur la différence). Sur le plan opérationnel, C3 réduit la charge d'inférence LLM d'environ 30%.
+3. **Journalisation Reproductible (Étape 9)** : Le test final s'exécute sur un jeu de 40 affirmations. Les prédictions finales encapsulent la *Provenance* exacte au niveau du champ (origine, méthode, confiance) et un bloc de métadonnées complet (`git_version`, `model_digest`, `prompt_hash`, `llm_call_reason`, durées).
+4. **Scellement Cryptographique** : Les scores globaux (accompagnés de leur intervalle de confiance à 95% calculé via l'approximation de Wilson) et toutes les traces JSONL sont figés par un manifeste **`checksums.sha256`**, interdisant toute retouche a posteriori.

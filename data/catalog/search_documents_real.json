@@ -1,0 +1,4239 @@
+[
+  {
+    "dataset_id": "BALANCE-PAIEMENTS",
+    "indicator_code": "BALANCE-PAIEMENTS",
+    "title": "Balance des paiements",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "COMPTE",
+      "INSTRUMENTS_BALANCE_PAIEMENTS",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Balance des paiements (BALANCE-PAIEMENTS). Description: . Dimensions: INDICATEUR, COMPTE, INSTRUMENTS_BALANCE_PAIEMENTS, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CHOMAGE-TRIM-NATIONAL",
+    "indicator_code": "CHOMAGE-TRIM-NATIONAL",
+    "title": "Chômage, taux de chômage par sexe et âge (sens BIT)",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "SEXE",
+      "AGE",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Chômage, taux de chômage par sexe et âge (sens BIT) (CHOMAGE-TRIM-NATIONAL). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, SEXE, AGE, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CLIMAT-AFFAIRES",
+    "indicator_code": "CLIMAT-AFFAIRES",
+    "title": "Indicateurs synthétiques du climat des affaires",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Indicateurs synthétiques du climat des affaires (CLIMAT-AFFAIRES). Description: . Dimensions: INDICATEUR, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2010-CONSO-MEN",
+    "indicator_code": "CNA-2010-CONSO-MEN",
+    "title": "Consommation des ménages - Résultats par produit, fonction et durabilité",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "PRIX_REF",
+      "OPERATION",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Consommation des ménages - Résultats par produit, fonction et durabilité (CNA-2010-CONSO-MEN). Description: . Dimensions: INDICATEUR, PRIX_REF, OPERATION, CNA_PRODUIT, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2010-CONSO-SI",
+    "indicator_code": "CNA-2010-CONSO-SI",
+    "title": "Dépenses de consommation finale par secteur institutionnel - Résultats par opération et produit",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "PRIX_REF",
+      "OPERATION",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Dépenses de consommation finale par secteur institutionnel - Résultats par opération et produit (CNA-2010-CONSO-SI). Description: . Dimensions: INDICATEUR, SECT-INST, PRIX_REF, OPERATION, CNA_PRODUIT, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2010-CPEB",
+    "indicator_code": "CNA-2010-CPEB",
+    "title": "Comptes de production et d’exploitation par branche",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "CNA_ACTIVITE",
+      "PRIX_REF",
+      "OPERATION",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Comptes de production et d’exploitation par branche (CNA-2010-CPEB). Description: . Dimensions: INDICATEUR, CNA_ACTIVITE, PRIX_REF, OPERATION, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2010-CSI",
+    "indicator_code": "CNA-2010-CSI",
+    "title": "Comptes des secteurs institutionnels - Résultats annuels",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "COMPTE",
+      "OPERATION",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Comptes des secteurs institutionnels - Résultats annuels (CNA-2010-CSI). Description: . Dimensions: INDICATEUR, SECT-INST, COMPTE, OPERATION, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2010-DEP-APU",
+    "indicator_code": "CNA-2010-DEP-APU",
+    "title": "Dépenses des administrations publiques - Résultats par fonction et opération",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "OPERATION",
+      "NATURE",
+      "FONCTION",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Dépenses des administrations publiques - Résultats par fonction et opération (CNA-2010-DEP-APU). Description: . Dimensions: INDICATEUR, SECT-INST, OPERATION, NATURE, FONCTION, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2010-DETTE-APU",
+    "indicator_code": "CNA-2010-DETTE-APU",
+    "title": "Dette et déficit des administrations publiques au sens de Maastricht",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "PRIX_REF",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Dette et déficit des administrations publiques au sens de Maastricht (CNA-2010-DETTE-APU). Description: . Dimensions: INDICATEUR, SECT-INST, PRIX_REF, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2010-EMPLOI",
+    "indicator_code": "CNA-2010-EMPLOI",
+    "title": "Emploi intérieur, durée effective travaillée et productivité horaire",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "CNA_ACTIVITE",
+      "SECT-INST",
+      "NATURE",
+      "CNA_TYPE_EMP",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Emploi intérieur, durée effective travaillée et productivité horaire (CNA-2010-EMPLOI). Description: . Dimensions: INDICATEUR, CNA_ACTIVITE, SECT-INST, NATURE, CNA_TYPE_EMP, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2010-ERE",
+    "indicator_code": "CNA-2010-ERE",
+    "title": "Équilibre ressources-emplois (ERE) - Résultats par opération et produit",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "PRIX_REF",
+      "OPERATION",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Équilibre ressources-emplois (ERE) - Résultats par opération et produit (CNA-2010-ERE). Description: . Dimensions: INDICATEUR, PRIX_REF, OPERATION, CNA_PRODUIT, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2010-FBCF-BRANCHE",
+    "indicator_code": "CNA-2010-FBCF-BRANCHE",
+    "title": "Formation brute de capital fixe (FBCF) par branche",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "CNA_ACTIVITE",
+      "PRIX_REF",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Formation brute de capital fixe (FBCF) par branche (CNA-2010-FBCF-BRANCHE). Description: . Dimensions: INDICATEUR, CNA_ACTIVITE, PRIX_REF, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2010-FBCF-SI",
+    "indicator_code": "CNA-2010-FBCF-SI",
+    "title": "Formation brute de capital fixe (FBCF) par secteur institutionnel - Résultats par produit",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "PRIX_REF",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Formation brute de capital fixe (FBCF) par secteur institutionnel - Résultats par produit (CNA-2010-FBCF-SI). Description: . Dimensions: INDICATEUR, SECT-INST, PRIX_REF, CNA_PRODUIT, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2010-PAT-NF",
+    "indicator_code": "CNA-2010-PAT-NF",
+    "title": "Comptes de patrimoine non financier - Encours, consommation de capital fixe",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "CNA_ACTIVITE",
+      "SECT-INST",
+      "PRIX_REF",
+      "OPERATION",
+      "NATURE",
+      "REF_AREA",
+      "TYPE-FLUX",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Comptes de patrimoine non financier - Encours, consommation de capital fixe (CNA-2010-PAT-NF). Description: . Dimensions: INDICATEUR, CNA_ACTIVITE, SECT-INST, PRIX_REF, OPERATION, NATURE, REF_AREA, TYPE-FLUX, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2010-PIB",
+    "indicator_code": "CNA-2010-PIB",
+    "title": "Produit intérieur brut (PIB) et ses composantes - Résultats annuels",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "PRIX_REF",
+      "OPERATION",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Produit intérieur brut (PIB) et ses composantes - Résultats annuels (CNA-2010-PIB). Description: . Dimensions: INDICATEUR, SECT-INST, PRIX_REF, OPERATION, CNA_PRODUIT, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2010-RDB",
+    "indicator_code": "CNA-2010-RDB",
+    "title": "Revenu et pouvoir d’achat des ménages - Résultats par ménage, personne et unité de consommation",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Revenu et pouvoir d’achat des ménages - Résultats par ménage, personne et unité de consommation (CNA-2010-RDB). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2010-TEI",
+    "indicator_code": "CNA-2010-TEI",
+    "title": "Tableau des entrées intermédiaires - Résultats par secteur et produit",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "CNA_ACTIVITE",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Tableau des entrées intermédiaires - Résultats par secteur et produit (CNA-2010-TEI). Description: . Dimensions: INDICATEUR, CNA_ACTIVITE, CNA_PRODUIT, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2010-TOF",
+    "indicator_code": "CNA-2010-TOF",
+    "title": "Comptes financiers - Flux et encours d’actifs, variation de patrimoine par secteur institutionnel",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "COMPTE",
+      "OPERATION",
+      "NATURE",
+      "REF_AREA",
+      "TYPE-FLUX",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Comptes financiers - Flux et encours d’actifs, variation de patrimoine par secteur institutionnel (CNA-2010-TOF). Description: . Dimensions: INDICATEUR, SECT-INST, COMPTE, OPERATION, NATURE, REF_AREA, TYPE-FLUX, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2014-CONSO-MEN",
+    "indicator_code": "CNA-2014-CONSO-MEN",
+    "title": "Consommation des ménages",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "PRIX_REF",
+      "OPERATION",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Consommation des ménages (CNA-2014-CONSO-MEN). Description: . Dimensions: INDICATEUR, PRIX_REF, OPERATION, CNA_PRODUIT, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2014-CONSO-SI",
+    "indicator_code": "CNA-2014-CONSO-SI",
+    "title": "Dépenses de consommation finale par secteur institutionnel",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "PRIX_REF",
+      "OPERATION",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Dépenses de consommation finale par secteur institutionnel (CNA-2014-CONSO-SI). Description: . Dimensions: INDICATEUR, SECT-INST, PRIX_REF, OPERATION, CNA_PRODUIT, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2014-CPEB",
+    "indicator_code": "CNA-2014-CPEB",
+    "title": "Comptes de production et d’exploitation par branche",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "CNA_ACTIVITE",
+      "PRIX_REF",
+      "OPERATION",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Comptes de production et d’exploitation par branche (CNA-2014-CPEB). Description: . Dimensions: INDICATEUR, CNA_ACTIVITE, PRIX_REF, OPERATION, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2014-CSI",
+    "indicator_code": "CNA-2014-CSI",
+    "title": "Comptes des secteurs institutionnels",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "COMPTE",
+      "OPERATION",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Comptes des secteurs institutionnels (CNA-2014-CSI). Description: . Dimensions: INDICATEUR, SECT-INST, COMPTE, OPERATION, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2014-DEP-APU",
+    "indicator_code": "CNA-2014-DEP-APU",
+    "title": "Dépenses des administrations publiques",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "OPERATION",
+      "NATURE",
+      "FONCTION",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Dépenses des administrations publiques (CNA-2014-DEP-APU). Description: . Dimensions: INDICATEUR, SECT-INST, OPERATION, NATURE, FONCTION, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2014-DETTE-APU",
+    "indicator_code": "CNA-2014-DETTE-APU",
+    "title": "Dette et déficit des administrations publiques au sens de Maastricht",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "PRIX_REF",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Dette et déficit des administrations publiques au sens de Maastricht (CNA-2014-DETTE-APU). Description: . Dimensions: INDICATEUR, SECT-INST, PRIX_REF, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2014-EMPLOI",
+    "indicator_code": "CNA-2014-EMPLOI",
+    "title": "Emploi intérieur, durée effective travaillée et productivité horaire",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "CNA_ACTIVITE",
+      "SECT-INST",
+      "NATURE",
+      "CNA_TYPE_EMP",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Emploi intérieur, durée effective travaillée et productivité horaire (CNA-2014-EMPLOI). Description: . Dimensions: INDICATEUR, CNA_ACTIVITE, SECT-INST, NATURE, CNA_TYPE_EMP, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2014-ERE",
+    "indicator_code": "CNA-2014-ERE",
+    "title": "Équilibre ressources-emplois (ERE)",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "PRIX_REF",
+      "OPERATION",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Équilibre ressources-emplois (ERE) (CNA-2014-ERE). Description: . Dimensions: INDICATEUR, PRIX_REF, OPERATION, CNA_PRODUIT, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2014-FBCF-BRANCHE",
+    "indicator_code": "CNA-2014-FBCF-BRANCHE",
+    "title": "Formation brute de capital fixe (FBCF) par branche",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "CNA_ACTIVITE",
+      "PRIX_REF",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Formation brute de capital fixe (FBCF) par branche (CNA-2014-FBCF-BRANCHE). Description: . Dimensions: INDICATEUR, CNA_ACTIVITE, PRIX_REF, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2014-FBCF-SI",
+    "indicator_code": "CNA-2014-FBCF-SI",
+    "title": "Formation brute de capital fixe (FBCF) par secteur institutionnel",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "PRIX_REF",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Formation brute de capital fixe (FBCF) par secteur institutionnel (CNA-2014-FBCF-SI). Description: . Dimensions: INDICATEUR, SECT-INST, PRIX_REF, CNA_PRODUIT, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2014-PAT-NF",
+    "indicator_code": "CNA-2014-PAT-NF",
+    "title": "Comptes de patrimoine non financier",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "CNA_ACTIVITE",
+      "SECT-INST",
+      "PRIX_REF",
+      "OPERATION",
+      "NATURE",
+      "REF_AREA",
+      "TYPE-FLUX",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Comptes de patrimoine non financier (CNA-2014-PAT-NF). Description: . Dimensions: INDICATEUR, CNA_ACTIVITE, SECT-INST, PRIX_REF, OPERATION, NATURE, REF_AREA, TYPE-FLUX, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2014-PIB",
+    "indicator_code": "CNA-2014-PIB",
+    "title": "Produit intérieur brut (PIB) et ses composantes",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "PRIX_REF",
+      "OPERATION",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Produit intérieur brut (PIB) et ses composantes (CNA-2014-PIB). Description: . Dimensions: INDICATEUR, SECT-INST, PRIX_REF, OPERATION, CNA_PRODUIT, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2014-RDB",
+    "indicator_code": "CNA-2014-RDB",
+    "title": "Revenu et pouvoir d’achat des ménages",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Revenu et pouvoir d’achat des ménages (CNA-2014-RDB). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2014-TEI",
+    "indicator_code": "CNA-2014-TEI",
+    "title": "Tableau des entrées intermédiaires",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "CNA_ACTIVITE",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Tableau des entrées intermédiaires (CNA-2014-TEI). Description: . Dimensions: INDICATEUR, CNA_ACTIVITE, CNA_PRODUIT, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2014-TOF",
+    "indicator_code": "CNA-2014-TOF",
+    "title": "Comptes financiers",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "COMPTE",
+      "OPERATION",
+      "NATURE",
+      "REF_AREA",
+      "TYPE-FLUX",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Comptes financiers (CNA-2014-TOF). Description: . Dimensions: INDICATEUR, SECT-INST, COMPTE, OPERATION, NATURE, REF_AREA, TYPE-FLUX, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2020-CONSO-MEN",
+    "indicator_code": "CNA-2020-CONSO-MEN",
+    "title": "Consommation des ménages",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "PRIX_REF",
+      "OPERATION",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Consommation des ménages (CNA-2020-CONSO-MEN). Description: . Dimensions: INDICATEUR, PRIX_REF, OPERATION, CNA_PRODUIT, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2020-CONSO-SI",
+    "indicator_code": "CNA-2020-CONSO-SI",
+    "title": "Dépenses de consommation finale par secteur institutionnel",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "PRIX_REF",
+      "OPERATION",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Dépenses de consommation finale par secteur institutionnel (CNA-2020-CONSO-SI). Description: . Dimensions: INDICATEUR, SECT-INST, PRIX_REF, OPERATION, CNA_PRODUIT, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2020-CPEB",
+    "indicator_code": "CNA-2020-CPEB",
+    "title": "Comptes de production et d’exploitation par branche",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "CNA_ACTIVITE",
+      "PRIX_REF",
+      "OPERATION",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Comptes de production et d’exploitation par branche (CNA-2020-CPEB). Description: . Dimensions: INDICATEUR, CNA_ACTIVITE, PRIX_REF, OPERATION, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2020-CSI",
+    "indicator_code": "CNA-2020-CSI",
+    "title": "Comptes des secteurs institutionnels",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "COMPTE",
+      "OPERATION",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Comptes des secteurs institutionnels (CNA-2020-CSI). Description: . Dimensions: INDICATEUR, SECT-INST, COMPTE, OPERATION, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2020-EMPLOI",
+    "indicator_code": "CNA-2020-EMPLOI",
+    "title": "Emploi intérieur, durée effective travaillée et productivité horaire",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "CNA_ACTIVITE",
+      "SECT-INST",
+      "NATURE",
+      "CNA_TYPE_EMP",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Emploi intérieur, durée effective travaillée et productivité horaire (CNA-2020-EMPLOI). Description: . Dimensions: INDICATEUR, CNA_ACTIVITE, SECT-INST, NATURE, CNA_TYPE_EMP, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2020-ERE",
+    "indicator_code": "CNA-2020-ERE",
+    "title": "Équilibre ressources-emplois (ERE)",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "PRIX_REF",
+      "OPERATION",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Équilibre ressources-emplois (ERE) (CNA-2020-ERE). Description: . Dimensions: INDICATEUR, PRIX_REF, OPERATION, CNA_PRODUIT, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2020-FBCF-SI",
+    "indicator_code": "CNA-2020-FBCF-SI",
+    "title": "Formation brute de capital fixe (FBCF) par secteur institutionnel",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "PRIX_REF",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Formation brute de capital fixe (FBCF) par secteur institutionnel (CNA-2020-FBCF-SI). Description: . Dimensions: INDICATEUR, SECT-INST, PRIX_REF, CNA_PRODUIT, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2020-PIB",
+    "indicator_code": "CNA-2020-PIB",
+    "title": "Produit intérieur brut (PIB) et ses composantes",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "PRIX_REF",
+      "OPERATION",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Produit intérieur brut (PIB) et ses composantes (CNA-2020-PIB). Description: . Dimensions: INDICATEUR, SECT-INST, PRIX_REF, OPERATION, CNA_PRODUIT, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNA-2020-TEI",
+    "indicator_code": "CNA-2020-TEI",
+    "title": "Tableau des entrées intermédiaires",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "CNA_ACTIVITE",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Tableau des entrées intermédiaires (CNA-2020-TEI). Description: . Dimensions: INDICATEUR, CNA_ACTIVITE, CNA_PRODUIT, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNT-2010-CB",
+    "indicator_code": "CNT-2010-CB",
+    "title": "Comptes des branches - Résultats trimestriels",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "OPERATION",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "VALORISATION",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Comptes des branches - Résultats trimestriels (CNT-2010-CB). Description: . Dimensions: INDICATEUR, OPERATION, CNA_PRODUIT, NATURE, REF_AREA, VALORISATION, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNT-2010-CSI",
+    "indicator_code": "CNT-2010-CSI",
+    "title": "Comptes de secteurs institutionnels - Résultats trimestriels",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "COMPTE",
+      "OPERATION",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Comptes de secteurs institutionnels - Résultats trimestriels (CNT-2010-CSI). Description: . Dimensions: INDICATEUR, SECT-INST, COMPTE, OPERATION, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNT-2010-OPERATIONS",
+    "indicator_code": "CNT-2010-OPERATIONS",
+    "title": "Opérations sur biens et services - Résultats trimestriels",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "COMPTE",
+      "OPERATION",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "VALORISATION",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Opérations sur biens et services - Résultats trimestriels (CNT-2010-OPERATIONS). Description: . Dimensions: INDICATEUR, SECT-INST, COMPTE, OPERATION, CNA_PRODUIT, NATURE, REF_AREA, VALORISATION, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNT-2010-PIB-EQB-RF",
+    "indicator_code": "CNT-2010-PIB-EQB-RF",
+    "title": "Équilibre du produit intérieur brut - Résultats trimestriels",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "OPERATION",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "VALORISATION",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Équilibre du produit intérieur brut - Résultats trimestriels (CNT-2010-PIB-EQB-RF). Description: . Dimensions: INDICATEUR, SECT-INST, OPERATION, CNA_PRODUIT, NATURE, REF_AREA, VALORISATION, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNT-2014-CB",
+    "indicator_code": "CNT-2014-CB",
+    "title": "Comptes des branches",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "OPERATION",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "VALORISATION",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Comptes des branches (CNT-2014-CB). Description: . Dimensions: INDICATEUR, OPERATION, CNA_PRODUIT, NATURE, REF_AREA, VALORISATION, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNT-2014-CSI",
+    "indicator_code": "CNT-2014-CSI",
+    "title": "Comptes de secteurs institutionnels",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "COMPTE",
+      "OPERATION",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Comptes de secteurs institutionnels (CNT-2014-CSI). Description: . Dimensions: INDICATEUR, SECT-INST, COMPTE, OPERATION, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNT-2014-OPERATIONS",
+    "indicator_code": "CNT-2014-OPERATIONS",
+    "title": "Opérations sur biens et services",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "COMPTE",
+      "OPERATION",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "VALORISATION",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Opérations sur biens et services (CNT-2014-OPERATIONS). Description: . Dimensions: INDICATEUR, SECT-INST, COMPTE, OPERATION, CNA_PRODUIT, NATURE, REF_AREA, VALORISATION, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNT-2020-CB",
+    "indicator_code": "CNT-2020-CB",
+    "title": "Comptes des branches",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "OPERATION",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "VALORISATION",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Comptes des branches (CNT-2020-CB). Description: . Dimensions: INDICATEUR, OPERATION, CNA_PRODUIT, NATURE, REF_AREA, VALORISATION, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNT-2020-CSI",
+    "indicator_code": "CNT-2020-CSI",
+    "title": "Comptes de secteurs institutionnels",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "COMPTE",
+      "OPERATION",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Comptes de secteurs institutionnels (CNT-2020-CSI). Description: . Dimensions: INDICATEUR, SECT-INST, COMPTE, OPERATION, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNT-2020-OPERATIONS",
+    "indicator_code": "CNT-2020-OPERATIONS",
+    "title": "Opérations sur biens et services",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "COMPTE",
+      "OPERATION",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "VALORISATION",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Opérations sur biens et services (CNT-2020-OPERATIONS). Description: . Dimensions: INDICATEUR, SECT-INST, COMPTE, OPERATION, CNA_PRODUIT, NATURE, REF_AREA, VALORISATION, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CNT-2020-PIB-EQB-RF",
+    "indicator_code": "CNT-2020-PIB-EQB-RF",
+    "title": "Équilibre du produit intérieur brut",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "OPERATION",
+      "CNA_PRODUIT",
+      "NATURE",
+      "REF_AREA",
+      "VALORISATION",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Équilibre du produit intérieur brut (CNT-2020-PIB-EQB-RF). Description: . Dimensions: INDICATEUR, SECT-INST, OPERATION, CNA_PRODUIT, NATURE, REF_AREA, VALORISATION, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "COEFF-EURO-FRANC",
+    "indicator_code": "COEFF-EURO-FRANC",
+    "title": "Coefficient de transformation de la monnaie",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Coefficient de transformation de la monnaie (COEFF-EURO-FRANC). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "COM-EXT",
+    "indicator_code": "COM-EXT",
+    "title": "Commerce extérieur de la France",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "COM_EXT_NAF2",
+      "NATURE",
+      "REF_AREA",
+      "ZONE_ECO",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Commerce extérieur de la France (COM-EXT). Description: . Dimensions: INDICATEUR, COM_EXT_NAF2, NATURE, REF_AREA, ZONE_ECO, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "COMPTES-ETAT",
+    "indicator_code": "COMPTES-ETAT",
+    "title": "Budget de l’État",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Budget de l’État (COMPTES-ETAT). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CONSO-MENAGES-2010",
+    "indicator_code": "CONSO-MENAGES-2010",
+    "title": "Consommation des ménages en biens - Résultats mensuels",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "PRODUIT_CONSO_MENAGES",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Consommation des ménages en biens - Résultats mensuels (CONSO-MENAGES-2010). Description: . Dimensions: INDICATEUR, PRODUIT_CONSO_MENAGES, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CONSO-MENAGES-2014",
+    "indicator_code": "CONSO-MENAGES-2014",
+    "title": "Consommation des ménages en biens",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "PRODUIT_CONSO_MENAGES",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Consommation des ménages en biens (CONSO-MENAGES-2014). Description: . Dimensions: INDICATEUR, PRODUIT_CONSO_MENAGES, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CONSO-MENAGES-2020",
+    "indicator_code": "CONSO-MENAGES-2020",
+    "title": "Consommation des ménages en biens",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "PRODUIT_CONSO_MENAGES",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Consommation des ménages en biens (CONSO-MENAGES-2020). Description: . Dimensions: INDICATEUR, PRODUIT_CONSO_MENAGES, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CONSTRUCTION-LOCAUX",
+    "indicator_code": "CONSTRUCTION-LOCAUX",
+    "title": "Construction de locaux non résidentiels",
+    "description": "",
+    "dimensions": [
+      "EUROSTAT_C_L",
+      "INDICATEUR",
+      "NATURE",
+      "ETAT_CONSTRUCTION",
+      "LOCAL",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Construction de locaux non résidentiels (CONSTRUCTION-LOCAUX). Description: . Dimensions: EUROSTAT_C_L, INDICATEUR, NATURE, ETAT_CONSTRUCTION, LOCAL, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CONSTRUCTION-LOGEMENTS",
+    "indicator_code": "CONSTRUCTION-LOGEMENTS",
+    "title": "Construction de logements",
+    "description": "",
+    "dimensions": [
+      "CUMUL12MOIS",
+      "EUROSTAT_C_LOG",
+      "INDICATEUR",
+      "NATURE",
+      "ETAT_CONSTRUCTION",
+      "LOGEMENT",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Construction de logements (CONSTRUCTION-LOGEMENTS). Description: . Dimensions: CUMUL12MOIS, EUROSTAT_C_LOG, INDICATEUR, NATURE, ETAT_CONSTRUCTION, LOGEMENT, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CREATIONS-ENTREPRISES-METHODE-2022",
+    "indicator_code": "CREATIONS-ENTREPRISES-METHODE-2022",
+    "title": "Créations d'entreprises - Méthode 2022",
+    "description": "",
+    "dimensions": [
+      "EUROSTAT_CREATIONS_ENTREPRISES",
+      "INDICATEUR",
+      "ACTIVITE_CREAT_ENT",
+      "NATURE",
+      "TYPE-ENT",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Créations d'entreprises - Méthode 2022 (CREATIONS-ENTREPRISES-METHODE-2022). Description: . Dimensions: EUROSTAT_CREATIONS_ENTREPRISES, INDICATEUR, ACTIVITE_CREAT_ENT, NATURE, TYPE-ENT, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "CREATIONS-ENTREPRISES",
+    "indicator_code": "CREATIONS-ENTREPRISES",
+    "title": "Créations d’entreprises",
+    "description": "",
+    "dimensions": [
+      "EUROSTAT_CREATIONS_ENTREPRISES",
+      "INDICATEUR",
+      "ACTIVITE_CREAT_ENT",
+      "NATURE",
+      "TYPE-ENT",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Créations d’entreprises (CREATIONS-ENTREPRISES). Description: . Dimensions: EUROSTAT_CREATIONS_ENTREPRISES, INDICATEUR, ACTIVITE_CREAT_ENT, NATURE, TYPE-ENT, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "DECES-MORTALITE",
+    "indicator_code": "DECES-MORTALITE",
+    "title": "Décès et mortalité",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "DEMOGRAPHIE",
+      "REF_AREA",
+      "SEXE",
+      "AGE",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Décès et mortalité (DECES-MORTALITE). Description: . Dimensions: INDICATEUR, NATURE, DEMOGRAPHIE, REF_AREA, SEXE, AGE, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "DEFAILLANCES-ENTREPRISES",
+    "indicator_code": "DEFAILLANCES-ENTREPRISES",
+    "title": "Défaillances d’entreprises",
+    "description": "",
+    "dimensions": [
+      "EUROSTAT_DEFAILLANCES_ENTREPRISES",
+      "INDICATEUR",
+      "ACTIVITE_CREAT_ENT",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Défaillances d’entreprises (DEFAILLANCES-ENTREPRISES). Description: . Dimensions: EUROSTAT_DEFAILLANCES_ENTREPRISES, INDICATEUR, ACTIVITE_CREAT_ENT, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "DEMANDES-EMPLOIS-NATIONALES",
+    "indicator_code": "DEMANDES-EMPLOIS-NATIONALES",
+    "title": "Demandeurs d'emploi inscrits à Pôle Emploi",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "METIER",
+      "DEMANDEURS_EMPLOI",
+      "DIPLOME",
+      "REF_AREA",
+      "SEXE",
+      "AGE",
+      "ANCIENNETE",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Demandeurs d'emploi inscrits à Pôle Emploi (DEMANDES-EMPLOIS-NATIONALES). Description: . Dimensions: INDICATEUR, NATURE, METIER, DEMANDEURS_EMPLOI, DIPLOME, REF_AREA, SEXE, AGE, ANCIENNETE, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "DETTE-NEGOCIABLE-ETAT",
+    "indicator_code": "DETTE-NEGOCIABLE-ETAT",
+    "title": "Dette négociable de l’État",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Dette négociable de l’État (DETTE-NEGOCIABLE-ETAT). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "DETTE-TRIM-APU-2014",
+    "indicator_code": "DETTE-TRIM-APU-2014",
+    "title": "Dette des administrations publiques au sens de Maastricht",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "DETTE_MAASTRICHT_INTRUMENTS",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Dette des administrations publiques au sens de Maastricht (DETTE-TRIM-APU-2014). Description: . Dimensions: INDICATEUR, SECT-INST, DETTE_MAASTRICHT_INTRUMENTS, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "DETTE-TRIM-APU-2020",
+    "indicator_code": "DETTE-TRIM-APU-2020",
+    "title": "Dette des administrations publiques au sens de Maastricht",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "DETTE_MAASTRICHT_INTRUMENTS",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Dette des administrations publiques au sens de Maastricht (DETTE-TRIM-APU-2020). Description: . Dimensions: INDICATEUR, SECT-INST, DETTE_MAASTRICHT_INTRUMENTS, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "DETTE-TRIM-APU",
+    "indicator_code": "DETTE-TRIM-APU",
+    "title": "Dette des administrations publiques au sens de Maastricht",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "SECT-INST",
+      "DETTE_MAASTRICHT_INTRUMENTS",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Dette des administrations publiques au sens de Maastricht (DETTE-TRIM-APU). Description: . Dimensions: INDICATEUR, SECT-INST, DETTE_MAASTRICHT_INTRUMENTS, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "EMPLOI-BIT-TRIM",
+    "indicator_code": "EMPLOI-BIT-TRIM",
+    "title": "Activité, emploi, sous-emploi au sens du BIT et autres indicateurs",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "SEXE",
+      "AGE",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Activité, emploi, sous-emploi au sens du BIT et autres indicateurs (EMPLOI-BIT-TRIM). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, SEXE, AGE, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "EMPLOI-SALARIE-TRIM-NATIONAL",
+    "indicator_code": "EMPLOI-SALARIE-TRIM-NATIONAL",
+    "title": "Estimations d'emploi salarié par secteur d'activité",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NAF2",
+      "NAF2_RGP",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Estimations d'emploi salarié par secteur d'activité (EMPLOI-SALARIE-TRIM-NATIONAL). Description: . Dimensions: INDICATEUR, NAF2, NAF2_RGP, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ENQ-CONJ-ACT-IND",
+    "indicator_code": "ENQ-CONJ-ACT-IND",
+    "title": "Conjoncture dans l’industrie",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "QUESTIONS_ECAI",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Conjoncture dans l’industrie (ENQ-CONJ-ACT-IND). Description: . Dimensions: INDICATEUR, QUESTIONS_ECAI, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ENQ-CONJ-ART-BAT",
+    "indicator_code": "ENQ-CONJ-ART-BAT",
+    "title": "Conjoncture dans l’artisanat du bâtiment",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "ACTIVITE_ECB",
+      "NATURE",
+      "CLIENTELE_ECB",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Conjoncture dans l’artisanat du bâtiment (ENQ-CONJ-ART-BAT). Description: . Dimensions: INDICATEUR, ACTIVITE_ECB, NATURE, CLIENTELE_ECB, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ENQ-CONJ-COM-DET",
+    "indicator_code": "ENQ-CONJ-COM-DET",
+    "title": "Conjoncture dans le commerce de détail et le commerce et la réparation automobile",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "ACTIVITE_ECCD",
+      "QUESTIONS_ECCD",
+      "PRODUITS_ECCD",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Conjoncture dans le commerce de détail et le commerce et la réparation automobile (ENQ-CONJ-COM-DET). Description: . Dimensions: INDICATEUR, ACTIVITE_ECCD, QUESTIONS_ECCD, PRODUITS_ECCD, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ENQ-CONJ-COM-GROS",
+    "indicator_code": "ENQ-CONJ-COM-GROS",
+    "title": "Conjoncture dans le commerce de gros",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "ACTIVITE_ECCG",
+      "QUESTIONS_ECCG",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Conjoncture dans le commerce de gros (ENQ-CONJ-COM-GROS). Description: . Dimensions: INDICATEUR, ACTIVITE_ECCG, QUESTIONS_ECCG, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ENQ-CONJ-IND-BAT",
+    "indicator_code": "ENQ-CONJ-IND-BAT",
+    "title": "Conjoncture dans l'industrie du bâtiment",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "ACTIVITE_ECB",
+      "NATURE",
+      "CLIENTELE_ECB",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Conjoncture dans l'industrie du bâtiment (ENQ-CONJ-IND-BAT). Description: . Dimensions: INDICATEUR, ACTIVITE_ECB, NATURE, CLIENTELE_ECB, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ENQ-CONJ-INV-IND",
+    "indicator_code": "ENQ-CONJ-INV-IND",
+    "title": "Investissements dans l’industrie",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "ECII_NAF",
+      "NATURE",
+      "FACTEUR_INV_ECII",
+      "DEST_INV_ECII",
+      "REF_AREA",
+      "QUESTIONS_ECII",
+      "PERIODE",
+      "TAILLE_ENT_ECII",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Investissements dans l’industrie (ENQ-CONJ-INV-IND). Description: . Dimensions: INDICATEUR, ECII_NAF, NATURE, FACTEUR_INV_ECII, DEST_INV_ECII, REF_AREA, QUESTIONS_ECII, PERIODE, TAILLE_ENT_ECII, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ENQ-CONJ-MENAGES",
+    "indicator_code": "ENQ-CONJ-MENAGES",
+    "title": "Conjoncture auprès des ménages",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "QUESTIONS_CAMME",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Conjoncture auprès des ménages (ENQ-CONJ-MENAGES). Description: . Dimensions: INDICATEUR, QUESTIONS_CAMME, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ENQ-CONJ-PROMO-IMMO",
+    "indicator_code": "ENQ-CONJ-PROMO-IMMO",
+    "title": "Conjoncture dans la promotion immobilière",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "FINANCEMENT_ECB",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Conjoncture dans la promotion immobilière (ENQ-CONJ-PROMO-IMMO). Description: . Dimensions: INDICATEUR, FINANCEMENT_ECB, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ENQ-CONJ-SERV",
+    "indicator_code": "ENQ-CONJ-SERV",
+    "title": "Conjoncture dans les services",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "ACTIVITE_EC",
+      "QUESTIONS_ECS",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Conjoncture dans les services (ENQ-CONJ-SERV). Description: . Dimensions: INDICATEUR, ACTIVITE_EC, QUESTIONS_ECS, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ENQ-CONJ-TP",
+    "indicator_code": "ENQ-CONJ-TP",
+    "title": "Conjoncture dans les travaux publics",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "CLIENTELE_ECB",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Conjoncture dans les travaux publics (ENQ-CONJ-TP). Description: . Dimensions: INDICATEUR, NATURE, CLIENTELE_ECB, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ENQ-CONJ-TRES-IND",
+    "indicator_code": "ENQ-CONJ-TRES-IND",
+    "title": "Enquête de conjoncture de trésorerie dans l'industrie",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "ECII_NAF",
+      "NATURE",
+      "REF_AREA",
+      "TAILLE_ENT_ETI",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Enquête de conjoncture de trésorerie dans l'industrie (ENQ-CONJ-TRES-IND). Description: . Dimensions: INDICATEUR, ECII_NAF, NATURE, REF_AREA, TAILLE_ENT_ETI, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IC-PROD-CONS-2010",
+    "indicator_code": "IC-PROD-CONS-2010",
+    "title": "Indices des coûts de production dans la construction - Résultats par secteur d'activité",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "CONSTRUCTION_ACTIVITE",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices des coûts de production dans la construction - Résultats par secteur d'activité (IC-PROD-CONS-2010). Description: . Dimensions: INDICATEUR, CONSTRUCTION_ACTIVITE, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IC-PROD-CONS-2015",
+    "indicator_code": "IC-PROD-CONS-2015",
+    "title": "Indices des coûts de production dans la construction",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "CONSTRUCTION_ACTIVITE",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indices des coûts de production dans la construction (IC-PROD-CONS-2015). Description: . Dimensions: INDICATEUR, CONSTRUCTION_ACTIVITE, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IC-PROD-CONS-2021",
+    "indicator_code": "IC-PROD-CONS-2021",
+    "title": "Indices des coûts de production dans la construction",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "CONSTRUCTION_ACTIVITE",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices des coûts de production dans la construction (IC-PROD-CONS-2021). Description: . Dimensions: INDICATEUR, CONSTRUCTION_ACTIVITE, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ICA-2005-COM-SERV",
+    "indicator_code": "ICA-2005-COM-SERV",
+    "title": "Indice de chiffre d'affaires dans le commerce et les services",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indice de chiffre d'affaires dans le commerce et les services (ICA-2005-COM-SERV). Description: . Dimensions: INDICATEUR, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ICA-2005-EMAGSA",
+    "indicator_code": "ICA-2005-EMAGSA",
+    "title": "Indice de chiffre d'affaire dans les grandes surfaces alimentaires (EMAGSA)",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "TYPE-SURF-ALIM",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indice de chiffre d'affaire dans les grandes surfaces alimentaires (EMAGSA) (ICA-2005-EMAGSA). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, TYPE-SURF-ALIM, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ICA-2005-IND-CONS",
+    "indicator_code": "ICA-2005-IND-CONS",
+    "title": "Indice de chiffre d'affaire dans l'industrie et la construction - Secteurs d'activités regroupés et détaillés",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "MARCHE",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indice de chiffre d'affaire dans l'industrie et la construction - Secteurs d'activités regroupés et détaillés (ICA-2005-IND-CONS). Description: . Dimensions: INDICATEUR, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, MARCHE, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ICA-2010-COMMERCE",
+    "indicator_code": "ICA-2010-COMMERCE",
+    "title": "Volume des ventes dans le commerce - Commerce de gros, détail, réparation d'automobiles et motocycles",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Volume des ventes dans le commerce - Commerce de gros, détail, réparation d'automobiles et motocycles (ICA-2010-COMMERCE). Description: . Dimensions: INDICATEUR, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ICA-2010-EMAGSA",
+    "indicator_code": "ICA-2010-EMAGSA",
+    "title": "Indice de chiffre d’affaires dans les grandes surfaces alimentaires (EMAGSA)",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "TYPE-SURF-ALIM",
+      "MARCHE",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indice de chiffre d’affaires dans les grandes surfaces alimentaires (EMAGSA) (ICA-2010-EMAGSA). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, TYPE-SURF-ALIM, MARCHE, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ICA-2010-IND-CONS",
+    "indicator_code": "ICA-2010-IND-CONS",
+    "title": "Indice de chiffre d’affaires dans l’industrie et la construction - Secteurs d'activités regroupés et détaillés",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "MARCHE",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indice de chiffre d’affaires dans l’industrie et la construction - Secteurs d'activités regroupés et détaillés (ICA-2010-IND-CONS). Description: . Dimensions: INDICATEUR, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, MARCHE, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ICA-2010-SERVICE",
+    "indicator_code": "ICA-2010-SERVICE",
+    "title": "Indice de production dans les services",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indice de production dans les services (ICA-2010-SERVICE). Description: . Dimensions: INDICATEUR, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ICA-2015-COMMERCE",
+    "indicator_code": "ICA-2015-COMMERCE",
+    "title": "Indices de chiffre d'affaires dans le commerce",
+    "description": "",
+    "dimensions": [
+      "EUROSTAT_ICA_COMMERCE",
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indices de chiffre d'affaires dans le commerce (ICA-2015-COMMERCE). Description: . Dimensions: EUROSTAT_ICA_COMMERCE, INDICATEUR, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ICA-2015-EMAGSA",
+    "indicator_code": "ICA-2015-EMAGSA",
+    "title": "Indices de chiffre d'affaires dans les grandes surfaces alimentaires",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "TYPE-SURF-ALIM",
+      "MARCHE",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices de chiffre d'affaires dans les grandes surfaces alimentaires (ICA-2015-EMAGSA). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, TYPE-SURF-ALIM, MARCHE, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ICA-2015-IND-CONS",
+    "indicator_code": "ICA-2015-IND-CONS",
+    "title": "Indices de chiffre d'affaires dans l'industrie et la construction",
+    "description": "",
+    "dimensions": [
+      "EUROSTAT_ICA_IND-CONS",
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "MARCHE",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indices de chiffre d'affaires dans l'industrie et la construction (ICA-2015-IND-CONS). Description: . Dimensions: EUROSTAT_ICA_IND-CONS, INDICATEUR, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, MARCHE, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ICA-2015-SERVICES",
+    "indicator_code": "ICA-2015-SERVICES",
+    "title": "Indices de chiffre d'affaires dans les services",
+    "description": "",
+    "dimensions": [
+      "EUROSTAT_ICA-SERVICES",
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indices de chiffre d'affaires dans les services (ICA-2015-SERVICES). Description: . Dimensions: EUROSTAT_ICA-SERVICES, INDICATEUR, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ICA-2021-COMMERCE",
+    "indicator_code": "ICA-2021-COMMERCE",
+    "title": "Indices de chiffre d'affaires dans le commerce",
+    "description": "",
+    "dimensions": [
+      "EUROSTAT_ICA_COMMERCE",
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices de chiffre d'affaires dans le commerce (ICA-2021-COMMERCE). Description: . Dimensions: EUROSTAT_ICA_COMMERCE, INDICATEUR, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ICA-2021-IND-CONS",
+    "indicator_code": "ICA-2021-IND-CONS",
+    "title": "Indices de chiffre d'affaires dans l'industrie et la construction",
+    "description": "",
+    "dimensions": [
+      "EUROSTAT_ICA_IND-CONS",
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "MARCHE",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices de chiffre d'affaires dans l'industrie et la construction (ICA-2021-IND-CONS). Description: . Dimensions: EUROSTAT_ICA_IND-CONS, INDICATEUR, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, MARCHE, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ICA-2021-SERVICES",
+    "indicator_code": "ICA-2021-SERVICES",
+    "title": "Indices de chiffre d'affaires dans les services",
+    "description": "",
+    "dimensions": [
+      "EUROSTAT_ICA-SERVICES",
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices de chiffre d'affaires dans les services (ICA-2021-SERVICES). Description: . Dimensions: EUROSTAT_ICA-SERVICES, INDICATEUR, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ICHT-2008",
+    "indicator_code": "ICHT-2008",
+    "title": "Indice du coût horaire du travail",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "COMPO_COUT_TRAVAIL",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indice du coût horaire du travail (ICHT-2008). Description: . Dimensions: INDICATEUR, NAF2, NATURE, COMPO_COUT_TRAVAIL, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ICT-2012",
+    "indicator_code": "ICT-2012",
+    "title": "Indice du coût du travail (ICT) - Résultats détaillés",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "COMPO_COUT_TRAVAIL",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indice du coût du travail (ICT) - Résultats détaillés (ICT-2012). Description: . Dimensions: INDICATEUR, NAF2, NATURE, COMPO_COUT_TRAVAIL, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ICT-2016",
+    "indicator_code": "ICT-2016",
+    "title": "Indice du coût du travail",
+    "description": "",
+    "dimensions": [
+      "EUROSTAT_ICT",
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "COMPO_COUT_TRAVAIL",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indice du coût du travail (ICT-2016). Description: . Dimensions: EUROSTAT_ICT, INDICATEUR, NAF2, NATURE, COMPO_COUT_TRAVAIL, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ICT-2020",
+    "indicator_code": "ICT-2020",
+    "title": "Indice du coût du travail",
+    "description": "",
+    "dimensions": [
+      "EUROSTAT_ICT",
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "COMPO_COUT_TRAVAIL",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indice du coût du travail (ICT-2020). Description: . Dimensions: EUROSTAT_ICT, INDICATEUR, NAF2, NATURE, COMPO_COUT_TRAVAIL, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ILC-ILAT-ICC",
+    "indicator_code": "ILC-ILAT-ICC",
+    "title": "Indices pour la révision d’un bail commercial ou professionnel",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices pour la révision d’un bail commercial ou professionnel (ILC-ILAT-ICC). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "INDEX-BT-TP-DIV-ANCIENNES-BASES",
+    "indicator_code": "INDEX-BT-TP-DIV-ANCIENNES-BASES",
+    "title": "Index bâtiment, travaux publics et divers de la construction",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "CONSTRUCTION_ACTIVITE",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Index bâtiment, travaux publics et divers de la construction (INDEX-BT-TP-DIV-ANCIENNES-BASES). Description: . Dimensions: INDICATEUR, CONSTRUCTION_ACTIVITE, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "INDEX-BT-TP-DIV-IM-2010",
+    "indicator_code": "INDEX-BT-TP-DIV-IM-2010",
+    "title": "Index bâtiment, travaux publics et divers de la construction",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "CONSTRUCTION_ACTIVITE",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Index bâtiment, travaux publics et divers de la construction (INDEX-BT-TP-DIV-IM-2010). Description: . Dimensions: INDICATEUR, CONSTRUCTION_ACTIVITE, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "INDICES",
+    "indicator_code": "INDICES",
+    "title": "Indices des loyers - Base 2019",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SECTEURS_LOYERS"
+    ],
+    "embedding_text": "Dataset: Indices des loyers - Base 2019 (INDICES). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SECTEURS_LOYERS.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IP-PROD-CONS-N-HAB-2010",
+    "indicator_code": "IP-PROD-CONS-N-HAB-2010",
+    "title": "Indice des prix de production de la construction neuve à usage d’habitation",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indice des prix de production de la construction neuve à usage d’habitation (IP-PROD-CONS-N-HAB-2010). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IP-PROD-CONS-N-HAB-2015",
+    "indicator_code": "IP-PROD-CONS-N-HAB-2015",
+    "title": "Indice des prix de production de la construction neuve à usage d'habitation",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indice des prix de production de la construction neuve à usage d'habitation (IP-PROD-CONS-N-HAB-2015). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IP-PROD-CONS-N-HAB-2021",
+    "indicator_code": "IP-PROD-CONS-N-HAB-2021",
+    "title": "Indice des prix de production de la construction neuve à usage d'habitation",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indice des prix de production de la construction neuve à usage d'habitation (IP-PROD-CONS-N-HAB-2021). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPAGRI-BASE-2015",
+    "indicator_code": "IPAGRI-BASE-2015",
+    "title": "Indices des prix dans l'agriculture",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "IPAGRI",
+      "PRODUITS_IPAGRI_2015",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices des prix dans l'agriculture (IPAGRI-BASE-2015). Description: . Dimensions: INDICATEUR, IPAGRI, PRODUITS_IPAGRI_2015, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPAGRI-BASE-2020",
+    "indicator_code": "IPAGRI-BASE-2020",
+    "title": "Indices des prix dans l'agriculture",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "IPAGRI",
+      "PRODUITS_IPAGRI_2020",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indices des prix dans l'agriculture (IPAGRI-BASE-2020). Description: . Dimensions: INDICATEUR, IPAGRI, PRODUITS_IPAGRI_2020, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPAGRI",
+    "indicator_code": "IPAGRI",
+    "title": "Indices des prix dans l’agriculture - IPPAP, IPGA, IPAMPA",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "PRODUITS_IPAGRI",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices des prix dans l’agriculture - IPPAP, IPGA, IPAMPA (IPAGRI). Description: . Dimensions: INDICATEUR, PRODUITS_IPAGRI, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPC-1970-1980",
+    "indicator_code": "IPC-1970-1980",
+    "title": "Indices des prix à la consommation",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "PRODUITS_IPC_1970_1980",
+      "REGROUPEMENTS_IPC_1970_1980",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices des prix à la consommation (IPC-1970-1980). Description: . Dimensions: INDICATEUR, PRODUITS_IPC_1970_1980, REGROUPEMENTS_IPC_1970_1980, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPC-1990",
+    "indicator_code": "IPC-1990",
+    "title": "Indices des prix à la consommation",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "COICOP_1990",
+      "PRODUITS_1990",
+      "NATURE",
+      "MENAGES_IPC",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices des prix à la consommation (IPC-1990). Description: . Dimensions: INDICATEUR, COICOP_1990, PRODUITS_1990, NATURE, MENAGES_IPC, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPC-1998",
+    "indicator_code": "IPC-1998",
+    "title": "Indices des prix à la consommation - Résultats par regroupement de produits",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "COICOP1998",
+      "PRIX_CONSO",
+      "NATURE",
+      "MENAGES_IPC",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices des prix à la consommation - Résultats par regroupement de produits (IPC-1998). Description: . Dimensions: INDICATEUR, COICOP1998, PRIX_CONSO, NATURE, MENAGES_IPC, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPC-2015",
+    "indicator_code": "IPC-2015",
+    "title": "Indices des prix à la consommation",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "FORME-VENTE",
+      "COICOP2016",
+      "PRIX_CONSO",
+      "NATURE",
+      "MENAGES_IPC",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indices des prix à la consommation (IPC-2015). Description: . Dimensions: INDICATEUR, FORME-VENTE, COICOP2016, PRIX_CONSO, NATURE, MENAGES_IPC, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPC-2025",
+    "indicator_code": "IPC-2025",
+    "title": "Indices des prix à la consommation",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "FORME-VENTE",
+      "COICOP2018",
+      "PRIX_CONSO",
+      "NATURE",
+      "MENAGES_IPC",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indices des prix à la consommation (IPC-2025). Description: . Dimensions: INDICATEUR, FORME-VENTE, COICOP2018, PRIX_CONSO, NATURE, MENAGES_IPC, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPC-PM-2015",
+    "indicator_code": "IPC-PM-2015",
+    "title": "Prix moyens de vente de détail",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "PRIX_CONSO",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Prix moyens de vente de détail (IPC-PM-2015). Description: . Dimensions: INDICATEUR, PRIX_CONSO, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPCH-2005",
+    "indicator_code": "IPCH-2005",
+    "title": "Indices des prix à la consommation harmonisés - Résultats par produit",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "PRODUITS_IPCH2005",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices des prix à la consommation harmonisés - Résultats par produit (IPCH-2005). Description: . Dimensions: INDICATEUR, PRODUITS_IPCH2005, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPCH-2015",
+    "indicator_code": "IPCH-2015",
+    "title": "Indices des prix à la consommation harmonisés",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "COICOP2016",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indices des prix à la consommation harmonisés (IPCH-2015). Description: . Dimensions: INDICATEUR, COICOP2016, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPCH-2025",
+    "indicator_code": "IPCH-2025",
+    "title": "Indices des prix à la consommation harmonisés",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "COICOP2018",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indices des prix à la consommation harmonisés (IPCH-2025). Description: . Dimensions: INDICATEUR, COICOP2018, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPEA-2010",
+    "indicator_code": "IPEA-2010",
+    "title": "Indice des prix d’entretien-amélioration des logements (IPEA) - Prix de production",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "CONSTRUCTION_ACTIVITE",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indice des prix d’entretien-amélioration des logements (IPEA) - Prix de production (IPEA-2010). Description: . Dimensions: INDICATEUR, CONSTRUCTION_ACTIVITE, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPEA-2015",
+    "indicator_code": "IPEA-2015",
+    "title": "Indice des prix d'entretien-amélioration des bâtiments",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "TYPE_BATIMENT",
+      "CONSTRUCTION_ACTIVITE",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indice des prix d'entretien-amélioration des bâtiments (IPEA-2015). Description: . Dimensions: INDICATEUR, TYPE_BATIMENT, CONSTRUCTION_ACTIVITE, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPEA-2021",
+    "indicator_code": "IPEA-2021",
+    "title": "Indice des prix d'entretien-amélioration des bâtiments",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "TYPE_BATIMENT",
+      "CONSTRUCTION_ACTIVITE",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indice des prix d'entretien-amélioration des bâtiments (IPEA-2021). Description: . Dimensions: INDICATEUR, TYPE_BATIMENT, CONSTRUCTION_ACTIVITE, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPGD-1998",
+    "indicator_code": "IPGD-1998",
+    "title": "Indices des prix dans la grande distribution",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "FORME-VENTE",
+      "PRIX_CONSO",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices des prix dans la grande distribution (IPGD-1998). Description: . Dimensions: INDICATEUR, FORME-VENTE, PRIX_CONSO, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPGD-2015",
+    "indicator_code": "IPGD-2015",
+    "title": "Indice des prix dans la grande distribution",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "FORME-VENTE",
+      "PRIX_CONSO",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indice des prix dans la grande distribution (IPGD-2015). Description: . Dimensions: INDICATEUR, FORME-VENTE, PRIX_CONSO, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPI-1990",
+    "indicator_code": "IPI-1990",
+    "title": "IPI-1990",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "ACTIVITE_IPI1990",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: IPI-1990 (IPI-1990). Description: . Dimensions: INDICATEUR, ACTIVITE_IPI1990, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPI-2005",
+    "indicator_code": "IPI-2005",
+    "title": "Indices de la production industrielle - Résultats par secteur d'activité détaillé et regroupements MIG",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "AUTRES_REGROUPEMENTS",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices de la production industrielle - Résultats par secteur d'activité détaillé et regroupements MIG (IPI-2005). Description: . Dimensions: INDICATEUR, AUTRES_REGROUPEMENTS, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPI-2010",
+    "indicator_code": "IPI-2010",
+    "title": "Indices de la production industrielle - Résultats par secteur d'activité détaillé et regroupements MIG",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "AUTRES_REGROUPEMENTS",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices de la production industrielle - Résultats par secteur d'activité détaillé et regroupements MIG (IPI-2010). Description: . Dimensions: INDICATEUR, AUTRES_REGROUPEMENTS, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPI-2015",
+    "indicator_code": "IPI-2015",
+    "title": "Indice de la production industrielle",
+    "description": "",
+    "dimensions": [
+      "BDM_EUR_IPI",
+      "INDICATEUR",
+      "AUTRES_REGROUPEMENTS",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indice de la production industrielle (IPI-2015). Description: . Dimensions: BDM_EUR_IPI, INDICATEUR, AUTRES_REGROUPEMENTS, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPLA-IPLNA-2010",
+    "indicator_code": "IPLA-IPLNA-2010",
+    "title": "Indices des prix des logements neufs et indices Notaires-Insee des prix des logements anciens",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices des prix des logements neufs et indices Notaires-Insee des prix des logements anciens (IPLA-IPLNA-2010). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPLA-IPLNA-2015",
+    "indicator_code": "IPLA-IPLNA-2015",
+    "title": "Indices des prix des logements neufs et Indices Notaires-Insee des prix des logements anciens",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indices des prix des logements neufs et Indices Notaires-Insee des prix des logements anciens (IPLA-IPLNA-2015). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPPI-2005",
+    "indicator_code": "IPPI-2005",
+    "title": "Indices de prix de production et d'importation dans l'industrie",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "PRODUIT_DETAILLE_IPPI",
+      "PRODUIT_IPPI",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices de prix de production et d'importation dans l'industrie (IPPI-2005). Description: . Dimensions: INDICATEUR, PRODUIT_DETAILLE_IPPI, PRODUIT_IPPI, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPPI-2010",
+    "indicator_code": "IPPI-2010",
+    "title": "Indices de prix de production et d'importation dans l'industrie",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "PRODUIT_DETAILLE_IPPI",
+      "PRODUIT_IPPI",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices de prix de production et d'importation dans l'industrie (IPPI-2010). Description: . Dimensions: INDICATEUR, PRODUIT_DETAILLE_IPPI, PRODUIT_IPPI, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPPI-2015",
+    "indicator_code": "IPPI-2015",
+    "title": "Indices de prix de production et d'importation dans l'industrie",
+    "description": "",
+    "dimensions": [
+      "EUROSTAT_IPPI",
+      "INDICATEUR",
+      "PRODUIT_DETAILLE_IPPI",
+      "PRODUIT_IPPI",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indices de prix de production et d'importation dans l'industrie (IPPI-2015). Description: . Dimensions: EUROSTAT_IPPI, INDICATEUR, PRODUIT_DETAILLE_IPPI, PRODUIT_IPPI, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPPI-2021",
+    "indicator_code": "IPPI-2021",
+    "title": "Indices de prix de production et d'importation dans l'industrie",
+    "description": "",
+    "dimensions": [
+      "EUROSTAT_IPPI",
+      "INDICATEUR",
+      "PRODUIT_DETAILLE_IPPI",
+      "PRODUIT_IPPI",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indices de prix de production et d'importation dans l'industrie (IPPI-2021). Description: . Dimensions: EUROSTAT_IPPI, INDICATEUR, PRODUIT_DETAILLE_IPPI, PRODUIT_IPPI, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPPMP-NF",
+    "indicator_code": "IPPMP-NF",
+    "title": "Indices de prix et cours des matières premières",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "MATIERES_PREMIERES",
+      "NATURE",
+      "NOUVEAU_FOURNISSEUR",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "MONNAIE",
+      "DEVISE",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indices de prix et cours des matières premières (IPPMP-NF). Description: . Dimensions: INDICATEUR, MATIERES_PREMIERES, NATURE, NOUVEAU_FOURNISSEUR, REF_AREA, UNIT_MEASURE, CORRECTION, MONNAIE, DEVISE, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPPMP",
+    "indicator_code": "IPPMP",
+    "title": "Indices de prix et cours des matières premières",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "MATIERES_PREMIERES",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "MONNAIE",
+      "DEVISE",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices de prix et cours des matières premières (IPPMP). Description: . Dimensions: INDICATEUR, MATIERES_PREMIERES, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, MONNAIE, DEVISE, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPPS-2010",
+    "indicator_code": "IPPS-2010",
+    "title": "Indice des prix de production dans les services",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "PRODUIT_DETAILLE_IPSE",
+      "PRODUIT_IPSE",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indice des prix de production dans les services (IPPS-2010). Description: . Dimensions: INDICATEUR, PRODUIT_DETAILLE_IPSE, PRODUIT_IPSE, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPPS-2015",
+    "indicator_code": "IPPS-2015",
+    "title": "Indice des prix de production dans les services",
+    "description": "",
+    "dimensions": [
+      "EUROSTAT_IPPS",
+      "INDICATEUR",
+      "PRODUIT_DETAILLE_IPSE",
+      "PRODUIT_IPSE",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indice des prix de production dans les services (IPPS-2015). Description: . Dimensions: EUROSTAT_IPPS, INDICATEUR, PRODUIT_DETAILLE_IPSE, PRODUIT_IPSE, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPPS-2021",
+    "indicator_code": "IPPS-2021",
+    "title": "Indice des prix de production dans les services",
+    "description": "",
+    "dimensions": [
+      "EUROSTAT_IPPS",
+      "INDICATEUR",
+      "PRODUIT_DETAILLE_IPSE",
+      "PRODUIT_IPSE",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indice des prix de production dans les services (IPPS-2021). Description: . Dimensions: EUROSTAT_IPPS, INDICATEUR, PRODUIT_DETAILLE_IPSE, PRODUIT_IPSE, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPS-2015-SERVICES",
+    "indicator_code": "IPS-2015-SERVICES",
+    "title": "Indices de production dans les services",
+    "description": "",
+    "dimensions": [
+      "EUROSTAT_IPS-SERVICES",
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indices de production dans les services (IPS-2015-SERVICES). Description: . Dimensions: EUROSTAT_IPS-SERVICES, INDICATEUR, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IPS-2021-SERVICES",
+    "indicator_code": "IPS-2021-SERVICES",
+    "title": "Indices de production dans les services",
+    "description": "",
+    "dimensions": [
+      "EUROSTAT_IPS-SERVICES",
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices de production dans les services (IPS-2021-SERVICES). Description: . Dimensions: EUROSTAT_IPS-SERVICES, INDICATEUR, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "IRL",
+    "indicator_code": "IRL",
+    "title": "Indice pour la révision d’un loyer d’habitation",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Indice pour la révision d’un loyer d’habitation (IRL). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "MARIAGES-NUPTIALITE-PACS-DIVORCES",
+    "indicator_code": "MARIAGES-NUPTIALITE-PACS-DIVORCES",
+    "title": "Mariages, nuptialité et Pactes civils de solidarité (Pacs)",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "DEMOGRAPHIE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Mariages, nuptialité et Pactes civils de solidarité (Pacs) (MARIAGES-NUPTIALITE-PACS-DIVORCES). Description: . Dimensions: INDICATEUR, NATURE, DEMOGRAPHIE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "NAISSANCES-FECONDITE",
+    "indicator_code": "NAISSANCES-FECONDITE",
+    "title": "Naissances et fécondité",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "DEMOGRAPHIE",
+      "REF_AREA",
+      "AGE",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Naissances et fécondité (NAISSANCES-FECONDITE). Description: . Dimensions: INDICATEUR, NATURE, DEMOGRAPHIE, REF_AREA, AGE, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ODD-CONSOMMATION-PRODUCTION",
+    "indicator_code": "ODD-CONSOMMATION-PRODUCTION",
+    "title": "Objectif de développement durable n°12 : Consommation et production responsable",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "INDICATEUR-ODD",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "DECHETS-RECYCLAGE-CONSOMMATION-ODD",
+      "SUPPRESSION-SERIES"
+    ],
+    "embedding_text": "Dataset: Objectif de développement durable n°12 : Consommation et production responsable (ODD-CONSOMMATION-PRODUCTION). Description: . Dimensions: INDICATEUR, INDICATEUR-ODD, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, DECHETS-RECYCLAGE-CONSOMMATION-ODD, SUPPRESSION-SERIES.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ODD-EAU-PROPRE-ASSAINISSEMENT",
+    "indicator_code": "ODD-EAU-PROPRE-ASSAINISSEMENT",
+    "title": "Objectif de développement durable n°6 : Eau propre et assainissement",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "INDICATEUR-ODD",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "GRANDS_USAGES_EAU",
+      "QUALITE_EAU",
+      "EAU-ODD",
+      "ASSAINISSEMENT-ODD"
+    ],
+    "embedding_text": "Dataset: Objectif de développement durable n°6 : Eau propre et assainissement (ODD-EAU-PROPRE-ASSAINISSEMENT). Description: . Dimensions: INDICATEUR, INDICATEUR-ODD, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, GRANDS_USAGES_EAU, QUALITE_EAU, EAU-ODD, ASSAINISSEMENT-ODD.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ODD-EDUCATION-QUALITE",
+    "indicator_code": "ODD-EDUCATION-QUALITE",
+    "title": "Objectif de développement durable n°4 : Education de qualité",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "INDICATEUR-ODD",
+      "NATURE",
+      "REF_AREA",
+      "SEXE",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SESC-ODD",
+      "PROJ_EDUC_DD-ODD",
+      "DISCIPLINE-ODD",
+      "NIV_COMP_NUM-ODD",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Objectif de développement durable n°4 : Education de qualité (ODD-EDUCATION-QUALITE). Description: . Dimensions: INDICATEUR, INDICATEUR-ODD, NATURE, REF_AREA, SEXE, UNIT_MEASURE, CORRECTION, SESC-ODD, PROJ_EDUC_DD-ODD, DISCIPLINE-ODD, NIV_COMP_NUM-ODD, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ODD-EGALITE-SEXES",
+    "indicator_code": "ODD-EGALITE-SEXES",
+    "title": "Objectif de développement durable n°5 : Égalité entre les sexes",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "INDICATEUR-ODD",
+      "NATURE",
+      "FORMATION-UNIVERSITE-ODD",
+      "REF_AREA",
+      "SEXE",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "ENCADREMENT-ODD"
+    ],
+    "embedding_text": "Dataset: Objectif de développement durable n°5 : Égalité entre les sexes (ODD-EGALITE-SEXES). Description: . Dimensions: INDICATEUR, INDICATEUR-ODD, NATURE, FORMATION-UNIVERSITE-ODD, REF_AREA, SEXE, UNIT_MEASURE, CORRECTION, ENCADREMENT-ODD.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ODD-ENERGIE-PROPRE-COUT-ABORDABLE",
+    "indicator_code": "ODD-ENERGIE-PROPRE-COUT-ABORDABLE",
+    "title": "Objectif de développement durable n°7 : Energie propre et d'un coût abordable",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "INDICATEUR-ODD",
+      "NATURE",
+      "TYPE_MENAGE-ODD",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SIT_REVENU-ODD",
+      "BASIND",
+      "SECTEURS-ODD",
+      "TYPE_MAT_PREM-ODD",
+      "ENERGIE_PRIMAIRE-ODD"
+    ],
+    "embedding_text": "Dataset: Objectif de développement durable n°7 : Energie propre et d'un coût abordable (ODD-ENERGIE-PROPRE-COUT-ABORDABLE). Description: . Dimensions: INDICATEUR, INDICATEUR-ODD, NATURE, TYPE_MENAGE-ODD, REF_AREA, UNIT_MEASURE, CORRECTION, SIT_REVENU-ODD, BASIND, SECTEURS-ODD, TYPE_MAT_PREM-ODD, ENERGIE_PRIMAIRE-ODD.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ODD-ERADICATION-PAUVRETE",
+    "indicator_code": "ODD-ERADICATION-PAUVRETE",
+    "title": "Objectif de développement durable n°1 : Éradication de la pauvreté",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "INDICATEUR-ODD",
+      "ACTIVITE-ODD",
+      "NATURE",
+      "METIER-ODD",
+      "REF_AREA",
+      "SEXE",
+      "AGE",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "NIVEAU-VIE-MEDIAN-ODD",
+      "UNITE-CONSOMMATION-ODD"
+    ],
+    "embedding_text": "Dataset: Objectif de développement durable n°1 : Éradication de la pauvreté (ODD-ERADICATION-PAUVRETE). Description: . Dimensions: INDICATEUR, INDICATEUR-ODD, ACTIVITE-ODD, NATURE, METIER-ODD, REF_AREA, SEXE, AGE, UNIT_MEASURE, CORRECTION, NIVEAU-VIE-MEDIAN-ODD, UNITE-CONSOMMATION-ODD.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ODD-INFRASTRUCTURES-RESILIENTES-INNOVATION",
+    "indicator_code": "ODD-INFRASTRUCTURES-RESILIENTES-INNOVATION",
+    "title": "Objectif de développement durable n°9 : Infrastructures résilientes et innovation",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "INDICATEUR-ODD",
+      "OP_TRANSPORTS",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "CREDITS_PUBLICS_RD-ODD",
+      "EMISSION_GES-ODD"
+    ],
+    "embedding_text": "Dataset: Objectif de développement durable n°9 : Infrastructures résilientes et innovation (ODD-INFRASTRUCTURES-RESILIENTES-INNOVATION). Description: . Dimensions: INDICATEUR, INDICATEUR-ODD, OP_TRANSPORTS, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, CREDITS_PUBLICS_RD-ODD, EMISSION_GES-ODD.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ODD-LUTTE-CHANGEMENT-CLIMATIQUE",
+    "indicator_code": "ODD-LUTTE-CHANGEMENT-CLIMATIQUE",
+    "title": "Objectif de développement durable n°13 : Mesures relatives à la lutte contre le changement climatique",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "INDICATEUR-ODD",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "EMISSION_GES-ODD",
+      "EMPREINTE-CARBONE-ODD",
+      "EVENEMENTS-RISQUES-NATURELS-ODD"
+    ],
+    "embedding_text": "Dataset: Objectif de développement durable n°13 : Mesures relatives à la lutte contre le changement climatique (ODD-LUTTE-CHANGEMENT-CLIMATIQUE). Description: . Dimensions: INDICATEUR, INDICATEUR-ODD, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, EMISSION_GES-ODD, EMPREINTE-CARBONE-ODD, EVENEMENTS-RISQUES-NATURELS-ODD.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ODD-PAIX-JUSTICE-INSTITUTIONS-EFFICACES",
+    "indicator_code": "ODD-PAIX-JUSTICE-INSTITUTIONS-EFFICACES",
+    "title": "Objectif de développement durable n°16 : Paix, justice et institutions efficaces",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "INDICATEUR-ODD",
+      "NATURE",
+      "REF_AREA",
+      "SEXE",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "CONFIANCE-INSTITUTIONS-ODD",
+      "JUSTICE-ODD"
+    ],
+    "embedding_text": "Dataset: Objectif de développement durable n°16 : Paix, justice et institutions efficaces (ODD-PAIX-JUSTICE-INSTITUTIONS-EFFICACES). Description: . Dimensions: INDICATEUR, INDICATEUR-ODD, NATURE, REF_AREA, SEXE, UNIT_MEASURE, CORRECTION, CONFIANCE-INSTITUTIONS-ODD, JUSTICE-ODD.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ODD-PARTENARIATS-REALISATION",
+    "indicator_code": "ODD-PARTENARIATS-REALISATION",
+    "title": "Objectif de développement durable n°17 : Partenariats pour la réalisation des objectifs",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "INDICATEUR-ODD",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SECTEURS-MARQUEURS-DISTRIBUTION-ODD",
+      "TYPES-AIDES-DEVELOPPEMENT-ODD"
+    ],
+    "embedding_text": "Dataset: Objectif de développement durable n°17 : Partenariats pour la réalisation des objectifs (ODD-PARTENARIATS-REALISATION). Description: . Dimensions: INDICATEUR, INDICATEUR-ODD, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SECTEURS-MARQUEURS-DISTRIBUTION-ODD, TYPES-AIDES-DEVELOPPEMENT-ODD.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ODD-REDUCTION-INEGALITES",
+    "indicator_code": "ODD-REDUCTION-INEGALITES",
+    "title": "Objectif de développement durable n°10 : Réduction des inégalités",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "INDICATEUR-ODD",
+      "NATURE",
+      "TYPE_MENAGE-ODD",
+      "REF_AREA",
+      "SEXE",
+      "AGE",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "CONNECTION_INTERNET"
+    ],
+    "embedding_text": "Dataset: Objectif de développement durable n°10 : Réduction des inégalités (ODD-REDUCTION-INEGALITES). Description: . Dimensions: INDICATEUR, INDICATEUR-ODD, NATURE, TYPE_MENAGE-ODD, REF_AREA, SEXE, AGE, UNIT_MEASURE, CORRECTION, CONNECTION_INTERNET.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ODD-SANTE-BIEN-ETRE",
+    "indicator_code": "ODD-SANTE-BIEN-ETRE",
+    "title": "Objectif de développement durable n°3 : Santé et bien-être",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "INDICATEUR-ODD",
+      "NATURE",
+      "DEMOGRAPHIE",
+      "DIPLOME",
+      "REF_AREA",
+      "SEXE",
+      "AGE",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "CONSOMMATION_ALCOOL_RISQUE",
+      "MODE_CONTAMINATION_VIH",
+      "RENONCEMENT_SOINS",
+      "STATUT_ACTIVITE",
+      "TYPE_ROUTE",
+      "SATISFACTION_VIE"
+    ],
+    "embedding_text": "Dataset: Objectif de développement durable n°3 : Santé et bien-être (ODD-SANTE-BIEN-ETRE). Description: . Dimensions: INDICATEUR, INDICATEUR-ODD, NATURE, DEMOGRAPHIE, DIPLOME, REF_AREA, SEXE, AGE, UNIT_MEASURE, CORRECTION, CONSOMMATION_ALCOOL_RISQUE, MODE_CONTAMINATION_VIH, RENONCEMENT_SOINS, STATUT_ACTIVITE, TYPE_ROUTE, SATISFACTION_VIE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ODD-SECURITE-ALIMENTAIRE-AGRICULTURE-DURABLE",
+    "indicator_code": "ODD-SECURITE-ALIMENTAIRE-AGRICULTURE-DURABLE",
+    "title": "Objectif de développement durable n°2 : Sécurité alimentaire et agriculture durable",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "INDICATEUR-ODD",
+      "NATURE",
+      "METIER",
+      "REF_AREA",
+      "SEXE",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "CHEPTEL",
+      "PRODUIT_PHYTOSANITAIRE",
+      "RACE_LOCALE_CLASSEE",
+      "MASSE_CORPORELLE"
+    ],
+    "embedding_text": "Dataset: Objectif de développement durable n°2 : Sécurité alimentaire et agriculture durable (ODD-SECURITE-ALIMENTAIRE-AGRICULTURE-DURABLE). Description: . Dimensions: INDICATEUR, INDICATEUR-ODD, NATURE, METIER, REF_AREA, SEXE, UNIT_MEASURE, CORRECTION, CHEPTEL, PRODUIT_PHYTOSANITAIRE, RACE_LOCALE_CLASSEE, MASSE_CORPORELLE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ODD-TRAVAIL-CROISSANCE",
+    "indicator_code": "ODD-TRAVAIL-CROISSANCE",
+    "title": "Objectif de développement durable n°8 : Travail décent et croissance durable",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "INDICATEUR-ODD",
+      "ACTIVITE-ODD",
+      "NATURE",
+      "METIER-ODD",
+      "REF_AREA",
+      "SEXE",
+      "AGE",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Objectif de développement durable n°8 : Travail décent et croissance durable (ODD-TRAVAIL-CROISSANCE). Description: . Dimensions: INDICATEUR, INDICATEUR-ODD, ACTIVITE-ODD, NATURE, METIER-ODD, REF_AREA, SEXE, AGE, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ODD-VIE-AQUATIQUE",
+    "indicator_code": "ODD-VIE-AQUATIQUE",
+    "title": "Objectif de développement durable n°14 : Vie aquatique",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "INDICATEUR-ODD",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "OCEANS-MERS-COURS-EAU-ODD",
+      "ETAT_TYPE-POLLUTION_IMPACTS_SITE_ODD",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Objectif de développement durable n°14 : Vie aquatique (ODD-VIE-AQUATIQUE). Description: . Dimensions: INDICATEUR, INDICATEUR-ODD, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, OCEANS-MERS-COURS-EAU-ODD, ETAT_TYPE-POLLUTION_IMPACTS_SITE_ODD, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ODD-VIE-TERRESTRE",
+    "indicator_code": "ODD-VIE-TERRESTRE",
+    "title": "Objectif de développement durable n°15 : Vie terrestre",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "INDICATEUR-ODD",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "ETAT_CONSERV_HAB_NAT_ODD",
+      "POP_OISEAUX_COMMUNS_ODD",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Objectif de développement durable n°15 : Vie terrestre (ODD-VIE-TERRESTRE). Description: . Dimensions: INDICATEUR, INDICATEUR-ODD, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, ETAT_CONSERV_HAB_NAT_ODD, POP_OISEAUX_COMMUNS_ODD, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "ODD-VILLES-COMMUNAUTES-DURABLES",
+    "indicator_code": "ODD-VILLES-COMMUNAUTES-DURABLES",
+    "title": "Objectif de développement durable n°11 : Villes et communautés durables",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "INDICATEUR-ODD",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SOLS_ART-ODD",
+      "TYPE_TRAITEMENT_DECH_MEN-ODD",
+      "CMA_PM10-ODD",
+      "STATIONS_MESURE-ODD"
+    ],
+    "embedding_text": "Dataset: Objectif de développement durable n°11 : Villes et communautés durables (ODD-VILLES-COMMUNAUTES-DURABLES). Description: . Dimensions: INDICATEUR, INDICATEUR-ODD, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SOLS_ART-ODD, TYPE_TRAITEMENT_DECH_MEN-ODD, CMA_PM10-ODD, STATIONS_MESURE-ODD.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "PARC-LOGEMENTS",
+    "indicator_code": "PARC-LOGEMENTS",
+    "title": "Estimations annuelles du parc de logements (EAPL)",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Estimations annuelles du parc de logements (EAPL) (PARC-LOGEMENTS). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "POPULATION-STRUCTURE",
+    "indicator_code": "POPULATION-STRUCTURE",
+    "title": "Population et structure de la population",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "DEMOGRAPHIE",
+      "REF_AREA",
+      "SEXE",
+      "AGE",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Population et structure de la population (POPULATION-STRUCTURE). Description: . Dimensions: INDICATEUR, NATURE, DEMOGRAPHIE, REF_AREA, SEXE, AGE, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "REVALORISATION-PENSIONS",
+    "indicator_code": "REVALORISATION-PENSIONS",
+    "title": "IPC utilisés par la calculette de revalorisation des pensions alimentaires",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "IPC_REVALORISATION",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: IPC utilisés par la calculette de revalorisation des pensions alimentaires (REVALORISATION-PENSIONS). Description: . Dimensions: INDICATEUR, IPC_REVALORISATION, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "SALAIRES-ACEMO",
+    "indicator_code": "SALAIRES-ACEMO",
+    "title": "Indices trimestriels de salaires dans le secteur privé - Résultats par secteur d’activité",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "INDICATEURS_ACEMO",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Indices trimestriels de salaires dans le secteur privé - Résultats par secteur d’activité (SALAIRES-ACEMO). Description: . Dimensions: INDICATEUR, NAF2, NATURE, INDICATEURS_ACEMO, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "SERIES",
+    "indicator_code": "SERIES",
+    "title": "Séries chronologiques de la BDM",
+    "description": "",
+    "dimensions": [
+      "IDBANK"
+    ],
+    "embedding_text": "Dataset: Séries chronologiques de la BDM (SERIES). Description: . Dimensions: IDBANK.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "SMIC-COTISATIONS",
+    "indicator_code": "SMIC-COTISATIONS",
+    "title": "Taux de cotisations et salaires minima garantis",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "INDICATEURS_SMIC_COTISATIONS",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Taux de cotisations et salaires minima garantis (SMIC-COTISATIONS). Description: . Dimensions: INDICATEUR, INDICATEURS_SMIC_COTISATIONS, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "SUIVI-DEMANDE-TOURISTIQUE",
+    "indicator_code": "SUIVI-DEMANDE-TOURISTIQUE",
+    "title": "Suivi de la demande touristique",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "INDIC_TOUR",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE",
+      "MODE_TRANSPORT",
+      "MOTIF_VOYAGE",
+      "TYPE_HEBERGEMENT",
+      "DESTINATION_VOYAGE",
+      "MOIS_RETOUR"
+    ],
+    "embedding_text": "Dataset: Suivi de la demande touristique (SUIVI-DEMANDE-TOURISTIQUE). Description: . Dimensions: INDICATEUR, NATURE, INDIC_TOUR, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE, MODE_TRANSPORT, MOTIF_VOYAGE, TYPE_HEBERGEMENT, DESTINATION_VOYAGE, MOIS_RETOUR.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TAUX-CHOMAGE",
+    "indicator_code": "TAUX-CHOMAGE",
+    "title": "Taux de chômage localisé",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: Taux de chômage localisé (TAUX-CHOMAGE). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-AGRICULTURE-CHEP-AGRI",
+    "indicator_code": "TCRED-AGRICULTURE-CHEP-AGRI",
+    "title": "TCRED - Cheptel présent dans les exploitations agricoles",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "AGRICOLE"
+    ],
+    "embedding_text": "Dataset: TCRED - Cheptel présent dans les exploitations agricoles (TCRED-AGRICULTURE-CHEP-AGRI). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, AGRICOLE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-AGRICULTURE-EXP-AGRI",
+    "indicator_code": "TCRED-AGRICULTURE-EXP-AGRI",
+    "title": "TCRED - Exploitations agricoles par superficie",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "AGRICOLE"
+    ],
+    "embedding_text": "Dataset: TCRED - Exploitations agricoles par superficie (TCRED-AGRICULTURE-EXP-AGRI). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, AGRICOLE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-AGRICULTURE-OCC-SOL",
+    "indicator_code": "TCRED-AGRICULTURE-OCC-SOL",
+    "title": "TCRED - Occupation du sol",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "AGRICOLE"
+    ],
+    "embedding_text": "Dataset: TCRED - Occupation du sol (TCRED-AGRICULTURE-OCC-SOL). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, AGRICOLE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-AGRICULTURE-PROD-VEG",
+    "indicator_code": "TCRED-AGRICULTURE-PROD-VEG",
+    "title": "TCRED - Productions végétales",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "AGRICOLE"
+    ],
+    "embedding_text": "Dataset: TCRED - Productions végétales (TCRED-AGRICULTURE-PROD-VEG). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, AGRICOLE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-CONDITIONSDEVIE-APE-PEC",
+    "indicator_code": "TCRED-CONDITIONSDEVIE-APE-PEC",
+    "title": "TCRED - Affaires pénales et population écrouée",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: TCRED - Affaires pénales et population écrouée (TCRED-CONDITIONSDEVIE-APE-PEC). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-CONDITIONSDEVIE-LICENCES-SPORTIVES",
+    "indicator_code": "TCRED-CONDITIONSDEVIE-LICENCES-SPORTIVES",
+    "title": "TCRED - Licences sportives de la fédération française",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "FEDERATION"
+    ],
+    "embedding_text": "Dataset: TCRED - Licences sportives de la fédération française (TCRED-CONDITIONSDEVIE-LICENCES-SPORTIVES). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, FEDERATION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-CONDITIONSDEVIE-LOG-SOC",
+    "indicator_code": "TCRED-CONDITIONSDEVIE-LOG-SOC",
+    "title": "TCRED - Logements sociaux",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Logements sociaux (TCRED-CONDITIONSDEVIE-LOG-SOC). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-CONDITIONSDEVIE-NMU-MOH",
+    "indicator_code": "TCRED-CONDITIONSDEVIE-NMU-MOH",
+    "title": "TCRED - Nombre de musées de France et de monuments historiques",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Nombre de musées de France et de monuments historiques (TCRED-CONDITIONSDEVIE-NMU-MOH). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-CONDITIONSDEVIE-TXP-CDE",
+    "indicator_code": "TCRED-CONDITIONSDEVIE-TXP-CDE",
+    "title": "TCRED - Taux de participation au 1er tour des différentes élections",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Taux de participation au 1er tour des différentes élections (TCRED-CONDITIONSDEVIE-TXP-CDE). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-CONSTRUCTION-LOCAUX",
+    "indicator_code": "TCRED-CONSTRUCTION-LOCAUX",
+    "title": "TCRED - Construction de locaux",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Construction de locaux (TCRED-CONSTRUCTION-LOCAUX). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-ECONOMIE-DEP-REC",
+    "indicator_code": "TCRED-ECONOMIE-DEP-REC",
+    "title": "TCRED - Dépenses et recettes des régions",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "FINANCES_REGIONS",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Dépenses et recettes des régions (TCRED-ECONOMIE-DEP-REC). Description: . Dimensions: INDICATEUR, FINANCES_REGIONS, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-ECONOMIE-PIB-REG-2014",
+    "indicator_code": "TCRED-ECONOMIE-PIB-REG-2014",
+    "title": "TCRED - Produits intérieurs bruts",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: TCRED - Produits intérieurs bruts (TCRED-ECONOMIE-PIB-REG-2014). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-ECONOMIE-PIB-REG",
+    "indicator_code": "TCRED-ECONOMIE-PIB-REG",
+    "title": "TCRED - Produits intérieurs bruts",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Produits intérieurs bruts (TCRED-ECONOMIE-PIB-REG). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-ECONOMIE-VAB-REG-2014",
+    "indicator_code": "TCRED-ECONOMIE-VAB-REG-2014",
+    "title": "TCRED-Valeurs ajoutées brutes",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NAF2_RGP",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: TCRED-Valeurs ajoutées brutes (TCRED-ECONOMIE-VAB-REG-2014). Description: . Dimensions: INDICATEUR, NAF2_RGP, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-ECONOMIE-VAB-REG",
+    "indicator_code": "TCRED-ECONOMIE-VAB-REG",
+    "title": "TCRED - Valeurs ajoutées brutes",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NAF2_RGP",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Valeurs ajoutées brutes (TCRED-ECONOMIE-VAB-REG). Description: . Dimensions: INDICATEUR, NAF2_RGP, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-EDUCATION-APP-JEN",
+    "indicator_code": "TCRED-EDUCATION-APP-JEN",
+    "title": "TCRED - Apprentissage chez les jeunes",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "APPR_SCOL",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Apprentissage chez les jeunes (TCRED-EDUCATION-APP-JEN). Description: . Dimensions: INDICATEUR, NATURE, APPR_SCOL, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-EDUCATION-DIPLOMES-TECHNIQUES",
+    "indicator_code": "TCRED-EDUCATION-DIPLOMES-TECHNIQUES",
+    "title": "TCRED - Réussite aux Brevet, CAP, BEP et BTS",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "DIPLOME",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: TCRED - Réussite aux Brevet, CAP, BEP et BTS (TCRED-EDUCATION-DIPLOMES-TECHNIQUES). Description: . Dimensions: INDICATEUR, NATURE, DIPLOME, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-EDUCATION-EFF-PSS",
+    "indicator_code": "TCRED-EDUCATION-EFF-PSS",
+    "title": "TCRED - Effectifs scolaires du premier et second degré et du supérieur",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "ENS-SEC-SUP",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: TCRED - Effectifs scolaires du premier et second degré et du supérieur (TCRED-EDUCATION-EFF-PSS). Description: . Dimensions: INDICATEUR, NATURE, ENS-SEC-SUP, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-EDUCATION-ENS-PSD",
+    "indicator_code": "TCRED-EDUCATION-ENS-PSD",
+    "title": "TCRED - Enseignants du premier et du second degrés",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "ENS-SEC-SUP",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: TCRED - Enseignants du premier et du second degrés (TCRED-EDUCATION-ENS-PSD). Description: . Dimensions: INDICATEUR, NATURE, ENS-SEC-SUP, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-EDUCATION-ETAB-SCOL",
+    "indicator_code": "TCRED-EDUCATION-ETAB-SCOL",
+    "title": "TCRED - Établissements scolaires du premier et second degré",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "TYPE-ETAB",
+      "ETAB-SCOL",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Établissements scolaires du premier et second degré (TCRED-EDUCATION-ETAB-SCOL). Description: . Dimensions: INDICATEUR, NATURE, TYPE-ETAB, ETAB-SCOL, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-EDUCATION-REU-BAC",
+    "indicator_code": "TCRED-EDUCATION-REU-BAC",
+    "title": "TCRED - Réussite aux différents baccalauréats",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "DIPLOME",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Réussite aux différents baccalauréats (TCRED-EDUCATION-REU-BAC). Description: . Dimensions: INDICATEUR, NATURE, DIPLOME, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-EMPLOI-31-DECEMBRE-BASE-2018",
+    "indicator_code": "TCRED-EMPLOI-31-DECEMBRE-BASE-2018",
+    "title": "TCRED - Emploi au 31 décembre - Base 2018",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NAF2_RGP",
+      "NATURE",
+      "CAT_POP_ACT",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: TCRED - Emploi au 31 décembre - Base 2018 (TCRED-EMPLOI-31-DECEMBRE-BASE-2018). Description: . Dimensions: INDICATEUR, NAF2_RGP, NATURE, CAT_POP_ACT, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-EMPLOI-31-DECEMBRE",
+    "indicator_code": "TCRED-EMPLOI-31-DECEMBRE",
+    "title": "TCRED - Emploi au 31 décembre",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NAF2_RGP",
+      "NATURE",
+      "CAT_POP_ACT",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: TCRED - Emploi au 31 décembre (TCRED-EMPLOI-31-DECEMBRE). Description: . Dimensions: INDICATEUR, NAF2_RGP, NATURE, CAT_POP_ACT, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-EMPLOI-SALARIE-TRIM",
+    "indicator_code": "TCRED-EMPLOI-SALARIE-TRIM",
+    "title": "Estimations d'emploi salarié par secteur d'activité",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Estimations d'emploi salarié par secteur d'activité (TCRED-EMPLOI-SALARIE-TRIM). Description: . Dimensions: INDICATEUR, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-ENTREPRISES-EFF-OPE",
+    "indicator_code": "TCRED-ENTREPRISES-EFF-OPE",
+    "title": "TCRED - Effectifs de recherche et développement des organismes publics et des entreprises",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "AGENTS_ECO",
+      "EFFECTIFS",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: TCRED - Effectifs de recherche et développement des organismes publics et des entreprises (TCRED-ENTREPRISES-EFF-OPE). Description: . Dimensions: INDICATEUR, NATURE, AGENTS_ECO, EFFECTIFS, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-ENTREPRISES-EMP-SAL-AN-TAILLE",
+    "indicator_code": "TCRED-ENTREPRISES-EMP-SAL-AN-TAILLE",
+    "title": "TCRED - Effectif salarié par catégorie d'entreprise",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "ENTREPRISE",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SUPPRESSION-SERIES"
+    ],
+    "embedding_text": "Dataset: TCRED - Effectif salarié par catégorie d'entreprise (TCRED-ENTREPRISES-EMP-SAL-AN-TAILLE). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, ENTREPRISE, UNIT_MEASURE, CORRECTION, SUPPRESSION-SERIES.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-ESTIMATIONS-POPULATION",
+    "indicator_code": "TCRED-ESTIMATIONS-POPULATION",
+    "title": "TCRED - Estimations de population",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "SEXE",
+      "AGE",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Estimations de population (TCRED-ESTIMATIONS-POPULATION). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, SEXE, AGE, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-SALAIRES-REVENUS-MEN",
+    "indicator_code": "TCRED-SALAIRES-REVENUS-MEN",
+    "title": "TCRED - Revenus disponibles des ménages",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Revenus disponibles des ménages (TCRED-SALAIRES-REVENUS-MEN). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-SALAIRES-REVENUS-RET-BEN",
+    "indicator_code": "TCRED-SALAIRES-REVENUS-RET-BEN",
+    "title": "TCRED - Retraités et bénéficiaires du minimum vieillesse",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: TCRED - Retraités et bénéficiaires du minimum vieillesse (TCRED-SALAIRES-REVENUS-RET-BEN). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-SALAIRES-REVENUS-REV-SAL-SEXE-CS",
+    "indicator_code": "TCRED-SALAIRES-REVENUS-REV-SAL-SEXE-CS",
+    "title": "TCRED - Revenu salarial annuel moyen selon la catégorie socioprofessionnelle et le sexe",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "METIER",
+      "REF_AREA",
+      "SEXE",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Revenu salarial annuel moyen selon la catégorie socioprofessionnelle et le sexe (TCRED-SALAIRES-REVENUS-REV-SAL-SEXE-CS). Description: . Dimensions: INDICATEUR, NATURE, METIER, REF_AREA, SEXE, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-SALAIRES-REVENUS-STRUCTURE-RDB",
+    "indicator_code": "TCRED-SALAIRES-REVENUS-STRUCTURE-RDB",
+    "title": "TCRED - Structure du revenu disponible",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "REVENU"
+    ],
+    "embedding_text": "Dataset: TCRED - Structure du revenu disponible (TCRED-SALAIRES-REVENUS-STRUCTURE-RDB). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, REVENU.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-SALAIRES-REVENUS-TAUX-PAUVRETE-AGE",
+    "indicator_code": "TCRED-SALAIRES-REVENUS-TAUX-PAUVRETE-AGE",
+    "title": "TCRED - Taux de pauvreté selon l'âge",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "AGE",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Taux de pauvreté selon l'âge (TCRED-SALAIRES-REVENUS-TAUX-PAUVRETE-AGE). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, AGE, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-SALAIRES-REVENUS-TNB",
+    "indicator_code": "TCRED-SALAIRES-REVENUS-TNB",
+    "title": "TCRED - Nombre et taux d'allocataires des différentes prestations sociales",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: TCRED - Nombre et taux d'allocataires des différentes prestations sociales (TCRED-SALAIRES-REVENUS-TNB). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-SANTE-ACCUEIL-PERS-AGEES",
+    "indicator_code": "TCRED-SANTE-ACCUEIL-PERS-AGEES",
+    "title": "TCRED - Accueil des personnes âgées",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "ACCUEIL-PERS-AGEES",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Accueil des personnes âgées (TCRED-SANTE-ACCUEIL-PERS-AGEES). Description: . Dimensions: INDICATEUR, NATURE, ACCUEIL-PERS-AGEES, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-SANTE-CAUSES-DECES",
+    "indicator_code": "TCRED-SANTE-CAUSES-DECES",
+    "title": "TCRED - Causes de décès",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "CAUSE-DECES",
+      "REF_AREA",
+      "SEXE",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: TCRED - Causes de décès (TCRED-SANTE-CAUSES-DECES). Description: . Dimensions: INDICATEUR, NATURE, CAUSE-DECES, REF_AREA, SEXE, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-SANTE-EQUIP-HOP",
+    "indicator_code": "TCRED-SANTE-EQUIP-HOP",
+    "title": "TCRED - Équipements hospitaliers",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "TYPE-ETAB",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Équipements hospitaliers (TCRED-SANTE-EQUIP-HOP). Description: . Dimensions: INDICATEUR, NATURE, TYPE-ETAB, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-SANTE-EQUIP-SPE",
+    "indicator_code": "TCRED-SANTE-EQUIP-SPE",
+    "title": "TCRED - Ratio d'équipement par spécialité",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "SPECIALITE-SANTE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: TCRED - Ratio d'équipement par spécialité (TCRED-SANTE-EQUIP-SPE). Description: . Dimensions: INDICATEUR, NATURE, SPECIALITE-SANTE, REF_AREA, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-SANTE-PERSONNELS",
+    "indicator_code": "TCRED-SANTE-PERSONNELS",
+    "title": "TCRED - Personnels de santé",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "METIER",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: TCRED - Personnels de santé (TCRED-SANTE-PERSONNELS). Description: . Dimensions: INDICATEUR, NATURE, METIER, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-SERVICES-TOURISME-TRANSPORTS-IMM-VN",
+    "indicator_code": "TCRED-SERVICES-TOURISME-TRANSPORTS-IMM-VN",
+    "title": "TCRED - Immatriculations de véhicules neufs",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Immatriculations de véhicules neufs (TCRED-SERVICES-TOURISME-TRANSPORTS-IMM-VN). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-SERVICES-TOURISME-TRANSPORTS-RR",
+    "indicator_code": "TCRED-SERVICES-TOURISME-TRANSPORTS-RR",
+    "title": "TCRED - Réseau routier",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Réseau routier (TCRED-SERVICES-TOURISME-TRANSPORTS-RR). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-TRAVAIL-EMPLOI-EFF-FP-RATIO",
+    "indicator_code": "TCRED-TRAVAIL-EMPLOI-EFF-FP-RATIO",
+    "title": "TCRED - Effectifs de la fonction publique",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "SEXE",
+      "VERSANTS_FP",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: TCRED - Effectifs de la fonction publique (TCRED-TRAVAIL-EMPLOI-EFF-FP-RATIO). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, SEXE, VERSANTS_FP, UNIT_MEASURE, CORRECTION, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-TRAVAIL-EMPLOI-EFF-FPE",
+    "indicator_code": "TCRED-TRAVAIL-EMPLOI-EFF-FPE",
+    "title": "TCRED - Effectifs de la fonction publique de l'État",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "SEXE",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "MINISTERES",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: TCRED - Effectifs de la fonction publique de l'État (TCRED-TRAVAIL-EMPLOI-EFF-FPE). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, SEXE, UNIT_MEASURE, CORRECTION, MINISTERES, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-TRAVAIL-EMPLOI-EFF-FPH",
+    "indicator_code": "TCRED-TRAVAIL-EMPLOI-EFF-FPH",
+    "title": "TCRED - Effectifs de la fonction publique hospitalière",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "TYPE-ETAB",
+      "REF_AREA",
+      "SEXE",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Effectifs de la fonction publique hospitalière (TCRED-TRAVAIL-EMPLOI-EFF-FPH). Description: . Dimensions: INDICATEUR, NATURE, TYPE-ETAB, REF_AREA, SEXE, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-TRAVAIL-EMPLOI-EFF-FPT",
+    "indicator_code": "TCRED-TRAVAIL-EMPLOI-EFF-FPT",
+    "title": "TCRED - Effectifs de la fonction publique territoriale",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "TYPE-ETAB",
+      "REF_AREA",
+      "SEXE",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Effectifs de la fonction publique territoriale (TCRED-TRAVAIL-EMPLOI-EFF-FPT). Description: . Dimensions: INDICATEUR, NATURE, TYPE-ETAB, REF_AREA, SEXE, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TCRED-TRAVAIL-EMPLOI-TCHOMA-SA",
+    "indicator_code": "TCRED-TRAVAIL-EMPLOI-TCHOMA-SA",
+    "title": "TCRED - Taux de chômage localisés par sexe et âge, en moyenne annuelle",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "REF_AREA",
+      "SEXE",
+      "AGE",
+      "UNIT_MEASURE",
+      "CORRECTION"
+    ],
+    "embedding_text": "Dataset: TCRED - Taux de chômage localisés par sexe et âge, en moyenne annuelle (TCRED-TRAVAIL-EMPLOI-TCHOMA-SA). Description: . Dimensions: INDICATEUR, NATURE, REF_AREA, SEXE, AGE, UNIT_MEASURE, CORRECTION.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TOURISME-FRANCE-METHODE-REDRESSEMENT-2019",
+    "indicator_code": "TOURISME-FRANCE-METHODE-REDRESSEMENT-2019",
+    "title": "Fréquentation touristique (nuitées, arrivées)",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "NATURE",
+      "INDIC_TOUR",
+      "REF_AREA",
+      "RESIDENCE",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "REDRESSEMENT_TOUR",
+      "SERIE_ARRETEE",
+      "SAISONNALITE"
+    ],
+    "embedding_text": "Dataset: Fréquentation touristique (nuitées, arrivées) (TOURISME-FRANCE-METHODE-REDRESSEMENT-2019). Description: . Dimensions: INDICATEUR, NATURE, INDIC_TOUR, REF_AREA, RESIDENCE, UNIT_MEASURE, CORRECTION, REDRESSEMENT_TOUR, SERIE_ARRETEE, SAISONNALITE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "TRANSPORTS",
+    "indicator_code": "TRANSPORTS",
+    "title": "Transports de marchandises, voyageurs et autres indicateurs - Immatriculations de véhicules",
+    "description": "",
+    "dimensions": [
+      "INDICATEUR",
+      "OP_TRANSPORTS",
+      "TYPE_RESEAU",
+      "TYPE_VEHICULE",
+      "TYPE_MARCHANDISE",
+      "NATURE",
+      "LIVRAISON_CARBURANT",
+      "REF_AREA",
+      "LOCALISATION",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Transports de marchandises, voyageurs et autres indicateurs - Immatriculations de véhicules (TRANSPORTS). Description: . Dimensions: INDICATEUR, OP_TRANSPORTS, TYPE_RESEAU, TYPE_VEHICULE, TYPE_MARCHANDISE, NATURE, LIVRAISON_CARBURANT, REF_AREA, LOCALISATION, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "VOV-2015-COMMERCE",
+    "indicator_code": "VOV-2015-COMMERCE",
+    "title": "Volumes des ventes dans le commerce",
+    "description": "",
+    "dimensions": [
+      "EUROSTAT_ICA_VOV",
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND",
+      "SERIE_ARRETEE"
+    ],
+    "embedding_text": "Dataset: Volumes des ventes dans le commerce (VOV-2015-COMMERCE). Description: . Dimensions: EUROSTAT_ICA_VOV, INDICATEUR, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND, SERIE_ARRETEE.",
+    "is_active": true,
+    "source": "INSEE"
+  },
+  {
+    "dataset_id": "VOV-2021-COMMERCE",
+    "indicator_code": "VOV-2021-COMMERCE",
+    "title": "Volumes des ventes dans le commerce",
+    "description": "",
+    "dimensions": [
+      "EUROSTAT_ICA_VOV",
+      "INDICATEUR",
+      "NAF2",
+      "NATURE",
+      "REF_AREA",
+      "UNIT_MEASURE",
+      "CORRECTION",
+      "BASIND"
+    ],
+    "embedding_text": "Dataset: Volumes des ventes dans le commerce (VOV-2021-COMMERCE). Description: . Dimensions: EUROSTAT_ICA_VOV, INDICATEUR, NAF2, NATURE, REF_AREA, UNIT_MEASURE, CORRECTION, BASIND.",
+    "is_active": true,
+    "source": "INSEE"
+  }
+]

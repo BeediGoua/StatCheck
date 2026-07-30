@@ -14,6 +14,8 @@ class CanonicalMentionBase(BaseModel):
     origin: str  # 'BASELINE', 'LLM', or 'FUSION'
     method: Optional[str] = None
     validation_status: str = "PENDING"
+    confidence: float = 1.0
+    alternatives: List[Any] = Field(default_factory=list)
 
 class CanonicalMeasure(CanonicalMentionBase):
     value: Optional[float] = None
@@ -31,6 +33,7 @@ class CanonicalTerritory(CanonicalMentionBase):
     code: Optional[str] = None
     territory_type: Optional[str] = None
     vintage: Optional[str] = None
+    status: str = "EXPLICIT"  # EXPLICIT, INFERRED, CONTEXTUAL, MISSING, DEFAULTED
 
 class CanonicalIndicator(CanonicalMentionBase):
     normalized_label: Optional[str] = None

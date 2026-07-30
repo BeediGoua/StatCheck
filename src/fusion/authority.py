@@ -60,15 +60,21 @@ class AuthorityMatrix:
             return {"decision": DecisionType.AGREEMENT, "explanation": ExplanationCode.EXACT_AGREEMENT, "result": merged}
             
         # 2. Même span, mais valeur différente -> L'extracteur déterministe (Baseline) l'emporte sur l'IA
+        # SEULEMENT SI la baseline est très confiante et validée.
         if b.offsets == l.offsets and b.value != l.value:
-            return {"decision": DecisionType.DETERMINISTIC_VALIDATOR_SELECTED, "explanation": ExplanationCode.NUMERIC_VALIDATOR_AUTHORITY, "result": merged}
+            if getattr(b, "confidence", 1.0) >= 0.9 and b.validation_status == "ACCEPTED":
+                return {"decision": DecisionType.DETERMINISTIC_VALIDATOR_SELECTED, "explanation": ExplanationCode.NUMERIC_VALIDATOR_AUTHORITY, "result": merged}
+            else:
+                return {"decision": DecisionType.BOTH_RETAINED_AS_ALTERNATIVES, "explanation": ExplanationCode.UNRESOLVED_ROLE_CONFLICT, "result": merged}
             
         # 3. Conflit de rôle
         if b.role != l.role:
             return {"decision": DecisionType.BOTH_RETAINED_AS_ALTERNATIVES, "explanation": ExplanationCode.UNRESOLVED_ROLE_CONFLICT, "result": merged}
             
-        # Par défaut, on favorise la logique déterministe
-        return {"decision": DecisionType.BASELINE_SELECTED, "explanation": ExplanationCode.NUMERIC_VALIDATOR_AUTHORITY, "result": merged}
+        # Par défaut, on favorise la logique déterministe si elle est sûre, sinon ambiguïté
+        if getattr(b, "confidence", 1.0) >= 0.9 and b.validation_status == "ACCEPTED":
+            return {"decision": DecisionType.BASELINE_SELECTED, "explanation": ExplanationCode.NUMERIC_VALIDATOR_AUTHORITY, "result": merged}
+        return {"decision": DecisionType.BOTH_RETAINED_AS_ALTERNATIVES, "explanation": ExplanationCode.UNRESOLVED_ROLE_CONFLICT, "result": merged}
 
     @staticmethod
     def fuse_territory(b: Optional[CanonicalTerritory], l: Optional[CanonicalTerritory]) -> Dict[str, Any]:
@@ -94,6 +100,9 @@ class AuthorityMatrix:
         
         # Conflit de codes validés (ex: ambigüité non résolue par le COG)
         if b.code != l.code:
+            # Si la baseline est explicite, elle gagne, sinon ambiguïté
+            if getattr(b, "status", "EXPLICIT") == "EXPLICIT" and b.validation_status == "ACCEPTED":
+                return {"decision": DecisionType.BASELINE_SELECTED, "explanation": ExplanationCode.COG_AUTHORITY, "result": merged}
             return {"decision": DecisionType.BOTH_RETAINED_AS_ALTERNATIVES, "explanation": ExplanationCode.AMBIGUOUS_GEOGRAPHY, "result": merged}
             
         return {"decision": DecisionType.AGREEMENT, "explanation": ExplanationCode.EXACT_AGREEMENT, "result": merged}

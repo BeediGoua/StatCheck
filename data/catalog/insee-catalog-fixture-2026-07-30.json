@@ -1,0 +1,172 @@
+{
+  "snapshot_id": "insee-catalog-2026-07-30",
+  "created_at": "2026-07-30T10:00:00Z",
+  "producers": [
+    "INSEE"
+  ],
+  "datasets": [
+    {
+      "dataset_id": "CHOMAGE-TRIM-NATIONAL",
+      "title": "Taux de chômage au sens du BIT",
+      "description": "Taux de chômage trimestriel par sexe et tranche d'âge",
+      "source": "INSEE",
+      "frequency": "QUARTERLY",
+      "unit": "PERCENTAGE",
+      "dimensions": [
+        {
+          "code": "AGE",
+          "label": "Âge"
+        },
+        {
+          "code": "SEXE",
+          "label": "Sexe"
+        },
+        {
+          "code": "TERRITORY",
+          "label": "Territoire"
+        }
+      ],
+      "modalities": [
+        {
+          "dimension": "AGE",
+          "code": "Y15T24",
+          "label": "15 à 24 ans"
+        },
+        {
+          "dimension": "AGE",
+          "code": "Y25T49",
+          "label": "25 à 49 ans"
+        },
+        {
+          "dimension": "AGE",
+          "code": "Y50MAX",
+          "label": "50 ans ou plus"
+        },
+        {
+          "dimension": "AGE",
+          "code": "ALL",
+          "label": "Ensemble"
+        },
+        {
+          "dimension": "TERRITORY",
+          "code": "FR",
+          "label": "France métropolitaine et DROM"
+        }
+      ]
+    },
+    {
+      "dataset_id": "NAISSANCES-ANNUEL",
+      "title": "Naissances vivantes, décès et solde naturel",
+      "description": "Évolution du nombre de naissances et décès annuels depuis 1946",
+      "source": "INSEE",
+      "frequency": "ANNUAL",
+      "unit": "ABSOLUTE",
+      "dimensions": [
+        {
+          "code": "TERRITORY",
+          "label": "Territoire"
+        }
+      ],
+      "modalities": [
+        {
+          "dimension": "TERRITORY",
+          "code": "FR",
+          "label": "France"
+        }
+      ]
+    },
+    {
+      "dataset_id": "IPC-ENSEMBLE",
+      "title": "Indice des prix à la consommation - Ensemble des ménages",
+      "description": "Inflation mensuelle et annuelle globale",
+      "source": "INSEE",
+      "frequency": "MONTHLY",
+      "unit": "INDEX",
+      "dimensions": [
+        {
+          "code": "TERRITORY",
+          "label": "Territoire"
+        }
+      ],
+      "modalities": [
+        {
+          "dimension": "TERRITORY",
+          "code": "FR",
+          "label": "France"
+        }
+      ]
+    },
+    {
+      "dataset_id": "TAUX-ACTIVITE-AGE",
+      "title": "Taux d'activité par âge",
+      "description": "Mesure les personnes actives (en emploi ou au chômage)",
+      "source": "INSEE",
+      "frequency": "QUARTERLY",
+      "unit": "PERCENTAGE",
+      "dimensions": [
+        {
+          "code": "AGE",
+          "label": "Âge"
+        },
+        {
+          "code": "TERRITORY",
+          "label": "Territoire"
+        }
+      ],
+      "modalities": [
+        {
+          "dimension": "AGE",
+          "code": "Y15T24",
+          "label": "15 à 24 ans"
+        },
+        {
+          "dimension": "TERRITORY",
+          "code": "FR",
+          "label": "France"
+        }
+      ]
+    },
+    {
+      "dataset_id": "CREATIONS-ENTREPRISES",
+      "title": "Créations d'entreprises",
+      "description": "Créations d'entreprises par secteur d'activité",
+      "source": "INSEE",
+      "frequency": "MONTHLY",
+      "unit": "ABSOLUTE",
+      "dimensions": [
+        {
+          "code": "TERRITORY",
+          "label": "Territoire"
+        }
+      ],
+      "modalities": [
+        {
+          "dimension": "TERRITORY",
+          "code": "FR",
+          "label": "France"
+        }
+      ]
+    },
+    {
+      "dataset_id": "IPC-ENERGIE",
+      "title": "Indice des prix à la consommation - Énergie",
+      "description": "Inflation sur les produits énergétiques",
+      "source": "INSEE",
+      "frequency": "MONTHLY",
+      "unit": "INDEX",
+      "dimensions": [
+        {
+          "code": "TERRITORY",
+          "label": "Territoire"
+        }
+      ],
+      "modalities": [
+        {
+          "dimension": "TERRITORY",
+          "code": "FR",
+          "label": "France"
+        }
+      ]
+    }
+  ]
+}

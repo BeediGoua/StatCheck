@@ -2,6 +2,31 @@ import random
 import math
 from typing import List, Dict, Tuple, Any
 
+# =====================================================================
+# DÉFINITIONS FORMELLES DES MÉTRIQUES (Lot 6C / V1)
+# =====================================================================
+# EXACT MATCH COMPLET :
+# Une prédiction est comptée en Exact Match uniquement si tous les champs 
+# obligatoires correspondent au Gold après normalisation : indicateur, 
+# territoire, période, opération, mesures, unités et statut d’abstention. 
+# Une erreur sur un seul champ rend l’affirmation incorrecte au niveau Exact Match.
+# 
+# ERREUR CRITIQUE SILENCIEUSE :
+# Une erreur critique silencieuse est une sortie déclarée exploitable qui 
+# modifie le sens statistique de l’affirmation sans déclencher d’abstention 
+# ni de signal d’incertitude : valeur, unité, signe, période, territoire, 
+# population, dénominateur ou indicateur incorrect.
+# 
+# ABSTENTION CORRECTE :
+# Le système refuse de s'engager (statut = MISSING_CONTEXT ou REJECTED) sur 
+# une phrase qui ne contient effectivement pas assez de données fiables.
+# 
+# TAUX D'APPEL LLM :
+# Pourcentage d'affirmations pour lesquelles le routeur C3 a déclenché une
+# inférence LLM.
+# =====================================================================
+
+
 try:
     from scipy.stats import binomtest
     HAS_SCIPY = True

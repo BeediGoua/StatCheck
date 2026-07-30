@@ -1,0 +1,93 @@
+[
+  {
+    "claim_id": "req_1",
+    "query": "Quel est le taux de chômage national ?",
+    "claim_context": {
+      "required_indicator": "CHOMAGE-TRIM-NATIONAL",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CHOMAGE-TRIM-NATIONAL": 3,
+      "TCRED-TRAVAIL-EMPLOI-TCHOMA-SA": 2
+    }
+  },
+  {
+    "claim_id": "req_2",
+    "query": "Le climat des affaires s'améliore-t-il cette année ?",
+    "claim_context": {
+      "required_indicator": "CLIMAT-AFFAIRES",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CLIMAT-AFFAIRES": 3,
+      "ENQ-CONJ-MENAGES": 1
+    }
+  },
+  {
+    "claim_id": "req_3",
+    "query": "Evolution du Produit Intérieur Brut (PIB)",
+    "claim_context": {
+      "required_indicator": "CNA-2010-PIB",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CNA-2010-PIB": 3,
+      "CNA-2014-PIB": 2,
+      "CNA-2020-PIB": 2
+    }
+  },
+  {
+    "claim_id": "req_4",
+    "query": "Combien de naissances en France ?",
+    "claim_context": {
+      "required_indicator": "NAISSANCES-FECONDITE",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "NAISSANCES-FECONDITE": 3,
+      "DECES-MORTALITE": 0
+    }
+  },
+  {
+    "claim_id": "req_5",
+    "query": "Où trouver l'indice des prix à la consommation ?",
+    "claim_context": {
+      "required_indicator": "IPC-2015",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "IPC-2015": 3,
+      "IPC-1990": 1,
+      "IPCH-2015": 2
+    }
+  },
+  {
+    "claim_id": "req_6",
+    "query": "Taux de pauvreté par âge",
+    "claim_context": {
+      "required_indicator": "TCRED-SALAIRES-REVENUS-TAUX-PAUVRETE-AGE",
+      "required_dimensions": ["AGE"],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "TCRED-SALAIRES-REVENUS-TAUX-PAUVRETE-AGE": 3
+    }
+  },
+  {
+    "claim_id": "req_7",
+    "query": "Chômage par région",
+    "claim_context": {
+      "required_indicator": "CHOMAGE-TRIM-NATIONAL",
+      "required_dimensions": ["REG"],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CHOMAGE-TRIM-NATIONAL": 0
+    }
+  }
+]

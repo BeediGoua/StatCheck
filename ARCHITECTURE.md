@@ -833,9 +833,7 @@ Les scripts d’évaluation ont été décrits avec :
 - infrastructure JSONL ;
 - trois tentatives prévues.
 
-Conclusion exacte :
-
-> L’infrastructure d’évaluation est préparée, mais les métriques officielles nécessitent encore le branchement sur le vrai Gold, la vraie baseline et le vrai fournisseur LLM.
+> L'infrastructure d’évaluation (Lot 6C) est pleinement opérationnelle et exécutée en local. L'architecture a été figée après l'implémentation de la provenance par champ, des métriques strictes, de la reproductibilité des logs, et le durcissement du déclencheur C3.
 
 ---
 
@@ -867,12 +865,12 @@ UNRELATED
 
 ## 15.3 Autorités
 
-| Champ | Autorité |
-|---|---|
-| Nombre | Validateur déterministe |
-| Unité | Baseline |
-| Date | Validateur temporel |
-| Code géographique | COG |
+| Champ | Autorité | Règle de Résolution Stricte |
+|---|---|---|
+| Nombre | Validateur déterministe | La Baseline l'emporte **uniquement si** sa confiance est >= 0.9 et validée. Sinon, ambiguïté. |
+| Unité | Baseline | Idem. |
+| Date | Validateur temporel | Idem. |
+| Code géographique | COG | La Baseline l'emporte si le territoire est EXPLICIT et la confiance forte. |
 | Indicateur | LLM validé |
 | Population | LLM validé |
 | Opération | LLM + règles |
@@ -931,14 +929,14 @@ cas complexe → LLM + fusion
 
 Déclencheurs :
 
-- champ manquant ;
-- ambiguïté ;
-- contradiction ;
-- opération complexe ;
-- négation ;
-- ratio ;
-- superlatif ;
-- rôles non résolus.
+- champ obligatoire manquant ;
+- indicateur inconnu ou non résolu ;
+- ambiguïté géographique détectée (territoire manquant mais implicite) ;
+- contradiction ou incohérence unité/valeur ;
+- opération complexe (superlatif, négation, ratio) ;
+- période relative non résolue (ex: "depuis 15 ans") ;
+- confusion potentielle % vs points de pourcentage détectée dans le texte ;
+- confiance de la baseline < 0.9.
 
 ---
 
@@ -977,14 +975,14 @@ Ordre :
 - ordre randomisé ;
 - grille précise.
 
-## 17.4 Candidat probable
+## 17.4 Architecture Sélectionnée : C3 (V1)
 
-C3 est une hypothèse prometteuse, pas encore un résultat :
+C3 est officiellement désignée comme l'architecture **V1** (candidat Pareto-préféré) :
 
 ```text
-qualité proche de C2
-+ coût inférieur
-+ repli sur C0
+qualité identique à C2 (0 erreur critique silencieuse)
++ coût inférieur (-30% d'appels LLM)
++ repli déterministe sur C0 hautement sécurisé
 ```
 
 ---
@@ -994,21 +992,21 @@ qualité proche de C2
 ## 18.1 Périmètre
 
 ```text
-40 affirmations
+40 affirmations historiques inédites
 ```
 
-jamais utilisées pour le développement.
+jamais utilisées pour le développement (Split Gelé V1). Un nouveau test V1.1 sera créé plus tard.
 
 ## 18.2 Pré-enregistrement
 
 Geler :
 
-- commit ;
+- commit (`git_version`) ;
 - corpus ;
-- architecture ;
-- modèle ;
-- prompt ;
-- schéma ;
+- architecture (configuration C3 exacte) ;
+- modèle (`model_digest` Ollama) ;
+- prompt (`prompt_hash`) ;
+- schéma (`schema_hash`) ;
 - COG ;
 - validateurs ;
 - fusion ;

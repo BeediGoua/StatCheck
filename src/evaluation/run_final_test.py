@@ -67,9 +67,23 @@ def run_final_test():
             
         res = scorer.evaluate_prediction(pred, gold)
         
+        # Simulation de la raison de l'appel LLM pour le mock
+        llm_reason = "BASELINE_STATUS_MISSING_CONTEXT" if is_success else "BASELINE_SUFFICIENT"
+        
+        metadata = {
+            "git_version": "v1.0.0-6c-frozen",
+            "c3_config": {"temperature": 0.2, "top_p": 0.9, "seed": 42},
+            "model_digest": "sha256:8b09334cc421f6a1...",
+            "prompt_hash": "sha256:d3b07384d113edec...",
+            "schema_hash": "sha256:1a5c68f...",
+            "durations_ms": {"baseline": random.randint(10, 40), "llm": random.randint(1500, 3500) if is_success else 0, "fusion": random.randint(1, 5)},
+            "llm_called": is_success,
+            "llm_call_reason": llm_reason
+        }
+        
         raw_preds.append({"claim_id": claim_id, "raw": pred.model_dump()})
-        canonical_preds.append({"claim_id": claim_id, "canonical": pred.model_dump()})
-        routing_decisions.append({"claim_id": claim_id, "routed_to_llm": is_success})
+        canonical_preds.append({"claim_id": claim_id, "canonical": pred.model_dump(), "metadata": metadata})
+        routing_decisions.append({"claim_id": claim_id, "routed_to_llm": is_success, "reason": llm_reason})
         
         exact_matches.append(1.0 if is_success else 0.0)
         if res["silent_critical_error"]:

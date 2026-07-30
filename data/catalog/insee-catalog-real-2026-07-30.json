@@ -1,0 +1,35 @@
+{
+  "snapshot_id": "insee-catalog-real-2026-07-31",
+  "generated_at": "2026-07-31T00:37:07.415548",
+  "source_endpoints": [
+    "https://bdm.insee.fr/series/sdmx/dataflow"
+  ],
+  "is_fixture": false,
+  "datasets": [
+    {
+      "dataset_id": "CHOMAGE-TRIM-NATIONAL",
+      "title": "Taux de chômage au sens du BIT",
+      "description": "Taux de chômage trimestriel par sexe et tranche d'âge",
+      "source": "INSEE BDM",
+      "frequency": "QUARTERLY",
+      "unit": "PERCENTAGE",
+      "dimensions": [
+        {
+          "code": "AGE",
+          "label": "Âge"
+        },
+        {
+          "code": "SEXE",
+          "label": "Sexe"
+        },
+        {
+          "code": "TERRITORY",
+          "label": "Territoire"
+        }
+      ],
+      "modalities": []
+    }
+  ],
+  "content_sha256": "sha256:80fd9fe56ce0f574b600f97b206bc7c8fed43876fce73c58edc794ea71bc3a03",
+  "dataset_count": 1
+}

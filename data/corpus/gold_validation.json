@@ -1,0 +1,482 @@
+[
+  {
+    "claim_id": "val_000",
+    "query": "Les salaires du privé ont augmenté avec l'inflation.",
+    "claim_context": {
+      "required_indicator": "SAL-ANN-SECT-PRIVE",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "SAL-ANN-SECT-PRIVE": 3
+    }
+  },
+  {
+    "claim_id": "val_001",
+    "query": "Combien y a-t-il eu de créations de boites en 2023 ?",
+    "claim_context": {
+      "required_indicator": "CREAT-ENT",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CREAT-ENT": 3
+    }
+  },
+  {
+    "claim_id": "val_002",
+    "query": "Évolution du chômage sens BIT",
+    "claim_context": {
+      "required_indicator": "CHOMAGE-TRIM-NATIONAL",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CHOMAGE-TRIM-NATIONAL": 3
+    }
+  },
+  {
+    "claim_id": "val_003",
+    "query": "Dette au sens de Maastricht",
+    "claim_context": {
+      "required_indicator": "DETTE-TRIM-APU",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "DETTE-TRIM-APU": 3
+    }
+  },
+  {
+    "claim_id": "val_004",
+    "query": "Les usines tournent à plein régime",
+    "claim_context": {
+      "required_indicator": "IND-PROD-INDUS",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "IND-PROD-INDUS": 3
+    }
+  },
+  {
+    "claim_id": "val_005",
+    "query": "La dette de la France",
+    "claim_context": {
+      "required_indicator": "DETTE-TRIM-APU",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "DETTE-TRIM-APU": 3
+    }
+  },
+  {
+    "claim_id": "val_006",
+    "query": "Demandeurs d'emploi catégorie A",
+    "claim_context": {
+      "required_indicator": "CHOMAGE-TRIM-NATIONAL",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CHOMAGE-TRIM-NATIONAL": 3
+    }
+  },
+  {
+    "claim_id": "val_007",
+    "query": "Prix à la consommation hors tabac",
+    "claim_context": {
+      "required_indicator": "IPC-2015",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "IPC-2015": 3
+    }
+  },
+  {
+    "claim_id": "val_008",
+    "query": "La dette publique a atteint un niveau record.",
+    "claim_context": {
+      "required_indicator": "DETTE-TRIM-APU",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "DETTE-TRIM-APU": 3
+    }
+  },
+  {
+    "claim_id": "val_009",
+    "query": "Création de micro entreprises",
+    "claim_context": {
+      "required_indicator": "CREAT-ENT",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CREAT-ENT": 3
+    }
+  },
+  {
+    "claim_id": "val_010",
+    "query": "L'inflation est terrible",
+    "claim_context": {
+      "required_indicator": "IPC-2015",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "IPC-2015": 3
+    }
+  },
+  {
+    "claim_id": "val_011",
+    "query": "Excédent commercial",
+    "claim_context": {
+      "required_indicator": "BALANCE-PAIEMENTS",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "BALANCE-PAIEMENTS": 3
+    }
+  },
+  {
+    "claim_id": "val_012",
+    "query": "Je veux monter ma boite",
+    "claim_context": {
+      "required_indicator": "CREAT-ENT",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CREAT-ENT": 3
+    }
+  },
+  {
+    "claim_id": "val_013",
+    "query": "Défaillances de PME",
+    "claim_context": {
+      "required_indicator": "DEFAILLANCES-ENTREPRISES",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "DEFAILLANCES-ENTREPRISES": 3
+    }
+  },
+  {
+    "claim_id": "val_014",
+    "query": "Produit intérieur brut en volume",
+    "claim_context": {
+      "required_indicator": "CNA-2014-PIB",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CNA-2014-PIB": 3
+    }
+  },
+  {
+    "claim_id": "val_015",
+    "query": "Investissement et PIB",
+    "claim_context": {
+      "required_indicator": "CNA-2014-PIB",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CNA-2014-PIB": 3
+    }
+  },
+  {
+    "claim_id": "val_016",
+    "query": "Prix de l'énergie",
+    "claim_context": {
+      "required_indicator": "IPC-2015",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "IPC-2015": 3
+    }
+  },
+  {
+    "claim_id": "val_017",
+    "query": "Salaire moyen en France",
+    "claim_context": {
+      "required_indicator": "SAL-ANN-SECT-PRIVE",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "SAL-ANN-SECT-PRIVE": 3
+    }
+  },
+  {
+    "claim_id": "val_018",
+    "query": "Dette trimestrielle de l'état",
+    "claim_context": {
+      "required_indicator": "DETTE-TRIM-APU",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "DETTE-TRIM-APU": 3
+    }
+  },
+  {
+    "claim_id": "val_019",
+    "query": "La croissance du PIB",
+    "claim_context": {
+      "required_indicator": "CNA-2014-PIB",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CNA-2014-PIB": 3
+    }
+  },
+  {
+    "claim_id": "val_020",
+    "query": "Le chômage grimpe",
+    "claim_context": {
+      "required_indicator": "CHOMAGE-TRIM-NATIONAL",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CHOMAGE-TRIM-NATIONAL": 3
+    }
+  },
+  {
+    "claim_id": "val_021",
+    "query": "Pouvoir d'achat et salaires",
+    "claim_context": {
+      "required_indicator": "SAL-ANN-SECT-PRIVE",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "SAL-ANN-SECT-PRIVE": 3
+    }
+  },
+  {
+    "claim_id": "val_022",
+    "query": "Exportations et importations",
+    "claim_context": {
+      "required_indicator": "BALANCE-PAIEMENTS",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "BALANCE-PAIEMENTS": 3
+    }
+  },
+  {
+    "claim_id": "val_023",
+    "query": "Confiance des entrepreneurs",
+    "claim_context": {
+      "required_indicator": "CLIMAT-AFFAIRES",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CLIMAT-AFFAIRES": 3
+    }
+  },
+  {
+    "claim_id": "val_024",
+    "query": "Taux d'intérêt de la dette publique",
+    "claim_context": {
+      "required_indicator": "DETTE-TRIM-APU",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "DETTE-TRIM-APU": 3
+    }
+  },
+  {
+    "claim_id": "val_025",
+    "query": "Production industrielle manufacturière",
+    "claim_context": {
+      "required_indicator": "IND-PROD-INDUS",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "IND-PROD-INDUS": 3
+    }
+  },
+  {
+    "claim_id": "val_026",
+    "query": "Perspectives économiques des chefs d'entreprise",
+    "claim_context": {
+      "required_indicator": "CLIMAT-AFFAIRES",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CLIMAT-AFFAIRES": 3
+    }
+  },
+  {
+    "claim_id": "val_027",
+    "query": "Liquidation judiciaire",
+    "claim_context": {
+      "required_indicator": "DEFAILLANCES-ENTREPRISES",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "DEFAILLANCES-ENTREPRISES": 3
+    }
+  },
+  {
+    "claim_id": "val_028",
+    "query": "L'indice des prix a explosé cette année.",
+    "claim_context": {
+      "required_indicator": "IPC-2015",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "IPC-2015": 3
+    }
+  },
+  {
+    "claim_id": "val_029",
+    "query": "Quel est le taux de chômage national actuel ?",
+    "claim_context": {
+      "required_indicator": "CHOMAGE-TRIM-NATIONAL",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CHOMAGE-TRIM-NATIONAL": 3
+    }
+  },
+  {
+    "claim_id": "val_030",
+    "query": "Production des usines automobiles",
+    "claim_context": {
+      "required_indicator": "IND-PROD-INDUS",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "IND-PROD-INDUS": 3
+    }
+  },
+  {
+    "claim_id": "val_031",
+    "query": "Dépôts de bilan",
+    "claim_context": {
+      "required_indicator": "DEFAILLANCES-ENTREPRISES",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "DEFAILLANCES-ENTREPRISES": 3
+    }
+  },
+  {
+    "claim_id": "val_032",
+    "query": "Le PIB français s'est effondré au premier trimestre.",
+    "claim_context": {
+      "required_indicator": "CNA-2014-PIB",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CNA-2014-PIB": 3
+    }
+  },
+  {
+    "claim_id": "val_033",
+    "query": "Le moral des patrons est au plus bas.",
+    "claim_context": {
+      "required_indicator": "CLIMAT-AFFAIRES",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CLIMAT-AFFAIRES": 3
+    }
+  },
+  {
+    "claim_id": "val_034",
+    "query": "Les faillites d'entreprises explosent.",
+    "claim_context": {
+      "required_indicator": "DEFAILLANCES-ENTREPRISES",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "DEFAILLANCES-ENTREPRISES": 3
+    }
+  },
+  {
+    "claim_id": "val_035",
+    "query": "Les salaires des femmes dans le privé",
+    "claim_context": {
+      "required_indicator": "SAL-ANN-SECT-PRIVE",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "SAL-ANN-SECT-PRIVE": 3
+    }
+  },
+  {
+    "claim_id": "val_036",
+    "query": "Créations d'auto-entreprises",
+    "claim_context": {
+      "required_indicator": "CREAT-ENT",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CREAT-ENT": 3
+    }
+  },
+  {
+    "claim_id": "val_037",
+    "query": "Climat des affaires dans le bâtiment",
+    "claim_context": {
+      "required_indicator": "CLIMAT-AFFAIRES",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CLIMAT-AFFAIRES": 3
+    }
+  },
+  {
+    "claim_id": "val_038",
+    "query": "Le chômage des jeunes a baissé.",
+    "claim_context": {
+      "required_indicator": "CHOMAGE-TRIM-NATIONAL",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "CHOMAGE-TRIM-NATIONAL": 3
+    }
+  },
+  {
+    "claim_id": "val_039",
+    "query": "La balance commerciale est déficitaire.",
+    "claim_context": {
+      "required_indicator": "BALANCE-PAIEMENTS",
+      "required_dimensions": [],
+      "forbidden_sources": []
+    },
+    "ground_truth": {
+      "BALANCE-PAIEMENTS": 3
+    }
+  }
+]
