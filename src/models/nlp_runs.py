@@ -81,12 +81,35 @@ class ResolutionRun(Base):
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     parser_run_id = Column(UUID(as_uuid=True), ForeignKey("parser_runs.id"))
     retrieval_run_id = Column(UUID(as_uuid=True), ForeignKey("retrieval_runs.id"))
-    nomenclature_version = Column(String)
-    rules_applied = Column(JSONB)
-    results = Column(JSONB)
-    ambiguities = Column(JSONB)
-    automatic_decisions = Column(Integer)
-    human_decisions = Column(Integer)
+    
+    # Versions conservées
+    parser_version = Column(String)
+    catalog_version = Column(String)
+    alias_version = Column(String)
+    rules_version = Column(String)
+    
+    # Stratégie et config
+    strategy = Column(String) # R0, R1, R2, R3
+    config_hash = Column(String)
+    latency_ms = Column(Integer)
 
     parser_run = relationship("ParserRun", back_populates="resolution_runs")
     retrieval_run = relationship("RetrievalRun", back_populates="resolution_runs")
+    candidates = relationship("ResolutionCandidate", back_populates="resolution_run", cascade="all, delete-orphan")
+
+class ResolutionCandidate(Base):
+    __tablename__ = "resolution_candidates"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    resolution_run_id = Column(UUID(as_uuid=True), ForeignKey("resolution_runs.id"), nullable=False)
+    claim_id = Column(UUID(as_uuid=True), ForeignKey("claims.id"), nullable=False)
+    
+    candidate_key = Column(String, nullable=False) # Ex: M.FR.IPC...
+    is_selected = Column(Boolean, default=False)
+    
+    scores = Column(JSONB)
+    method_used = Column(String)
+    decision_reason = Column(Text)
+    
+    resolution_run = relationship("ResolutionRun", back_populates="candidates")
+    claim = relationship("Claim")

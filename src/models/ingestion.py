@@ -5,11 +5,24 @@ from sqlalchemy.dialects.postgresql import UUID, JSONB
 from sqlalchemy.orm import relationship
 from src.db.database import Base
 
+class CatalogSnapshot(Base):
+    __tablename__ = "catalog_snapshots"
+
+    id = Column(String, primary_key=True) # e.g. "insee-2026-07"
+    status = Column(String, nullable=False, default="BUILDING") # BUILDING, VALIDATING, READY, FAILED, STALE
+    source_sha256 = Column(String)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    published_at = Column(DateTime)
+    
+    runs = relationship("IngestionRun", back_populates="snapshot")
+
 class IngestionRun(Base):
     __tablename__ = "ingestion_runs"
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     source_id = Column(UUID(as_uuid=True), ForeignKey("sources.id"), nullable=False)
+    snapshot_id = Column(String, ForeignKey("catalog_snapshots.id"))
+    source_sha256 = Column(String)
     ingestion_type = Column(String) # CATALOG, STRUCTURES, OBSERVATIONS
     started_at = Column(DateTime, default=datetime.utcnow)
     ended_at = Column(DateTime)
@@ -26,6 +39,7 @@ class IngestionRun(Base):
     summary_message = Column(Text)
 
     source = relationship("Source", back_populates="ingestion_runs")
+    snapshot = relationship("CatalogSnapshot", back_populates="runs")
     items = relationship("IngestionItem", back_populates="run", cascade="all, delete-orphan")
 
 class IngestionItem(Base):

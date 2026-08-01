@@ -1,0 +1,21 @@
+{
+  "timestamp": "20260801_135215",
+  "results": {
+    "CHOMAGE-TRIM-NATIONAL": {
+      "status": "FAILED",
+      "error": "\u00c9chec r\u00e9seau d\u00e9finitif: HTTPSConnectionPool(host='bdm.insee.fr', port=443): Max retries exceeded with url: /series/sdmx/datastructure/FR1/CHOMAGE-TRIM-NATIONAL/1.0 (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='bdm.insee.fr', port=443): Read timed out. (read timeout=90)\"))"
+    },
+    "IPC-2015": {
+      "status": "FAILED",
+      "error": "\u00c9chec r\u00e9seau d\u00e9finitif: HTTPSConnectionPool(host='bdm.insee.fr', port=443): Max retries exceeded with url: /series/sdmx/datastructure/FR1/IPC-2015/1.0 (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='bdm.insee.fr', port=443): Read timed out. (read timeout=90)\"))"
+    },
+    "NAISSANCES-FECONDITE": {
+      "status": "FAILED",
+      "error": "\u00c9chec r\u00e9seau d\u00e9finitif: HTTPSConnectionPool(host='bdm.insee.fr', port=443): Max retries exceeded with url: /series/sdmx/datastructure/FR1/NAISSANCES-FECONDITE/1.0 (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='bdm.insee.fr', port=443): Read timed out. (read timeout=90)\"))"
+    },
+    "CREATIONS-ENTREPRISES": {
+      "status": "FAILED",
+      "error": "\u00c9chec r\u00e9seau d\u00e9finitif: HTTPSConnectionPool(host='bdm.insee.fr', port=443): Max retries exceeded with url: /series/sdmx/datastructure/FR1/CREATIONS-ENTREPRISES/1.0 (Caused by ReadTimeoutError(\"HTTPSConnectionPool(host='bdm.insee.fr', port=443): Read timed out. (read timeout=90)\"))"
+    }
+  }
+}
