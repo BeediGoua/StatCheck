@@ -81,3 +81,37 @@ class EvaluationMetric(Base):
     category = Column(String, nullable=True)
 
     run = relationship("EvaluationRun", back_populates="metrics")
+
+class GoldAnnotation(Base):
+    __tablename__ = "gold_annotations"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    claim_id = Column(UUID(as_uuid=True), nullable=False) # L'unité d'annotation
+    dataflow_id = Column(String, nullable=False)
+    metadata_snapshot_id = Column(String, nullable=False)
+    
+    expected_status = Column(String, nullable=False) # FOUND, NOT_FOUND, AMBIGUOUS
+    codes_by_dimension = Column(JSON, nullable=True) # {"FREQ": "M", "NATURE": "INDICE"}
+    time_window = Column(JSON, nullable=True) # {"start": "2020", "end": "2025"}
+    allowed_defaults = Column(JSON, nullable=True) # {"AGE": "TOTAL"}
+    forbidden_substitutions = Column(JSON, nullable=True) # {"GEO": ["FRANCE_METRO"]}
+    
+    ambiguities = Column(String, nullable=True)
+    limitations = Column(String, nullable=True)
+    annotation_provenance = Column(String, nullable=False) # HUMAN_EXPERT, SYNTHETIC_LLM
+
+    keys = relationship("GoldAnnotationKey", back_populates="annotation", cascade="all, delete-orphan")
+
+    __table_args__ = (
+        UniqueConstraint("claim_id", "dataflow_id", "metadata_snapshot_id", name="uq_gold_annotation"),
+    )
+
+class GoldAnnotationKey(Base):
+    __tablename__ = "gold_annotation_keys"
+
+    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    annotation_id = Column(UUID(as_uuid=True), ForeignKey("gold_annotations.id"), nullable=False)
+    expected_ordered_key = Column(String, nullable=False) # M.INDICE.FR.TOTAL
+    relevance = Column(String, nullable=False, default="EXACT") # EXACT, ACCEPTABLE, INSUFFICIENT
+
+    annotation = relationship("GoldAnnotation", back_populates="keys")

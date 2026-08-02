@@ -1,0 +1,76 @@
+{
+    "metrics": {
+        "total_claims": 40,
+        "perfect_matches": 0,
+        "expected_rejections": 28,
+        "failures": {
+            "nlp_extraction_failed": 8,
+            "exact_match_failed": 4,
+            "structural_validation_failed": 0,
+            "wrong_key_generated": 0,
+            "ambiguous_failure": 0
+        }
+    },
+    "failure_details": [
+        {
+            "claim_id": "42a7f27c-eb54-4315-9906-fb7eabe3f33b",
+            "text": "Le taux de chômage au 1er trimestre 2024 était de 7,5%.",
+            "reason": "NLP Parser returned MISSING_CONTEXT or AMBIGUOUS unexpectedly."
+        },
+        {
+            "claim_id": "b9d382f9-3852-4984-b13a-c17f3aab956e",
+            "text": "L'indice des prix à la consommation a augmenté en mai 2023.",
+            "reason": "NLP Parser returned MISSING_CONTEXT or AMBIGUOUS unexpectedly."
+        },
+        {
+            "claim_id": "a3807493-6207-42b0-a0ea-2424b674dee0",
+            "text": "Il y a eu 2000 créations d'entreprises dans le secteur de la construction.",
+            "reason": "Exact Matcher n'a trouvé aucun code pour les termes extraits."
+        },
+        {
+            "claim_id": "265e6883-1c68-417e-bd08-8ab5fdd388ec",
+            "text": "L'espérance de vie des femmes à la naissance est de 85 ans.",
+            "reason": "NLP Parser returned MISSING_CONTEXT or AMBIGUOUS unexpectedly."
+        },
+        {
+            "claim_id": "d10936a8-2ba9-4f83-a60a-bc8c5d9259a5",
+            "text": "Le PIB de la France a cru de 1% au T2.",
+            "reason": "Exact Matcher n'a trouvé aucun code pour les termes extraits."
+        },
+        {
+            "claim_id": "ca10864c-5424-46af-b6bc-5fb5b5dff582",
+            "text": "Le nombre de bébés en 2023 a chuté.",
+            "reason": "NLP Parser returned MISSING_CONTEXT or AMBIGUOUS unexpectedly."
+        },
+        {
+            "claim_id": "c5084281-18aa-4afa-9be8-d484807a0c32",
+            "text": "L'inflation sous-jacente s'est calmée.",
+            "reason": "Exact Matcher n'a trouvé aucun code pour les termes extraits."
+        },
+        {
+            "claim_id": "531679b6-ae84-459d-ab97-0ff5f0523583",
+            "text": "Les chômeurs de longue durée sont plus nombreux.",
+            "reason": "NLP Parser returned MISSING_CONTEXT or AMBIGUOUS unexpectedly."
+        },
+        {
+            "claim_id": "8bcab66a-6d87-4dea-94dc-b444bcdeb334",
+            "text": "Moins de boîtes créées ce mois-ci.",
+            "reason": "NLP Parser returned MISSING_CONTEXT or AMBIGUOUS unexpectedly."
+        },
+        {
+            "claim_id": "e64aeaa7-2e80-4e46-b934-9329326cd398",
+            "text": "Le prix du pain a augmenté.",
+            "reason": "NLP Parser returned MISSING_CONTEXT or AMBIGUOUS unexpectedly."
+        },
+        {
+            "claim_id": "595e439e-43ad-4406-a73d-df2e40ff4b90",
+            "text": "Le chômage au sens strict du BIT est de 7%.",
+            "reason": "NLP Parser returned MISSING_CONTEXT or AMBIGUOUS unexpectedly."
+        },
+        {
+            "claim_id": "020513bb-3f01-401f-9768-b9b2e3d13d79",
+            "text": "Comparaison des naissances chez les moins de 20 ans et les plus de 40 ans.",
+            "reason": "Exact Matcher n'a trouvé aucun code pour les termes extraits."
+        }
+    ]
+}

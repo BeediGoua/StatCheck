@@ -1,0 +1,24 @@
+{
+    "total_annotations": 63,
+    "distribution_by_status": {
+        "FOUND": 24,
+        "NOT_FOUND": 29,
+        "AMBIGUOUS": 10
+    },
+    "distribution_by_dataflow": {
+        "CHOMAGE-TRIM-NATIONAL": 10,
+        "IPC-2015": 12,
+        "CREATIONS-ENTREPRISES": 8,
+        "DEMOGRAPHIE-ESPERANCE": 2,
+        "CNT-PIB": 6,
+        "NAISSANCES-FECONDITE": 8,
+        "TEST-EXT": 17
+    },
+    "phenomenon_frequencies": {
+        "allowed_defaults": 2,
+        "forbidden_substitutions": 2,
+        "ambiguities": 10,
+        "limitations": 29,
+        "time_window": 2
+    }
+}
