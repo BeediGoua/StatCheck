@@ -1,6 +1,6 @@
 import random
 from typing import List, Dict, Any
-from src.parser.canonical import CanonicalParseResult
+from src.parser.claim_specification import ClaimSpecification
 from src.fusion.engine import FusionEngine
 from src.evaluation.router import C3Router
 
@@ -14,15 +14,15 @@ class EvaluationOrchestrator:
         self.fusion = FusionEngine()
         self.router = C3Router()
         
-    def evaluate_c0_baseline(self, baseline_outputs: List[CanonicalParseResult]) -> List[CanonicalParseResult]:
+    def evaluate_c0_baseline(self, baseline_outputs: List[ClaimSpecification]) -> List[ClaimSpecification]:
         """C0 : Baseline seule. Aucun appel LLM."""
         return baseline_outputs
 
-    def evaluate_c1_llm(self, precomputed_llm_outputs: List[CanonicalParseResult]) -> List[CanonicalParseResult]:
+    def evaluate_c1_llm(self, precomputed_llm_outputs: List[ClaimSpecification]) -> List[ClaimSpecification]:
         """C1 : LLM seul (post-validé)."""
         return precomputed_llm_outputs
         
-    def evaluate_c2_fusion(self, baseline_outputs: List[CanonicalParseResult], precomputed_llm_outputs: List[CanonicalParseResult]) -> List[CanonicalParseResult]:
+    def evaluate_c2_fusion(self, baseline_outputs: List[ClaimSpecification], precomputed_llm_outputs: List[ClaimSpecification]) -> List[ClaimSpecification]:
         """C2 : Fusion toujours active sur 100% des affirmations."""
         fused_results = []
         for b, l in zip(baseline_outputs, precomputed_llm_outputs):
@@ -30,7 +30,7 @@ class EvaluationOrchestrator:
             fused_results.append(fused)
         return fused_results
         
-    def evaluate_c3_cascade(self, texts: List[str], baseline_outputs: List[CanonicalParseResult], precomputed_llm_outputs: List[CanonicalParseResult]) -> Dict[str, Any]:
+    def evaluate_c3_cascade(self, texts: List[str], baseline_outputs: List[ClaimSpecification], precomputed_llm_outputs: List[ClaimSpecification]) -> Dict[str, Any]:
         """
         C3 : Cascade déterministe. Baseline -> Routeur -> (LLM + Fusion si nécessaire).
         """

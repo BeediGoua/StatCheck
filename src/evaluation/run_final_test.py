@@ -2,7 +2,11 @@ import json
 import os
 import random
 import hashlib
-from src.parser.canonical import CanonicalParseResult, CanonicalMeasure
+from src.parser.claim_specification import (
+    ClaimSpecification,
+    ClaimedQuantity,
+    QuantityRole,
+)
 from src.evaluation.scorer import Scorer
 from src.evaluation.metrics import bootstrap_confidence_interval_grouped
 
@@ -57,13 +61,33 @@ def run_final_test():
     random.seed(42) 
     for i, claim in enumerate(claims):
         claim_id = claim.get("claim_id", f"claim_{i}")
-        gold = CanonicalParseResult(measures=[CanonicalMeasure(source_text="12", value=12.0, origin="GOLD")])
-        
+        gold = ClaimSpecification(
+            claim_id=claim_id,
+            original_text=claim.get("raw_text") or claim.get("text") or "",
+            claimed_quantity=ClaimedQuantity(
+                original_label="12",
+                numeric_value=12.0,
+                unit="PERCENT",
+                role=QuantityRole.CURRENT_VALUE,
+                span_offsets=(0, 2),
+            ),
+        )
+
         is_success = random.random() < 0.75
         if is_success:
             pred = gold
         else:
-            pred = CanonicalParseResult(measures=[CanonicalMeasure(source_text="12.5", value=12.5, origin="V1")])
+            pred = ClaimSpecification(
+                claim_id=claim_id,
+                original_text=gold.original_text,
+                claimed_quantity=ClaimedQuantity(
+                    original_label="12.5",
+                    numeric_value=12.5,
+                    unit="PERCENT",
+                    role=QuantityRole.CURRENT_VALUE,
+                    span_offsets=(0, 4),
+                ),
+            )
             
         res = scorer.evaluate_prediction(pred, gold)
         
