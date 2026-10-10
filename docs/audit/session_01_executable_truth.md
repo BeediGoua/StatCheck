@@ -49,7 +49,9 @@ Also inspected (read/grep, not executed as full pipelines):
 | Untracked important | `scripts/test_r1_pipeline.py` (MagicMock R1 smoke) |
 | Created by audit | `.venv/` (local), `PROJECT_STATUS.md`, this file |
 
-Nothing was deleted or force-reset.
+Nothing was deleted or force-reset during the audit itself.
+
+**Post-audit repository hygiene (Session 01.5):** tracked `__pycache__` / `*.pyc` and regenerable `.cache/bdm/` were untracked; `.gitignore` updated; `scripts/test_r1_pipeline.py` moved to `scripts/demos/mock_r1_resolution_demo.py` with an explicit MOCK/DEMO header. No production code changed. Canonical CONTRACT_DRIFT collection errors remain intentional Session-02 starting points.
 
 ---
 

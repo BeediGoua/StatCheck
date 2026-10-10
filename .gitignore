@@ -1,1 +1,25 @@
 /a faire/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+
+# Regenerable runtime / API caches (e.g. INSEE BDM JSON under .cache/bdm/)
+.cache/
+
+# Tests
+.pytest_cache/
+
+# Tooling
+.mypy_cache/
+.ruff_cache/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
