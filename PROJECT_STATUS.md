@@ -1,0 +1,161 @@
+# StatCheck — Executable Truth Status
+
+## Snapshot
+
+| Field | Value |
+|---|---|
+| Commit | `a2f7bfcbc346141c93b732abfffb8437ca499d39` |
+| Message | Architecture R1 : cible V1 |
+| Branch | `main` (aligned with `origin/main`) |
+| Audit date | 2026-10-10 |
+| Working tree | No tracked source edits. Untracked: `scripts/test_r1_pipeline.py` (+ local `__pycache__`, `.venv` created during audit) |
+
+**Rule used:** Documentation ≠ truth. Status below is from code + executed tests + scripts inspection.
+
+## Status legend
+
+| Status | Meaning |
+|---|---|
+| TARGET | Described as goal (docs/architecture), not proven by runtime |
+| IMPLEMENTED | Code present at audited commit |
+| TESTED | At least one relevant automated test executed successfully in this session |
+| VALIDATED | Demonstrated on appropriate real data / non-mock benchmark (not claimed here lightly) |
+| MOCK | Simulation, synthetic gold, forced outcome, or demo path |
+| BROKEN | Does not work at audited commit (import failure, schema mismatch, unwired) |
+| TODO | Absent |
+| UNKNOWN / NOT VERIFIED | Insufficient evidence in this session |
+
+## Component matrix
+
+| Component | Implemented | Tested | Validated | Mock | Broken | Evidence |
+|---|---|---|---|---|---|---|
+| Entry `main.py` | stub only | — | — | — | — | Prints hello; no pipeline |
+| Baseline parser | YES | NOT VERIFIED (needs `spacy`/`dateparser`) | NO | — | env deps missing from pyproject | `src/parser/baseline/baseline_parser.py` → legacy dict |
+| LLM parser (`StatCheckLLMParser`) | YES | PARTIAL (schemas/validators unit) | NO | — | — | Live prompt tests skipped (Ollama); needs `instructor`/`openai` |
+| Canonical Lot-8 | YES | NO | NO | — | BREAKS consumers | `indicator`, `time_period`, `statistical_operation` |
+| Canonical legacy (mentions) | expected by fusion/router/scorer | collection FAIL | NO | — | YES | Missing `CanonicalIndicator`, `SourceScope`, `indicators[]`, … |
+| FusionEngine | YES (measures only) | collection FAIL | NO | post-validators `pass` | YES (contract drift) | `src/fusion/engine.py` |
+| C3Router | YES | collection FAIL | NO | — | YES (contract drift) | expects `indicators` / `time_expressions` / `operation` |
+| Scorer / EvaluationOrchestrator | YES | collection FAIL | NO | — | YES (contract drift) | imports dead symbols from canonical |
+| `select_v1.py` | YES | — | **NO** | YES | scientific invalid | McNemar mock; `best_arch = "C3"`; `golds = baselines` |
+| `run_final_test.py` | YES | — | **NO** | YES | scientific invalid | `random` success; synthetic Canonical gold/pred; fake latencies |
+| Hybrid retrieval algos (RRF, reranker, nDCG) | YES | YES (8/8 lot7) | NO | demos in etape_4/5/6 | — | `tests/test_lot7.py` PASS |
+| Postgres FTS + pgvector path | YES | ERROR (no DB) | NOT VERIFIED here | mock helpers still in etape_7 file | env | `tests/test_postgres_e2e.py` connection refused |
+| Catalog / structure ingestion | YES | NOT RUN | NOT VERIFIED | — | — | live INSEE HTTP + SQLAlchemy |
+| Observation ingestion (parquet) | YES | NOT RUN | NOT VERIFIED | — | missing `pandas`/`pyarrow` in pyproject | `observation_ingester.py` |
+| SDMX resolvers (R1) | PARTIAL | NOT VERIFIED | NO | `test_r1_pipeline.py` MagicMock | schema mismatch risk | `Series` vs `AvailableSeriesKey`; `target_code` vs `target_modality_code` |
+| `SDMXSelectionPlan` | schema only | — | — | — | no producer | class defined, never constructed in `src/` |
+| InseeBdmProvider | YES | NOT RUN this session | UNKNOWN | — | — | idbank fetch exists; used by `verify_mvp.py` |
+| Calculator | YES | NOT RUN | UNKNOWN | — | — | ops on `Observation` list; no claim/verdict link |
+| Verdict / proof layer | TODO | — | — | — | — | taxonomy in docs only; no producer module |
+| End-to-end claim→verdict | TODO | — | — | — | YES (absent) | islands only |
+
+## Test status
+
+### Collection (after installing audit-only deps: pytest, pydantic, dateparser, instructor)
+
+| Scope | Collected | Collection errors |
+|---|---|---|
+| Default full tree (incl. scratch/scripts) | 13 | 12 |
+| Core: `tests` + `src/*/tests` (`--continue-on-collection-errors`) | **21** | **4** (all CONTRACT_DRIFT) |
+
+### Execution (this session)
+
+| Suite | PASS | FAIL | ERROR | SKIP |
+|---|---|---|---|---|
+| `tests/parser/llm` + `tests/test_lot7.py` | **14** | 0 | 0 | **3** (Ollama prompt tests) |
+| `tests/test_postgres_e2e.py` | 0 | 0 | **4** | 0 |
+| Fusion / router / scorer / regression_c3 | — | — | collection | — |
+
+**Headline counts (core intent):** PASS=14, FAIL=0, ERROR=4 (Postgres), SKIP=3, COLLECTION_ERROR=4 (contract drift).  
+**Not scientific:** any metrics from `select_v1.py` / `run_final_test.py` / `evaluation/releases/v1-final-test/`.
+
+### Broken tests (classified)
+
+| Test / module | Cause | Category | Prod file | Verdict |
+|---|---|---|---|---|
+| `tests/test_regression_c3.py` | `CanonicalIndicator` missing | CONTRACT_DRIFT | `src/parser/canonical.py` | BROKEN |
+| `src/evaluation/tests/test_router.py` | same | CONTRACT_DRIFT | canonical + router | BROKEN |
+| `src/evaluation/tests/test_scorer.py` | `SourceScope` / mention types missing | CONTRACT_DRIFT | canonical + scorer | BROKEN |
+| `src/fusion/tests/test_fusion.py` | `SourceScope` missing | CONTRACT_DRIFT | canonical + fusion | BROKEN |
+| `TestPostgresE2E::*` | connection refused localhost:5432 | ENVIRONMENT | docker-compose / DB | ENVIRONMENT |
+| Early collect: scratch/*, baseline, llm without deps | missing `instructor`/`spacy`/`dateparser` | EXTERNAL_DEPENDENCY | pyproject incomplete | ENVIRONMENT |
+
+## Contract drift
+
+| Concept | Canonical Lot-8 | Baseline | LLM | Fusion | Router | Gold annotation |
+|---|---|---|---|---|---|---|
+| Indicator | `indicator` (slot) | `subject.indicator` | `indicators[]` | expects `indicators` (stub) | `baseline_result.indicators` | `subject.indicator` |
+| Quantity | `unit` + measure slot `numeric_value` | `measures[]` (`value`, roles) | `measures[]` (`numeric_value`) | `baseline.measures` / `llm.measures` | `measures` required | singular `measure.{value,unit}` |
+| Time | `time_period` | `time` | `time_expressions[]` | stub | `time_expressions` | `time.*` |
+| Operation | `statistical_operation` | `operation` | `operation` | — | `operation` | `operation.{type,direction}` |
+| Status | `parse_status` ACCEPTED/… | `status.answerability` | `parse_status` COMPLETE/… | COMPLETE/AMBIGUOUS/… | AMBIGUOUS/PARTIAL/… | `status.answerability` |
+| IDs | `claim_id`, `original_text` required | identity only | envelope `claim_id` | ctor without ids (legacy) | — | `claim_id` |
+
+**SDMX / retrieval side:** resolvers take dict candidates (`dataflow_id`, `snapshot_id`) + `structured_dimensions`; `SDMXSelectionPlan` is unused; availability queries `Series.snapshot_id` / `series_key` which **do not exist** on `Series` (belong on `AvailableSeriesKey`).
+
+## Mock / historical results
+
+| Artifact | Classification | Scientific? |
+|---|---|---|
+| `src/evaluation/select_v1.py` | MOCK / DEMO | **No** — McNemar all-True; forces `C3`; gold = baseline self-copy; ADR invents latency narrative |
+| `src/evaluation/run_final_test.py` | MOCK | **No** — `random.random() < 0.75`; synthetic measures; fake durations; no real parsers |
+| `evaluation/releases/v1-final-test/` | HISTORICAL from mock run | **No** unless regenerated from real pipeline |
+| `scripts/etape_5/hybrid_search.py` optimize | DEMO — real RRF on mock ranks | Hyperparams not VALIDATED |
+| `scripts/etape_6/... demo_reranker` | DEMO | Algorithm REAL; demo data mock |
+| `scripts/etape_7/evaluate_retrieval.py` | REAL path in `main` + leftover mock_* helpers | Benchmark needs live Postgres — NOT VERIFIED this session |
+| `scripts/test_r1_pipeline.py` | MOCK DB | Orchestrator smoke only |
+| Fusion `_apply_post_validators` | PROTOTYPE (`pass`) | Not a validator |
+| `manifest_builder.py` placeholder hashes | PLACEHOLDER | Not provenance |
+
+## Real external dependencies
+
+| Dependency | Declared in pyproject? | Used for |
+|---|---|---|
+| SQLAlchemy, psycopg2-binary, requests, sentence-transformers, alembic | YES | DB, HTTP, embeddings |
+| **pydantic** | **NO** | canonical, LLM schemas, SDMX models |
+| **openai**, **instructor** | **NO** | LLM client |
+| **spacy**, **dateparser** | **NO** | baseline NLP / time |
+| **pandas**, **pyarrow** | **NO** | observation parquet |
+| PostgreSQL + pgvector | docker-compose | ingestion, FTS, vectors, resolvers |
+| INSEE BDM API | network | catalog/structure/obs/provider |
+| Ollama / local LLM | env | prompt tests (skipped) |
+
+## End-to-end status
+
+**Does an executable path exist today for:**  
+unknown text → parse → dataset retrieval → series/dimension resolution → INSEE fetch → deterministic calc → verdict?
+
+### **NO.**
+
+| Link | Status |
+|---|---|
+| Parser (baseline) | IMPLEMENTED (deps gap) |
+| Parser → Canonical (shared) | BROKEN (schema drift / no adapter) |
+| Canonical → Fusion / Router | BROKEN |
+| Canonical → Retrieval | NOT WIRED |
+| Retrieval (Lot 7 scripts) | IMPLEMENTED (PG-dependent); TESTED unit algos only |
+| Retrieval → Resolver | PARTIAL / NOT WIRED to parse |
+| Resolver | PARTIAL + DB schema mismatch risk |
+| Resolver → Provider | NOT WIRED (no `SDMXSelectionPlan` producer) |
+| Provider | IMPLEMENTED |
+| Provider → Calculator | PARTIAL script `verify_mvp.py` (hardcoded idbanks) |
+| Calculator | IMPLEMENTED |
+| Calculator → Verdict | TODO |
+
+Closest non-NLP path: `scripts/verify_mvp.py` (idbank → observations → Calculator). Closest resolution smoke: `scripts/test_r1_pipeline.py` (mocked session).
+
+## P0 blockers
+
+1. **Canonical contract split** — Lot-8 slots vs legacy mentions expected by fusion/router/scorer/tests; imports fail at collection.
+2. **No adapters** baseline/LLM → single canonical consumed downstream.
+3. **No claim→verdict orchestrator**; verdict taxonomy is documentation-only.
+4. **Evaluation “final” scripts are mocks** — cannot be used as scientific evidence.
+5. **Resolver/availability ORM mismatch** (`Series` vs `AvailableSeriesKey`; `target_code` vs `target_modality_code`).
+6. **Declared dependencies incomplete** relative to imports (blocks reproducible runs).
+
+## Recommended next action
+
+**Single next correction:** restore one shared `CanonicalParseResult` contract (choose Lot-8 or legacy mentions, not both) and make fusion/router/scorer/tests import and type-check against it — including adapters from baseline dict and LLM `ClaimParseResult`.
+
+Do not expand retrieval, LLM models, or new sources until this contract compiles and unit-tests for router/fusion/scorer collect and run.
