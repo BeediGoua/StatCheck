@@ -1,8 +1,10 @@
 from typing import Any, Dict, List, Optional, Tuple
 
 from src.fusion.alignment import BipartiteAligner
-from src.fusion.authority import AuthorityMatrix, DecisionType
+from src.fusion.authority import AuthorityMatrix
+from src.fusion.post_validators import apply_post_validators
 from src.parser.claim_specification import (
+    CLAIMED_QUANTITY_ROLES,
     ClaimSpecification,
     ClaimedQuantity,
     ParseStatus,
@@ -27,78 +29,16 @@ class FusionEngine:
             claim_id=baseline.claim_id or llm.claim_id,
             original_text=baseline.original_text or llm.original_text,
             parse_status=ParseStatus.PENDING,
-            indicator=baseline.indicator or llm.indicator,
-            populations=list(baseline.populations or llm.populations),
-            territories=list(baseline.territories),
-            time_period=baseline.time_period or llm.time_period,
-            statistical_operation=baseline.statistical_operation
-            or llm.statistical_operation,
         )
 
-        b_qty = baseline.quantity_list()
-        l_qty = llm.quantity_list()
-        measure_alignments = self.aligner.align(b_qty, l_qty)
-
-        matched_base_indices = set()
-        matched_llm_indices = set()
-        fused_quantities: List[ClaimedQuantity] = []
-
-        for align in measure_alignments:
-            b_idx = align["baseline_idx"]
-            l_idx = align["llm_idx"]
-            matched_base_indices.add(b_idx)
-            matched_llm_indices.add(l_idx)
-
-            b_mention = align["baseline_mention"]
-            l_mention = align["llm_mention"]
-
-            auth_res = self.authority.fuse_measure(b_mention, l_mention)
-            if auth_res["result"]:
-                fused_quantities.append(auth_res["result"])
-
-            decisions_log.append(
-                {
-                    "field": "quantities",
-                    "alignment_type": align["alignment_type"].value,
-                    "score": align["score"],
-                    "baseline_value": b_mention.model_dump(),
-                    "llm_value": l_mention.model_dump(),
-                    "decision_type": auth_res["decision"].value,
-                    "explanation": auth_res["explanation"].value,
-                }
-            )
-
-        for i, b_mention in enumerate(b_qty):
-            if i not in matched_base_indices:
-                auth_res = self.authority.fuse_measure(b_mention, None)
-                if auth_res["result"]:
-                    fused_quantities.append(auth_res["result"])
-                decisions_log.append(
-                    {
-                        "field": "quantities",
-                        "alignment_type": "NOT_ALIGNED",
-                        "decision_type": auth_res["decision"].value,
-                        "explanation": auth_res["explanation"].value,
-                    }
-                )
-
-        for i, l_mention in enumerate(l_qty):
-            if i not in matched_llm_indices:
-                auth_res = self.authority.fuse_measure(None, l_mention)
-                if auth_res["result"]:
-                    fused_quantities.append(auth_res["result"])
-                decisions_log.append(
-                    {
-                        "field": "quantities",
-                        "alignment_type": "NOT_ALIGNED",
-                        "decision_type": auth_res["decision"].value,
-                        "explanation": auth_res["explanation"].value,
-                    }
-                )
-
-        # Re-split into claimed vs reference using roles
-        from src.parser.claim_specification import CLAIMED_QUANTITY_ROLES
-
+        # --- Quantities ---
+        fused_quantities = self._fuse_list_field(
+            field="quantities",
+            baseline_items=baseline.quantity_list(),
+            llm_items=llm.quantity_list(),
+            fuse_fn=self.authority.fuse_quantity,
+            decisions_log=decisions_log,
+        )
         claimed = None
         references: List[ClaimedQuantity] = []
         for q in fused_quantities:
@@ -109,63 +49,222 @@ class FusionEngine:
         if claimed is None and fused_quantities:
             claimed = fused_quantities[0]
             references = fused_quantities[1:]
-
         final_result.claimed_quantity = claimed
         final_result.reference_quantities = references
 
-        # Territory fuse (simple first-pair / orphans) — full rewrite in Session 3
-        terr_align = self.aligner.align(baseline.territories, llm.territories)
-        matched_bt, matched_lt = set(), set()
-        fused_terr = []
-        for align in terr_align:
-            matched_bt.add(align["baseline_idx"])
-            matched_lt.add(align["llm_idx"])
-            auth_res = self.authority.fuse_territory(
-                align["baseline_mention"], align["llm_mention"]
-            )
-            if auth_res["result"]:
-                fused_terr.append(auth_res["result"])
-            decisions_log.append(
-                {
-                    "field": "territories",
-                    "alignment_type": align["alignment_type"].value,
-                    "decision_type": auth_res["decision"].value,
-                    "explanation": auth_res["explanation"].value,
-                }
-            )
-        for i, t in enumerate(baseline.territories):
-            if i not in matched_bt:
-                auth_res = self.authority.fuse_territory(t, None)
-                if auth_res["result"]:
-                    fused_terr.append(auth_res["result"])
-        for i, t in enumerate(llm.territories):
-            if i not in matched_lt:
-                auth_res = self.authority.fuse_territory(None, t)
-                if auth_res["result"]:
-                    fused_terr.append(auth_res["result"])
-        if fused_terr:
-            final_result.territories = fused_terr
+        # --- Territories ---
+        final_result.territories = self._fuse_list_field(
+            field="territories",
+            baseline_items=baseline.territories,
+            llm_items=llm.territories,
+            fuse_fn=self.authority.fuse_territory,
+            decisions_log=decisions_log,
+        )
 
-        self._apply_post_validators(final_result)
+        # --- Populations ---
+        final_result.populations = self._fuse_list_field(
+            field="populations",
+            baseline_items=baseline.populations,
+            llm_items=llm.populations,
+            fuse_fn=self.authority.fuse_population,
+            decisions_log=decisions_log,
+        )
 
-        if final_result.parse_status != ParseStatus.REJECTED:
-            has_ambiguity = any(
-                d["decision_type"] == DecisionType.BOTH_RETAINED_AS_ALTERNATIVES.value
-                for d in decisions_log
-            )
-            has_conflict = any(
-                d["decision_type"] == DecisionType.CONFLICT_UNRESOLVED.value
-                for d in decisions_log
-            )
-            if has_conflict:
-                final_result.parse_status = ParseStatus.CONTRADICTION
-            elif has_ambiguity:
-                final_result.parse_status = ParseStatus.AMBIGUOUS
-            else:
-                final_result.parse_status = ParseStatus.COMPLETE
+        # --- Singular slots ---
+        final_result.indicator = self._fuse_singular(
+            field="indicator",
+            baseline_item=baseline.indicator,
+            llm_item=llm.indicator,
+            fuse_fn=self.authority.fuse_indicator,
+            decisions_log=decisions_log,
+        )
+        final_result.time_period = self._fuse_singular(
+            field="time_period",
+            baseline_item=baseline.time_period,
+            llm_item=llm.time_period,
+            fuse_fn=self.authority.fuse_time,
+            decisions_log=decisions_log,
+        )
+        final_result.statistical_operation = self._fuse_singular(
+            field="statistical_operation",
+            baseline_item=baseline.statistical_operation,
+            llm_item=llm.statistical_operation,
+            fuse_fn=self.authority.fuse_operation,
+            decisions_log=decisions_log,
+        )
+        final_result.expressed_frequency = self._fuse_singular(
+            field="expressed_frequency",
+            baseline_item=baseline.expressed_frequency,
+            llm_item=llm.expressed_frequency,
+            fuse_fn=self.authority.fuse_frequency,
+            decisions_log=decisions_log,
+        )
+        final_result.adjustment = self._fuse_singular(
+            field="adjustment",
+            baseline_item=baseline.adjustment,
+            llm_item=llm.adjustment,
+            fuse_fn=self.authority.fuse_adjustment,
+            decisions_log=decisions_log,
+        )
+
+        # Preserve non-fused slots from baseline preferentially
+        final_result.expected_dimensions = list(
+            baseline.expected_dimensions or llm.expected_dimensions
+        )
+        final_result.comparison = baseline.comparison or llm.comparison
+
+        self._apply_post_validators(final_result, decisions_log)
 
         return final_result, decisions_log
 
-    def _apply_post_validators(self, result: ClaimSpecification) -> None:
-        """Placeholder — Session 3 will wire real post-validators."""
-        pass
+    def _log_decision(
+        self,
+        decisions_log: List[Dict],
+        field: str,
+        auth_res: Dict[str, Any],
+        align: Optional[Dict[str, Any]] = None,
+        baseline_value: Any = None,
+        llm_value: Any = None,
+    ) -> None:
+        entry: Dict[str, Any] = {
+            "field": field,
+            "baseline_value": (
+                baseline_value.model_dump()
+                if hasattr(baseline_value, "model_dump")
+                else baseline_value
+            ),
+            "llm_value": (
+                llm_value.model_dump()
+                if hasattr(llm_value, "model_dump")
+                else llm_value
+            ),
+            "decision": auth_res["decision"].value,
+            "decision_type": auth_res["decision"].value,
+            "explanation": auth_res["explanation"].value,
+            "reason": auth_res["explanation"].value,
+            "evidence": auth_res.get("evidence"),
+        }
+        if align is not None:
+            entry["alignment_type"] = (
+                align["alignment_type"].value
+                if hasattr(align["alignment_type"], "value")
+                else align["alignment_type"]
+            )
+            entry["score"] = align.get("score")
+            rel = align.get("semantic_relation")
+            if rel is not None:
+                entry["semantic_relation"] = (
+                    rel.value if hasattr(rel, "value") else rel
+                )
+        else:
+            entry["alignment_type"] = "NOT_ALIGNED"
+        decisions_log.append(entry)
+
+    def _fuse_list_field(
+        self,
+        field: str,
+        baseline_items: List,
+        llm_items: List,
+        fuse_fn,
+        decisions_log: List[Dict],
+    ) -> List:
+        alignments = self.aligner.align(baseline_items, llm_items)
+        matched_b, matched_l = set(), set()
+        fused: List = []
+
+        for align in alignments:
+            matched_b.add(align["baseline_idx"])
+            matched_l.add(align["llm_idx"])
+            b_m, l_m = align["baseline_mention"], align["llm_mention"]
+            auth_res = fuse_fn(b_m, l_m)
+            if auth_res["result"] is not None:
+                fused.append(auth_res["result"])
+            self._log_decision(
+                decisions_log,
+                field,
+                auth_res,
+                align=align,
+                baseline_value=b_m,
+                llm_value=l_m,
+            )
+
+        for i, item in enumerate(baseline_items):
+            if i not in matched_b:
+                auth_res = fuse_fn(item, None)
+                if auth_res["result"] is not None:
+                    fused.append(auth_res["result"])
+                self._log_decision(
+                    decisions_log, field, auth_res, baseline_value=item, llm_value=None
+                )
+
+        for i, item in enumerate(llm_items):
+            if i not in matched_l:
+                auth_res = fuse_fn(None, item)
+                if auth_res["result"] is not None:
+                    fused.append(auth_res["result"])
+                self._log_decision(
+                    decisions_log, field, auth_res, baseline_value=None, llm_value=item
+                )
+
+        return fused
+
+    def _fuse_singular(
+        self,
+        field: str,
+        baseline_item,
+        llm_item,
+        fuse_fn,
+        decisions_log: List[Dict],
+    ):
+        if baseline_item is None and llm_item is None:
+            return None
+
+        # Wrap as lists for alignment when both present
+        if baseline_item is not None and llm_item is not None:
+            aligns = self.aligner.align([baseline_item], [llm_item])
+            if aligns:
+                auth_res = fuse_fn(baseline_item, llm_item)
+                self._log_decision(
+                    decisions_log,
+                    field,
+                    auth_res,
+                    align=aligns[0],
+                    baseline_value=baseline_item,
+                    llm_value=llm_item,
+                )
+                return auth_res["result"]
+            # Below threshold — still apply authority (treat as paired by field)
+            auth_res = fuse_fn(baseline_item, llm_item)
+            self._log_decision(
+                decisions_log,
+                field,
+                auth_res,
+                baseline_value=baseline_item,
+                llm_value=llm_item,
+            )
+            return auth_res["result"]
+
+        auth_res = fuse_fn(baseline_item, llm_item)
+        self._log_decision(
+            decisions_log,
+            field,
+            auth_res,
+            baseline_value=baseline_item,
+            llm_value=llm_item,
+        )
+        return auth_res["result"]
+
+    def _apply_post_validators(
+        self, result: ClaimSpecification, decisions_log: List[Dict]
+    ) -> None:
+        _, reasons = apply_post_validators(result, decisions_log)
+        decisions_log.append(
+            {
+                "field": "_status",
+                "decision": result.parse_status.value,
+                "decision_type": result.parse_status.value,
+                "explanation": "POST_VALIDATORS",
+                "reason": ";".join(reasons),
+                "evidence": {"validator_reasons": reasons},
+            }
+        )

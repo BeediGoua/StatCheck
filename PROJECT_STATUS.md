@@ -18,6 +18,8 @@
 
 **Session 2.1 — contract hardening:** `extra="forbid"` on all IR models; `ParseStatus` enum; rich `ClaimedQuantity` (`lower_bound`/`upper_bound`/`scale`/`approximation`/`sign`); coherent provenance mapping in adapters. See `docs/audit/session_02_1_contract_hardening.md`.
 
+**Session 3 — Fusion + C3 semantic reliability:** fusion policy (`docs/contracts/fusion_policy_v1.md`); `semantic_relation` on alignment; full AuthorityMatrix (rich quantity, territory without EXPLICIT auto-win); claim-level post-validators; honest COMPLETE/AMBIGUOUS/CONTRADICTION/PARTIAL; C3 = CALL_LLM vs BASELINE_ONLY (fusion may stay non-COMPLETE). See `docs/audit/session_03_fusion_c3.md`. Thresholds not retuned. Retrieval/SDMX/verdict still out of scope.
+
 ## Status legend
 
 | Status | Meaning |
@@ -40,8 +42,8 @@
 | LLM parser (`StatCheckLLMParser`) | YES | PARTIAL (schemas/validators unit) | NO | — | — | Live prompt tests skipped (Ollama); needs `instructor`/`openai` |
 | ClaimSpecification V1 | YES | YES (adapters + migrated suites) | NO | — | — | `claimed_quantity` + slots; see contract doc |
 | Baseline/LLM adapters | YES | YES | NO | — | — | `src/parser/adapters/*` |
-| FusionEngine | YES (quantities + territories) | YES | NO | post-validators `pass` | — | migrated to Spec; quality = Session 3 |
-| C3Router | YES | YES | NO | — | — | uses `indicator` / `claimed_quantity` / … |
+| FusionEngine | YES (all Golden Path fields) | YES (adversarial + regression) | NO | — | — | policy + authority + post-validators; Session 3 |
+| C3Router | YES | YES | NO | — | — | CALL_LLM vs BASELINE_ONLY; does not set answerability |
 | Scorer / EvaluationOrchestrator | YES | YES | NO | — | — | slot/quantity matching |
 | `select_v1.py` | YES | — | **NO** | YES | scientific invalid | McNemar mock; `best_arch = "C3"`; `golds = baselines` |
 | `run_final_test.py` | YES | — | **NO** | YES | scientific invalid | `random` success; synthetic Canonical gold/pred; fake latencies |
@@ -137,8 +139,8 @@ unknown text → parse → dataset retrieval → series/dimension resolution →
 | Link | Status |
 |---|---|
 | Parser (baseline) | IMPLEMENTED (deps gap) |
-| Parser → Canonical (shared) | BROKEN (schema drift / no adapter) |
-| Canonical → Fusion / Router | BROKEN |
+| Parser → Canonical (shared) | IMPLEMENTED (ClaimSpecification + adapters; Session 2/2.1) |
+| Canonical → Fusion / Router | IMPLEMENTED (Session 3 fusion policy + C3 route) |
 | Canonical → Retrieval | NOT WIRED |
 | Retrieval (Lot 7 scripts) | IMPLEMENTED (PG-dependent); TESTED unit algos only |
 | Retrieval → Resolver | PARTIAL / NOT WIRED to parse |
@@ -153,15 +155,13 @@ Closest non-NLP path: `scripts/verify_mvp.py` (idbank → observations → Calcu
 
 ## P0 blockers
 
-1. **Canonical contract split** — Lot-8 slots vs legacy mentions expected by fusion/router/scorer/tests; imports fail at collection.
-2. **No adapters** baseline/LLM → single canonical consumed downstream.
-3. **No claim→verdict orchestrator**; verdict taxonomy is documentation-only.
-4. **Evaluation “final” scripts are mocks** — cannot be used as scientific evidence.
-5. **Resolver/availability ORM mismatch** (`Series` vs `AvailableSeriesKey`; `target_code` vs `target_modality_code`).
-6. **Declared dependencies incomplete** relative to imports (blocks reproducible runs).
+1. ~~Canonical contract split / no adapters~~ — **resolved** Sessions 2 / 2.1 / 3 (ClaimSpecification + fusion policy).
+2. **No claim→verdict orchestrator**; verdict taxonomy is documentation-only.
+3. **Evaluation “final” scripts are mocks** — cannot be used as scientific evidence.
+4. **Resolver/availability ORM mismatch** (`Series` vs `AvailableSeriesKey`; `target_code` vs `target_modality_code`).
+5. **Declared dependencies incomplete** relative to imports (blocks reproducible runs).
+6. **Canonical → Retrieval / SDMX** still NOT WIRED to the parse→fusion path.
 
 ## Recommended next action
 
-**Single next correction:** restore one shared `CanonicalParseResult` contract (choose Lot-8 or legacy mentions, not both) and make fusion/router/scorer/tests import and type-check against it — including adapters from baseline dict and LLM `ClaimParseResult`.
-
-Do not expand retrieval, LLM models, or new sources until this contract compiles and unit-tests for router/fusion/scorer collect and run.
+**Single next correction:** wire a real claim→retrieval/SDMX path (or a micro-gold evaluation) without treating mock `select_v1` / `run_final_test` as scientific evidence. Fusion+C3 claim-level reliability is in place; do not retune fusion thresholds before measuring on real claims.

@@ -1,9 +1,11 @@
 from src.parser.claim_specification import (
+    ClaimSlot,
     ClaimSpecification,
     ClaimedQuantity,
+    ParseStatus,
     QuantityRole,
 )
-from src.fusion.alignment import BipartiteAligner, AlignmentType
+from src.fusion.alignment import BipartiteAligner, AlignmentType, SemanticRelation
 from src.fusion.authority import AuthorityMatrix, DecisionType
 from src.fusion.engine import FusionEngine
 
@@ -25,6 +27,11 @@ def test_bipartite_aligner():
         AlignmentType.OVERLAP,
         AlignmentType.CONTAINS,
         AlignmentType.CONTAINED_BY,
+    )
+    assert results[0]["semantic_relation"] in (
+        SemanticRelation.SAME_MENTION,
+        SemanticRelation.SAME_MEANING,
+        SemanticRelation.SEMANTIC_DISAGREEMENT,
     )
 
 
@@ -63,17 +70,23 @@ def test_fusion_engine_complete():
         original_label="8%",
         span_offsets=(0, 2),
         numeric_value=8.0,
+        unit="PERCENT",
         role=QuantityRole.CURRENT_VALUE,
     )
+    ind = ClaimSlot(canonical_value="UNEMPLOYMENT_RATE", original_label="chômage")
     b = ClaimSpecification(
-        claim_id="t", original_text="x", claimed_quantity=qty.model_copy(deep=True)
+        claim_id="t",
+        original_text="x",
+        indicator=ind.model_copy(deep=True),
+        claimed_quantity=qty.model_copy(deep=True),
     )
     l = ClaimSpecification(
-        claim_id="t", original_text="x", claimed_quantity=qty.model_copy(deep=True)
+        claim_id="t",
+        original_text="x",
+        indicator=ind.model_copy(deep=True),
+        claimed_quantity=qty.model_copy(deep=True),
     )
     fused, log = engine.fuse(b, l)
-    from src.parser.claim_specification import ParseStatus
-
     assert fused.parse_status == ParseStatus.COMPLETE
     assert fused.claimed_quantity is not None
     assert len(fused.quantity_list()) == 1
@@ -91,3 +104,5 @@ def test_fusion_engine_orphan():
     l = ClaimSpecification(claim_id="t", original_text="x")
     fused, log = engine.fuse(b, l)
     assert len(fused.quantity_list()) == 1
+    # Missing indicator → PARTIAL (honest status)
+    assert fused.parse_status == ParseStatus.PARTIAL

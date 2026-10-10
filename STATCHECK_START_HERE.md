@@ -1,7 +1,7 @@
 # StatCheck France — Start here
 
-> **Snapshot documenté :** branche `main`, commit `5aaf667b978c299ad7ffb3f2b7ad8df3c268d874`  
-> (*ClaimSpecification V1 and baseline/LLM adapters*)  
+> **Snapshot documenté :** branche `main`, commit `bf55afcd7fbb0b7d2ea7f7c623ddd10ba6644cee`  
+> (*harden ClaimSpecification with strict fields and rich quantities*)  
 > **But :** carte d’entrée pour comprendre ce que StatCheck cherche à faire, ce qui est réel, et où lire la vérité runtime.
 
 ---
@@ -61,8 +61,8 @@ Code déterministe = données + résolution + calcul + preuve
 | 1 | Audit executable truth | DONE — `PROJECT_STATUS.md` + audit |
 | 1.5 | Hygiène repo (caches, `.gitignore`, mock R1 reclassé) | DONE |
 | 2 | `ClaimSpecification` V1 + adapters + migration Router/Fusion/Scorer | DONE |
-| **2.1** | **Hardening contrat** (`extra=forbid`, `ParseStatus`, quantités riches, provenance) | **DONE** |
-| 3 | Réparer réellement Fusion + C3 + post-validations | NEXT |
+| 2.1 | Hardening contrat (`extra=forbid`, `ParseStatus`, quantités riches, provenance) | DONE |
+| **3** | **Fusion policy + AuthorityMatrix + post-validators + C3 route** | **DONE** |
 | 4+ | Micro-gold, retrieval service, SDMX plan, verdict, preuve… | plus tard |
 
 ### Session 2 — contrat unique du claim
@@ -90,6 +90,16 @@ Fichiers clés :
 Important : `claimed_quantity` / `reference_quantities` = ce que l’utilisateur **affirme**.  
 Ce n’est **pas** une observation officielle ni une quantité calculée par StatCheck.
 
+### Session 3 — fusion sémantique
+
+Politique : [`docs/contracts/fusion_policy_v1.md`](docs/contracts/fusion_policy_v1.md)  
+Audit : [`docs/audit/session_03_fusion_c3.md`](docs/audit/session_03_fusion_c3.md)
+
+```text
+Alignement (même mention) → Authority (qui gagne / conflit) → Post-validators → statut
+C3 = CALL_LLM | BASELINE_ONLY  (pas l’answerability finale)
+```
+
 ---
 
 ## 4. Par où commencer ?
@@ -99,6 +109,8 @@ Ce n’est **pas** une observation officielle ni une quantité calculée par Sta
 1. [`PROJECT_STATUS.md`](PROJECT_STATUS.md)
 2. [`docs/audit/session_01_executable_truth.md`](docs/audit/session_01_executable_truth.md)
 3. [`docs/contracts/claim_specification_v1.md`](docs/contracts/claim_specification_v1.md)
+4. [`docs/contracts/fusion_policy_v1.md`](docs/contracts/fusion_policy_v1.md)
+5. [`docs/audit/session_03_fusion_c3.md`](docs/audit/session_03_fusion_c3.md)
 
 ### Modifier le parsing / le contrat claim
 
@@ -125,8 +137,8 @@ StatCheck/
 ├── PROJECT_STATUS.md          Vérité exécutable (à lire en premier)
 ├── STATCHECK_START_HERE.md    Ce guide
 ├── docs/
-│   ├── audit/                 Journal Session 1
-│   ├── contracts/             ClaimSpecification V1
+│   ├── audit/                 Sessions 1–3
+│   ├── contracts/             ClaimSpecification + fusion_policy V1
 │   └── …                      Docs historiques de phase
 ├── src/
 │   ├── parser/
@@ -135,8 +147,8 @@ StatCheck/
 │   │   ├── adapters/          → ClaimSpecification
 │   │   ├── claim_specification.py
 │   │   └── resolvers/         SDMX / dimensions (PARTIAL)
-│   ├── fusion/                Fusion Spec (post-validators encore stub)
-│   ├── evaluation/            Router, scorer, reports (certains scripts MOCK)
+│   ├── fusion/                Align + Authority + post-validators (Session 3)
+│   ├── evaluation/            C3 router, scorer, reports (certains scripts MOCK)
 │   ├── providers/             INSEE BDM
 │   ├── ingestion/             Catalogue / structures / observations
 │   ├── engine/                Calculator
