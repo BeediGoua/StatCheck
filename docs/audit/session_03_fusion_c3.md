@@ -3,7 +3,8 @@
 **Date:** 2026-10-10  
 **Base commit:** `bf55afcd7fbb0b7d2ea7f7c623ddd10ba6644cee`  
 **Scope:** fusion policy, AuthorityMatrix, claim-level post-validators, honest status, C3 route semantics.  
-**Out of scope:** retrieval, SDMX, INSEE, verdicts, tuning of alignment threshold `0.45` / confidence `0.9`.
+**Out of scope:** retrieval, SDMX, INSEE, verdicts, tuning of alignment threshold `0.45` / confidence `0.9`.  
+**Récit humain :** [`docs/sessions/session_03_fusion_fiable.md`](../sessions/session_03_fusion_fiable.md)
 
 ## Goals completed
 

@@ -2,7 +2,8 @@
 
 **Date:** 2026-10-10  
 **Base commit (Session 2):** `5aaf667b978c299ad7ffb3f2b7ad8df3c268d874`  
-**Scope:** harden IR only — no Fusion semantics, retrieval, SDMX, INSEE, verdicts.
+**Scope:** harden IR only — no Fusion semantics, retrieval, SDMX, INSEE, verdicts.  
+**Récit humain :** [`docs/sessions/session_02_1_durcissement.md`](../sessions/session_02_1_durcissement.md)
 
 ## Goals completed
 

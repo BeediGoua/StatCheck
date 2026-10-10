@@ -62,8 +62,9 @@ Code déterministe = données + résolution + calcul + preuve
 | 1.5 | Hygiène repo (caches, `.gitignore`, mock R1 reclassé) | DONE |
 | 2 | `ClaimSpecification` V1 + adapters + migration Router/Fusion/Scorer | DONE |
 | 2.1 | Hardening contrat (`extra=forbid`, `ParseStatus`, quantités riches, provenance) | DONE |
-| **3** | **Fusion policy + AuthorityMatrix + post-validators + C3 route** | **DONE** |
-| 4+ | Micro-gold, retrieval service, SDMX plan, verdict, preuve… | plus tard |
+| 3 | Fusion policy + AuthorityMatrix + post-validators + C3 route | DONE |
+| **4** | **Micro-Gold V0 oracle (12 claims CANDIDATE)** | **DONE (CANDIDATE; not VALIDATED)** |
+| 5+ | RetrievalService, SDMX plan, verdict, preuve… | plus tard |
 
 ### Session 2 — contrat unique du claim
 
@@ -100,6 +101,18 @@ Alignement (même mention) → Authority (qui gagne / conflit) → Post-validato
 C3 = CALL_LLM | BASELINE_ONLY  (pas l’answerability finale)
 ```
 
+### Session 4 — Micro-Gold oracle
+
+Contrat : [`docs/contracts/micro_gold_v0.md`](docs/contracts/micro_gold_v0.md)  
+Données : [`data/gold/micro_gold_v0/micro_gold_v0.yaml`](data/gold/micro_gold_v0/micro_gold_v0.yaml)  
+Audit : [`docs/audit/session_04_micro_gold.md`](docs/audit/session_04_micro_gold.md)
+
+```text
+12 claims MG001–MG012 (CANDIDATE)
+→ answerability / ClaimSpec / dataset / série / obs / calcul / verdict
+≠ VALIDATED système  (plusieurs idbanks BDM encore à pinner)
+```
+
 ---
 
 ## 4. Par où commencer ?
@@ -107,10 +120,9 @@ C3 = CALL_LLM | BASELINE_ONLY  (pas l’answerability finale)
 ### Comprendre l’état réel (15 min)
 
 1. [`PROJECT_STATUS.md`](PROJECT_STATUS.md)
-2. [`docs/audit/session_01_executable_truth.md`](docs/audit/session_01_executable_truth.md)
-3. [`docs/contracts/claim_specification_v1.md`](docs/contracts/claim_specification_v1.md)
-4. [`docs/contracts/fusion_policy_v1.md`](docs/contracts/fusion_policy_v1.md)
-5. [`docs/audit/session_03_fusion_c3.md`](docs/audit/session_03_fusion_c3.md)
+2. **Récits humains (recommandé) :** [`docs/sessions/README.md`](docs/sessions/README.md)
+3. Audits techniques : [`docs/audit/`](docs/audit/)
+4. Contrats : [`docs/contracts/claim_specification_v1.md`](docs/contracts/claim_specification_v1.md), [`fusion_policy_v1.md`](docs/contracts/fusion_policy_v1.md), [`micro_gold_v0.md`](docs/contracts/micro_gold_v0.md)
 
 ### Modifier le parsing / le contrat claim
 
@@ -137,9 +149,12 @@ StatCheck/
 ├── PROJECT_STATUS.md          Vérité exécutable (à lire en premier)
 ├── STATCHECK_START_HERE.md    Ce guide
 ├── docs/
-│   ├── audit/                 Sessions 1–3
-│   ├── contracts/             ClaimSpecification + fusion_policy V1
+│   ├── sessions/              Récits humains par session (lire ça)
+│   ├── audit/                 Traces techniques par session
+│   ├── contracts/             ClaimSpecification + fusion + micro_gold V0
 │   └── …                      Docs historiques de phase
+├── data/
+│   └── gold/micro_gold_v0/    Oracle E2E CANDIDATE (Session 4)
 ├── src/
 │   ├── parser/
 │   │   ├── baseline/          Parser déterministe → dict legacy
@@ -148,6 +163,7 @@ StatCheck/
 │   │   ├── claim_specification.py
 │   │   └── resolvers/         SDMX / dimensions (PARTIAL)
 │   ├── fusion/                Align + Authority + post-validators (Session 3)
+│   ├── gold/                  Micro-Gold loader
 │   ├── evaluation/            C3 router, scorer, reports (certains scripts MOCK)
 │   ├── providers/             INSEE BDM
 │   ├── ingestion/             Catalogue / structures / observations
@@ -182,4 +198,6 @@ StatCheck/
 2. ajuster le tableau des sessions ;
 3. pointer les chemins exacts ;
 4. ne jamais écrire `VALIDATED` sans expérience réelle ;
-5. garder `PROJECT_STATUS.md` comme source de statut détaillée.
+5. garder `PROJECT_STATUS.md` comme source de statut détaillée ;
+6. écrire/mettre à jour un **récit** dans [`docs/sessions/`](docs/sessions/) (clair, peu technique) ;
+7. garder/compléter l’**audit technique** dans [`docs/audit/`](docs/audit/).

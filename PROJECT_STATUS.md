@@ -20,6 +20,8 @@
 
 **Session 3 — Fusion + C3 semantic reliability:** fusion policy (`docs/contracts/fusion_policy_v1.md`); `semantic_relation` on alignment; full AuthorityMatrix (rich quantity, territory without EXPLICIT auto-win); claim-level post-validators; honest COMPLETE/AMBIGUOUS/CONTRADICTION/PARTIAL; C3 = CALL_LLM vs BASELINE_ONLY (fusion may stay non-COMPLETE). See `docs/audit/session_03_fusion_c3.md`. Thresholds not retuned. Retrieval/SDMX/verdict still out of scope.
 
+**Session 4 — Micro-Gold V0 (oracle CANDIDATE):** 12 frozen claims MG001–MG012 in `data/gold/micro_gold_v0/`; contract `docs/contracts/micro_gold_v0.md`; structural tests PASS. Publication values verified for chômage/IPC/pop/naissances/créations. **Not VALIDATED** — several BDM idbanks still unpinned (`NEEDS_HUMAN_REVIEW`). See `docs/audit/session_04_micro_gold.md`. No retrieval/C3 tuning.
+
 ## Status legend
 
 | Status | Meaning |
@@ -44,6 +46,7 @@
 | Baseline/LLM adapters | YES | YES | NO | — | — | `src/parser/adapters/*` |
 | FusionEngine | YES (all Golden Path fields) | YES (adversarial + regression) | NO | — | — | policy + authority + post-validators; Session 3 |
 | C3Router | YES | YES | NO | — | — | CALL_LLM vs BASELINE_ONLY; does not set answerability |
+| Micro-Gold V0 | YES (12 CANDIDATE cases) | YES (structural) | **NO** | — | — | oracle fixture; not system-validated |
 | Scorer / EvaluationOrchestrator | YES | YES | NO | — | — | slot/quantity matching |
 | `select_v1.py` | YES | — | **NO** | YES | scientific invalid | McNemar mock; `best_arch = "C3"`; `golds = baselines` |
 | `run_final_test.py` | YES | — | **NO** | YES | scientific invalid | `random` success; synthetic Canonical gold/pred; fake latencies |
@@ -164,4 +167,4 @@ Closest non-NLP path: `scripts/verify_mvp.py` (idbank → observations → Calcu
 
 ## Recommended next action
 
-**Single next correction:** wire a real claim→retrieval/SDMX path (or a micro-gold evaluation) without treating mock `select_v1` / `run_final_test` as scientific evidence. Fusion+C3 claim-level reliability is in place; do not retune fusion thresholds before measuring on real claims.
+**Single next correction:** pin remaining BDM idbanks on Micro-Gold FOUND cases (IPC/pop/births/entreprises), then evaluate RetrievalService / SDMXSelectionPlan **against** `data/gold/micro_gold_v0/` — without treating mock `select_v1` / `run_final_test` as scientific evidence. Do not retune fusion/C3 thresholds before measuring on this oracle.

@@ -2,7 +2,8 @@
 
 **Date:** 2026-10-10  
 **Repo:** https://github.com/BeediGoua/StatCheck  
-**Auditor mode:** read-only on production code; allowed to create this file + `PROJECT_STATUS.md` only.
+**Auditor mode:** read-only on production code; allowed to create this file + `PROJECT_STATUS.md` only.  
+**Récit humain :** [`docs/sessions/session_01_audit_de_verite.md`](../sessions/session_01_audit_de_verite.md)
 
 ---
 

@@ -1,0 +1,143 @@
+"""Structural validation for Micro-Gold V0 (Session 4)."""
+
+from __future__ import annotations
+
+from src.engine.calculator import Calculator
+from src.gold.micro_gold_v0 import (
+    EXPECTED_CLAIM_IDS,
+    FROZEN_CLAIMS,
+    AnswerabilityStatus,
+    ComputationOperation,
+    ExpectedVerdict,
+    GoldStatus,
+    load_micro_gold_v0,
+)
+from src.models.observation import Observation
+
+
+TOLERANCE = 0.05
+
+
+def _cases():
+    return load_micro_gold_v0()
+
+
+def test_exactly_twelve_unique_ids():
+    cases = _cases()
+    ids = [c.claim_id for c in cases]
+    assert len(ids) == 12
+    assert len(set(ids)) == 12
+    assert tuple(sorted(ids)) == tuple(sorted(EXPECTED_CLAIM_IDS))
+
+
+def test_frozen_claim_texts():
+    for case in _cases():
+        assert case.claim == FROZEN_CLAIMS[case.claim_id]
+
+
+def test_all_candidate_never_validated():
+    for case in _cases():
+        assert case.gold_status == GoldStatus.CANDIDATE
+        assert case.gold_status.value != "VALIDATED"
+
+
+def test_answerability_distribution():
+    statuses = {c.claim_id: c.answerability.status for c in _cases()}
+    assert statuses["MG004"] == AnswerabilityStatus.AMBIGUOUS
+    assert statuses["MG005"] == AnswerabilityStatus.INSUFFICIENT
+    found = [c for c in _cases() if c.answerability.status == AnswerabilityStatus.FOUND]
+    assert len(found) >= 8
+
+
+def test_found_requires_grounding_obs_computation_verdict():
+    for case in _cases():
+        if case.answerability.status != AnswerabilityStatus.FOUND:
+            continue
+        g = case.expected_grounding
+        assert g.dataset_id
+        assert g.idbank or g.series_id
+        assert case.expected_observations
+        assert case.expected_computation.operation != ComputationOperation.NONE
+        assert case.expected_computation.result is not None
+        assert case.expected_verdict in (
+            ExpectedVerdict.SUPPORTED,
+            ExpectedVerdict.REFUTED,
+        )
+
+
+def test_ambiguous_and_insufficient_have_ambiguities():
+    for case in _cases():
+        if case.answerability.status in (
+            AnswerabilityStatus.AMBIGUOUS,
+            AnswerabilityStatus.INSUFFICIENT,
+        ):
+            assert case.ambiguities
+            assert case.expected_verdict in (
+                ExpectedVerdict.INSUFFICIENT_EVIDENCE,
+                None,
+            )
+
+
+def test_mg001_mg002_have_revision_notes():
+    by_id = {c.claim_id: c for c in _cases()}
+    assert by_id["MG001"].provenance.revision_note
+    assert by_id["MG002"].provenance.revision_note
+
+
+def test_verdict_targets():
+    by_id = {c.claim_id: c for c in _cases()}
+    assert by_id["MG008"].expected_verdict == ExpectedVerdict.REFUTED
+    assert by_id["MG011"].expected_verdict == ExpectedVerdict.REFUTED
+    for cid in ("MG001", "MG002", "MG003", "MG006", "MG007", "MG009", "MG010", "MG012"):
+        assert by_id[cid].expected_verdict == ExpectedVerdict.SUPPORTED
+
+
+def _to_observations(case):
+    return [
+        Observation(
+            period=o.period,
+            value=o.value,
+            dataflow_id=case.expected_grounding.dataset_id or "UNKNOWN",
+            dimensions=dict(case.expected_dimensions or {}),
+        )
+        for o in case.expected_observations
+    ]
+
+
+def test_calculator_coherence_for_found():
+    for case in _cases():
+        if case.answerability.status != AnswerabilityStatus.FOUND:
+            continue
+        op = case.expected_computation.operation
+        if op == ComputationOperation.NONE:
+            continue
+        obs = _to_observations(case)
+        comp = case.expected_computation
+        if op == ComputationOperation.VALUE:
+            got = Calculator.get_value(obs, comp.period or "")
+        elif op == ComputationOperation.POINT_CHANGE:
+            got = Calculator.point_variation(
+                obs, comp.start_period or "", comp.end_period or ""
+            )
+        elif op == ComputationOperation.RELATIVE_CHANGE:
+            got = Calculator.relative_variation(
+                obs, comp.start_period or "", comp.end_period or ""
+            )
+        elif op == ComputationOperation.RATIO:
+            got = Calculator.ratio(
+                obs, comp.start_period or "", comp.end_period or ""
+            )
+        else:
+            continue
+        assert got is not None, f"{case.claim_id}: Calculator returned None"
+        assert abs(got - float(comp.result)) <= TOLERANCE, (
+            f"{case.claim_id}: Calculator {got} vs gold {comp.result}"
+        )
+
+
+def test_families_covered():
+    families = {c.family for c in _cases()}
+    assert "unemployment" in families
+    assert "inflation" in families
+    assert "population" in families or "births" in families
+    assert "business_creation" in families
