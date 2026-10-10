@@ -16,6 +16,8 @@
 
 **Session 2 — ClaimSpecification V1:** single claim contract documented in `docs/contracts/claim_specification_v1.md`, implemented in `src/parser/claim_specification.py`, with adapters `baseline_to_canonical` / `llm_to_canonical`. Router, Fusion, Scorer consume `ClaimSpecification` (legacy mention API removed). Parser→Canonical adapters = IMPLEMENTED (not E2E VALIDATED). Canonical CONTRACT_DRIFT collection errors from Session 1 are resolved at import level.
 
+**Session 2.1 — contract hardening:** `extra="forbid"` on all IR models; `ParseStatus` enum; rich `ClaimedQuantity` (`lower_bound`/`upper_bound`/`scale`/`approximation`/`sign`); coherent provenance mapping in adapters. See `docs/audit/session_02_1_contract_hardening.md`.
+
 ## Status legend
 
 | Status | Meaning |

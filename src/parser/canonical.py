@@ -12,8 +12,11 @@ from src.parser.claim_specification import (
     ClaimedQuantity,
     ConstraintType,
     ExtractionProvenance,
+    ParseStatus,
     PresenceStatus,
+    QuantityApproximation,
     QuantityRole,
+    QuantityScale,
     REFERENCE_QUANTITY_ROLES,
 )
 
@@ -26,7 +29,10 @@ __all__ = [
     "ClaimedQuantity",
     "ConstraintType",
     "ExtractionProvenance",
+    "ParseStatus",
     "PresenceStatus",
+    "QuantityApproximation",
     "QuantityRole",
+    "QuantityScale",
     "REFERENCE_QUANTITY_ROLES",
 ]

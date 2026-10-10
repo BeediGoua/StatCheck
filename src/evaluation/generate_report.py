@@ -4,7 +4,7 @@ from typing import List, Dict, Any
 
 from src.parser.adapters.baseline_to_canonical import baseline_dict_to_claim_specification
 from src.parser.adapters.llm_to_canonical import llm_result_to_claim_specification
-from src.parser.claim_specification import ClaimSpecification
+from src.parser.claim_specification import ClaimSpecification, ParseStatus
 from src.evaluation.scorer import Scorer
 from src.evaluation.orchestrator import EvaluationOrchestrator
 
@@ -36,7 +36,10 @@ class ReportGenerator:
             total_f1_measures += res["metrics"]["measures"]["semantic"]["f1"]
             ind_key = "indicator" if "indicator" in res["metrics"] else "indicators"
             total_f1_indicators += res["metrics"][ind_key]["semantic"]["f1"]
-            if p.parse_status != "REJECTED" and p.parse_status != "MISSING_CONTEXT":
+            if p.parse_status not in {
+                ParseStatus.REJECTED,
+                ParseStatus.MISSING_CONTEXT,
+            }:
                 total_coverage += 1
 
         return {
@@ -100,7 +103,7 @@ def safe_parse(data_dict: dict, origin_name: str) -> ClaimSpecification:
     """Best-effort parse of legacy prediction dicts into ClaimSpecification V1."""
     if not data_dict:
         return ClaimSpecification(
-            claim_id="unknown", original_text="", parse_status="PARTIAL"
+            claim_id="unknown", original_text="", parse_status=ParseStatus.PARTIAL
         )
 
     if "subject" in data_dict or "identity" in data_dict:
@@ -125,7 +128,7 @@ def safe_parse(data_dict: dict, origin_name: str) -> ClaimSpecification:
         return ClaimSpecification(
             claim_id="unknown",
             original_text="",
-            parse_status="PARTIAL",
+            parse_status=ParseStatus.PARTIAL,
             warnings=[f"safe_parse_failed_for_{origin_name}"],
         )
 

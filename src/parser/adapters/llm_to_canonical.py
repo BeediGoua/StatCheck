@@ -11,16 +11,20 @@ from src.parser.claim_specification import (
     ClaimTime,
     ClaimedQuantity,
     ExtractionProvenance,
+    ParseStatus,
     PresenceStatus,
+    QuantityApproximation,
     QuantityRole,
+    QuantityScale,
     REFERENCE_QUANTITY_ROLES,
 )
 
 _LLM_STATUS = {
-    "COMPLETE": "ACCEPTED",
-    "PARTIAL": "PARTIAL",
-    "AMBIGUOUS": "AMBIGUOUS",
-    "UNSUPPORTED": "REJECTED",
+    "COMPLETE": ParseStatus.ACCEPTED,
+    "PARTIAL": ParseStatus.PARTIAL,
+    "AMBIGUOUS": ParseStatus.AMBIGUOUS,
+    "UNSUPPORTED": ParseStatus.REJECTED,
+    "ACCEPTED": ParseStatus.ACCEPTED,
 }
 
 
@@ -39,13 +43,25 @@ def _as_dict(obj: Any) -> Dict[str, Any]:
 def _role_from_str(raw: Any) -> QuantityRole:
     if raw is None:
         return QuantityRole.UNKNOWN
-    text = str(raw).upper()
+    text = str(getattr(raw, "value", raw)).upper()
     if text in ("VALUE", "CURRENT", "CURRENT_VALUE"):
         return QuantityRole.CURRENT_VALUE
     try:
         return QuantityRole(text)
     except ValueError:
         return QuantityRole.UNKNOWN
+
+
+def _enum_from_str(enum_cls, raw: Any, default):
+    if raw is None:
+        return default
+    if isinstance(raw, enum_cls):
+        return raw
+    text = str(getattr(raw, "value", raw)).upper()
+    try:
+        return enum_cls(text)
+    except ValueError:
+        return default
 
 
 def _offsets(m: Dict[str, Any]) -> Optional[Tuple[int, int]]:
@@ -59,18 +75,30 @@ def _offsets(m: Dict[str, Any]) -> Optional[Tuple[int, int]]:
     return None
 
 
+def _certainty_to_provenance_presence(
+    certainty: Any,
+) -> Tuple[ExtractionProvenance, PresenceStatus]:
+    text = str(getattr(certainty, "value", certainty) or "EXPLICIT").upper()
+    if text == "IMPLICIT":
+        return ExtractionProvenance.IMPLICIT_CONTEXT, PresenceStatus.IMPLICIT
+    if text == "AMBIGUOUS":
+        return ExtractionProvenance.INFERRED, PresenceStatus.IMPLICIT
+    return ExtractionProvenance.EXPLICIT_TEXT, PresenceStatus.EXPLICIT
+
+
 def _mention_to_slot(m: Dict[str, Any]) -> ClaimSlot:
-    certainty = str(m.get("certainty") or "EXPLICIT").upper()
-    presence = PresenceStatus.EXPLICIT
-    if certainty == "IMPLICIT":
-        presence = PresenceStatus.IMPLICIT
-    elif certainty == "AMBIGUOUS":
-        presence = PresenceStatus.IMPLICIT
+    provenance, presence = _certainty_to_provenance_presence(m.get("certainty"))
+    # source_scope CONTEXT_* reinforces implicit/context provenance when present
+    scope = str(getattr(m.get("source_scope"), "value", m.get("source_scope") or "")).upper()
+    if scope in ("CONTEXT_BEFORE", "CONTEXT_AFTER") and provenance == ExtractionProvenance.EXPLICIT_TEXT:
+        provenance = ExtractionProvenance.IMPLICIT_CONTEXT
+        if presence == PresenceStatus.EXPLICIT:
+            presence = PresenceStatus.IMPLICIT
     return ClaimSlot(
         canonical_value=m.get("normalized_label") or m.get("canonical_value"),
         original_label=m.get("source_text") or m.get("original_label"),
         span_offsets=_offsets(m),
-        provenance=ExtractionProvenance.EXPLICIT_TEXT,
+        provenance=provenance,
         presence=presence,
         confidence=float(m.get("confidence", 1.0)),
         alternatives=list(m.get("alternatives") or []),
@@ -86,6 +114,8 @@ def _measure_to_quantity(m: Dict[str, Any]) -> ClaimedQuantity:
     if unit == "PERCENTAGE":
         unit = "PERCENT"
     slot = _mention_to_slot(m)
+    lower = m.get("lower_bound")
+    upper = m.get("upper_bound")
     return ClaimedQuantity(
         canonical_value=slot.canonical_value or (str(value) if value is not None else None),
         original_label=slot.original_label,
@@ -95,8 +125,15 @@ def _measure_to_quantity(m: Dict[str, Any]) -> ClaimedQuantity:
         confidence=slot.confidence,
         alternatives=slot.alternatives,
         numeric_value=float(value) if value is not None else None,
+        lower_bound=float(lower) if lower is not None else None,
+        upper_bound=float(upper) if upper is not None else None,
         unit=str(unit) if unit is not None else None,
+        scale=_enum_from_str(QuantityScale, m.get("scale"), QuantityScale.NONE),
         role=role,
+        approximation=_enum_from_str(
+            QuantityApproximation, m.get("approximation"), QuantityApproximation.EXACT
+        ),
+        sign=m.get("sign") if m.get("sign") is not None else None,
         validation_status=m.get("validation_status", "ACCEPTED"),
     )
 
@@ -141,7 +178,6 @@ def llm_result_to_claim_specification(
     original_text: str,
 ) -> ClaimSpecification:
     data = _as_dict(llm_result)
-    # Envelope with validated_data / raw_parsed_data
     if "validated_data" in data and data["validated_data"]:
         data = _as_dict(data["validated_data"])
     elif "raw_parsed_data" in data and data["raw_parsed_data"]:
@@ -150,7 +186,9 @@ def llm_result_to_claim_specification(
     raw_status = data.get("parse_status")
     if hasattr(raw_status, "value"):
         raw_status = raw_status.value
-    parse_status = _LLM_STATUS.get(str(raw_status or "COMPLETE").upper(), "ACCEPTED")
+    parse_status = _LLM_STATUS.get(
+        str(raw_status or "COMPLETE").upper(), ParseStatus.ACCEPTED
+    )
 
     ambiguities: List[Ambiguity] = []
     for a in data.get("ambiguities") or []:
@@ -172,8 +210,8 @@ def llm_result_to_claim_specification(
                 alternatives=[],
             )
         )
-        if parse_status == "ACCEPTED":
-            parse_status = "MISSING_CONTEXT"
+        if parse_status == ParseStatus.ACCEPTED:
+            parse_status = ParseStatus.MISSING_CONTEXT
 
     indicators = [_as_dict(x) for x in (data.get("indicators") or [])]
     indicator = _mention_to_slot(indicators[0]) if indicators else None
@@ -185,8 +223,8 @@ def llm_result_to_claim_specification(
                 alternatives=indicators[1:],
             )
         )
-        if parse_status == "ACCEPTED":
-            parse_status = "AMBIGUOUS"
+        if parse_status == ParseStatus.ACCEPTED:
+            parse_status = ParseStatus.AMBIGUOUS
 
     populations = [_mention_to_slot(_as_dict(x)) for x in (data.get("populations") or [])]
     territories = [_mention_to_slot(_as_dict(x)) for x in (data.get("territories") or [])]
@@ -195,6 +233,7 @@ def llm_result_to_claim_specification(
     time_period = None
     if time_exprs:
         t0 = time_exprs[0]
+        prov, pres = _certainty_to_provenance_presence(t0.get("certainty"))
         time_period = ClaimTime(
             canonical_value=t0.get("normalized_label") or t0.get("source_text"),
             original_label=t0.get("source_text"),
@@ -204,6 +243,8 @@ def llm_result_to_claim_specification(
             precision=t0.get("granularity"),
             is_relative=bool(t0.get("is_relative")),
             confidence=float(t0.get("confidence", 1.0)),
+            provenance=prov,
+            presence=pres,
         )
         if len(time_exprs) > 1:
             ambiguities.append(
@@ -265,8 +306,8 @@ def llm_result_to_claim_specification(
         else None
     )
 
-    if indicator is None and parse_status == "ACCEPTED":
-        parse_status = "PARTIAL"
+    if indicator is None and parse_status == ParseStatus.ACCEPTED:
+        parse_status = ParseStatus.PARTIAL
 
     return ClaimSpecification(
         claim_id=claim_id,

@@ -4,7 +4,7 @@ from __future__ import annotations
 from enum import Enum
 from typing import Any, List, Optional, Tuple
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class ExtractionProvenance(str, Enum):
@@ -26,6 +26,17 @@ class ConstraintType(str, Enum):
     UNCERTAIN_INFERENCE = "UNCERTAIN_INFERENCE"
 
 
+class ParseStatus(str, Enum):
+    ACCEPTED = "ACCEPTED"
+    PARTIAL = "PARTIAL"
+    AMBIGUOUS = "AMBIGUOUS"
+    MISSING_CONTEXT = "MISSING_CONTEXT"
+    REJECTED = "REJECTED"
+    PENDING = "PENDING"
+    COMPLETE = "COMPLETE"
+    CONTRADICTION = "CONTRADICTION"
+
+
 class QuantityRole(str, Enum):
     CURRENT_VALUE = "CURRENT_VALUE"
     START_VALUE = "START_VALUE"
@@ -39,6 +50,25 @@ class QuantityRole(str, Enum):
     RATIO_VALUE = "RATIO_VALUE"
     RANK_VALUE = "RANK_VALUE"
     UNKNOWN = "UNKNOWN"
+
+
+class QuantityScale(str, Enum):
+    UNIT = "UNIT"
+    THOUSAND = "THOUSAND"
+    MILLION = "MILLION"
+    BILLION = "BILLION"
+    TRILLION = "TRILLION"
+    NONE = "NONE"
+
+
+class QuantityApproximation(str, Enum):
+    EXACT = "EXACT"
+    APPROXIMATELY = "APPROXIMATELY"
+    AT_LEAST = "AT_LEAST"
+    AT_MOST = "AT_MOST"
+    MORE_THAN = "MORE_THAN"
+    LESS_THAN = "LESS_THAN"
+    BETWEEN = "BETWEEN"
 
 
 CLAIMED_QUANTITY_ROLES = {
@@ -59,7 +89,13 @@ REFERENCE_QUANTITY_ROLES = {
 }
 
 
-class ClaimSlot(BaseModel):
+class StrictModel(BaseModel):
+    """All ClaimSpecification IR models reject unknown fields."""
+
+    model_config = ConfigDict(extra="forbid")
+
+
+class ClaimSlot(StrictModel):
     canonical_value: Optional[str] = Field(
         None, description="Normalized code or concept (e.g. UNEMPLOYMENT_RATE, FR)"
     )
@@ -85,8 +121,13 @@ class ClaimTime(ClaimSlot):
 
 class ClaimedQuantity(ClaimSlot):
     numeric_value: Optional[float] = None
+    lower_bound: Optional[float] = None
+    upper_bound: Optional[float] = None
     unit: Optional[str] = None
+    scale: QuantityScale = QuantityScale.NONE
     role: QuantityRole = QuantityRole.UNKNOWN
+    approximation: QuantityApproximation = QuantityApproximation.EXACT
+    sign: Optional[str] = None
     # Optional fusion/eval metadata (not observation data)
     validation_status: Optional[str] = Field(
         default="ACCEPTED",
@@ -94,14 +135,14 @@ class ClaimedQuantity(ClaimSlot):
     )
 
 
-class Ambiguity(BaseModel):
+class Ambiguity(StrictModel):
     field: str
     reason: str
     alternatives: List[Any] = Field(default_factory=list)
     requires_human_validation: bool = True
 
 
-class ClaimSpecification(BaseModel):
+class ClaimSpecification(StrictModel):
     """Unique claim representation after baseline/LLM adapters."""
 
     claim_id: str
@@ -120,7 +161,7 @@ class ClaimSpecification(BaseModel):
     statistical_operation: Optional[ClaimSlot] = None
     comparison: Optional[ClaimSlot] = None
 
-    parse_status: str = "ACCEPTED"
+    parse_status: ParseStatus = ParseStatus.ACCEPTED
     ambiguities: List[Ambiguity] = Field(default_factory=list)
     warnings: List[str] = Field(default_factory=list)
 

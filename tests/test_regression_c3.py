@@ -3,6 +3,7 @@ from src.parser.claim_specification import (
     ClaimSpecification,
     ClaimTime,
     ClaimedQuantity,
+    ParseStatus,
     PresenceStatus,
     QuantityRole,
 )
@@ -14,7 +15,7 @@ def _base(
     indicator_conf=1.0,
     with_time=False,
     relative_time=False,
-    parse_status="ACCEPTED",
+    parse_status=ParseStatus.ACCEPTED,
 ):
     kwargs = dict(
         claim_id="t",
@@ -55,7 +56,9 @@ def _base(
 
 def test_router_should_call_llm_missing_mandatory_fields():
     baseline_result = ClaimSpecification(
-        claim_id="t", original_text="Le taux de chômage a baissé.", parse_status="ACCEPTED"
+        claim_id="t",
+        original_text="Le taux de chômage a baissé.",
+        parse_status=ParseStatus.ACCEPTED,
     )
     decision = C3Router.should_call_llm(baseline_result, "Le taux de chômage a baissé.")
     assert decision["trigger"] is True

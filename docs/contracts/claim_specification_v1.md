@@ -1,8 +1,9 @@
 # ClaimSpecification V1
 
-**Status:** normative contract for Session 2  
+**Status:** normative contract for Session 2 (+ hardening Session 2.1)  
 **Scope:** representation of a statistical **claim as asserted in text**  
-**Non-goals:** official observations, computed quantities, SDMX keys, verdicts
+**Non-goals:** official observations, computed quantities, SDMX keys, verdicts  
+**Strictness:** all IR models use Pydantic v2 `ConfigDict(extra="forbid")` — unknown/legacy fields (`indicators`, `measures`, typos) raise `ValidationError`.
 
 ## 1. Purpose
 
@@ -40,7 +41,7 @@ ClaimSpecification
 ├── statistical_operation: ClaimSlot?
 ├── comparison: ClaimSlot?
 │
-├── parse_status: str
+├── parse_status: ParseStatus
 ├── ambiguities: Ambiguity[]
 └── warnings: str[]
 ```
@@ -68,9 +69,13 @@ Extends `ClaimSlot` with:
 
 | Field | Meaning |
 |---|---|
-| `numeric_value` | Float asserted by the claim |
+| `numeric_value` | Float asserted by the claim (optional if only bounds) |
+| `lower_bound` / `upper_bound` | Interval asserted (« entre 4 et 6 % ») |
 | `unit` | e.g. `PERCENT`, `PERCENTAGE_POINT`, `COUNT` |
+| `scale` | `UNIT` / `THOUSAND` / `MILLION` / `BILLION` / `TRILLION` / `NONE` |
 | `role` | See §3 |
+| `approximation` | `EXACT` / `APPROXIMATELY` / `AT_LEAST` / `AT_MOST` / `MORE_THAN` / `LESS_THAN` / `BETWEEN` |
+| `sign` | Optional claim-side sign string (e.g. `-`) |
 
 ### 2.4 Ambiguity
 
@@ -108,9 +113,9 @@ Extends `ClaimSlot` with:
    - `reference_quantities`: `START_VALUE=8`, `END_VALUE=7`  
    - `claimed_quantity` optional (derived change not required in V1 if only anchors are stated)
 
-## 4. parse_status
+## 4. ParseStatus (typed enum)
 
-Allowed values for V1 consumers:
+`parse_status` is a `ParseStatus` enum (not a free string). Allowed values:
 
 | Status | Meaning |
 |---|---|
@@ -122,6 +127,8 @@ Allowed values for V1 consumers:
 | `PENDING` | Intermediate (fusion only) |
 | `COMPLETE` | Fusion success synonym of accepted fused result |
 | `CONTRADICTION` | Unresolved conflict after fusion |
+
+Invalid values raise `ValidationError`.
 
 Baseline `status.answerability` mapping:
 
@@ -140,6 +147,17 @@ LLM `parse_status` mapping:
 | `PARTIAL` | `PARTIAL` |
 | `AMBIGUOUS` | `AMBIGUOUS` |
 | `UNSUPPORTED` | `REJECTED` |
+
+### 4.1 Provenance / presence mapping
+
+| Upstream signal | `provenance` | `presence` |
+|---|---|---|
+| Explicit mention in claim | `EXPLICIT_TEXT` | `EXPLICIT` |
+| Implicit / context mention (LLM `certainty=IMPLICIT` or context scope) | `IMPLICIT_CONTEXT` | `IMPLICIT` |
+| Ambiguous / inferred (LLM `certainty=AMBIGUOUS`, baseline `territory_status=INFERRED`) | `INFERRED` | `IMPLICIT` |
+| Missing / defaulted (baseline `territory_status=MISSING`) | `DEFAULTED` | `MISSING` |
+
+Adapters must not force `EXPLICIT_TEXT` when upstream encodes implicit/inferred certainty.
 
 ## 5. Mapping — Baseline dict → ClaimSpecification
 

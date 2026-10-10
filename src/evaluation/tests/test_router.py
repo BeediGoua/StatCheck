@@ -2,6 +2,7 @@ from src.parser.claim_specification import (
     ClaimSlot,
     ClaimSpecification,
     ClaimedQuantity,
+    ParseStatus,
     PresenceStatus,
     QuantityRole,
 )
@@ -12,7 +13,7 @@ def _sufficient_spec(**overrides):
     base = dict(
         claim_id="t",
         original_text="L'inflation est de 5%.",
-        parse_status="ACCEPTED",
+        parse_status=ParseStatus.ACCEPTED,
         indicator=ClaimSlot(canonical_value="inflation", original_label="inflation"),
         territories=[
             ClaimSlot(

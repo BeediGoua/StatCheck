@@ -6,6 +6,7 @@ from src.parser.claim_specification import (
     ClaimSpecification,
     ClaimTime,
     ClaimedQuantity,
+    ParseStatus,
 )
 
 
@@ -143,12 +144,7 @@ class Scorer:
                 tp_semantic["populations"] += 1
             all_errors.extend(errors)
 
-        if prediction.parse_status in [
-            "ACCEPTED",
-            "ACCEPTED_WITH_WARNINGS",
-            "ACCEPTED_WITH_CORRECTIONS",
-            "COMPLETE",
-        ]:
+        if prediction.parse_status in {ParseStatus.ACCEPTED, ParseStatus.COMPLETE}:
             critical_error_types = [
                 ErrorCategory.NUMERIC_VALUE_ERROR,
                 ErrorCategory.TERRITORY_CODE_ERROR,

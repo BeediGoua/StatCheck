@@ -11,16 +11,19 @@ from src.parser.claim_specification import (
     ClaimTime,
     ClaimedQuantity,
     ExtractionProvenance,
+    ParseStatus,
     PresenceStatus,
+    QuantityApproximation,
     QuantityRole,
+    QuantityScale,
     REFERENCE_QUANTITY_ROLES,
 )
 
 _ANSWERABILITY_TO_STATUS = {
-    "VERIFIABLE": "ACCEPTED",
-    "AMBIGUOUS": "AMBIGUOUS",
-    "MISSING_CONTEXT": "MISSING_CONTEXT",
-    "CONTRADICTION": "REJECTED",
+    "VERIFIABLE": ParseStatus.ACCEPTED,
+    "AMBIGUOUS": ParseStatus.AMBIGUOUS,
+    "MISSING_CONTEXT": ParseStatus.MISSING_CONTEXT,
+    "CONTRADICTION": ParseStatus.REJECTED,
 }
 
 
@@ -28,13 +31,24 @@ def _role_from_str(raw: Any) -> QuantityRole:
     if raw is None:
         return QuantityRole.UNKNOWN
     text = str(raw).upper()
-    # Baseline sometimes uses VALUE for a current level
     if text in ("VALUE", "CURRENT", "CURRENT_VALUE"):
         return QuantityRole.CURRENT_VALUE
     try:
         return QuantityRole(text)
     except ValueError:
         return QuantityRole.UNKNOWN
+
+
+def _enum_from_str(enum_cls, raw: Any, default):
+    if raw is None:
+        return default
+    if isinstance(raw, enum_cls):
+        return raw
+    text = str(raw).upper()
+    try:
+        return enum_cls(text)
+    except ValueError:
+        return default
 
 
 def _offsets(m: Dict[str, Any]) -> Optional[Tuple[int, int]]:
@@ -51,16 +65,30 @@ def _slot_from_label(
     canonical: Optional[str] = None,
     confidence: float = 1.0,
     presence: PresenceStatus = PresenceStatus.EXPLICIT,
+    provenance: ExtractionProvenance = ExtractionProvenance.EXPLICIT_TEXT,
 ) -> Optional[ClaimSlot]:
     if label is None or (isinstance(label, str) and not label.strip()):
         return None
     return ClaimSlot(
         canonical_value=canonical or label,
         original_label=label,
-        provenance=ExtractionProvenance.EXPLICIT_TEXT,
+        provenance=provenance,
         presence=presence,
         confidence=confidence,
     )
+
+
+def _territory_presence_provenance(
+    terr_status: Optional[str],
+) -> Tuple[PresenceStatus, ExtractionProvenance]:
+    status = (terr_status or "EXPLICIT").upper()
+    if status == "MISSING":
+        return PresenceStatus.MISSING, ExtractionProvenance.DEFAULTED
+    if status == "INFERRED":
+        return PresenceStatus.IMPLICIT, ExtractionProvenance.INFERRED
+    if status == "AMBIGUOUS":
+        return PresenceStatus.IMPLICIT, ExtractionProvenance.INFERRED
+    return PresenceStatus.EXPLICIT, ExtractionProvenance.EXPLICIT_TEXT
 
 
 def _measure_to_quantity(m: Dict[str, Any]) -> ClaimedQuantity:
@@ -70,15 +98,26 @@ def _measure_to_quantity(m: Dict[str, Any]) -> ClaimedQuantity:
     if unit == "PERCENTAGE":
         unit = "PERCENT"
     label = m.get("span_text") or m.get("source_text") or m.get("original_label")
+    lower = m.get("lower_bound")
+    upper = m.get("upper_bound")
     return ClaimedQuantity(
         canonical_value=str(value) if value is not None else None,
         original_label=label,
         span_offsets=_offsets(m),
         numeric_value=float(value) if value is not None else None,
+        lower_bound=float(lower) if lower is not None else None,
+        upper_bound=float(upper) if upper is not None else None,
         unit=unit,
+        scale=_enum_from_str(QuantityScale, m.get("scale"), QuantityScale.NONE),
         role=role,
+        approximation=_enum_from_str(
+            QuantityApproximation, m.get("approximation"), QuantityApproximation.EXACT
+        ),
+        sign=m.get("sign"),
         confidence=float(m.get("confidence", 1.0)),
         validation_status=m.get("validation_status", "ACCEPTED"),
+        provenance=ExtractionProvenance.EXPLICIT_TEXT,
+        presence=PresenceStatus.EXPLICIT,
     )
 
 
@@ -94,7 +133,6 @@ def _partition_measures(
         if q.role in CLAIMED_QUANTITY_ROLES or (
             q.role == QuantityRole.UNKNOWN and q.numeric_value is not None and not references
         ):
-            # UNKNOWN with a bare level → treat as CURRENT if no claimed yet
             if q.role == QuantityRole.UNKNOWN:
                 q.role = QuantityRole.CURRENT_VALUE
             claimed_candidates.append(q)
@@ -134,34 +172,29 @@ def baseline_dict_to_claim_specification(
     cid = claim_id or baseline.get("claim_id") or identity.get("claim_id") or "unknown"
 
     answerability = status.get("answerability")
-    parse_status = _ANSWERABILITY_TO_STATUS.get(answerability, "ACCEPTED")
+    parse_status = _ANSWERABILITY_TO_STATUS.get(answerability, ParseStatus.ACCEPTED)
     if answerability is None and status.get("error"):
-        parse_status = "REJECTED"
+        parse_status = ParseStatus.REJECTED
 
     ambiguities: List[Ambiguity] = []
     warnings: List[str] = []
 
     indicator = _slot_from_label(subject.get("indicator"))
     if indicator is None:
-        if parse_status == "ACCEPTED":
-            parse_status = "PARTIAL"
+        if parse_status == ParseStatus.ACCEPTED:
+            parse_status = ParseStatus.PARTIAL
         ambiguities.append(
             Ambiguity(field="indicator", reason="NO_INDICATOR", alternatives=[])
         )
 
     territories: List[ClaimSlot] = []
     terr_main = subject.get("territory_main")
-    terr_status = subject.get("territory_status")
-    presence = PresenceStatus.EXPLICIT
-    if terr_status in ("MISSING", "INFERRED", "AMBIGUOUS"):
-        presence = (
-            PresenceStatus.MISSING
-            if terr_status == "MISSING"
-            else PresenceStatus.IMPLICIT
-        )
+    presence, provenance = _territory_presence_provenance(subject.get("territory_status"))
     if terr_main:
         territories.append(
-            _slot_from_label(terr_main, presence=presence)  # type: ignore[arg-type]
+            _slot_from_label(
+                terr_main, presence=presence, provenance=provenance
+            )  # type: ignore[arg-type]
         )
     alts = subject.get("territory_alternatives") or []
     if alts:
@@ -172,8 +205,8 @@ def baseline_dict_to_claim_specification(
                 alternatives=alts,
             )
         )
-        if parse_status == "ACCEPTED":
-            parse_status = "AMBIGUOUS"
+        if parse_status == ParseStatus.ACCEPTED:
+            parse_status = ParseStatus.AMBIGUOUS
 
     populations: List[ClaimSlot] = []
     pop = subject.get("population")
@@ -188,8 +221,8 @@ def baseline_dict_to_claim_specification(
                 alternatives=pop_alts,
             )
         )
-        if parse_status == "ACCEPTED":
-            parse_status = "AMBIGUOUS"
+        if parse_status == ParseStatus.ACCEPTED:
+            parse_status = ParseStatus.AMBIGUOUS
 
     period_rel = time.get("period_relative")
     period_exp = time.get("period_explicit")
@@ -209,10 +242,9 @@ def baseline_dict_to_claim_specification(
 
     claimed, references, meas_amb = _partition_measures(baseline.get("measures") or [])
     ambiguities.extend(meas_amb)
-    if meas_amb and parse_status == "ACCEPTED":
-        parse_status = "AMBIGUOUS"
+    if meas_amb and parse_status == ParseStatus.ACCEPTED:
+        parse_status = ParseStatus.AMBIGUOUS
 
-    # Singular gold-style measure
     if claimed is None and baseline.get("measure"):
         claimed = _measure_to_quantity({**baseline["measure"], "role": "CURRENT_VALUE"})
 

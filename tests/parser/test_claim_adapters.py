@@ -1,7 +1,13 @@
 """Semantic adapter tests for ClaimSpecification V1."""
 from src.parser.adapters.baseline_to_canonical import baseline_dict_to_claim_specification
 from src.parser.adapters.llm_to_canonical import llm_result_to_claim_specification
-from src.parser.claim_specification import QuantityRole
+from src.parser.claim_specification import (
+    ExtractionProvenance,
+    ParseStatus,
+    QuantityApproximation,
+    QuantityRole,
+    QuantityScale,
+)
 
 
 def test_inflation_is_5_percent_baseline():
@@ -32,7 +38,7 @@ def test_inflation_is_5_percent_baseline():
     assert spec.claimed_quantity.role == QuantityRole.CURRENT_VALUE
     assert spec.statistical_operation is not None
     assert spec.statistical_operation.canonical_value == "VALUE"
-    assert spec.parse_status == "ACCEPTED"
+    assert spec.parse_status == ParseStatus.ACCEPTED
 
 
 def test_unemployment_down_20_percent_since_2020():
@@ -104,7 +110,7 @@ def test_ambiguous_territory_via_adapter():
     }
     spec = baseline_dict_to_claim_specification(baseline)
     assert any(a.field == "territories" for a in spec.ambiguities)
-    assert spec.parse_status == "AMBIGUOUS"
+    assert spec.parse_status == ParseStatus.AMBIGUOUS
 
 
 def test_ambiguous_population_via_adapter():
@@ -123,7 +129,7 @@ def test_ambiguous_population_via_adapter():
     }
     spec = baseline_dict_to_claim_specification(baseline)
     assert any(a.field == "populations" for a in spec.ambiguities)
-    assert spec.parse_status == "AMBIGUOUS"
+    assert spec.parse_status == ParseStatus.AMBIGUOUS
     assert len(spec.populations) == 1
 
 
@@ -138,7 +144,7 @@ def test_missing_indicator_not_accepted():
     }
     spec = baseline_dict_to_claim_specification(baseline)
     assert spec.indicator is None
-    assert spec.parse_status != "ACCEPTED"
+    assert spec.parse_status != ParseStatus.ACCEPTED
     assert any(a.field == "indicator" for a in spec.ambiguities)
 
 
@@ -176,4 +182,155 @@ def test_llm_adapter_maps_measures_and_indicator():
     assert spec.indicator.canonical_value == "INFLATION"
     assert spec.claimed_quantity is not None
     assert spec.claimed_quantity.numeric_value == 5.0
-    assert spec.parse_status == "ACCEPTED"
+    assert spec.parse_status == ParseStatus.ACCEPTED
+
+
+def test_approx_20_percent_preserved():
+    llm = {
+        "parse_status": "COMPLETE",
+        "indicators": [{"source_text": "inflation", "normalized_label": "INFLATION", "certainty": "EXPLICIT"}],
+        "populations": [],
+        "territories": [],
+        "time_expressions": [],
+        "measures": [
+            {
+                "source_text": "environ 20 %",
+                "numeric_value": 20.0,
+                "unit": "PERCENT",
+                "role": "CURRENT_VALUE",
+                "approximation": "APPROXIMATELY",
+                "scale": "NONE",
+                "certainty": "EXPLICIT",
+            }
+        ],
+        "operation": None,
+        "comparisons": [],
+        "ambiguities": [],
+        "missing_context": [],
+    }
+    spec = llm_result_to_claim_specification(llm, "c", "L'inflation est environ 20 %.")
+    assert spec.claimed_quantity is not None
+    assert spec.claimed_quantity.approximation == QuantityApproximation.APPROXIMATELY
+
+
+def test_scale_millions_preserved():
+    llm = {
+        "parse_status": "COMPLETE",
+        "indicators": [{"source_text": "emplois", "normalized_label": "EMPLOIS", "certainty": "EXPLICIT"}],
+        "populations": [],
+        "territories": [],
+        "time_expressions": [],
+        "measures": [
+            {
+                "source_text": "5 millions",
+                "numeric_value": 5.0,
+                "unit": "COUNT",
+                "role": "CURRENT_VALUE",
+                "scale": "MILLION",
+                "approximation": "EXACT",
+                "certainty": "EXPLICIT",
+            }
+        ],
+        "operation": None,
+        "comparisons": [],
+        "ambiguities": [],
+        "missing_context": [],
+    }
+    spec = llm_result_to_claim_specification(llm, "c", "Il y a 5 millions d'emplois.")
+    assert spec.claimed_quantity is not None
+    assert spec.claimed_quantity.scale == QuantityScale.MILLION
+
+
+def test_at_least_10_percent_preserved():
+    llm = {
+        "parse_status": "COMPLETE",
+        "indicators": [{"source_text": "inflation", "normalized_label": "INFLATION", "certainty": "EXPLICIT"}],
+        "populations": [],
+        "territories": [],
+        "time_expressions": [],
+        "measures": [
+            {
+                "source_text": "au moins 10 %",
+                "numeric_value": 10.0,
+                "unit": "PERCENT",
+                "role": "CURRENT_VALUE",
+                "approximation": "AT_LEAST",
+                "certainty": "EXPLICIT",
+            }
+        ],
+        "operation": None,
+        "comparisons": [],
+        "ambiguities": [],
+        "missing_context": [],
+    }
+    spec = llm_result_to_claim_specification(llm, "c", "L'inflation est d'au moins 10 %.")
+    assert spec.claimed_quantity is not None
+    assert spec.claimed_quantity.approximation == QuantityApproximation.AT_LEAST
+
+
+def test_bounded_quantity_preserved():
+    llm = {
+        "parse_status": "COMPLETE",
+        "indicators": [{"source_text": "inflation", "normalized_label": "INFLATION", "certainty": "EXPLICIT"}],
+        "populations": [],
+        "territories": [],
+        "time_expressions": [],
+        "measures": [
+            {
+                "source_text": "entre 4 et 6 %",
+                "numeric_value": None,
+                "lower_bound": 4.0,
+                "upper_bound": 6.0,
+                "unit": "PERCENT",
+                "role": "CURRENT_VALUE",
+                "approximation": "BETWEEN",
+                "certainty": "EXPLICIT",
+            }
+        ],
+        "operation": None,
+        "comparisons": [],
+        "ambiguities": [],
+        "missing_context": [],
+    }
+    spec = llm_result_to_claim_specification(llm, "c", "L'inflation est entre 4 et 6 %.")
+    assert spec.claimed_quantity is not None
+    assert spec.claimed_quantity.lower_bound == 4.0
+    assert spec.claimed_quantity.upper_bound == 6.0
+    assert spec.claimed_quantity.approximation == QuantityApproximation.BETWEEN
+
+
+def test_inferred_territory_provenance_not_explicit():
+    baseline = {
+        "claim_id": "g",
+        "identity": {"text": "Le chômage a baissé."},
+        "subject": {
+            "indicator": "chômage",
+            "territory_main": "France",
+            "territory_status": "INFERRED",
+        },
+        "measures": [{"value": 1.0, "unit": "PERCENT", "role": "CURRENT_VALUE"}],
+        "operation": {"type": "VALUE", "direction": "NONE"},
+        "status": {"answerability": "VERIFIABLE"},
+    }
+    spec = baseline_dict_to_claim_specification(baseline)
+    assert len(spec.territories) == 1
+    assert spec.territories[0].provenance != ExtractionProvenance.EXPLICIT_TEXT
+    assert spec.territories[0].provenance == ExtractionProvenance.INFERRED
+
+
+def test_explicit_territory_provenance():
+    baseline = {
+        "claim_id": "h",
+        "identity": {"text": "Le chômage a baissé en France."},
+        "subject": {
+            "indicator": "chômage",
+            "territory_main": "France",
+            "territory_status": "EXPLICIT",
+        },
+        "measures": [{"value": 1.0, "unit": "PERCENT", "role": "CURRENT_VALUE"}],
+        "operation": {"type": "VALUE", "direction": "NONE"},
+        "status": {"answerability": "VERIFIABLE"},
+    }
+    spec = baseline_dict_to_claim_specification(baseline)
+    assert spec.territories[0].provenance == ExtractionProvenance.EXPLICIT_TEXT
+

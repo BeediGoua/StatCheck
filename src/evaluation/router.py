@@ -1,6 +1,6 @@
 from typing import Any, Dict
 
-from src.parser.claim_specification import ClaimSpecification, PresenceStatus
+from src.parser.claim_specification import ClaimSpecification, ParseStatus, PresenceStatus
 
 
 class C3Router:
@@ -8,19 +8,16 @@ class C3Router:
 
     @staticmethod
     def should_call_llm(baseline_result: ClaimSpecification, text: str) -> Dict[str, Any]:
-        """
-        Détermine de façon déterministe s'il faut faire appel au LLM.
-        Le LLM est appelé lorsque la baseline est incomplète, ambiguë, incohérente ou insuffisamment fiable.
-        """
-        if baseline_result.parse_status in [
-            "AMBIGUOUS",
-            "PARTIAL",
-            "MISSING_CONTEXT",
-            "REJECTED",
-        ]:
+        status = baseline_result.parse_status
+        if status in {
+            ParseStatus.AMBIGUOUS,
+            ParseStatus.PARTIAL,
+            ParseStatus.MISSING_CONTEXT,
+            ParseStatus.REJECTED,
+        }:
             return {
                 "trigger": True,
-                "reason": f"BASELINE_STATUS_{baseline_result.parse_status}",
+                "reason": f"BASELINE_STATUS_{status.value}",
             }
 
         indicator = baseline_result.indicator
@@ -73,11 +70,6 @@ class C3Router:
     def should_trigger_control_sample(
         is_baseline_sufficient: bool, random_val: float, threshold: float = 0.05
     ) -> bool:
-        """
-        Échantillon de contrôle : Force l'appel au LLM sur un petit pourcentage (ex: 5%)
-        des cas jugés 'faciles' par la baseline pour auditer ses erreurs silencieuses.
-        `random_val` doit être déterministe (généré avec un seed lié à l'ID de l'affirmation).
-        """
         if is_baseline_sufficient and random_val < threshold:
             return True
         return not is_baseline_sufficient

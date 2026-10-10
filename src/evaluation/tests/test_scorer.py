@@ -1,6 +1,7 @@
 from src.parser.claim_specification import (
     ClaimSpecification,
     ClaimedQuantity,
+    ParseStatus,
     QuantityRole,
 )
 from src.evaluation.scorer import Scorer
@@ -17,7 +18,9 @@ def _qty(val: float, role: QuantityRole, start: int = 0, end: int = 5) -> Claime
     )
 
 
-def _spec_claimed(qty: ClaimedQuantity, status: str = "ACCEPTED") -> ClaimSpecification:
+def _spec_claimed(
+    qty: ClaimedQuantity, status: ParseStatus = ParseStatus.ACCEPTED
+) -> ClaimSpecification:
     return ClaimSpecification(
         claim_id="t",
         original_text="x",
@@ -44,7 +47,7 @@ def test_reversed_order():
     pred = ClaimSpecification(
         claim_id="t",
         original_text="x",
-        parse_status="ACCEPTED",
+        parse_status=ParseStatus.ACCEPTED,
         claimed_quantity=m1,
         reference_quantities=[m2],
     )
@@ -61,7 +64,9 @@ def test_reversed_order():
 def test_missing_mention():
     scorer = Scorer()
     m1 = _qty(5.0, QuantityRole.CURRENT_VALUE)
-    pred = ClaimSpecification(claim_id="t", original_text="x", parse_status="ACCEPTED")
+    pred = ClaimSpecification(
+        claim_id="t", original_text="x", parse_status=ParseStatus.ACCEPTED
+    )
     result = scorer.evaluate_prediction(pred, _spec_claimed(m1))
     assert result["is_exact_match"] is False
     assert result["metrics"]["measures"]["exact_span"]["fn"] == 1
@@ -102,7 +107,7 @@ def test_good_value_bad_role():
     pred = ClaimSpecification(
         claim_id="t",
         original_text="x",
-        parse_status="ACCEPTED",
+        parse_status=ParseStatus.ACCEPTED,
         reference_quantities=[_qty(5.0, QuantityRole.START_VALUE)],
     )
     gold = _spec_claimed(_qty(5.0, QuantityRole.CURRENT_VALUE))
@@ -115,7 +120,7 @@ def test_good_value_bad_role():
 def test_rejected_result_is_not_silent_error():
     scorer = Scorer()
     result = scorer.evaluate_prediction(
-        _spec_claimed(_qty(10.0, QuantityRole.CURRENT_VALUE), status="REJECTED"),
+        _spec_claimed(_qty(10.0, QuantityRole.CURRENT_VALUE), status=ParseStatus.REJECTED),
         _spec_claimed(_qty(5.0, QuantityRole.CURRENT_VALUE)),
     )
     assert result["is_exact_match"] is False
@@ -126,7 +131,7 @@ def test_accepted_but_false_is_silent_error():
     scorer = Scorer()
     result = scorer.evaluate_prediction(
         _spec_claimed(
-            _qty(10.0, QuantityRole.CURRENT_VALUE), status="ACCEPTED_WITH_WARNINGS"
+            _qty(10.0, QuantityRole.CURRENT_VALUE), status=ParseStatus.ACCEPTED
         ),
         _spec_claimed(_qty(5.0, QuantityRole.CURRENT_VALUE)),
     )
@@ -135,7 +140,9 @@ def test_accepted_but_false_is_silent_error():
 
 def test_empty_fields():
     scorer = Scorer()
-    pred = ClaimSpecification(claim_id="t", original_text="x", parse_status="ACCEPTED")
+    pred = ClaimSpecification(
+        claim_id="t", original_text="x", parse_status=ParseStatus.ACCEPTED
+    )
     gold = ClaimSpecification(claim_id="t", original_text="x")
     result = scorer.evaluate_prediction(pred, gold)
     assert result["is_exact_match"] is True

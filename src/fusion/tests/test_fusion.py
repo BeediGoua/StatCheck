@@ -72,7 +72,9 @@ def test_fusion_engine_complete():
         claim_id="t", original_text="x", claimed_quantity=qty.model_copy(deep=True)
     )
     fused, log = engine.fuse(b, l)
-    assert fused.parse_status == "COMPLETE"
+    from src.parser.claim_specification import ParseStatus
+
+    assert fused.parse_status == ParseStatus.COMPLETE
     assert fused.claimed_quantity is not None
     assert len(fused.quantity_list()) == 1
 

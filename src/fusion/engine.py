@@ -2,7 +2,11 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from src.fusion.alignment import BipartiteAligner
 from src.fusion.authority import AuthorityMatrix, DecisionType
-from src.parser.claim_specification import ClaimSpecification, ClaimedQuantity
+from src.parser.claim_specification import (
+    ClaimSpecification,
+    ClaimedQuantity,
+    ParseStatus,
+)
 
 
 class FusionEngine:
@@ -22,7 +26,7 @@ class FusionEngine:
         final_result = ClaimSpecification(
             claim_id=baseline.claim_id or llm.claim_id,
             original_text=baseline.original_text or llm.original_text,
-            parse_status="PENDING",
+            parse_status=ParseStatus.PENDING,
             indicator=baseline.indicator or llm.indicator,
             populations=list(baseline.populations or llm.populations),
             territories=list(baseline.territories),
@@ -144,7 +148,7 @@ class FusionEngine:
 
         self._apply_post_validators(final_result)
 
-        if final_result.parse_status != "REJECTED":
+        if final_result.parse_status != ParseStatus.REJECTED:
             has_ambiguity = any(
                 d["decision_type"] == DecisionType.BOTH_RETAINED_AS_ALTERNATIVES.value
                 for d in decisions_log
@@ -154,11 +158,11 @@ class FusionEngine:
                 for d in decisions_log
             )
             if has_conflict:
-                final_result.parse_status = "CONTRADICTION"
+                final_result.parse_status = ParseStatus.CONTRADICTION
             elif has_ambiguity:
-                final_result.parse_status = "AMBIGUOUS"
+                final_result.parse_status = ParseStatus.AMBIGUOUS
             else:
-                final_result.parse_status = "COMPLETE"
+                final_result.parse_status = ParseStatus.COMPLETE
 
         return final_result, decisions_log
 
