@@ -933,7 +933,8 @@
   gold_status: CANDIDATE
   answerability:
     status: FOUND
-    reason: Official SIDE annual business creations France 2025 = 1165800.
+    reason: Official SIDE annual business creations France 2025 = 1165800 (rounded; exact SIDE/BDM sum
+      1165795).
   claim_specification:
     indicator:
       canonical_value: BUSINESS_CREATIONS
@@ -962,45 +963,100 @@
   expected_grounding:
     provider: INSEE
     dataset_id: CREATIONS-ENTREPRISES
-    dataset_title: Les créations d’entreprises en 2025 — Insee Première n°2092 (SIDE). BDM national Ensemble-France
-      monthly series are discontinued (arrêtées).
-    series_id: SIDE_ANNUAL_FR_2025
-    idbank: null
+    dataset_title: Nombre de créations d'entreprises - Ensemble - France - Données mensuelles brutes
+      (SIDE / BDM 010755537; successor of stopped 001564301).
+    series_id: '010755537'
+    idbank: '010755537'
     series_key: null
   expected_dimensions:
-    GEO: FR
-    FREQ: A
-    UNIT: ENTERPRISE
-    SECTOR: MARCHAND_NON_AGRICOLE
+    GEO: FE
+    FREQ: M
+    UNIT: UNITE
+    NATURE: BRUTE
+    SECTOR: ENSEMBLE
   expected_observations:
-  - period: '2025'
-    value: 1165800
+  - period: '2025-01'
+    value: 105274
     unit: ENTERPRISE
-    note: Insee Première 2092 / SIDE annual total
+    note: BDM 010755537 OBS_STATUS=A OBS_QUAL=DEF
+  - period: '2025-02'
+    value: 95051
+    unit: ENTERPRISE
+    note: BDM 010755537 OBS_STATUS=A OBS_QUAL=DEF
+  - period: '2025-03'
+    value: 95697
+    unit: ENTERPRISE
+    note: BDM 010755537 OBS_STATUS=A OBS_QUAL=DEF
+  - period: '2025-04'
+    value: 97861
+    unit: ENTERPRISE
+    note: BDM 010755537 OBS_STATUS=A OBS_QUAL=DEF
+  - period: '2025-05'
+    value: 87988
+    unit: ENTERPRISE
+    note: BDM 010755537 OBS_STATUS=A OBS_QUAL=DEF
+  - period: '2025-06'
+    value: 93835
+    unit: ENTERPRISE
+    note: BDM 010755537 OBS_STATUS=A OBS_QUAL=DEF
+  - period: '2025-07'
+    value: 101879
+    unit: ENTERPRISE
+    note: BDM 010755537 OBS_STATUS=A OBS_QUAL=DEF
+  - period: '2025-08'
+    value: 80456
+    unit: ENTERPRISE
+    note: BDM 010755537 OBS_STATUS=A OBS_QUAL=DEF
+  - period: '2025-09'
+    value: 101006
+    unit: ENTERPRISE
+    note: BDM 010755537 OBS_STATUS=A OBS_QUAL=DEF
+  - period: '2025-10'
+    value: 116385
+    unit: ENTERPRISE
+    note: BDM 010755537 OBS_STATUS=A OBS_QUAL=DEF
+  - period: '2025-11'
+    value: 93992
+    unit: ENTERPRISE
+    note: BDM 010755537 OBS_STATUS=A OBS_QUAL=DEF
+  - period: '2025-12'
+    value: 96371
+    unit: ENTERPRISE
+    note: BDM 010755537 OBS_STATUS=A OBS_QUAL=DEF
   expected_computation:
-    operation: VALUE
+    operation: SUM
     period: '2025'
-    result: 1165800
+    result: 1165795
     unit: ENTERPRISE
-    formula_note: LEVEL annual creations, champ activités marchandes non agricoles
+    formula_note: annual_sum = sum(monthly BDM 010755537 2025-01..12); distinct from claim rounded label
+      1165800
   expected_verdict: SUPPORTED
   ambiguities: []
   provenance:
     sources:
     - https://www.insee.fr/fr/statistiques/8721354
+    - https://www.insee.fr/fr/statistiques/serie/010755537
+    - https://www.insee.fr/fr/statistiques/serie/001564301
     as_of_date: '2026-02-01'
-    snapshot_kind: publication_snapshot
-    revision_note: No active BDM idbank for 'Ensemble - France' annual/monthly total in CREATIONS-ENTREPRISES
-      dataflow (only séries arrêtées). Oracle uses publication SIDE total until a successor idbank is
-      published.
+    snapshot_kind: mixed
+    revision_note: Claim/publication snapshot keeps rounded 1 165 800 (Première 2092) and exact SIDE
+      1 165 795. BDM live annual_sum of 010755537 equals exact SIDE 1 165 795 (LAST_UPDATE=2026-09-18).
+      Do not overwrite publication snapshot with a different vintage.
     observed_at: '2026-10-10'
-    data_version: Insee Première 2092; BDM CREATIONS-ENTREPRISES inspected
+    data_version: BDM LAST_UPDATE=2026-09-18; Insee Première 2092
+    publication_value: '1165800 (claim rounded) / 1165795 (SIDE exact)'
+    revised_series_value: '1165795 (BDM annual_sum 010755537, 12 months 2025)'
+    discrepancy_cause: CLAIM_ROUNDING
+    replaced_idbank: '001564301'
   annotation:
     source_checked: true
-    review_status: NEEDS_HUMAN_REVIEW
-    notes: Insee Première 2092 value verified; BDM idbank still to pin.
+    review_status: SOURCE_CHECKED
+    notes: Dual vintage — publication snapshot for claim/verdict; BDM monthly SUM for series grounding.
     rejected_candidates:
     - Micro-entrepreneurs only (758600) — incomplete vs claim
-    verification_status: UNRESOLVED
-    verification_notes: Publication value 1 165 800 confirmed; national BDM idbank not available (Ensemble
-      France series stopped). Keep series_id publication handle.
+    - Stopped Ensemble-France series 001564301 without successor
+    verification_status: CORRECTED
+    verification_notes: Pinned active BDM 010755537 (Ensemble-France monthly raw; successor of stopped
+      001564301). Semantic match TITLE/REF_AREA=FE/FREQ=M/UNIT=UNITE. Publication claim 1165800 remains
+      SUPPORTED (rounded); BDM SUM 2025=1165795 matches exact SIDE. CORRECTED not CONFIRMED because claim
+      label ≠ exact sum (rounding).

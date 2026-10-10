@@ -66,3 +66,18 @@ class Calculator:
             raise ZeroDivisionError("Le dénominateur est 0, impossible de calculer le ratio.")
             
         return round(num_val / den_val, 2)
+
+    @staticmethod
+    def sum(observations: List[Observation], periods: Optional[List[str]] = None) -> Optional[float]:
+        """
+        Somme déterministe des observations (optionnellement filtrée par périodes).
+        """
+        selected = observations
+        if periods is not None:
+            wanted = set(periods)
+            selected = [o for o in observations if o.period in wanted]
+            if len(selected) != len(wanted):
+                return None
+        if not selected:
+            return None
+        return float(sum(o.value for o in selected))

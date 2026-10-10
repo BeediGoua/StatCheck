@@ -64,7 +64,7 @@ Code déterministe = données + résolution + calcul + preuve
 | 2.1 | Hardening contrat (`extra=forbid`, `ParseStatus`, quantités riches, provenance) | DONE |
 | 3 | Fusion policy + AuthorityMatrix + post-validators + C3 route | DONE |
 | 4 | Micro-Gold V0 oracle (12 claims CANDIDATE) | DONE (CANDIDATE) |
-| **4.1** | **Vérifier/durcir idbanks + dims + obs du Micro-Gold** | **PARTIAL (+ FIX NEEDED); stop avant retrieval** |
+| **4.1** | **Vérifier/durcir idbanks + dims + obs du Micro-Gold** | **DONE (+ FIX NEEDED); stop avant retrieval** |
 | 5+ | RetrievalService, SDMX plan, verdict, preuve… | plus tard (après acceptation 4.1) |
 
 ### Session 2 — contrat unique du claim
@@ -115,7 +115,8 @@ Audit : [`docs/audit/session_04_1_micro_gold_series.md`](docs/audit/session_04_1
 Récit : [`docs/sessions/session_04_1_verite_de_serie.md`](docs/sessions/session_04_1_verite_de_serie.md)
 
 ```text
-Verdict 4.1: PARTIAL (MG012 sans idbank BDM) + FIX NEEDED (corrections IPC/pop/naissances)
+Verdict 4.1 (+4.1bis): DONE (tous FOUND CONFIRMED/CORRECTED; MG012=010755537 dual vintage)
++ FIX NEEDED (corrections matérielles idbanks/obs)
 gold_status reste CANDIDATE — pas VALIDATED
 Ne pas lancer retrieval avant acceptation de ce verdict
 ```

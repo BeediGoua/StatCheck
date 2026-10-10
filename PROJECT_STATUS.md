@@ -22,7 +22,7 @@
 
 **Session 4 — Micro-Gold V0 (oracle CANDIDATE):** 12 frozen claims MG001–MG012 in `data/gold/micro_gold_v0/`; contract `docs/contracts/micro_gold_v0.md`; structural tests PASS. See `docs/audit/session_04_micro_gold.md`.
 
-**Session 4.1 — series truth hardening:** BDM idbanks pinned for chômage (`001688527`), IPC YoY/MoM (`011814632`/`011814631`), population (`001760077`), births monthly (`001641601`). Corrections to obs (pop/Δpop). **Verdict: PARTIAL** (MG012 national BDM idbank UNRESOLVED) **+ FIX NEEDED** (material corrections). Still `gold_status=CANDIDATE`, not VALIDATED. See `docs/audit/session_04_1_micro_gold_series.md`. No retrieval/C3 work.
+**Session 4.1 (+ 4.1bis) — series truth hardening:** BDM idbanks pinned for chômage (`001688527`), IPC YoY/MoM (`011814632`/`011814631`), population (`001760077`), births monthly (`001641601`), business creations (`010755537`, successor of stopped `001564301`). MG012 dual vintage (publication 1 165 800 / BDM SUM 1 165 795). **Verdict: DONE** (all FOUND CONFIRMED/CORRECTED) **+ FIX NEEDED** (material corrections). Still `gold_status=CANDIDATE`, not VALIDATED. See `docs/audit/session_04_1_micro_gold_series.md`. No retrieval/C3 work.
 
 ## Status legend
 
@@ -48,7 +48,7 @@
 | Baseline/LLM adapters | YES | YES | NO | — | — | `src/parser/adapters/*` |
 | FusionEngine | YES (all Golden Path fields) | YES (adversarial + regression) | NO | — | — | policy + authority + post-validators; Session 3 |
 | C3Router | YES | YES | NO | — | — | CALL_LLM vs BASELINE_ONLY; does not set answerability |
-| Micro-Gold V0 | YES (12 CANDIDATE cases) | YES (structural + 4.1 verify) | **NO** | — | — | SERIES hardened 4.1; MG012 idbank UNRESOLVED |
+| Micro-Gold V0 | YES (12 CANDIDATE cases) | YES (structural + 4.1/4.1bis) | **NO** | — | — | SERIES hardened; MG012 `010755537` CORRECTED dual vintage |
 | Scorer / EvaluationOrchestrator | YES | YES | NO | — | — | slot/quantity matching |
 | `select_v1.py` | YES | — | **NO** | YES | scientific invalid | McNemar mock; `best_arch = "C3"`; `golds = baselines` |
 | `run_final_test.py` | YES | — | **NO** | YES | scientific invalid | `random` success; synthetic Canonical gold/pred; fake latencies |
@@ -169,4 +169,4 @@ Closest non-NLP path: `scripts/verify_mvp.py` (idbank → observations → Calcu
 
 ## Recommended next action
 
-**Single next correction:** resolve MG012 BDM idbank (or explicitly accept publication-only grounding), then — only after accepting Session 4.1 verdict — evaluate RetrievalService / SDMXSelectionPlan against `data/gold/micro_gold_v0/`. Do not retune fusion/C3 thresholds first.
+**Single next correction:** after accepting Session 4.1 (+4.1bis) verdict, evaluate RetrievalService / SDMXSelectionPlan against `data/gold/micro_gold_v0/`. Do not retune fusion/C3 thresholds first.

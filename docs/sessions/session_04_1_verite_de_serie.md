@@ -24,6 +24,8 @@ Pour chaque claim, on a :
 6. corrigé le YAML quand c’était nécessaire ;
 7. documenté publication vs révision pour le chômage.
 
+**Addendum 4.1bis :** on a rouvert MG012 après découverte de la série active `010755537` (successeur de `001564301` arrêtée).
+
 ## Résultats (vue simple)
 
 - **Chômage (MG001–MG003)** : série `001688527` confirmée (BIT, ensemble, France hors Mayotte, CVS). On garde le snapshot de publication à 7,5 %, et on documente l’histoire des révisions sans l’écraser.
@@ -31,32 +33,32 @@ Pour chaque claim, on a :
 - **IPC (MG006–MG008)** : idbanks trouvés et branchés (`011814632` annuel, `011814631` mensuel). Les valeurs 1,2 % et −1,0 % sont confirmées. MG008 reste juste : bonne série, mauvaise valeur affirmée.
 - **Population (MG009, MG011)** : série `001760077` confirmée ; les effectifs BDM actuels diffèrent un peu de la table « portrait social » initiale → correction, mais « environ 68,6 millions » reste soutenu. La hausse de population n’égale toujours pas les naissances.
 - **Naissances (MG010)** : série mensuelle France `001641601` ; la somme 2025 fait exactement 643 905.
-- **Créations d’entreprises (MG012)** : le chiffre annuel SIDE (1 165 800) est confirmé en publication, mais **aucune série BDM nationale « Ensemble – France » active** n’a été trouvée (les anciennes sont arrêtées) → cas **non résolu** pour l’idbank.
+- **Créations d’entreprises (MG012)** : série BDM active `010755537` (Ensemble – France – mensuel brut), successeur de `001564301`. Snapshot publication : claim arrondi **1 165 800** / SIDE exact **1 165 795**. Somme live des 12 mois 2025 = **1 165 795** (égale au SIDE exact). Dual vintage conservé ; statut **CORRECTED**.
 
 ## Verdict
 
 ```text
-PARTIAL — il reste 1 cas non résolu (MG012)
-FIX NEEDED — on a dû corriger plusieurs annotations (surtout IPC / pop / naissances)
+DONE — tous les FOUND ont série+dims+obs CONFIRMED/CORRECTED
+FIX NEEDED — corrections matérielles (dont MG012 idbank + dual vintage)
 ```
 
-Autrement dit : le Micro-Gold est **beaucoup plus fiable** qu’en fin de Session 4 pour servir d’oracle de grounding sur chômage, prix, population et naissances. Il n’est **pas encore DONE** tant que MG012 n’a pas d’identifiant de série machine, ou qu’on n’accepte pas explicitement un oracle « publication seule » pour ce cas.
+Autrement dit : le Micro-Gold est maintenant un oracle de grounding **série-pinné** pour les cas FOUND. Il reste **CANDIDATE** (pas VALIDATED) : on n’a toujours pas branché le retrieval dessus.
 
 ## Pourquoi c’était important
 
-Sans cette session, on aurait testé le retrieval sur des poignées fictives (`IPC_YOY_ENSEMBLE_FR`, idbanks vides). On aurait pu « réussir » en trouvant n’importe quelle série au bon chiffre. Maintenant, pour 11 claims sur 12, on sait ce qu’on cherche vraiment.
+Sans cette session, on aurait testé le retrieval sur des poignées fictives (`IPC_YOY_ENSEMBLE_FR`, idbanks vides). On aurait pu « réussir » en trouvant n’importe quelle série au bon chiffre. Maintenant, pour les 12 claims, on sait ce qu’on cherche vraiment — y compris le successeur national des créations d’entreprises.
 
 ## Leçons tirées
 
 - Une publication et une série BDM peuvent diverger après révision : il faut stocker les deux histoires.
 - « Moins de 25 ans » n’est pas une licence pour résoudre « jeunes ».
-- Certaines statistiques annuelles (créations) peuvent être solides en publication et absentes comme série BDM active.
+- Une série « arrêtée » peut avoir un successeur actif au titre équivalent : il faut le chercher avant de conclure UNRESOLVED.
 - Corriger un Gold n’est pas un échec : c’est exactement le travail de Session 4.1.
 
 ## Pour la suite
 
 On s’arrête ici jusqu’à lecture du verdict.  
-Ensuite seulement : décider du sort de MG012, puis éventuellement brancher le retrieval contre cet oracle.
+Ensuite seulement : éventuellement brancher le retrieval contre cet oracle (Session 5) — **pas avant acceptation**.
 
 ## Trace technique
 

@@ -6,18 +6,18 @@
 
 **Récit humain :** [`docs/sessions/session_04_1_verite_de_serie.md`](../sessions/session_04_1_verite_de_serie.md)
 
+**Addendum 4.1bis (2026-10-10):** fermeture MG012 via idbank actif `010755537`.
+
 ---
 
-## Verdict Session 4.1
+## Verdict Session 4.1 (+ 4.1bis)
 
 ```text
-PARTIAL — il reste 1 cas non résolu (MG012)
-FIX NEEDED — corrections matérielles sur MG006–MG011 (idbanks / observations)
+DONE — tous les FOUND ont série+dims+obs CONFIRMED/CORRECTED
+FIX NEEDED — corrections matérielles (dont MG012 idbank + dual vintage)
 ```
 
-**Oracle de grounding ?** Assez fiable pour chômage + IPC + population + naissances (FOUND CONFIRMED/CORRECTED avec idbank).  
-**Pas encore DONE** tant que MG012 n’a pas d’idbank BDM national actif (séries Ensemble–France arrêtées dans le dataflow `CREATIONS-ENTREPRISES`).
-
+**Oracle de grounding ?** Oui pour les FOUND : chaque cas CONFIRMED/CORRECTED a un idbank BDM pinné (ou abstention volontaire MG004/MG005).  
 `gold_status` reste **CANDIDATE**. Ne pas écrire VALIDATED.
 
 ---
@@ -37,7 +37,7 @@ FIX NEEDED — corrections matérielles sur MG006–MG011 (idbanks / observation
 | MG009 | OK ESTIMATIONS-POPULATION | OK `001760077` | OK FE / A | CORRECTED 68851996 | **CORRECTED** |
 | MG010 | OK ETAT-CIVIL | OK `001641601` (mensuel→somme) | OK FE / M | OK sum=643905 | **CORRECTED** |
 | MG011 | OK pop | OK `001760077` | OK | CORRECTED Δ=213619 | **CORRECTED** |
-| MG012 | OK SIDE / Première 2092 | **pas d’idbank BDM actif** | pub. FR / A | OK 1165800 | **UNRESOLVED** |
+| MG012 | OK CREATIONS-ENTREPRISES | OK `010755537` (succ. `001564301`) | OK FE / M / BRUTE / Ensemble | 12 mois 2025 ; SUM=**1165795** | **CORRECTED** |
 
 ---
 
@@ -48,10 +48,29 @@ FIX NEEDED — corrections matérielles sur MG006–MG011 (idbanks / observation
 3. **MG011** — Δpop BDM **213 619** (plus 169 000 de l’ancienne table) ; toujours REFUTED vs 643 905 naissances.
 4. **Naissances** — idbank mensuel France `001641601` ; somme 2025 = **643 905** (match Focus). Rejet de la série métropole seule `000067677`.
 5. **Chômage** — métadonnées BDM confirmées (`REF_AREA=FR-D976`, CVS, ensemble). Snapshot publication **conservé** (7.5) malgré historique de révision (IR ultérieur 7.6 / BDM live 7.5+OBS_REV).
+6. **MG012 (4.1bis)** — idbank actif `010755537` (« Ensemble - France - Données mensuelles brutes ») ; successeur documenté de `001564301` (série arrêtée, même libellé). Dual vintage : publication claim **1 165 800** / SIDE exact **1 165 795** vs BDM `annual_sum` **1 165 795**. `discrepancy_cause=CLAIM_ROUNDING`. Opération Gold `SUM`. Statut **CORRECTED** (pas CONFIRMED : libellé arrondi ≠ somme exacte).
 
-## Non résolu
+### MG012 — mensuels BDM 2025 (`010755537`, LAST_UPDATE=2026-09-18)
 
-- **MG012** : dans `CREATIONS-ENTREPRISES`, les séries « Ensemble - France » sont **arrêtées**. Valeur annuelle SIDE confirmée en publication seulement.
+| Période | Valeur | Flags |
+|---|---|---|
+| 2025-01 | 105 274 | A / DEF |
+| 2025-02 | 95 051 | A / DEF |
+| 2025-03 | 95 697 | A / DEF |
+| 2025-04 | 97 861 | A / DEF |
+| 2025-05 | 87 988 | A / DEF |
+| 2025-06 | 93 835 | A / DEF |
+| 2025-07 | 101 879 | A / DEF |
+| 2025-08 | 80 456 | A / DEF |
+| 2025-09 | 101 006 | A / DEF |
+| 2025-10 | 116 385 | A / DEF |
+| 2025-11 | 93 992 | A / DEF |
+| 2025-12 | 96 371 | A / DEF |
+| **SUM** | **1 165 795** | = SIDE exact ; claim arrondi 1 165 800 |
+
+Écart claim arrondi vs somme : **−5** (`CLAIM_ROUNDING`). Un écart ~200 parfois cité n’apparaît **pas** sur le vintage inspecté (somme = SIDE exact).
+
+---
 
 ## MG001–MG003 publication vs révision
 
@@ -63,14 +82,15 @@ FIX NEEDED — corrections matérielles sur MG006–MG011 (idbanks / observation
 
 Oracle MG001–MG003 = **publication snapshot**, pas « dernière valeur vue un jour ».
 
+---
+
 ## Tests
 
 ```text
 .venv\Scripts\python.exe -m pytest tests/gold/test_micro_gold_v0.py -q --tb=short
-# → 13 passed
+# → 13 passed (après 4.1bis)
 ```
 
 ## Stop
 
-Ne pas démarrer Retrieval / Session 5 tant que ce verdict n’est pas accepté.  
-Prochaine action humaine possible : trouver le successeur BDM des créations Ensemble–France, ou accepter MG012 comme oracle **publication-only**.
+Ne pas démarrer Retrieval / Session 5 tant que ce verdict n’est pas accepté.

@@ -102,6 +102,7 @@ class ComputationOperation(str, Enum):
     POINT_CHANGE = "POINT_CHANGE"
     RELATIVE_CHANGE = "RELATIVE_CHANGE"
     RATIO = "RATIO"
+    SUM = "SUM"
     NONE = "NONE"
 
 
@@ -174,6 +175,13 @@ class Provenance(StrictModel):
     )
     revised_series_value: Optional[str] = Field(
         None, description="Later revised series value if different"
+    )
+    discrepancy_cause: Optional[str] = Field(
+        None,
+        description="Cause of publication vs live BDM gap (UNKNOWN or documented)",
+    )
+    replaced_idbank: Optional[str] = Field(
+        None, description="Stopped predecessor idbank when a successor is pinned"
     )
 
 

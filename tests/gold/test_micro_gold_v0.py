@@ -128,6 +128,8 @@ def test_calculator_coherence_for_found():
             got = Calculator.ratio(
                 obs, comp.start_period or "", comp.end_period or ""
             )
+        elif op == ComputationOperation.SUM:
+            got = Calculator.sum(obs)
         else:
             continue
         assert got is not None, f"{case.claim_id}: Calculator returned None"
@@ -165,9 +167,23 @@ def test_confirmed_or_corrected_found_require_idbank():
         assert case.expected_grounding.idbank, case.claim_id
 
 
-def test_mg012_unresolved_without_idbank():
+def test_mg012_corrected_dual_vintage():
     by_id = {c.claim_id: c for c in _cases()}
     c = by_id["MG012"]
-    assert c.annotation.verification_status == VerificationStatus.UNRESOLVED
-    assert c.expected_grounding.idbank is None
-    assert c.expected_grounding.series_id
+    assert c.gold_status == GoldStatus.CANDIDATE
+    assert c.claim == FROZEN_CLAIMS["MG012"]
+    assert c.annotation.verification_status == VerificationStatus.CORRECTED
+    assert c.expected_grounding.idbank == "010755537"
+    assert c.expected_grounding.series_id == "010755537"
+    assert c.provenance.replaced_idbank == "001564301"
+    assert c.expected_computation.operation == ComputationOperation.SUM
+    assert c.expected_computation.result == 1165795
+    monthly = [o for o in c.expected_observations if o.period.startswith("2025-")]
+    assert len(monthly) == 12
+    assert abs(sum(o.value for o in monthly) - 1165795) <= TOLERANCE
+    pub = c.provenance.publication_value or ""
+    assert "1165800" in pub
+    assert "1165795" in pub
+    rev = c.provenance.revised_series_value or ""
+    assert "1165795" in rev
+    assert float(c.expected_computation.result) != 1165800

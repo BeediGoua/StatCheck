@@ -34,7 +34,7 @@ This file is an **oracle for future Retrieval/SDMX sessions**. It is **not** a m
 | `gold_status` | `CANDIDATE` only until Session 4.1 verdict accepted (never auto-`VALIDATED`) |
 | `annotation.review_status` | `DRAFT`, `SOURCE_CHECKED`, `NEEDS_HUMAN_REVIEW` |
 | `annotation.verification_status` | `CONFIRMED`, `CORRECTED`, `NEEDS_HUMAN_REVIEW`, `UNRESOLVED` (Session 4.1) |
-| `expected_computation.operation` | `VALUE`, `POINT_CHANGE`, `RELATIVE_CHANGE`, `RATIO`, `NONE` |
+| `expected_computation.operation` | `VALUE`, `POINT_CHANGE`, `RELATIVE_CHANGE`, `RATIO`, `SUM`, `NONE` |
 
 Session 4.1 rule: FOUND with `verification_status` in {CONFIRMED, CORRECTED} **requires** a non-null `idbank`.
 
@@ -75,6 +75,7 @@ Operations align with [`src/engine/calculator.py`](../../src/engine/calculator.p
 | `POINT_CHANGE` | `point_variation` |
 | `RELATIVE_CHANGE` | `relative_variation` |
 | `RATIO` | `ratio` |
+| `SUM` | `sum` |
 
 Structural tests recompute from `expected_observations` with a documented tolerance (default absolute 0.05 for rounded %).
 
