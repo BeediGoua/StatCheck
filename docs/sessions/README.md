@@ -22,6 +22,7 @@ On continue à écrire les audits techniques à chaque session structurante.
 | 2.1 | [session_02_1_durcissement.md](session_02_1_durcissement.md) | On a rendu ce format plus strict et plus riche. |
 | 3 | [session_03_fusion_fiable.md](session_03_fusion_fiable.md) | On a appris à fusionner Baseline et LLM sans mentir sur le résultat. |
 | 4 | [session_04_oracle_micro_gold.md](session_04_oracle_micro_gold.md) | On a commencé à fabriquer la vérité terrain pour tester le vrai grounding. |
+| 4.1 | [session_04_1_verite_de_serie.md](session_04_1_verite_de_serie.md) | On a vérifié/corrigé les vraies séries INSEE derrière le Micro-Gold. |
 
 ## Règle pour les prochaines sessions
 

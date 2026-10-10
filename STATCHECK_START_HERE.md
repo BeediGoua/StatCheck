@@ -63,8 +63,9 @@ Code déterministe = données + résolution + calcul + preuve
 | 2 | `ClaimSpecification` V1 + adapters + migration Router/Fusion/Scorer | DONE |
 | 2.1 | Hardening contrat (`extra=forbid`, `ParseStatus`, quantités riches, provenance) | DONE |
 | 3 | Fusion policy + AuthorityMatrix + post-validators + C3 route | DONE |
-| **4** | **Micro-Gold V0 oracle (12 claims CANDIDATE)** | **DONE (CANDIDATE; not VALIDATED)** |
-| 5+ | RetrievalService, SDMX plan, verdict, preuve… | plus tard |
+| 4 | Micro-Gold V0 oracle (12 claims CANDIDATE) | DONE (CANDIDATE) |
+| **4.1** | **Vérifier/durcir idbanks + dims + obs du Micro-Gold** | **PARTIAL (+ FIX NEEDED); stop avant retrieval** |
+| 5+ | RetrievalService, SDMX plan, verdict, preuve… | plus tard (après acceptation 4.1) |
 
 ### Session 2 — contrat unique du claim
 
@@ -105,12 +106,18 @@ C3 = CALL_LLM | BASELINE_ONLY  (pas l’answerability finale)
 
 Contrat : [`docs/contracts/micro_gold_v0.md`](docs/contracts/micro_gold_v0.md)  
 Données : [`data/gold/micro_gold_v0/micro_gold_v0.yaml`](data/gold/micro_gold_v0/micro_gold_v0.yaml)  
-Audit : [`docs/audit/session_04_micro_gold.md`](docs/audit/session_04_micro_gold.md)
+Audit : [`docs/audit/session_04_micro_gold.md`](docs/audit/session_04_micro_gold.md)  
+Récit : [`docs/sessions/session_04_oracle_micro_gold.md`](docs/sessions/session_04_oracle_micro_gold.md)
+
+### Session 4.1 — vérité de série
+
+Audit : [`docs/audit/session_04_1_micro_gold_series.md`](docs/audit/session_04_1_micro_gold_series.md)  
+Récit : [`docs/sessions/session_04_1_verite_de_serie.md`](docs/sessions/session_04_1_verite_de_serie.md)
 
 ```text
-12 claims MG001–MG012 (CANDIDATE)
-→ answerability / ClaimSpec / dataset / série / obs / calcul / verdict
-≠ VALIDATED système  (plusieurs idbanks BDM encore à pinner)
+Verdict 4.1: PARTIAL (MG012 sans idbank BDM) + FIX NEEDED (corrections IPC/pop/naissances)
+gold_status reste CANDIDATE — pas VALIDATED
+Ne pas lancer retrieval avant acceptation de ce verdict
 ```
 
 ---

@@ -10,6 +10,7 @@ from src.gold.micro_gold_v0 import (
     ComputationOperation,
     ExpectedVerdict,
     GoldStatus,
+    VerificationStatus,
     load_micro_gold_v0,
 )
 from src.models.observation import Observation
@@ -141,3 +142,32 @@ def test_families_covered():
     assert "inflation" in families
     assert "population" in families or "births" in families
     assert "business_creation" in families
+
+
+def test_every_case_has_verification_status():
+    allowed = {s.value for s in VerificationStatus}
+    for case in _cases():
+        assert case.annotation.verification_status is not None
+        assert case.annotation.verification_status.value in allowed
+        assert case.annotation.verification_notes
+
+
+def test_confirmed_or_corrected_found_require_idbank():
+    for case in _cases():
+        vs = case.annotation.verification_status
+        if vs not in (
+            VerificationStatus.CONFIRMED,
+            VerificationStatus.CORRECTED,
+        ):
+            continue
+        if case.answerability.status != AnswerabilityStatus.FOUND:
+            continue
+        assert case.expected_grounding.idbank, case.claim_id
+
+
+def test_mg012_unresolved_without_idbank():
+    by_id = {c.claim_id: c for c in _cases()}
+    c = by_id["MG012"]
+    assert c.annotation.verification_status == VerificationStatus.UNRESOLVED
+    assert c.expected_grounding.idbank is None
+    assert c.expected_grounding.series_id

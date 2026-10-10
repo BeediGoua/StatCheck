@@ -88,6 +88,15 @@ class ReviewStatus(str, Enum):
     NEEDS_HUMAN_REVIEW = "NEEDS_HUMAN_REVIEW"
 
 
+class VerificationStatus(str, Enum):
+    """Session 4.1 series-grounding check."""
+
+    CONFIRMED = "CONFIRMED"
+    CORRECTED = "CORRECTED"
+    NEEDS_HUMAN_REVIEW = "NEEDS_HUMAN_REVIEW"
+    UNRESOLVED = "UNRESOLVED"
+
+
 class ComputationOperation(str, Enum):
     VALUE = "VALUE"
     POINT_CHANGE = "POINT_CHANGE"
@@ -154,11 +163,25 @@ class Provenance(StrictModel):
         None,
         description="publication_snapshot | revised_series | mixed",
     )
+    data_version: Optional[str] = Field(
+        None, description="BDM LAST_UPDATE or publication version label"
+    )
+    observed_at: Optional[str] = Field(
+        None, description="ISO date when Series/BDM values were inspected"
+    )
+    publication_value: Optional[str] = Field(
+        None, description="Value as published at as_of_date (MG001–MG003)"
+    )
+    revised_series_value: Optional[str] = Field(
+        None, description="Later revised series value if different"
+    )
 
 
 class AnnotationMeta(StrictModel):
     source_checked: bool = False
     review_status: ReviewStatus = ReviewStatus.DRAFT
+    verification_status: Optional[VerificationStatus] = None
+    verification_notes: Optional[str] = None
     notes: Optional[str] = None
     rejected_candidates: List[str] = Field(default_factory=list)
 
@@ -203,6 +226,14 @@ class MicroGoldCase(StrictModel):
             ):
                 raise ValueError(
                     f"{self.claim_id}: FOUND requires SUPPORTED or REFUTED verdict"
+                )
+            vs = self.annotation.verification_status
+            if vs in (
+                VerificationStatus.CONFIRMED,
+                VerificationStatus.CORRECTED,
+            ) and not g.idbank:
+                raise ValueError(
+                    f"{self.claim_id}: CONFIRMED/CORRECTED FOUND requires idbank"
                 )
         else:
             if not self.ambiguities and not (self.answerability.reason or "").strip():

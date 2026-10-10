@@ -31,9 +31,12 @@ This file is an **oracle for future Retrieval/SDMX sessions**. It is **not** a m
 |---|---|
 | `answerability.status` | `FOUND`, `AMBIGUOUS`, `NOT_FOUND`, `INSUFFICIENT` |
 | `expected_verdict` | `SUPPORTED`, `REFUTED`, `INSUFFICIENT_EVIDENCE`, or `null` |
-| `gold_status` | `CANDIDATE` only in Session 4 (never auto-`VALIDATED`) |
+| `gold_status` | `CANDIDATE` only until Session 4.1 verdict accepted (never auto-`VALIDATED`) |
 | `annotation.review_status` | `DRAFT`, `SOURCE_CHECKED`, `NEEDS_HUMAN_REVIEW` |
+| `annotation.verification_status` | `CONFIRMED`, `CORRECTED`, `NEEDS_HUMAN_REVIEW`, `UNRESOLVED` (Session 4.1) |
 | `expected_computation.operation` | `VALUE`, `POINT_CHANGE`, `RELATIVE_CHANGE`, `RATIO`, `NONE` |
+
+Session 4.1 rule: FOUND with `verification_status` in {CONFIRMED, CORRECTED} **requires** a non-null `idbank`.
 
 ## Structural rules
 

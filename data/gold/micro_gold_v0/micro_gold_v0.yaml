@@ -1,118 +1,123 @@
-# Micro-Gold V0 — CANDIDATE oracle (Session 4)
-# Do not mark VALIDATED. Texts are frozen. Values from cited INSEE publications.
-
 - claim_id: MG001
-  claim: "Au deuxième trimestre 2025, le taux de chômage au sens du BIT en France hors Mayotte était de 7,5 %."
+  claim: Au deuxième trimestre 2025, le taux de chômage au sens du BIT en France hors Mayotte était de
+    7,5 %.
   family: unemployment
   gold_status: CANDIDATE
   answerability:
     status: FOUND
-    reason: "Unambiguous BIT unemployment rate, France hors Mayotte, T2 2025, level VALUE."
+    reason: Unambiguous BIT unemployment rate, France hors Mayotte, T2 2025, level VALUE.
   claim_specification:
     indicator:
       canonical_value: UNEMPLOYMENT_RATE_BIT
-      original_label: "taux de chômage au sens du BIT"
+      original_label: taux de chômage au sens du BIT
     territories:
-      - canonical_value: FR_HORS_MAYOTTE
-        original_label: "France hors Mayotte"
+    - canonical_value: FR_HORS_MAYOTTE
+      original_label: France hors Mayotte
     time_period:
-      start_date: "2025-Q2"
-      end_date: "2025-Q2"
+      start_date: 2025-Q2
+      end_date: 2025-Q2
       precision: QUARTER
       is_relative: false
-      original_label: "deuxième trimestre 2025"
+      original_label: deuxième trimestre 2025
     claimed_quantity:
       numeric_value: 7.5
       unit: PERCENT
       role: CURRENT_VALUE
       approximation: EXACT
-      original_label: "7,5 %"
+      original_label: 7,5 %
     statistical_operation:
       canonical_value: VALUE
-      original_label: "était de"
+      original_label: était de
     expressed_frequency:
       canonical_value: QUARTERLY
-      original_label: "trimestre"
+      original_label: trimestre
     adjustment: null
     populations: []
   expected_grounding:
     provider: INSEE
     dataset_id: CHOMAGE-TRIM-NATIONAL
-    dataset_title: "Taux de chômage au sens du BIT et indicateurs sur le marché du travail (enquête Emploi)"
-    series_id: "001688527"
-    idbank: "001688527"
+    dataset_title: Taux de chômage au sens du BIT - Ensemble - France hors Mayotte - Données CVS
+    series_id: 001688527
+    idbank: 001688527
     series_key: null
   expected_dimensions:
-    GEO: FR_HORS_MAYOTTE
+    GEO: FR-D976
     AGE: TOTAL
     SEX: TOTAL
     FREQ: Q
-    UNIT: PERCENT
+    UNIT: POURCENT
     ADJUSTMENT: SA
   expected_observations:
-    - period: "2025-Q2"
-      value: 7.5
-      unit: PERCENT
-      note: "Publication IR n°198 (08/08/2025) — publication snapshot"
-    - period: "2024-Q2"
-      value: 7.3
-      unit: PERCENT
-      note: "Same publication table — used for MG002/MG003"
+  - period: 2025-Q2
+    value: 7.5
+    unit: PERCENT
+    note: Publication IR 8627586 snapshot (08/08/2025)
+  - period: 2024-Q2
+    value: 7.3
+    unit: PERCENT
+    note: Same publication table
   expected_computation:
     operation: VALUE
-    period: "2025-Q2"
+    period: 2025-Q2
     result: 7.5
     unit: PERCENT
-    formula_note: "LEVEL from publication snapshot T2 2025 = 7.5"
+    formula_note: LEVEL from publication snapshot T2 2025 = 7.5
   expected_verdict: SUPPORTED
   ambiguities: []
   provenance:
-    sources:
-      - "https://www.insee.fr/fr/statistiques/8627586"
-      - "https://www.insee.fr/fr/statistiques/serie/001688527"
-    as_of_date: "2025-08-08"
+    sources: &id001
+    - https://www.insee.fr/fr/statistiques/8627586
+    - https://www.insee.fr/fr/statistiques/serie/001688527
+    - https://bdm.insee.fr/series/sdmx/data/SERIES_BDM/001688527
+    as_of_date: '2025-08-08'
     snapshot_kind: publication_snapshot
-    revision_note: >
-      IR 08/08/2025 published 7.5% for 2025-Q2 (France hors Mayotte).
-      Series 001688527 may later show a revised 7.6% for the same quarter.
-      Gold MG001 anchors the publication snapshot, not the latest revision.
+    revision_note: Do not overwrite publication snapshot with later revisions. Verdict MG001 anchored
+      on IR 08/08/2025 = 7.5%.
+    observed_at: '2026-10-10'
+    data_version: BDM LAST_UPDATE=2026-08-07; IR 8627586
+    publication_value: 2025-Q2=7.5 (IR 8627586)
+    revised_series_value: IR 8989990 table showed 2025-T2=7.6; live BDM 2026-10-10 returns 2025-Q2=7.5
+      with OBS_REV=1 — Gold keeps publication snapshot 7.5
   annotation:
     source_checked: true
     review_status: SOURCE_CHECKED
-    notes: "Verified against Informations rapides n°198 table (7.5 / 7.3)."
+    notes: Verified against Informations rapides n°198 table (7.5 / 7.3).
     rejected_candidates:
-      - "France métropolitaine series (7.3% in same table) — wrong GEO"
-
+    - France métropolitaine series (7.3% in same table) — wrong GEO
+    verification_status: CONFIRMED
+    verification_notes: BDM series 001688527 metadata matches BIT/total/FR hors Mayotte/CVS; publication
+      obs retained; revision history documented.
 - claim_id: MG002
-  claim: "Entre le deuxième trimestre 2024 et le deuxième trimestre 2025, le taux de chômage au sens du BIT en France hors Mayotte a augmenté de 0,2 point."
+  claim: Entre le deuxième trimestre 2024 et le deuxième trimestre 2025, le taux de chômage au sens du
+    BIT en France hors Mayotte a augmenté de 0,2 point.
   family: unemployment
   gold_status: CANDIDATE
   answerability:
     status: FOUND
-    reason: "Same series as MG001; operation is POINT_CHANGE not relative %."
+    reason: Same series as MG001; operation is POINT_CHANGE not relative %.
   claim_specification:
     indicator:
       canonical_value: UNEMPLOYMENT_RATE_BIT
-      original_label: "taux de chômage au sens du BIT"
+      original_label: taux de chômage au sens du BIT
     territories:
-      - canonical_value: FR_HORS_MAYOTTE
-        original_label: "France hors Mayotte"
+    - canonical_value: FR_HORS_MAYOTTE
+      original_label: France hors Mayotte
     time_period:
-      start_date: "2024-Q2"
-      end_date: "2025-Q2"
+      start_date: 2024-Q2
+      end_date: 2025-Q2
       precision: QUARTER
       is_relative: false
-      original_label: "entre T2 2024 et T2 2025"
+      original_label: entre T2 2024 et T2 2025
     claimed_quantity:
       numeric_value: 0.2
       unit: PERCENTAGE_POINT
       role: ABSOLUTE_CHANGE
       approximation: EXACT
-      original_label: "0,2 point"
-      sign: "+"
+      original_label: 0,2 point
+      sign: +
     statistical_operation:
       canonical_value: POINT_CHANGE
-      original_label: "a augmenté de … point"
+      original_label: a augmenté de … point
     expressed_frequency:
       canonical_value: QUARTERLY
     adjustment: null
@@ -120,65 +125,69 @@
   expected_grounding:
     provider: INSEE
     dataset_id: CHOMAGE-TRIM-NATIONAL
-    dataset_title: "Taux de chômage au sens du BIT (enquête Emploi)"
-    series_id: "001688527"
-    idbank: "001688527"
+    dataset_title: Taux de chômage au sens du BIT - Ensemble - France hors Mayotte - Données CVS
+    series_id: 001688527
+    idbank: 001688527
     series_key: null
   expected_dimensions:
-    GEO: FR_HORS_MAYOTTE
+    GEO: FR-D976
     AGE: TOTAL
     SEX: TOTAL
     FREQ: Q
-    UNIT: PERCENT
+    UNIT: POURCENT
     ADJUSTMENT: SA
   expected_observations:
-    - period: "2024-Q2"
-      value: 7.3
-      unit: PERCENT
-    - period: "2025-Q2"
-      value: 7.5
-      unit: PERCENT
+  - period: 2024-Q2
+    value: 7.3
+    unit: PERCENT
+  - period: 2025-Q2
+    value: 7.5
+    unit: PERCENT
   expected_computation:
     operation: POINT_CHANGE
-    start_period: "2024-Q2"
-    end_period: "2025-Q2"
+    start_period: 2024-Q2
+    end_period: 2025-Q2
     result: 0.2
     unit: PERCENTAGE_POINT
-    formula_note: "7.5 - 7.3 = 0.2 point (publication snapshot)"
+    formula_note: 7.5 - 7.3 = 0.2 point (publication snapshot)
   expected_verdict: SUPPORTED
   ambiguities: []
   provenance:
-    sources:
-      - "https://www.insee.fr/fr/statistiques/8627586"
-    as_of_date: "2025-08-08"
+    sources: *id001
+    as_of_date: '2025-08-08'
     snapshot_kind: publication_snapshot
-    revision_note: >
-      Same revision caveat as MG001: later series revision may change end level;
-      POINT_CHANGE on publication snapshot remains +0.2.
+    revision_note: Do not overwrite publication snapshot with later revisions. Verdict MG001 anchored
+      on IR 08/08/2025 = 7.5%.
+    observed_at: '2026-10-10'
+    data_version: BDM LAST_UPDATE=2026-08-07; IR 8627586
+    publication_value: POINT_CHANGE 7.5-7.3=+0.2 (IR snapshot)
+    revised_series_value: Same series; see MG001 revision note
   annotation:
     source_checked: true
     review_status: SOURCE_CHECKED
-    notes: "IR text explicitly: supérieur de 0,2 point au T2 2024."
+    notes: 'IR text explicitly: supérieur de 0,2 point au T2 2024.'
     rejected_candidates:
-      - "Interpreting 0,2 point as relative 0.2% — wrong unit/op"
-
+    - Interpreting 0,2 point as relative 0.2% — wrong unit/op
+    verification_status: CONFIRMED
+    verification_notes: Same confirmed idbank as MG001; POINT_CHANGE on publication snapshot.
 - claim_id: MG003
-  claim: "Entre le deuxième trimestre 2024 et le deuxième trimestre 2025, le taux de chômage au sens du BIT en France hors Mayotte a augmenté de 2,7 %."
+  claim: Entre le deuxième trimestre 2024 et le deuxième trimestre 2025, le taux de chômage au sens du
+    BIT en France hors Mayotte a augmenté de 2,7 %.
   family: unemployment
   gold_status: CANDIDATE
   answerability:
     status: FOUND
-    reason: "Same levels as MG002 but RELATIVE_CHANGE; distinct from POINT_CHANGE."
+    reason: Same levels as MG002 but RELATIVE_CHANGE; distinct from POINT_CHANGE.
   claim_specification:
     indicator:
       canonical_value: UNEMPLOYMENT_RATE_BIT
-      original_label: "taux de chômage au sens du BIT"
+      original_label: taux de chômage au sens du BIT
     territories:
-      - canonical_value: FR_HORS_MAYOTTE
-        original_label: "France hors Mayotte"
+    - canonical_value: FR_HORS_MAYOTTE
+      original_label: France hors Mayotte
     time_period:
-      start_date: "2024-Q2"
-      end_date: "2025-Q2"
+      start_date: 2024-Q2
+      end_date: 2025-Q2
       precision: QUARTER
       is_relative: false
     claimed_quantity:
@@ -186,11 +195,11 @@
       unit: PERCENT
       role: RELATIVE_CHANGE
       approximation: EXACT
-      original_label: "2,7 %"
-      sign: "+"
+      original_label: 2,7 %
+      sign: +
     statistical_operation:
       canonical_value: RELATIVE_CHANGE
-      original_label: "a augmenté de … %"
+      original_label: a augmenté de … %
     expressed_frequency:
       canonical_value: QUARTERLY
     adjustment: null
@@ -198,70 +207,77 @@
   expected_grounding:
     provider: INSEE
     dataset_id: CHOMAGE-TRIM-NATIONAL
-    dataset_title: "Taux de chômage au sens du BIT (enquête Emploi)"
-    series_id: "001688527"
-    idbank: "001688527"
+    dataset_title: Taux de chômage au sens du BIT - Ensemble - France hors Mayotte - Données CVS
+    series_id: 001688527
+    idbank: 001688527
     series_key: null
   expected_dimensions:
-    GEO: FR_HORS_MAYOTTE
+    GEO: FR-D976
     AGE: TOTAL
     SEX: TOTAL
     FREQ: Q
-    UNIT: PERCENT
+    UNIT: POURCENT
     ADJUSTMENT: SA
   expected_observations:
-    - period: "2024-Q2"
-      value: 7.3
-      unit: PERCENT
-    - period: "2025-Q2"
-      value: 7.5
-      unit: PERCENT
+  - period: 2024-Q2
+    value: 7.3
+    unit: PERCENT
+  - period: 2025-Q2
+    value: 7.5
+    unit: PERCENT
   expected_computation:
     operation: RELATIVE_CHANGE
-    start_period: "2024-Q2"
-    end_period: "2025-Q2"
+    start_period: 2024-Q2
+    end_period: 2025-Q2
     result: 2.74
     unit: PERCENT
-    formula_note: >
-      ((7.5-7.3)/7.3)*100 = 2.739… → Calculator rounds to 2.74;
-      claim states 2.7% (1-decimal rounding). Verdict SUPPORTED under 0.05 abs tolerance.
+    formula_note: '((7.5-7.3)/7.3)*100 = 2.739… → Calculator rounds to 2.74; claim states 2.7% (1-decimal
+      rounding). Verdict SUPPORTED under 0.05 abs tolerance.
+
+      '
   expected_verdict: SUPPORTED
   ambiguities: []
   provenance:
-    sources:
-      - "https://www.insee.fr/fr/statistiques/8627586"
-    as_of_date: "2025-08-08"
+    sources: *id001
+    as_of_date: '2025-08-08'
     snapshot_kind: publication_snapshot
-    revision_note: "Same publication snapshot levels as MG001/MG002."
+    revision_note: Do not overwrite publication snapshot with later revisions. Verdict MG001 anchored
+      on IR 08/08/2025 = 7.5%.
+    observed_at: '2026-10-10'
+    data_version: BDM LAST_UPDATE=2026-08-07; IR 8627586
+    publication_value: RELATIVE_CHANGE ((7.5-7.3)/7.3)*100≈2.74
+    revised_series_value: Same series; see MG001
   annotation:
     source_checked: true
     review_status: SOURCE_CHECKED
-    notes: "Deliberate twin of MG002 to separate points vs relative %."
+    notes: Deliberate twin of MG002 to separate points vs relative %.
     rejected_candidates:
-      - "Treating as POINT_CHANGE of 2.7 points — absurd / wrong op"
-
+    - Treating as POINT_CHANGE of 2.7 points — absurd / wrong op
+    verification_status: CONFIRMED
+    verification_notes: Same confirmed idbank; RELATIVE_CHANGE vs MG002 POINT_CHANGE documented.
 - claim_id: MG004
-  claim: "Au deuxième trimestre 2025, le chômage des jeunes en France était de 19 %."
+  claim: Au deuxième trimestre 2025, le chômage des jeunes en France était de 19 %.
   family: unemployment
   gold_status: CANDIDATE
   answerability:
     status: AMBIGUOUS
-    reason: >
-      'jeunes' is not a unique age band (15-24 vs under-25 vs 15-29);
-      territory 'France' may mean hors Mayotte or métropolitaine.
+    reason: '''jeunes'' is not a unique age band (15-24 vs under-25 vs 15-29); territory ''France'' may
+      mean hors Mayotte or métropolitaine.
+
+      '
   claim_specification:
     indicator:
       canonical_value: UNEMPLOYMENT_RATE_BIT
-      original_label: "chômage des jeunes"
+      original_label: chômage des jeunes
     populations:
-      - canonical_value: null
-        original_label: "jeunes"
+    - canonical_value: null
+      original_label: jeunes
     territories:
-      - canonical_value: null
-        original_label: "France"
+    - canonical_value: null
+      original_label: France
     time_period:
-      start_date: "2025-Q2"
-      end_date: "2025-Q2"
+      start_date: 2025-Q2
+      end_date: 2025-Q2
       precision: QUARTER
       is_relative: false
     claimed_quantity:
@@ -277,75 +293,83 @@
   expected_grounding:
     provider: INSEE
     dataset_id: CHOMAGE-TRIM-NATIONAL
-    dataset_title: "Taux de chômage BIT par âge (candidat non unique)"
-    series_id: "001688537"
-    idbank: "001688537"
+    dataset_title: Taux de chômage au sens du BIT - Ensemble des moins de 25 ans - France hors Mayotte
+      - Données CVS (CANDIDATE only)
+    series_id: 001688537
+    idbank: 001688537
     series_key: null
   expected_dimensions:
-    GEO: null
-    AGE: null
+    GEO: FR-D976
+    AGE: UNDER_25
     SEX: TOTAL
     FREQ: Q
-    UNIT: PERCENT
+    UNIT: POURCENT
     ADJUSTMENT: SA
   expected_observations:
-    - period: "2025-Q2"
-      value: 19.0
-      unit: PERCENT
-      note: "IR: 15-24 ans = 19,0% — candidate only, not unique grounding"
+  - period: 2025-Q2
+    value: 19.0
+    unit: PERCENT
+    note: BDM 001688537 (=moins de 25 ans); claim says 'jeunes' — not unique
   expected_computation:
     operation: NONE
     result: null
     unit: null
-    formula_note: "No unique operation until age band / GEO disambiguated."
+    formula_note: No unique operation until age band / GEO disambiguated.
   expected_verdict: INSUFFICIENT_EVIDENCE
   ambiguities:
-    - field: populations
-      reason: "jeunes not uniquely mapped to 15-24 / under-25 / 15-29"
-      alternatives:
-        - AGE_15_24
-        - AGE_UNDER_25
-        - AGE_15_29
-    - field: territories
-      reason: "France vs France hors Mayotte vs France métropolitaine"
-      alternatives:
-        - FR_HORS_MAYOTTE
-        - FR_METRO
+  - field: populations
+    reason: jeunes not uniquely mapped to 15-24 / under-25 / 15-29
+    alternatives:
+    - AGE_15_24
+    - AGE_UNDER_25
+    - AGE_15_29
+  - field: territories
+    reason: France vs France hors Mayotte vs France métropolitaine
+    alternatives:
+    - FR_HORS_MAYOTTE
+    - FR_METRO
   provenance:
     sources:
-      - "https://www.insee.fr/fr/statistiques/8627586"
-      - "https://www.insee.fr/fr/statistiques/serie/001688537"
-    as_of_date: "2025-08-08"
+    - https://www.insee.fr/fr/statistiques/8627586
+    - https://www.insee.fr/fr/statistiques/serie/001688537
+    as_of_date: '2025-08-08'
     snapshot_kind: mixed
     revision_note: null
+    observed_at: '2026-10-10'
+    data_version: BDM LAST_UPDATE=2026-08-07
   annotation:
     source_checked: true
     review_status: SOURCE_CHECKED
-    notes: >
-      Publication shows 15-24 = 19.0% at T2 2025, but claim does not name that band.
-      Do not silently ground to 001688537.
-    rejected_candidates:
-      - "Auto-select AGE_15_24 because value matches"
+    notes: 'Publication shows 15-24 = 19.0% at T2 2025, but claim does not name that band. Do not silently
+      ground to 001688537.
 
+      '
+    rejected_candidates:
+    - Auto-select AGE_15_24 because value matches
+    verification_status: CONFIRMED
+    verification_notes: 'Abstention confirmed: candidate series exists (under-25=19.0) but claim ''jeunes''
+      does not uniquely select AGE band / GEO. Remain AMBIGUOUS.'
 - claim_id: MG005
-  claim: "Au deuxième trimestre 2025, 3,3 millions de chômeurs au sens du BIT étaient inscrits en catégorie A à France Travail."
+  claim: Au deuxième trimestre 2025, 3,3 millions de chômeurs au sens du BIT étaient inscrits en catégorie
+    A à France Travail.
   family: unemployment
   gold_status: CANDIDATE
   answerability:
     status: INSUFFICIENT
-    reason: >
-      Claim mixes BIT unemployed stock with France Travail category A registration —
-      incompatible statistical universes; cannot prove one with the other.
+    reason: 'Claim mixes BIT unemployed stock with France Travail category A registration — incompatible
+      statistical universes; cannot prove one with the other.
+
+      '
   claim_specification:
     indicator:
       canonical_value: null
-      original_label: "chômeurs BIT inscrits catégorie A"
+      original_label: chômeurs BIT inscrits catégorie A
     territories:
-      - canonical_value: null
-        original_label: null
+    - canonical_value: null
+      original_label: null
     time_period:
-      start_date: "2025-Q2"
-      end_date: "2025-Q2"
+      start_date: 2025-Q2
+      end_date: 2025-Q2
       precision: QUARTER
       is_relative: false
     claimed_quantity:
@@ -354,7 +378,7 @@
       scale: MILLION
       role: CURRENT_VALUE
       approximation: APPROXIMATELY
-      original_label: "3,3 millions"
+      original_label: 3,3 millions
     statistical_operation:
       canonical_value: VALUE
     expressed_frequency: null
@@ -372,50 +396,55 @@
   expected_computation:
     operation: NONE
     result: null
-    formula_note: "No single official series answers a BIT∩catégorie-A claim."
+    formula_note: No single official series answers a BIT∩catégorie-A claim.
   expected_verdict: INSUFFICIENT_EVIDENCE
   ambiguities:
-    - field: indicator
-      reason: "BIT unemployment ≠ demandeurs d'emploi catégorie A (France Travail)"
-      alternatives:
-        - UNEMPLOYMENT_BIT_STOCK
-        - JOBSEEKERS_CATEGORY_A
-    - field: expected_grounding
-      reason: "No joint series defines BIT unemployed who are catégorie A"
-      alternatives: []
+  - field: indicator
+    reason: BIT unemployment ≠ demandeurs d'emploi catégorie A (France Travail)
+    alternatives:
+    - UNEMPLOYMENT_BIT_STOCK
+    - JOBSEEKERS_CATEGORY_A
+  - field: expected_grounding
+    reason: No joint series defines BIT unemployed who are catégorie A
+    alternatives: []
   provenance:
     sources:
-      - "https://www.insee.fr/fr/statistiques/8627586"
-    as_of_date: "2025-08-08"
+    - https://www.insee.fr/fr/statistiques/8627586
+    as_of_date: '2025-08-08'
     snapshot_kind: mixed
     revision_note: null
+    observed_at: '2026-10-10'
   annotation:
     source_checked: true
     review_status: SOURCE_CHECKED
-    notes: >
-      Hard negative against historical gold_validation val_006 which golded
-      'Demandeurs d'emploi catégorie A' to CHOMAGE-TRIM-NATIONAL (BIT).
-    rejected_candidates:
-      - "CHOMAGE-TRIM-NATIONAL as proof of catégorie A"
-      - "France Travail DEFM A as proof of BIT unemployment"
+    notes: 'Hard negative against historical gold_validation val_006 which golded ''Demandeurs d''emploi
+      catégorie A'' to CHOMAGE-TRIM-NATIONAL (BIT).
 
+      '
+    rejected_candidates:
+    - CHOMAGE-TRIM-NATIONAL as proof of catégorie A
+    - France Travail DEFM A as proof of BIT unemployment
+    verification_status: CONFIRMED
+    verification_notes: 'Abstention confirmed: BIT unemployed ≠ France Travail catégorie A; no joint official
+      series. Remain INSUFFICIENT.'
 - claim_id: MG006
-  claim: "En septembre 2025, les prix à la consommation en France entière ont augmenté de 1,2 % sur un an."
+  claim: En septembre 2025, les prix à la consommation en France entière ont augmenté de 1,2 % sur un
+    an.
   family: inflation
   gold_status: CANDIDATE
   answerability:
     status: FOUND
-    reason: "IPC definitive YoY France entière September 2025 = +1.2%."
+    reason: IPC definitive YoY France entière September 2025 = +1.2%.
   claim_specification:
     indicator:
       canonical_value: CPI_YOY
-      original_label: "prix à la consommation … sur un an"
+      original_label: prix à la consommation … sur un an
     territories:
-      - canonical_value: FR_ENTIERE
-        original_label: "France entière"
+    - canonical_value: FR_ENTIERE
+      original_label: France entière
     time_period:
-      start_date: "2025-09"
-      end_date: "2025-09"
+      start_date: 2025-09
+      end_date: 2025-09
       precision: MONTH
       is_relative: false
     claimed_quantity:
@@ -423,11 +452,11 @@
       unit: PERCENT
       role: RELATIVE_CHANGE
       approximation: EXACT
-      original_label: "1,2 %"
-      sign: "+"
+      original_label: 1,2 %
+      sign: +
     statistical_operation:
       canonical_value: RELATIVE_CHANGE
-      original_label: "sur un an"
+      original_label: sur un an
     expressed_frequency:
       canonical_value: MONTHLY
     adjustment:
@@ -436,65 +465,75 @@
     populations: []
   expected_grounding:
     provider: INSEE
-    dataset_id: IPC-2015
-    dataset_title: "Indice des prix à la consommation — résultats définitifs (septembre 2025)"
-    series_id: "IPC_YOY_ENSEMBLE_FR"
-    idbank: null
+    dataset_id: IPC-2025
+    dataset_title: Indice des prix à la consommation - Base 2025 - Glissement annuel - Ensemble des ménages
+      - France - COICOP 00 Ensemble
+    series_id: 011814632
+    idbank: 011814632
     series_key: null
   expected_dimensions:
-    GEO: FR_ENTIERE
+    GEO: FE
     FREQ: M
-    UNIT: PERCENT
+    UNIT: POURCENT
     ADJUSTMENT: NSA
-    COICOP: ENSEMBLE
+    COICOP: '00'
+    NATURE: YOY
   expected_observations:
-    - period: "2025-09"
-      value: 1.2
-      unit: PERCENT
-      note: "Glissement annuel IPC ensemble (IR 255, 15/10/2025)"
+  - period: 2025-09
+    value: 1.2
+    unit: PERCENT
+    note: BDM 011814632 = IR 8655430 YoY
   expected_computation:
     operation: VALUE
-    period: "2025-09"
+    period: 2025-09
     result: 1.2
     unit: PERCENT
-    formula_note: >
-      Official published YoY rate treated as VALUE on the variation series
-      (not recomputed from raw index levels in this oracle).
+    formula_note: 'Official published YoY rate treated as VALUE on the variation series (not recomputed
+      from raw index levels in this oracle).
+
+      '
   expected_verdict: SUPPORTED
   ambiguities: []
   provenance:
-    sources:
-      - "https://www.insee.fr/fr/statistiques/8655430"
-    as_of_date: "2025-10-15"
-    snapshot_kind: publication_snapshot
-    revision_note: "Definitive IPC; provisional estimate confirmed."
+    sources: &id002
+    - https://www.insee.fr/fr/statistiques/8655430
+    - https://www.insee.fr/fr/statistiques/serie/011814632
+    as_of_date: '2025-10-15'
+    snapshot_kind: revised_series
+    revision_note: Definitive IPC; provisional estimate confirmed.
+    observed_at: '2026-10-10'
+    data_version: BDM LAST_UPDATE=2026-09-30
   annotation:
     source_checked: true
-    review_status: NEEDS_HUMAN_REVIEW
-    notes: >
-      Values verified on IR n°255. Exact BDM idbank for YoY ensemble not pinned
-      in Session 4 (series_id is publication-level handle).
-    rejected_candidates:
-      - "IPCH YoY 1.07% — related but different index"
-      - "Inflation sous-jacente 1.3%"
+    review_status: SOURCE_CHECKED
+    notes: 'Values verified on IR n°255. Exact BDM idbank for YoY ensemble not pinned in Session 4 (series_id
+      is publication-level handle).
 
+      '
+    rejected_candidates:
+    - IPCH YoY 1.07% — related but different index
+    - Inflation sous-jacente 1.3%
+    verification_status: CORRECTED
+    verification_notes: 'Pinned idbank 011814632 (base 2025, not placeholder IPC-2015 handle). Obs 1.2
+      confirmed. Metadata: FE / monthly / YoY / COICOP 00.'
 - claim_id: MG007
-  claim: "En septembre 2025, les prix à la consommation en France entière ont baissé de 1,0 % par rapport à août 2025."
+  claim: En septembre 2025, les prix à la consommation en France entière ont baissé de 1,0 % par rapport
+    à août 2025.
   family: inflation
   gold_status: CANDIDATE
   answerability:
     status: FOUND
-    reason: "IPC definitive MoM France entière September 2025 = -1.0%."
+    reason: IPC definitive MoM France entière September 2025 = -1.0%.
   claim_specification:
     indicator:
       canonical_value: CPI_MOM
-      original_label: "prix à la consommation … par rapport à août"
+      original_label: prix à la consommation … par rapport à août
     territories:
-      - canonical_value: FR_ENTIERE
-        original_label: "France entière"
+    - canonical_value: FR_ENTIERE
+      original_label: France entière
     time_period:
-      start_date: "2025-08"
-      end_date: "2025-09"
+      start_date: 2025-08
+      end_date: 2025-09
       precision: MONTH
       is_relative: false
     claimed_quantity:
@@ -502,11 +541,11 @@
       unit: PERCENT
       role: RELATIVE_CHANGE
       approximation: EXACT
-      original_label: "1,0 %"
-      sign: "-"
+      original_label: 1,0 %
+      sign: '-'
     statistical_operation:
       canonical_value: RELATIVE_CHANGE
-      original_label: "baissé … par rapport à"
+      original_label: baissé … par rapport à
     expressed_frequency:
       canonical_value: MONTHLY
     adjustment:
@@ -514,63 +553,70 @@
     populations: []
   expected_grounding:
     provider: INSEE
-    dataset_id: IPC-2015
-    dataset_title: "Indice des prix à la consommation — résultats définitifs (septembre 2025)"
-    series_id: "IPC_MOM_ENSEMBLE_FR"
-    idbank: null
+    dataset_id: IPC-2025
+    dataset_title: Indice des prix à la consommation - Base 2025 - Variation mensuelle - Ensemble des
+      ménages - France - COICOP 00 Ensemble
+    series_id: 011814631
+    idbank: 011814631
     series_key: null
   expected_dimensions:
-    GEO: FR_ENTIERE
+    GEO: FE
     FREQ: M
-    UNIT: PERCENT
+    UNIT: POURCENT
     ADJUSTMENT: NSA
-    COICOP: ENSEMBLE
+    COICOP: '00'
+    NATURE: MOM
   expected_observations:
-    - period: "2025-09"
-      value: -1.0
-      unit: PERCENT
-      note: "Variation mensuelle IPC ensemble"
+  - period: 2025-09
+    value: -1.0
+    unit: PERCENT
+    note: BDM 011814631 = IR 8655430 MoM
   expected_computation:
     operation: VALUE
-    period: "2025-09"
+    period: 2025-09
     result: -1.0
     unit: PERCENT
-    formula_note: "Published MoM rate as VALUE on variation series."
+    formula_note: Published MoM rate as VALUE on variation series.
   expected_verdict: SUPPORTED
   ambiguities: []
   provenance:
     sources:
-      - "https://www.insee.fr/fr/statistiques/8655430"
-    as_of_date: "2025-10-15"
-    snapshot_kind: publication_snapshot
+    - https://www.insee.fr/fr/statistiques/8655430
+    - https://www.insee.fr/fr/statistiques/serie/011814631
+    as_of_date: '2025-10-15'
+    snapshot_kind: revised_series
     revision_note: null
+    observed_at: '2026-10-10'
+    data_version: BDM LAST_UPDATE=2026-09-30
   annotation:
     source_checked: true
-    review_status: NEEDS_HUMAN_REVIEW
-    notes: "IR n°255 MoM -1.0% verified; BDM idbank still to pin."
+    review_status: SOURCE_CHECKED
+    notes: IR n°255 MoM -1.0% verified; BDM idbank still to pin.
     rejected_candidates:
-      - "Using YoY +1.2% as monthly change"
-      - "IPC CVS monthly 0.0%"
-
+    - Using YoY +1.2% as monthly change
+    - IPC CVS monthly 0.0%
+    verification_status: CORRECTED
+    verification_notes: Pinned idbank 011814631 MoM ensemble France; value -1.0 confirmed.
 - claim_id: MG008
-  claim: "En septembre 2025, l’inflation en France était de 1,0 %."
+  claim: En septembre 2025, l’inflation en France était de 1,0 %.
   family: inflation
   gold_status: CANDIDATE
   answerability:
     status: FOUND
-    reason: >
-      Interpretable as IPC YoY France; grounding unique enough, but claimed 1.0%
-      mismatches official +1.2% → REFUTED.
+    reason: 'Interpretable as IPC YoY France; grounding unique enough, but claimed 1.0% mismatches official
+      +1.2% → REFUTED.
+
+      '
   claim_specification:
     indicator:
       canonical_value: CPI_YOY
-      original_label: "inflation"
+      original_label: inflation
     territories:
-      - canonical_value: FR
-        original_label: "France"
+    - canonical_value: FR
+      original_label: France
     time_period:
-      start_date: "2025-09"
-      end_date: "2025-09"
+      start_date: 2025-09
+      end_date: 2025-09
       precision: MONTH
       is_relative: false
     claimed_quantity:
@@ -578,81 +624,86 @@
       unit: PERCENT
       role: RELATIVE_CHANGE
       approximation: EXACT
-      original_label: "1,0 %"
+      original_label: 1,0 %
     statistical_operation:
       canonical_value: RELATIVE_CHANGE
-      original_label: "était de"
+      original_label: était de
     expressed_frequency:
       canonical_value: MONTHLY
     adjustment: null
     populations: []
   expected_grounding:
     provider: INSEE
-    dataset_id: IPC-2015
-    dataset_title: "IPC — glissement annuel ensemble (septembre 2025)"
-    series_id: "IPC_YOY_ENSEMBLE_FR"
-    idbank: null
+    dataset_id: IPC-2025
+    dataset_title: Indice des prix à la consommation - Base 2025 - Glissement annuel - Ensemble des ménages
+      - France - COICOP 00 Ensemble
+    series_id: 011814632
+    idbank: 011814632
     series_key: null
   expected_dimensions:
-    GEO: FR_ENTIERE
+    GEO: FE
     FREQ: M
-    UNIT: PERCENT
+    UNIT: POURCENT
     ADJUSTMENT: NSA
-    COICOP: ENSEMBLE
+    COICOP: '00'
+    NATURE: YOY
   expected_observations:
-    - period: "2025-09"
-      value: 1.2
-      unit: PERCENT
-      note: "Official YoY; claim asserts 1.0"
+  - period: 2025-09
+    value: 1.2
+    unit: PERCENT
+    note: Official YoY; claim asserts 1.0 → REFUTED
   expected_computation:
     operation: VALUE
-    period: "2025-09"
+    period: 2025-09
     result: 1.2
     unit: PERCENT
-    formula_note: "Official 1.2 vs claimed 1.0 → REFUTED"
+    formula_note: Official 1.2 vs claimed 1.0 → REFUTED
   expected_verdict: REFUTED
   ambiguities: []
   provenance:
-    sources:
-      - "https://www.insee.fr/fr/statistiques/8655430"
-    as_of_date: "2025-10-15"
+    sources: *id002
+    as_of_date: '2025-10-15'
     snapshot_kind: publication_snapshot
-    revision_note: >
-      1.0% YoY appears for other months (e.g. 2025-07 IPC YoY); not September.
+    revision_note: '1.0% YoY appears for other months (e.g. 2025-07 IPC YoY); not September.
+
+      '
+    observed_at: '2026-10-10'
+    data_version: BDM LAST_UPDATE=2026-09-30
   annotation:
     source_checked: true
-    review_status: NEEDS_HUMAN_REVIEW
-    notes: "False claimed value vs verified IR YoY; idbank still publication-level."
+    review_status: SOURCE_CHECKED
+    notes: False claimed value vs verified IR YoY; idbank still publication-level.
     rejected_candidates:
-      - "Accepting July 2025 YoY 1.0% for a September claim"
-
+    - Accepting July 2025 YoY 1.0% for a September claim
+    verification_status: CORRECTED
+    verification_notes: Same YoY series as MG006; official 1.2 vs claimed 1.0 remains REFUTED.
 - claim_id: MG009
-  claim: "Au 1er janvier 2025, la France comptait environ 68,6 millions d’habitants."
+  claim: Au 1er janvier 2025, la France comptait environ 68,6 millions d’habitants.
   family: population
   gold_status: CANDIDATE
   answerability:
     status: FOUND
-    reason: "Population stock estimate France at 2025-01-01 ≈ 68.6 million."
+    reason: Population stock estimate France at 2025-01-01 ≈ 68.6 million.
   claim_specification:
     indicator:
       canonical_value: POPULATION_STOCK
-      original_label: "habitants"
+      original_label: habitants
     territories:
-      - canonical_value: FR
-        original_label: "France"
+    - canonical_value: FR
+      original_label: France
     time_period:
-      start_date: "2025-01-01"
-      end_date: "2025-01-01"
+      start_date: '2025-01-01'
+      end_date: '2025-01-01'
       precision: DAY
       is_relative: false
-      original_label: "1er janvier 2025"
+      original_label: 1er janvier 2025
     claimed_quantity:
       numeric_value: 68.6
       unit: PERSON
       scale: MILLION
       role: CURRENT_VALUE
       approximation: APPROXIMATELY
-      original_label: "environ 68,6 millions"
+      original_label: environ 68,6 millions
     statistical_operation:
       canonical_value: VALUE
     expressed_frequency:
@@ -662,60 +713,68 @@
   expected_grounding:
     provider: INSEE
     dataset_id: ESTIMATIONS-POPULATION
-    dataset_title: "Estimations de population — France portrait social / bilan démographique"
-    series_id: "POP_FR_0101"
-    idbank: null
+    dataset_title: Estimations de population - Ensemble - France
+    series_id: '001760077'
+    idbank: '001760077'
     series_key: null
   expected_dimensions:
-    GEO: FR
+    GEO: FE
     FREQ: A
-    UNIT: PERSON
+    UNIT: INDIVIDUS
     AGE: TOTAL
     SEX: TOTAL
   expected_observations:
-    - period: "2025-01-01"
-      value: 68605600
-      unit: PERSON
-      note: "Table: 68 605,6 milliers → 68,6056 millions"
+  - period: '2025'
+    value: 68851996
+    unit: PERSON
+    note: BDM annual code 2025 = stock ~1 Jan 2025 (provisional, revised). Portrait social prose ~68.6M
+      / table 68 605,6 milliers.
   expected_computation:
     operation: VALUE
-    period: "2025-01-01"
-    result: 68605600
+    period: '2025'
+    result: 68851996
     unit: PERSON
-    formula_note: >
-      Claim ~68.6 million (APPROXIMATELY) matches 68.6056 million official estimate.
+    formula_note: BDM VALUE for 2025. Claim 'environ 68,6 millions' still SUPPORTED (approx). Publication
+      table 68.6056M documented in notes.
   expected_verdict: SUPPORTED
   ambiguities: []
   provenance:
     sources:
-      - "https://www.insee.fr/fr/statistiques/8612506"
-    as_of_date: "2025-11-01"
-    snapshot_kind: publication_snapshot
-    revision_note: "Population figures for 2023–2025 marked provisional in the publication."
+    - https://www.insee.fr/fr/statistiques/8612506
+    - https://www.insee.fr/fr/statistiques/serie/001760077
+    as_of_date: '2025-11-01'
+    snapshot_kind: revised_series
+    revision_note: Population figures for 2023–2025 marked provisional in the publication.
+    observed_at: '2026-10-10'
+    data_version: BDM LAST_UPDATE=2026-01-14
+    publication_value: 68.6M / 68605600 (portrait social table)
+    revised_series_value: BDM 001760077 period 2025 = 68851996 (P, REV)
   annotation:
     source_checked: true
-    review_status: NEEDS_HUMAN_REVIEW
-    notes: "Population level verified; exact BDM idbank not pinned in Session 4."
+    review_status: SOURCE_CHECKED
+    notes: Population level verified; exact BDM idbank not pinned in Session 4.
     rejected_candidates:
-      - "France métropolitaine only (66,4 millions) — wrong GEO for claim 'France'"
-
+    - France métropolitaine only (66,4 millions) — wrong GEO for claim 'France'
+    verification_status: CORRECTED
+    verification_notes: Pinned idbank 001760077; obs corrected to live BDM 68851996; claim approximation
+      still SUPPORTED.
 - claim_id: MG010
-  claim: "En 2025, 643 905 bébés sont nés en France."
+  claim: En 2025, 643 905 bébés sont nés en France.
   family: births
   gold_status: CANDIDATE
   answerability:
     status: FOUND
-    reason: "Official definitive live births France 2025 = 643905."
+    reason: Official definitive live births France 2025 = 643905.
   claim_specification:
     indicator:
       canonical_value: LIVE_BIRTHS
-      original_label: "bébés sont nés"
+      original_label: bébés sont nés
     territories:
-      - canonical_value: FR
-        original_label: "France"
+    - canonical_value: FR
+      original_label: France
     time_period:
-      start_date: "2025"
-      end_date: "2025"
+      start_date: '2025'
+      end_date: '2025'
       precision: YEAR
       is_relative: false
     claimed_quantity:
@@ -724,7 +783,7 @@
       scale: UNIT
       role: CURRENT_VALUE
       approximation: EXACT
-      original_label: "643 905"
+      original_label: 643 905
     statistical_operation:
       canonical_value: VALUE
     expressed_frequency:
@@ -734,58 +793,66 @@
   expected_grounding:
     provider: INSEE
     dataset_id: ETAT-CIVIL-NAISSANCES
-    dataset_title: "Les naissances en 2025 — Insee Focus n°383"
-    series_id: "NAISSANCES_FR_A"
-    idbank: null
+    dataset_title: Démographie - Nombre de naissances vivantes par mois - France (inclus Mayotte à partir
+      de 2014)
+    series_id: '001641601'
+    idbank: '001641601'
     series_key: null
   expected_dimensions:
-    GEO: FR
-    FREQ: A
-    UNIT: PERSON
+    GEO: FE
+    FREQ: M
+    UNIT: INDIVIDUS
   expected_observations:
-    - period: "2025"
-      value: 643905
-      unit: PERSON
+  - period: '2025'
+    value: 643905
+    unit: PERSON
+    note: Annual total = sum of monthly BDM 001641601 for 2025 (exact match Focus 9017867).
   expected_computation:
     operation: VALUE
-    period: "2025"
+    period: '2025'
     result: 643905
     unit: PERSON
-    formula_note: "LEVEL annual live births"
+    formula_note: LEVEL annual live births
   expected_verdict: SUPPORTED
   ambiguities: []
   provenance:
     sources:
-      - "https://www.insee.fr/fr/statistiques/9017867"
-    as_of_date: "2026-07-02"
-    snapshot_kind: publication_snapshot
+    - https://www.insee.fr/fr/statistiques/9017867
+    - https://www.insee.fr/fr/statistiques/serie/001641601
+    as_of_date: '2026-07-02'
+    snapshot_kind: revised_series
     revision_note: null
+    observed_at: '2026-10-10'
+    data_version: BDM LAST_UPDATE=2026-10-01
   annotation:
     source_checked: true
-    review_status: NEEDS_HUMAN_REVIEW
-    notes: "Focus 383 value verified; BDM idbank still to pin."
+    review_status: SOURCE_CHECKED
+    notes: Focus 383 value verified; BDM idbank still to pin.
     rejected_candidates:
-      - "France métropolitaine 610186 — wrong GEO"
-
+    - France métropolitaine 610186 — wrong GEO
+    verification_status: CORRECTED
+    verification_notes: Pinned monthly France FE series 001641601; annual 2025 sum=643905 matches Focus.
+      Reject metro-only annual 000067677.
 - claim_id: MG011
-  claim: "En 2025, la population française a augmenté de 643 905 personnes grâce aux naissances."
+  claim: En 2025, la population française a augmenté de 643 905 personnes grâce aux naissances.
   family: population
   gold_status: CANDIDATE
   answerability:
     status: FOUND
-    reason: >
-      Claim asserts population net increase equal to births; births figure is real
-      but indicator/operation wrong → REFUTED (stock/flow hard negative).
+    reason: 'Claim asserts population net increase equal to births; births figure is real but indicator/operation
+      wrong → REFUTED (stock/flow hard negative).
+
+      '
   claim_specification:
     indicator:
       canonical_value: POPULATION_NET_CHANGE
-      original_label: "population française a augmenté"
+      original_label: population française a augmenté
     territories:
-      - canonical_value: FR
-        original_label: "France"
+    - canonical_value: FR
+      original_label: France
     time_period:
-      start_date: "2025"
-      end_date: "2025"
+      start_date: '2025'
+      end_date: '2025'
       precision: YEAR
       is_relative: false
     claimed_quantity:
@@ -793,11 +860,11 @@
       unit: PERSON
       role: ABSOLUTE_CHANGE
       approximation: EXACT
-      original_label: "643 905"
-      sign: "+"
+      original_label: 643 905
+      sign: +
     statistical_operation:
       canonical_value: POINT_CHANGE
-      original_label: "a augmenté de"
+      original_label: a augmenté de
     expressed_frequency:
       canonical_value: ANNUAL
     adjustment: null
@@ -805,71 +872,78 @@
   expected_grounding:
     provider: INSEE
     dataset_id: ESTIMATIONS-POPULATION
-    dataset_title: "Estimations de population — soldes naturel et migratoire"
-    series_id: "POP_FR_0101"
-    idbank: null
+    dataset_title: Estimations de population - Ensemble - France
+    series_id: '001760077'
+    idbank: '001760077'
     series_key: null
   expected_dimensions:
-    GEO: FR
+    GEO: FE
     FREQ: A
-    UNIT: PERSON
+    UNIT: INDIVIDUS
+    AGE: TOTAL
+    SEX: TOTAL
   expected_observations:
-    - period: "2025-01-01"
-      value: 68605600
-      unit: PERSON
-      note: "Stock start 2025"
-    - period: "2024-01-01"
-      value: 68436600
-      unit: PERSON
-      note: "Stock start 2024 (68 436,6 milliers)"
-    - period: "2025"
-      value: 643905
-      unit: PERSON
-      note: "Births 2025 — wrong series for claimed indicator"
+  - period: '2025'
+    value: 68851996
+    unit: PERSON
+    note: BDM pop stock year code 2025
+  - period: '2024'
+    value: 68638377
+    unit: PERSON
+    note: BDM pop stock year code 2024
+  - period: 2025-BIRTHS
+    value: 643905
+    unit: PERSON
+    note: Births flow (wrong indicator for claimed Δpop)
   expected_computation:
     operation: POINT_CHANGE
-    start_period: "2024-01-01"
-    end_period: "2025-01-01"
-    result: 169000
+    start_period: '2024'
+    end_period: '2025'
+    result: 213619
     unit: PERSON
-    formula_note: >
-      Official pop change ≈ +169000 (68.6056M - 68.4366M), not +643905.
-      Births are a flow component, not net population change.
+    formula_note: BDM Δpop 68851996-68638377=213619 ≠ claimed +643905 births. REFUTED.
   expected_verdict: REFUTED
   ambiguities: []
   provenance:
     sources:
-      - "https://www.insee.fr/fr/statistiques/8612506"
-      - "https://www.insee.fr/fr/statistiques/9017867"
-    as_of_date: "2025-11-01"
+    - https://www.insee.fr/fr/statistiques/8612506
+    - https://www.insee.fr/fr/statistiques/9017867
+    - https://www.insee.fr/fr/statistiques/serie/001760077
+    as_of_date: '2025-11-01'
     snapshot_kind: mixed
-    revision_note: >
-      Population change uses provisional stocks; births 643905 are definitive Focus 383.
+    revision_note: 'Population change uses provisional stocks; births 643905 are definitive Focus 383.
       Either way the equality births = Δpop is false.
+
+      '
+    observed_at: '2026-10-10'
+    data_version: BDM LAST_UPDATE=2026-01-14
+    publication_value: Δpop≈169000 on older portrait table
+    revised_series_value: BDM Δ=213619
   annotation:
     source_checked: true
-    review_status: NEEDS_HUMAN_REVIEW
-    notes: "REFUTED logic solid; pin BDM ids when wiring retrieval."
+    review_status: SOURCE_CHECKED
+    notes: REFUTED logic solid; pin BDM ids when wiring retrieval.
     rejected_candidates:
-      - "Using ETAT-CIVIL-NAISSANCES to support a population-increase claim"
-
+    - Using ETAT-CIVIL-NAISSANCES to support a population-increase claim
+    verification_status: CORRECTED
+    verification_notes: Pinned pop idbank; corrected Δpop to BDM 213619; still REFUTED vs births.
 - claim_id: MG012
-  claim: "En 2025, 1 165 800 entreprises ont été créées en France."
+  claim: En 2025, 1 165 800 entreprises ont été créées en France.
   family: business_creation
   gold_status: CANDIDATE
   answerability:
     status: FOUND
-    reason: "Official SIDE annual business creations France 2025 = 1165800."
+    reason: Official SIDE annual business creations France 2025 = 1165800.
   claim_specification:
     indicator:
       canonical_value: BUSINESS_CREATIONS
-      original_label: "entreprises ont été créées"
+      original_label: entreprises ont été créées
     territories:
-      - canonical_value: FR
-        original_label: "France"
+    - canonical_value: FR
+      original_label: France
     time_period:
-      start_date: "2025"
-      end_date: "2025"
+      start_date: '2025'
+      end_date: '2025'
       precision: YEAR
       is_relative: false
     claimed_quantity:
@@ -878,7 +952,7 @@
       scale: UNIT
       role: CURRENT_VALUE
       approximation: EXACT
-      original_label: "1 165 800"
+      original_label: 1 165 800
     statistical_operation:
       canonical_value: VALUE
     expressed_frequency:
@@ -888,8 +962,9 @@
   expected_grounding:
     provider: INSEE
     dataset_id: CREATIONS-ENTREPRISES
-    dataset_title: "Les créations d’entreprises en 2025 — Insee Première n°2092"
-    series_id: "CREA_ENT_FR_A"
+    dataset_title: Les créations d’entreprises en 2025 — Insee Première n°2092 (SIDE). BDM national Ensemble-France
+      monthly series are discontinued (arrêtées).
+    series_id: SIDE_ANNUAL_FR_2025
     idbank: null
     series_key: null
   expected_dimensions:
@@ -898,26 +973,34 @@
     UNIT: ENTERPRISE
     SECTOR: MARCHAND_NON_AGRICOLE
   expected_observations:
-    - period: "2025"
-      value: 1165800
-      unit: ENTERPRISE
+  - period: '2025'
+    value: 1165800
+    unit: ENTERPRISE
+    note: Insee Première 2092 / SIDE annual total
   expected_computation:
     operation: VALUE
-    period: "2025"
+    period: '2025'
     result: 1165800
     unit: ENTERPRISE
-    formula_note: "LEVEL annual creations, champ activités marchandes non agricoles"
+    formula_note: LEVEL annual creations, champ activités marchandes non agricoles
   expected_verdict: SUPPORTED
   ambiguities: []
   provenance:
     sources:
-      - "https://www.insee.fr/fr/statistiques/8721354"
-    as_of_date: "2026-02-01"
+    - https://www.insee.fr/fr/statistiques/8721354
+    as_of_date: '2026-02-01'
     snapshot_kind: publication_snapshot
-    revision_note: null
+    revision_note: No active BDM idbank for 'Ensemble - France' annual/monthly total in CREATIONS-ENTREPRISES
+      dataflow (only séries arrêtées). Oracle uses publication SIDE total until a successor idbank is
+      published.
+    observed_at: '2026-10-10'
+    data_version: Insee Première 2092; BDM CREATIONS-ENTREPRISES inspected
   annotation:
     source_checked: true
     review_status: NEEDS_HUMAN_REVIEW
-    notes: "Insee Première 2092 value verified; BDM idbank still to pin."
+    notes: Insee Première 2092 value verified; BDM idbank still to pin.
     rejected_candidates:
-      - "Micro-entrepreneurs only (758600) — incomplete vs claim"
+    - Micro-entrepreneurs only (758600) — incomplete vs claim
+    verification_status: UNRESOLVED
+    verification_notes: Publication value 1 165 800 confirmed; national BDM idbank not available (Ensemble
+      France series stopped). Keep series_id publication handle.
