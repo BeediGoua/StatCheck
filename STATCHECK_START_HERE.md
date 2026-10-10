@@ -64,8 +64,9 @@ Code déterministe = données + résolution + calcul + preuve
 | 2.1 | Hardening contrat (`extra=forbid`, `ParseStatus`, quantités riches, provenance) | DONE |
 | 3 | Fusion policy + AuthorityMatrix + post-validators + C3 route | DONE |
 | 4 | Micro-Gold V0 oracle (12 claims CANDIDATE) | DONE (CANDIDATE) |
-| **4.1** | **Vérifier/durcir idbanks + dims + obs du Micro-Gold** | **DONE (+ FIX NEEDED); stop avant retrieval** |
-| 5+ | RetrievalService, SDMX plan, verdict, preuve… | plus tard (après acceptation 4.1) |
+| **4.1** | **Vérifier/durcir idbanks + dims + obs du Micro-Gold** | **DONE (+ FIX NEEDED)** |
+| **5.0** | **Audit exécutable du retrieval existant** | **DONE — décision C; E2E ENVIRONMENT_BLOCKED** |
+| 5.1+ | Smoke DB réel, puis éventuel RetrievalService / catalogue… | après smoke Postgres |
 
 ### Session 2 — contrat unique du claim
 
@@ -118,7 +119,18 @@ Récit : [`docs/sessions/session_04_1_verite_de_serie.md`](docs/sessions/session
 Verdict 4.1 (+4.1bis): DONE (tous FOUND CONFIRMED/CORRECTED; MG012=010755537 dual vintage)
 + FIX NEEDED (corrections matérielles idbanks/obs)
 gold_status reste CANDIDATE — pas VALIDATED
-Ne pas lancer retrieval avant acceptation de ce verdict
+```
+
+### Session 5.0 — vérité du retrieval
+
+Audit : [`docs/audit/session_05_0_retrieval_executable_truth.md`](docs/audit/session_05_0_retrieval_executable_truth.md)  
+Récit : [`docs/sessions/session_05_0_verite_du_retrieval.md`](docs/sessions/session_05_0_verite_du_retrieval.md)
+
+```text
+Décision C — réutiliser RRF/reranker/SQL ; reconstruire l’intégration
+Pas de RetrievalService dans src/
+Postgres smoke : ENVIRONMENT_BLOCKED (Docker Desktop arrêté)
+Prochaine expérience : allumer Docker → init schéma → ingest 222 datasets → smoke chômage BIT
 ```
 
 ---

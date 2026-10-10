@@ -24,6 +24,8 @@
 
 **Session 4.1 (+ 4.1bis) — series truth hardening:** BDM idbanks pinned for chômage (`001688527`), IPC YoY/MoM (`011814632`/`011814631`), population (`001760077`), births monthly (`001641601`), business creations (`010755537`, successor of stopped `001564301`). MG012 dual vintage (publication 1 165 800 / BDM SUM 1 165 795). **Verdict: DONE** (all FOUND CONFIRMED/CORRECTED) **+ FIX NEEDED** (material corrections). Still `gold_status=CANDIDATE`, not VALIDATED. See `docs/audit/session_04_1_micro_gold_series.md`. No retrieval/C3 work.
 
+**Session 5.0 — retrieval executable truth:** No `RetrievalService` in `src/`; hybrid path = Lot-7 scripts (FTS + MiniLM/pgvector + RRF + deterministic reranker). Algos **TESTED** (`tests/test_lot7.py` 8/8). Live Postgres/pgvector path **ENVIRONMENT_BLOCKED** this session (Docker Desktop engine not running; localhost:5432 refused). Catalogue seed present (`data/catalog/search_documents_real.json`, 222 datasets). Schema dim drift 1024 vs MiniLM 384. **Decision: C** — reuse core algorithms, rebuild integration layer. See `docs/audit/session_05_0_retrieval_executable_truth.md`. No RetrievalService implemented.
+
 ## Status legend
 
 | Status | Meaning |
@@ -52,8 +54,9 @@
 | Scorer / EvaluationOrchestrator | YES | YES | NO | — | — | slot/quantity matching |
 | `select_v1.py` | YES | — | **NO** | YES | scientific invalid | McNemar mock; `best_arch = "C3"`; `golds = baselines` |
 | `run_final_test.py` | YES | — | **NO** | YES | scientific invalid | `random` success; synthetic Canonical gold/pred; fake latencies |
-| Hybrid retrieval algos (RRF, reranker, nDCG) | YES | YES (8/8 lot7) | NO | demos in etape_4/5/6 | — | `tests/test_lot7.py` PASS |
-| Postgres FTS + pgvector path | YES | ERROR (no DB) | NOT VERIFIED here | mock helpers still in etape_7 file | env | `tests/test_postgres_e2e.py` connection refused |
+| Hybrid retrieval algos (RRF, reranker, nDCG) | YES | YES (8/8 lot7, Session 5.0) | NO | demos in etape_4/5/6 | — | unit only; not E2E retrieval |
+| Postgres FTS + pgvector path | YES (scripts) | ERROR | NO | mock_* helpers in evaluate_retrieval | — | ENVIRONMENT_BLOCKED (Docker engine down) |
+| RetrievalService | **NO** | — | — | — | — | scripts only; decision C (Session 5.0) |
 | Catalog / structure ingestion | YES | NOT RUN | NOT VERIFIED | — | — | live INSEE HTTP + SQLAlchemy |
 | Observation ingestion (parquet) | YES | NOT RUN | NOT VERIFIED | — | missing `pandas`/`pyarrow` in pyproject | `observation_ingester.py` |
 | SDMX resolvers (R1) | PARTIAL | NOT VERIFIED | NO | `test_r1_pipeline.py` MagicMock | schema mismatch risk | `Series` vs `AvailableSeriesKey`; `target_code` vs `target_modality_code` |
@@ -169,4 +172,4 @@ Closest non-NLP path: `scripts/verify_mvp.py` (idbank → observations → Calcu
 
 ## Recommended next action
 
-**Single next correction:** after accepting Session 4.1 (+4.1bis) verdict, evaluate RetrievalService / SDMXSelectionPlan against `data/gold/micro_gold_v0/`. Do not retune fusion/C3 thresholds first.
+**Single next correction:** clear ENVIRONMENT_BLOCKED — start Docker Desktop, `docker compose up -d db`, run `scripts/etape_7/01_init_schema.py` + `02_ingest_real_data.py`, smoke query `taux de chômage au sens du BIT`. Only then decide thin RetrievalService vs catalogue unification. Do not retune fusion/C3; do not Micro-Gold retrieval eval yet.
